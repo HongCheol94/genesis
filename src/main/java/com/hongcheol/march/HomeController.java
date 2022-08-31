@@ -32,4 +32,35 @@ public class HomeController {
 			
 			return "home";
 		}
+		
+		@RequestMapping(value = "/home2", method = RequestMethod.GET)
+		public String home2(Locale locale, Model model) {
+			
+			return "home2";
+		}
+		@RequestMapping(value = "/home3", method = RequestMethod.GET)
+		public String home3(Locale locale, Model model) {
+			
+			return "home3";
+		}
+		@RequestMapping(value = "/home4", method = RequestMethod.GET)
+		public String home4(Locale locale, Model model) {
+			
+			return "home4";
+		}
+		@RequestMapping(value = "/home5", method = RequestMethod.GET)
+		public String home5(Locale locale, Model model) {
+			
+			return "home5";
+		}
+		@RequestMapping(value = "/codeList", method = RequestMethod.GET)
+		public String codeList(Locale locale, Model model) {
+			
+			return "codeList";
+		}
+		@RequestMapping(value = "/codeGroupList", method = RequestMethod.GET)
+		public String codeGroupList(Locale locale, Model model) {
+			
+			return "codeGroupList";
+		}
 }
