@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,131 +120,16 @@
 					</th>
 					<th>#</th>
 					<th>코드그룹 코드</th>
-					<th>코드그룹 이름(한글)</th>
-					<th>코드그룹 이름(영문)</th>
-					<th>코드갯수</th>
-					<th>등록일</th>
-					<th>수정일</th>
 				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>42</td>
-					<td>449</td>
-					<td>asdfasdf</td>
-					<td></td>
-					<td>0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>41</td>
-					<td>48</td>
-					<td>asdfasdf</td>
-					<td></td>
-					<td>0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>40</td>
-					<td>47</td>
-					<td>123</td>
-					<td></td>
-					<td>0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>39</td>
-					<td>39</td>
-					<td>test19</td>
-					<td></td>
-					<td>0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>38</td>
-					<td>38</td>
-					<td>test18</td>
-					<td></td>
-					<td>0</td>
-					<td></td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>37</td>
-					<td>37</td>
-					<td>test17</td>
-					<td></td>
-					<td>0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>36</td>
-					<td>36</td>
-					<td>test16</td>
-					<td></td>
-					<td>0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>35</td>
-					<td>35</td>
-					<td>test15</td>
-					<td></td>
-					<td>0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>34</td>
-					<td>34</td>
-					<td>test14</td>
-					<td></td>
-					<td>0</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>33</td>
-					<td>33</td>
-					<td>test13</td>
-					<td></td>
-					<td>0</td>
-					<td></td>
-					<td></td>
-				</tr>
+				<c:forEach items="${list}" var="list" varStatus="status">
+					<tr class="search">
+						<td>
+							<input type="checkbox" name="check">
+						</td>
+						<td>${list.seq }</td>
+						<td>${list.codeGroup }</td>
+					</tr>
+				</c:forEach>
 			</table>
 			<!-- 페이지 목록 -->
 			<div class="row justify-content-center">

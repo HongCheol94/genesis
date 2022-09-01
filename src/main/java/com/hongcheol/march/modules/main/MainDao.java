@@ -1,4 +1,4 @@
-package com.hongcheol.march.modules.codegroup;
+package com.hongcheol.march.modules.main;
 
 import java.util.List;
 
@@ -9,13 +9,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class CodeGroupDao {
+public class MainDao {
 
 	@Inject
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.hongcheol.march.modules.codegroup.CodeGroupMapper";
+	private static String namespace = "com.hongcheol.march.modules.main.MainMapper";
 	
-	public List<CodeGroup> selectList(){ return sqlSession.selectList(namespace + ".selectList", ""); }
+	public List<Main> selectList() {return sqlSession.selectList(namespace + ".selectList","");}
 }

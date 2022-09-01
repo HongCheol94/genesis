@@ -10,11 +10,13 @@
 	
 	<select id="selectList" resultMap="resultMapObj">
 	
-	select 
-		a.*
-    From momstouch.ccg a
+   SELECT 
+    a.*
+    ,
+    (SELECT COUNT(*) FROM ccg b where a.Seq = b.Seq) as cnt
+    FORM 
+    
     
 	</select>
 
 </mapper>	
-

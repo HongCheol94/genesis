@@ -3,8 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -19,8 +20,8 @@
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
-			    <a class="navbar-brand" href="codeGroupList.html">
-			    	<image alt="" src="../../resources/images/kbcar.jpg" width="70px">
+			    <a class="navbar-brand" href="codeList.html">
+			    	<image alt="" src="../images/kbcar.jpg" width="70px">
 			    </a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 			      <span class="navbar-toggler-icon"></span>
@@ -28,7 +29,7 @@
 			    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 			      <div class="offcanvas-header">
 			        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-			        	<image alt="" src="../../resources/images/kbcar.jpg" width="100px">
+			        	<image alt="" src="./image/kbcar.jpg" width="100px">
 		        	</h5>
 			        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			      </div>
@@ -36,7 +37,7 @@
 			        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 			          <li class="nav-item">
 			            <a class="nav-link active" aria-current="page" href="#">
-			            	<image alt="" src="../../resources/images/person.png" width="100x">
+			            	<image alt="" src="./image/person.png" width="100x">
 		            	</a>
 			          </li>
 			          <hr>
@@ -67,8 +68,8 @@
 			      </div>
 			    </div>
 			</nav>
-			<img src="../../resources/images/listBg.jpg" class="rounded mx-auto d-block" alt="...">
-			<span class="fs-2">코드그룹 관리</span>
+			<img src="../images/listbg.jpg" class="rounded mx-auto d-block" alt="...">
+			<span class="fs-2">코드 관리</span>
 			<!-- 코드검색 -->
 			<div class="container border px mt-3 mb-3">
 				<div class="row p-2 mt-3">
@@ -84,6 +85,7 @@
 							<option selected>날짜</option>
 							<option value="가입일">가입일</option>
 							<option value="수정일">수정일</option>
+							<option value="생일">생일</option>
 						</select>
 					</div>
 					<div class="col mt-1">
@@ -103,10 +105,10 @@
 							</select>
 						</div>
 						<div class="col mt-2">
-							<input onkeyup="filter()" type="text" class="form-control" id="value" placeholder=" search">
-					  	</div>
-						<div class="col mt-2">
-							<button type="button">
+							  <input onkeyup="filter()" type="text" class="form-control" id="value" placeholder=" search">
+						</div>
+						<div>
+							<button type="button" class="btn btn-promary btn-sm border p-1 mt-3" >
 								<i class="fa-solid fa-magnifying-glass"></i>
 							</button>
 						</div>
@@ -122,8 +124,12 @@
 					<th>#</th>
 					<th>코드그룹 코드</th>
 					<th>코드그룹 이름(한글)</th>
-					<th>코드그룹 이름(영문)</th>
-					<th>코드갯수</th>
+					<th>코드</th>
+					<th>대체 코드</th>
+					<th>코드 이름(한글)</th>
+					<th>코드 이름(영문)</th>
+					<th>사용</th>
+					<th>순서</th>
 					<th>등록일</th>
 					<th>수정일</th>
 				</tr>
@@ -132,13 +138,10 @@
 						<td>
 							<input type="checkbox" name="check">
 						</td>
-						<td>${list.seq }</td>
-						<td>${list.codeGroup }</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td>${list.seq}</td>
+						<td>${list.codeName}</td>
+						<td>${list.codeGroup}</td>
+						<td>${list.ccg_seq}</td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -188,7 +191,7 @@
 				  </div>
 				</div>
 				<div class="col-1 px-5 offset-10">
-					<a href="codeGroupForm.html">
+					<a href="codeForm.html">
 						<button type="button" class="btn btn-outline-warning  btn-lg">
 							<i class="fa-solid fa-user-plus"></i>
 						</button>
@@ -233,6 +236,7 @@
         }
       }
 	</script>
+	<!-- end -->
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
