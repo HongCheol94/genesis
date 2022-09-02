@@ -7,7 +7,7 @@ public class CodeGroup {
 // 	infr_code_group	
 	private String seq;
 	private String codeGroup;
-	
+	private Integer cnt;
 	
 	public String getSeq() {
 		return seq;
@@ -21,5 +21,12 @@ public class CodeGroup {
 	public void setCodeGroup(String codeGroup) {
 		this.codeGroup = codeGroup;
 	}
+	public Integer getCnt() {
+		return cnt;
+	}
+	public void setCnt(Integer cnt) {
+		this.cnt = cnt;
+	}
+	
 	
 }
