@@ -16,7 +16,7 @@ public class MemberDao {
 	private SqlSession sqlSession;
 	
 	private static String namespace = "com.hongcheol.march.modules.member.MemberMapper";
-			
-	public List<Member> selectList() { return sqlSession.selectList(namespace + ".selectList","");}		
-			
+	
+	public List<Member> selectList(){ 
+		return sqlSession.selectList(namespace + ".selectList", ""); }
 }

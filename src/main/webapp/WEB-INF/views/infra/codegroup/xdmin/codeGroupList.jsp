@@ -15,7 +15,7 @@
 <body>
 	
 	<!-- start -->
-	<form method="post" action="/codeGroup/codeGroupList">
+	<form method="get" action="/codeGroup/codeGroupList">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
@@ -94,18 +94,18 @@
 					</div>
 					<div class="row row-cols-sm-6">
 						<div class="col p-2">
-							<select class="form-select" name="shOption" aria-label="Default select example">
+							<select class="form-select" id="shOption" name="shOption" aria-label="Default select example">
 								<option value="" <c:if test="${empty vo.shOption}">selected</c:if>>검색구분</option>
 								<option value="1" <c:if test="${vo.shOption eq 1}">selected</c:if>>코드그룹 코드</option>
-								<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>코드그룹 이름 (한글)</option>
 								<option value="3" <c:if test="${vo.shOption eq 3}">selected</c:if>>코드그룹 이름 (영문)</option>
+								<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>코드그룹 이름 (한글)</option>
 							</select>
 						</div>
 						<div class="col mt-2">
-							<input onkeyup="filter()" type="text" class="form-control" id="value" name="shValue" value="<c:out value="${vo.shValue}"/>" placeholder=" search">
+							<input onkeyup="filter()" type="text" class="form-control" id="shValue" name="shValue" value="<c:out value="${vo.shValue}"/>" placeholder=" search">
 					  	</div>
 						<div class="col mt-2">
-							<button type="button">
+							<button type="submit">
 								<i class="fa-solid fa-magnifying-glass"></i>
 							</button>
 						</div>

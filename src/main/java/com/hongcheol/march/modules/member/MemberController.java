@@ -14,11 +14,12 @@ public class MemberController {
 	@Autowired
 	MemberServiceImpl service;
 	
+
 	@RequestMapping(value = "Member")
-	public String Member(Model model) throws Exception{
-		
+	public String Member(Model model) throws Exception {
+
 		List<Member> list = service.selectList();
-		model.addAttribute("list",list);
+		model.addAttribute("list", list);
 		
 		return "infra/member/xdmin/Member";
 	}

@@ -3,7 +3,7 @@ package com.hongcheol.march.modules.member;
 import java.util.Date;
 
 public class Member {
-
+	
 	private String seq;
 	private String id;
 	private String password;
@@ -11,12 +11,13 @@ public class Member {
 	private int age;
 	private int gender;
 	private Date dob;
-	private int addressNumber;
+	private int addresNumber;
 	private String address;
 	private String detailedAddress;
 	private String number;
 	private String email;
-	private int memberDefaultNy;
+	private String memberDefaultNy;
+	
 	public String getSeq() {
 		return seq;
 	}
@@ -59,11 +60,11 @@ public class Member {
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
-	public int getAddressNumber() {
-		return addressNumber;
+	public int getAddresNumber() {
+		return addresNumber;
 	}
-	public void setAddressNumber(int addressNumber) {
-		this.addressNumber = addressNumber;
+	public void setAddresNumber(int addresNumber) {
+		this.addresNumber = addresNumber;
 	}
 	public String getAddress() {
 		return address;
@@ -89,12 +90,11 @@ public class Member {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getMemberDefaultNy() {
+	public String getMemberDefaultNy() {
 		return memberDefaultNy;
 	}
-	public void setMemberDefaultNy(int memberDefaultNy) {
+	public void setMemberDefaultNy(String memberDefaultNy) {
 		this.memberDefaultNy = memberDefaultNy;
 	}
-	
 	
 }
