@@ -11,6 +11,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
 	
@@ -73,32 +76,31 @@
 			<div class="container border px mt-3 mb-3">
 				<div class="row p-2 mt-3">
 					<div class="col">
-						<select class="form-select" aria-label="Default select example">
-							<option selected>삭제여부</option>
-							<option value="삭제">삭제</option>
-							<option value="미삭제">미삭제</option>
+						<select class="form-select" id="shDelNy" name="shDelNy" aria-label="Default select example">
+							<option value=""<c:if test="${empty vo.shDelNy}">selected</c:if>>삭제여부</option>
+							<option value="0" <c:if test="${vo.shDelNy eq 0}">selected</c:if>>N</option>
+							<option value="1" <c:if test="${vo.shDelNy eq 1}">selected</c:if>>Y</option>
 						</select>
 					</div>
 					<div class="col">
 						<select class="form-select" aria-label="Default select example">
 							<option selected>날짜</option>
-							<option value="가입일">가입일</option>
+							<option value="등록일">등록일</option>
 							<option value="수정일">수정일</option>
 						</select>
 					</div>
 					<div class="col mt-1">
-						<input type="text" id="DateStar" value="시작일" class="form-control form-control-sm hasDatepicker" autocomplete="off"	>
+						<input type="text" id="datepicker" name="datepicker" value="등록일" class="form-control form-control-sm"	>
 					</div>
 					<div class="col mt-1">
-						<input type="text" id="DateEnd" value="종료일" class="form-control form-control-sm hasDatepicker" autocomplete="off"	>
+						<input type="text" id="datepicker2" name="datepicker2" value="수정일" class="form-control form-control-sm">
 					</div>
 					<div class="row row-cols-sm-6">
 						<div class="col p-2">
 							<select class="form-select" id="shOption" name="shOption" aria-label="Default select example">
 								<option value="" <c:if test="${empty vo.shOption}">selected</c:if>>검색구분</option>
-								<option value="1" <c:if test="${vo.shOption eq 1}">selected</c:if>>코드그룹 코드</option>
-								<option value="3" <c:if test="${vo.shOption eq 3}">selected</c:if>>코드그룹 이름 (영문)</option>
-								<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>코드그룹 이름 (한글)</option>
+								<option value="1" <c:if test="${vo.shOption eq 1}">selected</c:if>>번호</option>
+								<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>코드그룹</option>
 							</select>
 						</div>
 						<div class="col mt-2">
@@ -133,18 +135,18 @@
 						</tr>
 					</c:when>
 					<c:otherwise>
-						<c:forEach items="${list}" var="list" varStatus="status">
+						<c:forEach items="${list}" var="list" varStatus="status" end="4">
 							<tr class="search">
 								<td>
 									<input type="checkbox" name="check">
 								</td>
 								<td>${list.seq }</td>
 								<td>${list.codeGroup }</td>
-								<td></td>
-								<td></td>
+								<td>${list.codeNameK }</td>
+								<td>${list.codeNameEn }</td>
 								<td>${list.cnt }</td>
-								<td></td>
-								<td></td>
+								<td>${list.registrationDate }</td>
+								<td>${list.revisedDate }</td>
 							</tr>
 						</c:forEach>
 					</c:otherwise>
@@ -207,7 +209,7 @@
 	</form>
 	
 	<script type="text/javascript">
-	function selectAll(selectAll)  {
+/* 		function selectAll(selectAll)  {
 		  const checkboxes 
 		       = document.getElementsByName('check');
 		  
@@ -219,10 +221,10 @@
 		const myModal = document.getElementById('myModal')
 		const myInput = document.getElementById('myInput')
 	
-		myModal.addEventListener('shown.bs.modal', () => {
+		  myModal.addEventListener('shown.bs.modal', () => { 
 		  myInput.focus()
 		})
-		
+		 
 		
 		 function filter(){
 
@@ -239,9 +241,16 @@
             item[i].style.display = "none";
           }
         }
-      }
+      }   */
+      
+      $(function() {
+          $( "#datepicker" ).datepicker();
+          $( "#datepicker2" ).datepicker();
+        });
 	</script>
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<script>
+   
 </body>
 </html>

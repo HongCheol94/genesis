@@ -21,7 +21,7 @@
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
 			    <a class="navbar-brand" href="codeList.html">
-			    	<image alt="" src="../images/kbcar.jpg" width="70px">
+			    	<image alt="" src="../../resources/images/kbcar.jpg" width="70px">
 			    </a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 			      <span class="navbar-toggler-icon"></span>
@@ -29,7 +29,7 @@
 			    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 			      <div class="offcanvas-header">
 			        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-			        	<image alt="" src="./image/kbcar.jpg" width="100px">
+			        	<image alt="" src="../../resources/images/kbcar.jpg" width="100px">
 		        	</h5>
 			        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			      </div>
@@ -37,7 +37,7 @@
 			        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 			          <li class="nav-item">
 			            <a class="nav-link active" aria-current="page" href="#">
-			            	<image alt="" src="./image/person.png" width="100x">
+			            	<image alt="" src="../../resources/images/person.png" width="100x">
 		            	</a>
 			          </li>
 			          <hr>
@@ -68,7 +68,7 @@
 			      </div>
 			    </div>
 			</nav>
-			<img src="../images/listbg.jpg" class="rounded mx-auto d-block" alt="...">
+			<img src="../../resources/images/listBg.jpg" class="rounded mx-auto d-block" alt="...">
 			<span class="fs-2">코드 관리</span>
 			<!-- 코드검색 -->
 			<div class="container border px mt-3 mb-3">

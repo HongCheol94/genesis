@@ -1,22 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Bootstrap demo</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-</head>
-<body>
-	
-	<!-- start -->
-	
-	<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -33,7 +21,7 @@
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
 			    <a class="navbar-brand" href="../listChoice/choicList.html">
-			    	<image alt="" src="../images/kbcar.jpg" width="70px">
+			    	<image alt="" src="../../resources/images/kbcar.jpg" width="70px">
 			    </a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 			      <span class="navbar-toggler-icon"></span>
@@ -41,7 +29,7 @@
 			    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 			      <div class="offcanvas-header">
 			        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-			        	<image alt="" src="./image/kbcar.jpg" width="100px">
+			        	<image alt="" src="../../resources/images/kbcar.jpg" width="100px">
 		        	</h5>
 			        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			      </div>
@@ -49,7 +37,7 @@
 			        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 			          <li class="nav-item">
 			            <a class="nav-link active" aria-current="page" href="#">
-			            	<image alt="" src="./image/person.png" width="100x">
+			            	<image alt="" src="../../resources/images/person.png" width="100x">
 		            	</a>
 			          </li>
 			          <hr>
@@ -77,7 +65,7 @@
 			      </div>
 			    </div>
 			</nav>
-			<img src="../images/listbg.jpg" class="rounded mx-auto d-block" alt="...">
+			<img src="../../resources/images/listBg.jpg" class="rounded mx-auto d-block" alt="...">
 			<!-- 회원검색 -->
 			<div class="container border px">
 				<div class="row p-2">
@@ -133,94 +121,36 @@
 						<input type="checkbox" name="check" value="selectAll" onclick="selectAll(this)">
 					</th>
 					<th>번호</th>
-					<th>회원번호</th>
+					<th>아이디</th>
 					<th>이름</th>
 					<th>성별</th>
 					<th>전화번호</th>
 					<th>주소</th>
 					<th>이메일</th>
-					<th>가입일</th>
 				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>1</td>
-					<td>00114</td>
-					<td class="sn">
-						<a href="../dminMember/d_memberView.html" style="color:black; text-decoration-line: none;">마동석</a>
-					</td>
-					<td>남자</td>
-					<td>010-1828-7163</td>
-					<td>서울시 서초구 잠원동</td>
-					<td>madongsuck@naver.com</td>
-					<td>2000.04.26</td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>2</td>
-					<td>00564</td>
-					<td class="sn">김소은</td>
-					<td>여자</td>
-					<td>010-4852-8251</td>
-					<td>서울시 강남구 테헤란로</td>
-					<td>soeun@naver.com</td>
-					<td>2005.02.26</td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>3</td>
-					<td>00264</td>
-					<td class="sn">정우성</td>
-					<td>남자</td>
-					<td>010-7217-1375</td>
-					<td>서울시 도봉구 방학동</td>
-					<td>menam@nate.com</td>
-					<td>1998.10.12</td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>4</td>
-					<td>01038</td>
-					<td class="sn">이나영</td>
-					<td>여자</td>
-					<td>010-3345-8762</td>
-					<td>서울시 강남구 테헤란로</td>
-					<td>nayong@naver.com</td>
-					<td>1999.03.22</td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>5</td>
-					<td>00342</td>
-					<td class="sn">송혜교</td>
-					<td>여자</td>
-					<td>010-4211-7531</td>
-					<td>서울시 서초구 반포동</td>
-					<td>menam@nate.com</td>
-					<td>1998.10.12</td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>6</td>
-					<td>00482</td>
-					<td class="sn">이동욱</td>
-					<td>남자</td>
-					<td>010-1583-6648</td>
-					<td>경기도 의정부시 의정부동</td>
-					<td>menam@nate.com</td>
-					<td>2001.08.16</td>
-				</tr>
+				<c:choose>
+					<c:when test="${fn:length(list) eq 0 }">
+						<tr>
+							<td class="text-center" colspan="8">There is no date!</td>
+						</tr>
+					</c:when>
+					<c:otherwise>
+						<c:forEach items="${list}" var="list" varStatus="status">
+							<tr class="search">
+								<td>
+									<input type="checkbox" name="check">
+								</td>
+								<td>${list.seq }</td>
+								<td>${list.id }</td>
+								<td>${list.name}</td>
+								<td>${list.gender}</td>
+								<td>${list.number}</td>
+								<td>${list.address}</td>
+								<td>${list.email}</td>
+							</tr>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>
 			</table>
 			<!-- 페이지 목록 -->
 			<div class="row justify-content-center">
@@ -313,12 +243,6 @@
         }
       }
 	</script>
-	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-</body>
-</html>
-	
-	<!-- end -->
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

@@ -13,8 +13,21 @@
 	 select
 		a.seq
         ,a.codeGroup
+        ,a.shDelny
+        ,a.codeNamek
+        ,a.codeNameEn
+        ,a.registrationDate
+        ,a.revisedDate
         ,b.codeName
         ,b.ccg_seq
+        ,b.delNy
+        ,b.substituteCode
+        ,b.codeNameK
+        ,b.codeNameEn
+        ,b.useNy
+        ,b.turn
+        ,b.registrationDate
+        ,b.revisedDate
         from ccg a
         inner join cc b
         on b.seq = a.seq

@@ -9,14 +9,29 @@
     <resultMap id="resultMapObj" type="com.hongcheol.march.modules.codegroup.CodeGroup"></resultMap>
 	
 	<select id="selectList" resultMap="resultMapObj">
-	
-
-     select 
-	a.* 
-	,(SELECT COUNT(*) FROM cc b where b.ccg_seq = a.seq) as cnt
-	FROM ccg a
-	WHERE 1=0
-	
+	<!--      select 
+		a.* 
+		,(SELECT COUNT(*) FROM cc b where b.ccg_seq = a.seq) as cnt
+		FROM ccg a
+		WHERE 1=1
+		and shDelNy = 0 -->
+		
+		SELECT
+			a.*
+			,(SELECT COUNT(*) FROM cc b where b.ccg_seq = a.seq) as cnt
+		FROM ccg a
+		WHERE 1=1
+			AND shDelNy = 0
+			<!-- AND codeGroup LIKE CONCAT('%',#{shValue},'%') -->
+			
+		
+		
+		<if test="shDelNy != null and !shDelNy.equals('')">AND shDelNy = #{shDelNy}</if>
+		<choose>
+			<when test="shOption == 1">AND Seq = #{shValue}</when>
+			<when test="shOption == 2">AND codeGroup LIKE CONCAT('%',#{shValue},'%')</when>
+			<otherwise></otherwise>
+		</choose>
 	</select>
 
 </mapper>	

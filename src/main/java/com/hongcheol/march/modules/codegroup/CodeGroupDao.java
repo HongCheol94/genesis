@@ -15,8 +15,14 @@ public class CodeGroupDao {
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.hongcheol.march.modules.codegroup.CodeGroupMapper";
+	private static String namespace = "com.hongcheol.march.modules.codegroup.codeGroupMapper";
+			
+//	private static String namespace = "com.hongcheol.march.modules.codegroup.CodeGroupMapper";
 	
 	public List<CodeGroup> selectList(CodeGroupVo vo){
-		return sqlSession.selectList(namespace + ".selectList", vo); }
+//		return sqlSession.selectList(namespace + ".selectList", vo); 
+	List<CodeGroup> list = sqlSession.selectList("com.hongcheol.march.modules.codegroup.CodeGroupMapper.selectList",vo);
+	return list;
+	}
+	
 }
