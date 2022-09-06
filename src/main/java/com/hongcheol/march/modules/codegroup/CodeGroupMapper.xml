@@ -21,7 +21,6 @@
 			,(SELECT COUNT(*) FROM cc b where b.ccg_seq = a.seq) as cnt
 		FROM ccg a
 		WHERE 1=1
-			AND shDelNy = 0
 			<!-- AND codeGroup LIKE CONCAT('%',#{shValue},'%') -->
 			
 		
@@ -33,5 +32,22 @@
 			<otherwise></otherwise>
 		</choose>
 	</select>
+	
+	<insert id="insert">
+		INSERT INTO ccg (
+			codeNameK
+			,codeNameEn
+			,shDelNy
+		)
+		VALUES(
+			#{codeNameK}
+			,#{codeNameEn}
+			,0
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
 
 </mapper>	

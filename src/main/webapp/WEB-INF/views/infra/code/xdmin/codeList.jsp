@@ -74,18 +74,17 @@
 			<div class="container border px mt-3 mb-3">
 				<div class="row p-2 mt-3">
 					<div class="col">
-						<select class="form-select" aria-label="Default select example">
-							<option selected>삭제여부</option>
-							<option value="삭제">삭제</option>
-							<option value="미삭제">미삭제</option>
+						<select class="form-select" id="shDelNy" name="shDelNy" aria-label="Default select example">
+							<option value=""<c:if test="${empty vo.shDelNy}">selected</c:if>>삭제여부</option>
+							<option value="0"<c:if test="${vo.shDelNy eq 0}">selected</c:if>>Y</option>
+							<option value="1"<c:if test="${vo.shDelNy eq 1}">selected</c:if>>N</option>
 						</select>
 					</div>
 					<div class="col">
 						<select class="form-select" aria-label="Default select example">
 							<option selected>날짜</option>
-							<option value="가입일">가입일</option>
-							<option value="수정일">수정일</option>
-							<option value="생일">생일</option>
+							<option value="수정일">Y</option>
+							<option value="생일">N</option>
 						</select>
 					</div>
 					<div class="col mt-1">
@@ -96,16 +95,14 @@
 					</div>
 					<div class="row row-cols-sm-6">
 						<div class="col p-2">
-							<select class="form-select" aria-label="Default select example">
-								<option selected>검색구분</option>
-								<option value="번호">번호</option>
-								<option value="이름">이름</option>
-								<option value="아이디">아이디</option>
-								<option value="회원번호">회원번호</option>
+							<select class="form-select" id="shOption" name="shOption" aria-label="Default select example">
+								<option value=""<c:if test="${empty vo.shOption}">selected</c:if>>검색구분</option>
+								<option value="1"<c:if test="${vo.shOption}">selected</c:if>>번호</option>
+								<option value="2"<c:if test="${vo.shOption}">selected</c:if>>코드</option>
 							</select>
 						</div>
 						<div class="col mt-2">
-							  <input onkeyup="filter()" type="text" class="form-control" id="value" placeholder=" search">
+							  <input onkeyup="filter()" type="text" class="form-control" id="shValue" name="shValue" value="<c:out value="${vo.shValue}"/>" placeholder=" search">
 						</div>
 						<div>
 							<button type="button" class="btn btn-promary btn-sm border p-1 mt-3" >
@@ -133,17 +130,33 @@
 					<th>등록일</th>
 					<th>수정일</th>
 				</tr>
+			<c:choose>
+				<c:when test="${fn:length(list) eq 0 }">
+					<tr>
+						<td class="text-center" colspan="8">There is no date!</td>
+					</tr>
+				</c:when>
+			<c:otherwise>
 				<c:forEach items="${list}" var="list" varStatus="status">
 					<tr class="search">
 						<td>
 							<input type="checkbox" name="check">
 						</td>
 						<td>${list.seq}</td>
-						<td>${list.codeName}</td>
-						<td>${list.codeGroup}</td>
-						<td>${list.ccg_seq}</td>
+						<td>${list.codeGroupCode}</td>
+						<td>${list.codeGroupNameK}</td>
+						<td>${list.code}</td>
+						<td>${list.substituteCode}</td>
+						<td>${list.codeNameK}</td>
+						<td>${list.codeNameEn}</td>
+						<td>${list.useNy}</td>
+						<td>${list.turn}</td>
+						<td>${list.registrationDate}</td>
+						<td>${list.revisedDate}</td>
 					</tr>
 				</c:forEach>
+			</c:otherwise>
+		</c:choose>
 			</table>
 			<!-- 페이지 목록 -->
 			<div class="row justify-content-center">

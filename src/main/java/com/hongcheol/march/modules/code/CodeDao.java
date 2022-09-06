@@ -17,6 +17,9 @@ public class CodeDao {
 	
 	private static String namespace = "com.hongcheol.march.modules.code.CodeMapper";
 	
-	public List<Code> selectList(){ 
-		return sqlSession.selectList(namespace + ".selectList", ""); }
+	public List<Code> selectList(codeVo vo){
+		List<Code> list = sqlSession.selectList("com.hongcheol.march.modules.code.CodeMapper.selectList",vo);
+//		return sqlSession.selectList(namespace + ".selectList", ""); }
+		return list;
+	}
 }

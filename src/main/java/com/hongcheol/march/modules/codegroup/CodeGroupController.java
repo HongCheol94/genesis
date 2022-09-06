@@ -26,4 +26,19 @@ public class CodeGroupController {
 		
 		return "infra/codegroup/xdmin/codeGroupList";
 	}
+	
+	@RequestMapping(value = "codeGroupRegForm")
+	public String codeGroupRegForm(Model model) throws Exception{
+		
+		return "infra/codegroup/xdmin/codeGroupRegForm";
+	}
+	
+	@RequestMapping(value = "codeGroupInst")
+	public String codeGroupInst(CodeGroup dto) throws Exception{
+		
+		int result = service.insert(dto);
+		System.out.println("controller result: " + result);
+		
+		return "redirect:/codeGroup/codeGroupList";
+	}
 }

@@ -10,28 +10,20 @@
 	
 	<select id="selectList" resultMap="resultMapObj">
 	
-	 select
-		a.seq
-        ,a.codeGroup
-        ,a.shDelny
-        ,a.codeNamek
-        ,a.codeNameEn
-        ,a.registrationDate
-        ,a.revisedDate
-        ,b.codeName
-        ,b.ccg_seq
-        ,b.delNy
-        ,b.substituteCode
-        ,b.codeNameK
-        ,b.codeNameEn
-        ,b.useNy
-        ,b.turn
-        ,b.registrationDate
-        ,b.revisedDate
-        from ccg a
-        inner join cc b
-        on b.seq = a.seq
-    
+	 SELECT
+		a.*
+		From cc a
+		WHERE 1=1	
+		AND shDelNy = 1
+		
+		<if test="shDelNy != null and !shDelNy.equals('')">AND shDelNy = #{shDelNy}</if>
+		<choose>
+			<when test="shOption == 1">AND Seq = #{shValue}</when>
+			<when test="shOption == 2">AND codeGroup LIKE CONCAT('%',#{shValue},'%')</when>
+			<otherwise></otherwise>
+		</choose>
 	</select>
+	
+	
 
 </mapper>	

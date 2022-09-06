@@ -135,7 +135,7 @@
 						</tr>
 					</c:when>
 					<c:otherwise>
-						<c:forEach items="${list}" var="list" varStatus="status" end="4">
+						<c:forEach items="${list}" var="list" varStatus="status">
 							<tr class="search">
 								<td>
 									<input type="checkbox" name="check">
@@ -198,7 +198,7 @@
 				  </div>
 				</div>
 				<div class="col-1 px-5 offset-10">
-					<a href="codeGroupForm.html">
+					<a href="codeGroupRegForm">
 						<button type="button" class="btn btn-outline-warning  btn-lg">
 							<i class="fa-solid fa-user-plus"></i>
 						</button>
