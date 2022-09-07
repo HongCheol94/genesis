@@ -2,27 +2,28 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <style>
-    a{
-      text-decoration-line: none;
-    }
-  </style>
+    <style>
+        a{
+            text-decoration-line: none;
+        }
+    </style>
 </head>
 <body>
 	
 	<!-- start -->
 	
-	<form method="post" action="/codeGroup/codeGroupInst" id="codeGroupList">
+	<form method="post" action="./memberList2.html">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
-			    <a class="navbar-brand" href="codeList.html">
+			    <a class="navbar-brand" href="codeGroupList.html">
 			    	<image alt="" src="../images/kbcar.jpg" width="70px">
 			    </a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -70,31 +71,39 @@
 			      </div>
 			    </div>
 			</nav>
-            <span class="fs-2">코드그룹 관리</span>
-            <div class="row mt-5">
+            <span class="fs-2">코드 관리</span>
+            <div class="col-6 mb-3">
+                <label for="exampleFormControlInput1" class="form-label">사용여부</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>사용여부</option>
+                    <option value="1">Y</option>
+                    <option value="2">N</option>
+                  </select>
+            </div>
+             <div class="row">
                 <div class="col-6 mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">코드그룹 코드</label>
-                    <input type="text" class="form-control" id="codeGroup" name="codeGroup" placeholder="영문(대소문자),숫자">
+                    <label for="exampleFormControlInput1" class="form-label">코드</label>
+                    <input class="form-control" type="text" placeholder="자동생성" aria-label="Disabled input example" disabled>
                 </div>
                 <div class="col-6 mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">코드그룹 코드(Another)</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="" placeholder="영문(대소문자),숫자">
+                    <label for="exampleFormControlInput1" class="form-label">코드(Another)</label>
+                    <input type="email" class="form-control" id="codeAn" name="codeAn" placeholder="">
                 </div>
              </div>
              <div class="row">
                 <div class="col-6 mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">코드그룹 이름 (한글)</label>
-                    <input type="text" class="form-control" id="codeNameK" name="codeNameK" placeholder="한굴,숫자">
+                    <label for="exampleFormControlInput1" class="form-label">코드 이름 (한글)</label>
+                    <input type="email" class="form-control" id="codeNameK" name="codeNameK" placeholder="">
                 </div>
                 <div class="col-6 mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">코드그룹 이름 (영문)</label>
-                    <input type="text" class="form-control" id="codeNameEn" name="codeNameEn" placeholder="영문(대소문자),숫자">
+                    <label for="exampleFormControlInput1" class="form-label">코드 이름 (영문)</label>
+                    <input type="email" class="form-control" id="codeNameEn" name="codeNameEn" placeholder="">
                 </div>
              </div>
              <div class="row">
                 <div class="col-6">
                     <label for="exampleFormControlInput1" class="form-label">사용여부</label>
-                    <select class="form-select" id="shDelNy" name="shDelNy" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example">
                         <option selected>사용여부</option>
                         <option value="1">Y</option>
                         <option value="2">N</option>
@@ -102,13 +111,13 @@
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">순서</label>
-                    <input type="text" class="form-control" name="" id="" placeholder="숫자">
+                    <input type="email" class="form-control" id="turn" name="turn" placeholder="숫자">
                 </div>
              </div>
              <div class="row">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">설명</label>
-                    <textarea class="form-control" id="" rows="3"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <div class="col-6">
                     <label for="exampleFormControlInput1" class="form-label">삭제여부</label>
@@ -122,94 +131,56 @@
              <div class="row">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">예비1 (varchar type)</label>
-                    <input type="text" class="form-control" id="" name="" placeholder="영문(대소문자),숫자">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">예비2 (varchar type)</label>
-                    <input type="text" class="form-control" id="" name="" placeholder="영문(대소문자),숫자">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">예비3 (varchar type)</label>
-                    <input type="text" class="form-control" id="" name="" placeholder="영문(대소문자),숫자">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
                 </div>
              </div>
              <div class="row">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">예비1 (int type)</label>
-                    <input type="text" class="form-control" id="" name="" placeholder="영문(대소문자),숫자">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">예비2 (int type)</label>
-                    <input type="ttext" class="form-control" id="" name="" placeholder="영문(대소문자),숫자">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">예비3 (int type)</label>
-                    <input type="text" class="form-control" id="" name="" placeholder="영문(대소문자),숫자">
-                </div>
-                 <div class="col-6 mb-3">
-                	<input type="radio" id="gender1" name="gender" value="1">남성
-                	<input type="radio" id="gender2" name="gender" value="2">여성
-                	<input type="radio" id="gender3" name="gender" value="3">기타
-                </div>
-                  <div class="col-6 mb-3">
-                	<input type="checkbox" id="hobby1" name="hobby" value="1">산책
-                	<input type="checkbox" id="hobby2" name="hobby" value="2">등산
-                	<input type="checkbox" id="hobby3" name="hobby" value="3">러닝
-                	<input type="checkbox" id="hobby4" name="hobby" value="4">수영
-                	<input type="checkbox" id="hobby5" name="hobby" value="5">먹기
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
                 </div>
              </div>
              <!-- 하단 아이콘 -->
              <div class="row">
                 <div class="col">
-                  <a href="codeGroupList" style="color:black">
-                    <button type="button" style="background-color: white;">
-                      <i class="fa-solid fa-bars"></i>
-                    </button>
-                  </a>
+                    <a href="codeGroupList.html" style="color:black">
+                        <button type="button" style="background-color: white;">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                    </a>
                 </div>
                 <div class="col text-end">
-                  <a href="codeList.html">
-                    <button type="button" style="background-color: red;">
-                      <i class="fa-solid fa-xmark" style="color:white"></i>
+                    <a href="codeGroupList.html">
+                        <button type="button" style="background-color: red;">
+                            <i class="fa-solid fa-xmark" style="color:white;"></i>
+                        </button>
+                    </a>
+                    <button type="button" style="background-color: white;">
+                        <i class="fa-solid fa-trash-can" style="color:red;"></i>
                     </button>
-                  </a> 
-                  <button type="button" style="background-color: white;">
-                    <i class="fa-solid fa-trash-can" style="color:red"></i>
-                  </button>
-                  <button type="button" name="" id="btnSave" onClick="test();" style="background-color: white;">
-                    <i class="fa-solid fa-bookmark" style="color:green"></i>
-                  </button>
+                    <button type="button" style="background-color: white;">
+                        <i class="fa-solid fa-bookmark" style="color:green"></i>
+                    </button>
                 </div>
              </div>
         </div> <!--컨테이너 끝-->
-       </form>
-	
-	<script type="text/javascript">
-		function test() {
-			
-			/* alert("test");
-			
-			alert(document.getElementById('codeGroup').value);
-			alert(document.getElementById('codeNameK').value);
-			alert(document.getElementById('codeNameEn').value);
-			alert(document.getElementById('shDelNy').value); 
- 			alert(document.querySelector("input[name='gender']:checked").value);  */
- 			
-		/* 	  if(document.getElementById("codeGroup").value == '' || document.getElementById("codeGroup").value == null){
-				alert("좋은말로 할때 써넣어라!");
-				document.getElementById("codeGroup").value="";
-				document.getElementById("codeGroup").focus();
-				return false;
-			}   */
-		//document.getElementById("codeGroupList").subimt(); 
-		
-		 if(document.querySelector('input[name=hobby]:checked') == null) {
-			alert("좋은 말로 할때 골라?")
-		} 
-		
-	}
-	</script>
+
 	
 	<!-- end -->
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>

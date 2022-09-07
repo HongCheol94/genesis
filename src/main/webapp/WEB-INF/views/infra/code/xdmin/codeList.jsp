@@ -16,7 +16,7 @@
 <body>
 	
 	<!-- start -->
-	<form method="post" action="./memberList2.html">
+	<form method="post" action="/code/codeRegForm">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
@@ -76,8 +76,8 @@
 					<div class="col">
 						<select class="form-select" id="shDelNy" name="shDelNy" aria-label="Default select example">
 							<option value=""<c:if test="${empty vo.shDelNy}">selected</c:if>>삭제여부</option>
-							<option value="0"<c:if test="${vo.shDelNy eq 0}">selected</c:if>>Y</option>
-							<option value="1"<c:if test="${vo.shDelNy eq 1}">selected</c:if>>N</option>
+							<option value="0"<c:if test="${vo.shDelNy eq 0}">selected</c:if>>N</option>
+							<option value="1"<c:if test="${vo.shDelNy eq 1}">selected</c:if>>Y</option>
 						</select>
 					</div>
 					<div class="col">
@@ -105,7 +105,7 @@
 							  <input onkeyup="filter()" type="text" class="form-control" id="shValue" name="shValue" value="<c:out value="${vo.shValue}"/>" placeholder=" search">
 						</div>
 						<div>
-							<button type="button" class="btn btn-promary btn-sm border p-1 mt-3" >
+							<button type="submit" class="btn btn-promary btn-sm border p-1 mt-3" >
 								<i class="fa-solid fa-magnifying-glass"></i>
 							</button>
 						</div>
@@ -204,7 +204,7 @@
 				  </div>
 				</div>
 				<div class="col-1 px-5 offset-10">
-					<a href="codeForm.html">
+					<a href="codeRegForm">
 						<button type="button" class="btn btn-outline-warning  btn-lg">
 							<i class="fa-solid fa-user-plus"></i>
 						</button>

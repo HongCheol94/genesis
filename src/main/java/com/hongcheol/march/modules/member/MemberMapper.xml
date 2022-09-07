@@ -10,7 +10,11 @@
 	
 	<select id="selectList" resultMap="resultMapObj">
 	
-	 select * from member
-	 
+	 select
+	  a.* 
+	  from member
+	  where 1=1
+	  
+	
 	</select>
 </mapper>	

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.hongcheol.march.modules.codegroup.CodeGroup;
+
 @Controller
 @RequestMapping(value = "/code/")
 public class CodeController {
@@ -26,4 +28,19 @@ public class CodeController {
 		
 		return "infra/code/xdmin/codeList";
 	}
-}
+	
+	@RequestMapping(value = "codeRegForm")
+	public String codeRegForm(Model model) throws Exception{
+		
+		return "infra/code/xdmin/codeRegForm";
+	}
+	
+	@RequestMapping(value = "codeInst")
+	public String codeGroupInst(Code dto) throws Exception{
+		
+		int result = service.insert(dto);
+		System.out.println("controller result: " + result);
+		
+		return "redirect:/codeGroup/codeGroupList";
+	}
+}	

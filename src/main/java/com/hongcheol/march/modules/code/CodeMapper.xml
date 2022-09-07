@@ -14,7 +14,7 @@
 		a.*
 		From cc a
 		WHERE 1=1	
-		AND shDelNy = 1
+		
 		
 		<if test="shDelNy != null and !shDelNy.equals('')">AND shDelNy = #{shDelNy}</if>
 		<choose>
@@ -23,6 +23,25 @@
 			<otherwise></otherwise>
 		</choose>
 	</select>
+	
+	<insert id="insert">
+		INSERT INTO cc(
+			codeAn
+			,codeNameK
+			,codeNameEn
+			,turn
+			,shDelNy
+		)
+		VALUES(
+			#{codeNameAn}
+			,#{codeNameK}
+			,#{codeNameEn}
+			,#{turn}
+			,#{shDelNy}
+		)
+		
+		
+	</insert>
 	
 	
 

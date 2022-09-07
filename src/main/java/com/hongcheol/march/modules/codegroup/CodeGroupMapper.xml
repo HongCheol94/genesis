@@ -37,11 +37,14 @@
 		INSERT INTO ccg (
 			codeNameK
 			,codeNameEn
+			,codeGroup
 			,shDelNy
+			
 		)
 		VALUES(
 			#{codeNameK}
 			,#{codeNameEn}
+			,#{codeGroup}
 			,0
 		)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
