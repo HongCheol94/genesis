@@ -74,21 +74,21 @@
             <div class="row mt-5">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드그룹 코드</label>
-                    <input type="text" class="form-control" id="codeGroup" name="codeGroup" placeholder="영문(대소문자),숫자">
+                    <input type="text" class="form-control" id="codeGroup" name="codeGroup" value="<c:out value="${list.seq}"/>" placeholder="영문(대소문자),숫자">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드그룹 코드(Another)</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="" placeholder="영문(대소문자),숫자">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="" value="<c:out value="${list.seq}"/>" placeholder="영문(대소문자),숫자">
                 </div>
              </div>
              <div class="row">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드그룹 이름 (한글)</label>
-                    <input type="text" class="form-control" id="codeNameK" name="codeNameK" value="<c:out value="${item.codeNameK }"/>" placeholder="한굴,숫자">
+                    <input type="text" class="form-control" id="codeNameK"  name="codeNameK" value="<c:out value="${list.seq}"/>" placeholder="한굴,숫자">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드그룹 이름 (영문)</label>
-                    <input type="text" class="form-control" id="codeNameEn" name="codeNameEn" value="<c:out value="${item.codeNameEn }"/>" placeholder="영문(대소문자),숫자">
+                    <input type="text" class="form-control" id="codeNameEn" name="codeNameEn" value="<c:out value="${list.seq}"/>" placeholder="영문(대소문자),숫자">
                 </div>
              </div>
              <div class="row">
@@ -102,7 +102,7 @@
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">순서</label>
-                    <input type="text" class="form-control" name="" id="" placeholder="숫자">
+                    <input type="text" class="form-control" name="" id=""  value="<c:out value="${list.seq}"/>" placeholder="숫자">
                 </div>
              </div>
              <div class="row">

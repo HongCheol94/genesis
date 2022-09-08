@@ -19,19 +19,19 @@ public class HomeController {
 		/**
 		 * Simply selects the home view to render by returning its name.
 		 */
-		@RequestMapping(value = "/", method = RequestMethod.GET)
-		public String home(Locale locale, Model model) {
-			logger.info("Welcome home! The client locale is {}.", locale);
-			
-			Date date = new Date();
-			DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-			
-			String formattedDate = dateFormat.format(date);
-			
-			model.addAttribute("serverTime", formattedDate );
-			
-			return "home";
-		}
+//		@RequestMapping(value = "/", method = RequestMethod.GET)
+//		public String home(Locale locale, Model model) {
+//			logger.info("Welcome home! The client locale is {}.", locale);
+//			
+//			Date date = new Date();
+//			DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+//			
+//			String formattedDate = dateFormat.format(date);
+//			
+//			model.addAttribute("serverTime", formattedDate );
+//			
+//			return "home";
+//		}
 		
 		@RequestMapping(value = "/home2", method = RequestMethod.GET)
 		public String home2(Locale locale, Model model) {
@@ -53,14 +53,9 @@ public class HomeController {
 			
 			return "home5";
 		}
-		@RequestMapping(value = "/codeList", method = RequestMethod.GET)
-		public String codeList(Locale locale, Model model) {
-			
-			return "codeList";
-		}
-		@RequestMapping(value = "/codeGroupList", method = RequestMethod.GET)
-		public String codeGroupList(Locale locale, Model model) {
-			
-			return "codeGroupList";
+		
+		@RequestMapping(value = "/")
+		public String main(Model model) {
+			return "infra/main/xdmin/main";
 		}
 }

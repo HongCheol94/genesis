@@ -24,24 +24,38 @@
 		</choose>
 	</select>
 	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM cc a
+		WHERE 1=1
+			AND seq = #{seq}
+	</select>
+	
+
+	
 	<insert id="insert">
-		INSERT INTO cc(
-			codeAn
-			,codeNameK
+		INSERT INTO cc (
+			codeNameK
 			,codeNameEn
 			,turn
+			,codeAn
 			,shDelNy
+			
 		)
 		VALUES(
-			#{codeNameAn}
-			,#{codeNameK}
+			#{codeNameK}
 			,#{codeNameEn}
 			,#{turn}
-			,#{shDelNy}
+			,#{codeAn}
+			,0
 		)
-		
-		
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+			
 	</insert>
+	
 	
 	
 

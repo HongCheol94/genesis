@@ -142,7 +142,7 @@
 								</td>
 								<td>${list.seq }</td>
 								<td>${list.codeGroup }</td>
-								<td>${list.codeNameK }</td>
+								<td><a href="/codeGroup/codeGroupView?seq=<c:out value="${list.seq }"/>">${list.codeNameK }</a></td>
 								<td>${list.codeNameEn }</td>
 								<td>${list.cnt }</td>
 								<td>${list.registrationDate }</td>

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hongcheol.march.modules.codegroup.CodeGroup;
+import com.hongcheol.march.modules.codegroup.CodeGroupVo;
 
 @Controller
 @RequestMapping(value = "/code/")
@@ -41,6 +42,14 @@ public class CodeController {
 		int result = service.insert(dto);
 		System.out.println("controller result: " + result);
 		
-		return "redirect:/codeGroup/codeGroupList";
+		return "redirect:/code/codeList";
 	}
+	
+	@RequestMapping(value = "codeView")
+	public String codeView(codeVo vo, Model model) throws Exception{
+		Code result = service.selectOne(vo);
+		model.addAttribute("item",result);
+		return "infra/code/xdmin/codeRegForm";
+	}
+	
 }	

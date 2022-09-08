@@ -13,6 +13,9 @@ public class codeVo {
 	private Date reviseDate;
 	private Integer useNy;
 	private Integer turn;
+	private String codeAn;
+	private String seq;
+//	-------------------------------------
 	public Integer getShOption() {
 		return ShOption;
 	}
@@ -67,6 +70,20 @@ public class codeVo {
 	public void setTurn(Integer turn) {
 		this.turn = turn;
 	}
+	public String getCodeAn() {
+		return codeAn;
+	}
+	public void setCodeAn(String codeAn) {
+		this.codeAn = codeAn;
+	}
+	public String getSeq() {
+		return seq;
+	}
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
+	
+	
 	
 
 }

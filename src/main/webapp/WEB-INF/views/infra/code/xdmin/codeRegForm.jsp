@@ -19,12 +19,12 @@
 	
 	<!-- start -->
 	
-	<form method="post" action="./memberList2.html">
+	<form method="post" action="/code/codeInst" id="codeList">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
 			    <a class="navbar-brand" href="codeGroupList.html">
-			    	<image alt="" src="../images/kbcar.jpg" width="70px">
+			    	<image alt="" src="../../resources/images/kbcar.jpg" width="70px">
 			    </a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 			      <span class="navbar-toggler-icon"></span>
@@ -87,17 +87,17 @@
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드(Another)</label>
-                    <input type="email" class="form-control" id="codeAn" name="codeAn" placeholder="">
+                    <input type="text" class="form-control" id="codeAn" name="codeAn" value="<c:out value="${item.codeNameK }"/>" placeholder="">
                 </div>
              </div>
              <div class="row">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드 이름 (한글)</label>
-                    <input type="email" class="form-control" id="codeNameK" name="codeNameK" placeholder="">
+                    <input type="text" class="form-control" id="codeNameK" name="codeNameK" value="<c:out value="${item.codeNameK }"/>" placeholder="">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드 이름 (영문)</label>
-                    <input type="email" class="form-control" id="codeNameEn" name="codeNameEn" placeholder="">
+                    <input type="text" class="form-control" id="codeNameEn" name="codeNameEn" value="<c:out value="${item.codeNameK }"/>" placeholder="">
                 </div>
              </div>
              <div class="row">
@@ -111,7 +111,7 @@
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">순서</label>
-                    <input type="email" class="form-control" id="turn" name="turn" placeholder="숫자">
+                    <input type="text" class="form-control" id="turn" name="turn" value="<c:out value="${item.codeNameK }"/>" placeholder="숫자">
                 </div>
              </div>
              <div class="row">
@@ -131,29 +131,29 @@
              <div class="row">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">예비1 (varchar type)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">예비2 (varchar type)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">예비3 (varchar type)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
                 </div>
              </div>
              <div class="row">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">예비1 (int type)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">예비2 (int type)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">예비3 (int type)</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="영문(대소문자),숫자">
                 </div>
              </div>
              <!-- 하단 아이콘 -->
@@ -174,7 +174,7 @@
                     <button type="button" style="background-color: white;">
                         <i class="fa-solid fa-trash-can" style="color:red;"></i>
                     </button>
-                    <button type="button" style="background-color: white;">
+                    <button type="submit" style="background-color: white;">
                         <i class="fa-solid fa-bookmark" style="color:green"></i>
                     </button>
                 </div>

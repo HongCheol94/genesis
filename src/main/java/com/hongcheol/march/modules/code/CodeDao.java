@@ -14,7 +14,7 @@ public class CodeDao {
 	@Inject
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
-	
+									  
 	private static String namespace = "com.hongcheol.march.modules.code.CodeMapper";
 	
 	public List<Code> selectList(codeVo vo){
@@ -28,5 +28,12 @@ public class CodeDao {
 		System.out.println("dao result: " + result);
 		return result;
 	}
+	
+	public Code selectOne(codeVo vo) {
+		Code result = sqlSession .selectOne(namespace + ".selectOne", vo);
+		System.out.println("dao result : " + result);
+		return result;
+	}
+	
 	
 }

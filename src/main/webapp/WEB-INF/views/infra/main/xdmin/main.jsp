@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -19,7 +18,7 @@
 	<!-- 상단목록 -->
 	<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
 	  <ol class="breadcrumb">
-	  	<li class="breadcrumb-item col-1"><a href="../maine/mainForm.html"><image src="../images/kblogo.png"></a></li>
+	  	<li class="breadcrumb-item col-1"><a href="../maine/mainForm.html"><image src="../../resources/images/kblogo.png"></a></li>
 	    <li class="breadcrumb-item col-1 offset-4 mt-4">
 	    	<a href="../buy/userBuy.html" class="top-menu">
 	    		<p class="fs-3">살때</p>
@@ -63,22 +62,22 @@
 		<div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
 		  <div class="carousel-inner">
 		    <div class="carousel-item active" data-bs-interval="1000">
-		      <img src="../images/mainCarousel(1).jpg" class="d-block w-100" alt="...">
+		      <img src="../../resources/images/main/mainCarousel(1).jpg" class="d-block w-100" alt="...">
 		    </div>
 		    <div class="carousel-item" data-bs-interval="2000">
-		      <img src="../images/mainCarousel(2).jpg" class="d-block w-100" alt="...">
+		      <img src="../../resources/images/main/mainCarousel(2).jpg" class="d-block w-100" alt="...">
 		    </div>
 		    <div class="carousel-item" data-bs-interval="3000">
-		      <img src="../images/mainCarousel(3).jpg" class="d-block w-100" alt="...">
+		      <img src="../../resources/images/main/mainCarousel(3).jpg" class="d-block w-100" alt="...">
 		    </div>
 		    <div class="carousel-item" data-bs-interval="4000">
-		      <img src="../images/mainCarousel(4).jpg" class="d-block w-100" alt="...">
+		      <img src="../../resources/images/main/mainCarousel(4).jpg" class="d-block w-100" alt="...">
 		    </div>
 		    <div class="carousel-item" data-bs-interval="5000">
-		      <img src="../images/mainCarousel(5).jpg" class="d-block w-100" alt="...">
+		      <img src="../../resources/images/main/mainCarousel(5).jpg" class="d-block w-100" alt="...">
 		    </div>
 		    <div class="carousel-item">
-		      <img src="../images/mainCarousel(6).jpg" class="d-block w-100" alt="...">
+		      <img src="../../resources/images/main/mainCarousel(6).jpg" class="d-block w-100" alt="...">
 		    </div>
 		  </div>
 		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -135,13 +134,13 @@
 		<!-- 추천차량 -->
 		
 		<div style="float:right" class="row mt-5">
-			<img src="../images/cadillac.jpg">
+			<img src="../../resources/images/main/cadillac.jpg" style="height:745px">
 		</div>
 		<div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
 		  <div class="col">
 			<a href="../Buy/buyDetails.html" style="color:black">
 				<div class="card">
-				<img src="../images/mainCar(1).jpg" class="card-img-top" alt="...">
+				<img src="../../resources/images/main/mainCar(1).jpg" class="card-img-top" alt="...">
 				<div class="card-body">
 					<h5 class="card-title">기아 더 뉴 쏘렌토2.2 디젤 2WD 노블레스</h5>
 					<p class="card-text">
@@ -158,7 +157,7 @@
 		  </div>
 		  <div class="col">
 		    <div class="card">
-		      <img src="../images/mainCar(2).jpg" class="card-img-top" alt="...">
+		      <img src="../../resources/images/main/mainCar(2).jpg" class="card-img-top" alt="...">
 		      <div class="card-body">
 		        <h5 class="card-title">현대 싼타페 TM 디젤 2.0 2WD 모던</h5>
 		        <p class="card-text">18년05월(19년식)<br>63,000km ㅣ 디젤 ㅣ 경기</p>
@@ -172,7 +171,7 @@
 		  </div>
 		 <div class="col">
 		    <div class="card">
-		      <img src="../images/mainCar(3).jpg" class="card-img-top" alt="...">
+		      <img src="../../resources/images/main/mainCar(3).jpg" class="card-img-top" alt="...">
 		      <div class="card-body">
 		        <h5 class="card-title">현대 쏘나타 (DN8)<br> 2.0 인스퍼레이션</h5>
 		        <p class="card-text">19년07월(20년식)<br>38,569km ㅣ 가솔린 ㅣ 대구</p>
@@ -186,7 +185,7 @@
 		  </div>
 		  <div class="col">
 		    <div class="card">
-		      <img src="../images/mainCar(4).jpg" class="card-img-top" alt="...">
+		      <img src="../../resources/images/main/mainCar(4).jpg" class="card-img-top" alt="...">
 		      <div class="card-body">
 		        <h5 class="card-title">현대 싼타페 TM 디젤 2.0 2WD 프리미엄</h5>
 		        <p class="card-text">18년05월(19년식)<br>68,700km ㅣ 디젤 ㅣ 울산</p>
@@ -200,7 +199,7 @@
 		  </div>
 		  <div class="col">
 		    <div class="card">
-		      <img src="../images/mainCar(5).jpg" class="card-img-top" alt="...">
+		      <img src="../../resources/images/main/mainCar(5).jpg" class="card-img-top" alt="...">
 		      <div class="card-body">
 		        <h5 class="card-title">기아 K5 3세대 2.0 가솔린 노블레스</h5>
 		        <p class="card-text">20년05월(20년식)<br>19,700km ㅣ 가솔린 ㅣ 울산</p>
@@ -212,9 +211,9 @@
 			    </div>
 		    </div>
 		  </div>
-		  <div class="col">
+		  <div class="col mb-3">
 		    <div class="card">
-		      <img src="../images/mainCar(6).jpg" class="card-img-top" alt="...">
+		      <img src="../../resources/images/main/mainCar(6).jpg" class="card-img-top" alt="...">
 		      <div class="card-body">
 		        <h5 class="card-title">현대 싼타페 TM 디젤 2.0 2WD 익스클루시브</h5>
 		        <p class="card-text">18년07월(19년식)<br>50,000km ㅣ 디젤 ㅣ 경기</p>
@@ -232,7 +231,7 @@
 	<!-- 중간광고 -->
 	
 	<div class="container-md mt-5 mb-3">
-		<img src="../images/middleHero.png " class="rounded mx-auto d-block" alt="...">
+		<img src="../../resources/images/main/middleHero.png " class="rounded mx-auto d-block" alt="...">
 	</div>
 	
 	<!-- 하단메뉴 -->

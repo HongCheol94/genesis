@@ -22,8 +22,6 @@
 		FROM ccg a
 		WHERE 1=1
 			<!-- AND codeGroup LIKE CONCAT('%',#{shValue},'%') -->
-			
-		
 		
 		<if test="shDelNy != null and !shDelNy.equals('')">AND shDelNy = #{shDelNy}</if>
 		<choose>
@@ -31,6 +29,17 @@
 			<when test="shOption == 2">AND codeGroup LIKE CONCAT('%',#{shValue},'%')</when>
 			<otherwise></otherwise>
 		</choose>
+	</select>
+	
+	<!-- ====================== -->
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM ccg a
+		WHERE 1=1
+			AND seq = #{seq}
+		
 	</select>
 	
 	<insert id="insert">
@@ -51,6 +60,7 @@
 			SELECT last_insert_id()
 		</selectKey>
 	</insert>
+	
 	
 
 </mapper>	

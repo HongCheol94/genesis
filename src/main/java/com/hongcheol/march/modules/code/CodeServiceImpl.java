@@ -30,4 +30,11 @@ public class CodeServiceImpl implements CodeService {
 		return result;
 	}
 	
+	@Override
+	public Code selectOne(codeVo vo) throws Exception {
+		Code result = dao.selectOne(vo);
+		System.out.println("service result: " + result);
+		return result;
+	}
+	
 }

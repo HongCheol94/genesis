@@ -12,6 +12,7 @@ public class CodeGroupVo {
 	private String cdoeNameEn;
 	private String registrationDate;
 	private String revisedDate;
+	private String seq;
 // ------------	
 	
 	public Integer getCnt() {
@@ -63,6 +64,13 @@ public class CodeGroupVo {
 	public void setShDelNy(Integer shDelNy) {
 		this.shDelNy = shDelNy;
 	}
+	public String getSeq() {
+		return seq;
+	}
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
+
 
 	
 }

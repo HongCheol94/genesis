@@ -147,7 +147,7 @@
 						<td>${list.codeGroupNameK}</td>
 						<td>${list.code}</td>
 						<td>${list.substituteCode}</td>
-						<td>${list.codeNameK}</td>
+						<td><a href="/code/codeView?seq=<c:out value="${list.seq }"/>">${list.codeNameK}</a></td>
 						<td>${list.codeNameEn}</td>
 						<td>${list.useNy}</td>
 						<td>${list.turn}</td>

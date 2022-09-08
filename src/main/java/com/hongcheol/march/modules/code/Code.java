@@ -14,10 +14,12 @@ public class Code {
 	private String substituteCode;
 	private String codeNameK;
 	private String codeNameEn;
+	private String codeAn;
 	private Integer useNy;
 	private Integer turn;
 	private String registrationDate;
 	private String revisedDate;
+//	------------------------------
 	public String getSeq() {
 		return seq;
 	}
@@ -72,6 +74,12 @@ public class Code {
 	public void setCodeNameEn(String codeNameEn) {
 		this.codeNameEn = codeNameEn;
 	}
+	public String getCodeAn() {
+		return codeAn;
+	}
+	public void setCodeAn(String codeAn) {
+		this.codeAn = codeAn;
+	}
 	public Integer getUseNy() {
 		return useNy;
 	}
@@ -96,6 +104,8 @@ public class Code {
 	public void setRevisedDate(String revisedDate) {
 		this.revisedDate = revisedDate;
 	}
+	
+
 
  
 	
