@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -9,12 +9,62 @@
     <resultMap id="resultMapObj" type="com.hongcheol.march.modules.member.Member"></resultMap>
 	
 	<select id="selectList" resultMap="resultMapObj">
-	
-	 select
-	  a.* 
-	  from member
-	  where 1=1
-	  
-	
+	<!--      select 
+		a.* 
+		,(SELECT COUNT(*) FROM cc b where b.ccg_seq = a.seq) as cnt
+		FROM ccg a
+		WHERE 1=1
+		and shDelNy = 0 -->
+		
+		SELECT
+			a.*
+		FROM member a
+		WHERE 1=1
+			<!-- AND codeGroup LIKE CONCAT('%',#{shValue},'%') -->
+			
+			<if test="shDelNy != null and !shDelNy.equals('')">AND shDelNy = #{shDelNy}</if>
+		<choose>
+			<when test="shOption == 1">AND Seq = #{shValue}</when>
+			<when test="shOption == 2">AND codeGroup LIKE CONCAT('%',#{shValue},'%')</when>
+			<otherwise></otherwise>
+		</choose>
 	</select>
-</mapper>	
+	
+	<insert id="insert">
+		INSERT INTO member (
+			id
+			,password
+			,name
+			,gender
+			,dob
+			,addressNumber
+			,address
+			,detailedAddress
+			,number
+			,ea
+			,eAe
+			,email
+			,memberDefaultNy
+			,shDelNy
+		)
+		VALUES(
+			#{id}
+			,#{password}
+			,#{name}
+			,#{gender}
+			,#{addressNumber}
+			,#{address}
+			,#{detaildeAddress}
+			,#{number}
+			,#{ea}
+			,#{eAe}
+			,#{email}
+			,#{memberDefaultNy}
+			,#{shDelNy}
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+		
+	</insert>
+</mapper>

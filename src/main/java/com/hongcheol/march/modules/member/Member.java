@@ -8,15 +8,19 @@ public class Member {
 	private String id;
 	private String password;
 	private String name;
-	private int age;
-	private int gender;
+	private Integer gender;
 	private Date dob;
-	private int addresNumber;
+	private Integer addressNumber;
 	private String address;
 	private String detailedAddress;
 	private String number;
+	private String ea;
+	private String eAe;
 	private String email;
-	private String memberDefaultNy;
+	private Integer memberDefaultNy;
+	private Integer shDelNy;
+	
+//	---------------------------------
 	
 	public String getSeq() {
 		return seq;
@@ -42,16 +46,10 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public int getGender() {
+	public Integer getGender() {
 		return gender;
 	}
-	public void setGender(int gender) {
+	public void setGender(Integer gender) {
 		this.gender = gender;
 	}
 	public Date getDob() {
@@ -60,11 +58,11 @@ public class Member {
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
-	public int getAddresNumber() {
-		return addresNumber;
+	public Integer getAddressNumber() {
+		return addressNumber;
 	}
-	public void setAddresNumber(int addresNumber) {
-		this.addresNumber = addresNumber;
+	public void setAddressNumber(Integer addressNumber) {
+		this.addressNumber = addressNumber;
 	}
 	public String getAddress() {
 		return address;
@@ -84,17 +82,40 @@ public class Member {
 	public void setNumber(String number) {
 		this.number = number;
 	}
+	public String getEa() {
+		return ea;
+	}
+	public void setEa(String ea) {
+		this.ea = ea;
+	}
+	public String geteAe() {
+		return eAe;
+	}
+	public void seteAe(String eAe) {
+		this.eAe = eAe;
+	}
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getMemberDefaultNy() {
+	public Integer getMemberDefaultNy() {
 		return memberDefaultNy;
 	}
-	public void setMemberDefaultNy(String memberDefaultNy) {
+	public void setMemberDefaultNy(Integer memberDefaultNy) {
 		this.memberDefaultNy = memberDefaultNy;
 	}
+	public Integer getShDelNy() {
+		return shDelNy;
+	}
+	public void setShDelNy(Integer shDelNy) {
+		this.shDelNy = shDelNy;
+	}
 	
+	
+	
+	
+	
+
 }
