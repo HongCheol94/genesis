@@ -18,7 +18,7 @@
 	
 	<!-- start -->
 	
-	<form method="post" id="form" name="form" action="/codeGroup/codeGroupList">
+	<form method="post" id="form" name="form">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
@@ -192,7 +192,8 @@
        
 	<!-- script -->
 	
-	
+	  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+				
 	  <script type="text/javascript">
         
     	var goUrlList = "/codeGroup/codeGroupList"; 				/* #-> */

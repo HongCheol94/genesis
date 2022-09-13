@@ -29,18 +29,42 @@ public class MemberController {
 		return "infra/member/xdmin/member";
 	}
 	
-	@RequestMapping(value = "MemberRegForm")
-	public String MemberRegForm(Model model) throws Exception{
+//	View포함
+	
+	@RequestMapping(value = "memberRegForm")    
+	public String memberRegForm(Model model, MemberVo vo) throws Exception{
+		
+		Member item = service.selectOne(vo);
+		model.addAttribute("item", item);
 		
 		return "infra/member/xdmin/memberRegForm";
 	}
 	
-	@RequestMapping(value = "MemberInst")
-	public String codeGroupInst(Member dto) throws Exception{
+	@RequestMapping(value = "memberInst")
+	public String memberInst(Member dto) throws Exception{
 		
 		int result = service.insert(dto);
 		System.out.println("controller result: " + result);
 		
 		return "redirect:/member/member";
 	}
+	
+	@RequestMapping(value = "memberUpdt")
+	public String memberUpdt(MemberVo vo, Member dto) throws Exception {
+		service.update(dto);
+		return "redirect:/code/codeList";
+	}
+	
+	@RequestMapping(value = "memberUelete")
+	public String memberUelete(Member dto) throws Exception {
+		service.uelete(dto);
+		return "redirect:/member/member";
+	}
+	
+	@RequestMapping(value = "memberDelete")
+	public String memberDelete(Member dto) throws Exception {
+		service.delete(dto);
+		return "redirect:/member/member";
+	}
+	
 }

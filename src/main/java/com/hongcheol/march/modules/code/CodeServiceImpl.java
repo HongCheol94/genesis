@@ -51,6 +51,4 @@ public class CodeServiceImpl implements CodeService {
 	public int update(Code dto) throws Exception {
 		return dao.update(dto);
 	}
-	
-	
 }

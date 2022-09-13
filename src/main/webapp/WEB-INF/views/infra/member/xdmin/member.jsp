@@ -141,7 +141,7 @@
 								</td>
 								<td>${list.seq }</td>
 								<td>${list.id }</td>
-								<td><a href="/Member/memberView?seq=<c:out value="${list.seq }"/>">${list.name}</a></td>
+								<td><a href="/member/memberRegForm?seq=<c:out value="${list.seq }"/>">${list.name}</a></td>
 								<td>${list.gender}</td>
 								<td>${list.number}</td>
 								<td>${list.address}</td>

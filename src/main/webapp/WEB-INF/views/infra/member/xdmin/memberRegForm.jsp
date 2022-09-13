@@ -78,7 +78,7 @@
 				</div>
 				<div class="col-md-2">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="ID" placeholder="이름">
+						<input type="text" class="form-control" id="ID" name="name" value="<c:out value="${item.name }"/>" placeholder="이름">
 						<label for="floatingInput">이름</label>
 					</div>
 				</div>
@@ -86,7 +86,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-4">
 					<div class="form-floating mb-3">
-					  <input type="ID" class="form-control" id="ID" placeholder="ID">
+					  <input type="ID" class="form-control" id="ID" name="id" value="<c:out value="${item.id }"/>" placeholder="ID">
 					  <label for="floatingInput">아이디</label>
 					</div>
 				</div>
@@ -94,7 +94,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-4">
 					<div class="form-floating">
-					  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+					  <input type="password" class="form-control" id="floatingPassword" name="password" value="<c:out value="${item.password }"/>" placeholder="Password">
 					  <label for="floatingPassword">비밀번호</label>
 					</div>
 				</div>
@@ -110,7 +110,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-2">
 					<div class="form-floating mt-3">
-						<input type="text" class="form-control" id="floatingPassword" placeholder="인증번호입력">
+						<input type="text" class="form-control" id="floatingPassword"  placeholder="인증번호입력">
 						<label for="floatingEmail">이메일</label>
 					</div>
 				</div>
@@ -129,14 +129,14 @@
 			<div class="row justify-content-center">
 				<div class="col-md-4">
 					<div class="form-floating mt-3">
-					  <input type="text" class="form-control" id="floatingPassword" placeholder="callnumber">
+					  <input type="text" class="form-control" id="floatingPassword" name="number" value="<c:out value="${item.number }"/>" placeholder="callnumber">
 					  <label for="floatingPassword">전화번호</label>
 				  </div>
 			  </div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-2 form-floating mt-3">
-					<input type="text" class="form-control" id="floatingPassword" placeholder="인증번호입력">
+					<input type="text" class="form-control" id="floatingPassword" name="addressNumber" value="<c:out value="${item.addressNumber }"/>" placeholder="인증번호입력">
 					<label for="floatingadress">우편번호</label>
 				</div>
 				<div class="col-md-2 mt-3 btn-group">
@@ -146,16 +146,14 @@
 				<div class="row justify-content-center">
 				<div class="col-md-4">
 					<div class="form-floating mt-3">
-					  <input type="text" class="form-control" id="floatingPassword" placeholder="callnumber">
+					  <input type="text" class="form-control" id="floatingPassword" name="address" value="<c:out value="${item.address }"/>" placeholder="callnumber">
 					  <label for="floatingaddress">주소</label>
 				  </div>
 			  </div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-2 p-4 offset-1 px-0">
-					<a href="../dminMember/d_memberView.html">	
-					  <button type="button" class="btn btn-outline-warning">회원가입</button>
-					</a>
+					  <button type="submit" class="btn btn-outline-warning">회원가입</button>
 					<a href="../list/memberList.html"> 
 					  <button type="button" class="btn btn-outline-warning">&nbsp;취&nbsp;&nbsp;&nbsp;&nbsp;소&nbsp;</button>
 					</a> 	
