@@ -13,6 +13,9 @@ public class CodeGroup {
 	private String codeNameEn;
 	private String registrationDate;
 	private String revisedDate;
+	private Integer deleteNy;
+	
+	
 	
 	public String getCodeNameK() {
 		return codeNameK;
@@ -61,6 +64,12 @@ public class CodeGroup {
 	}
 	public void setShDelNy(Integer shDelNy) {
 		this.shDelNy = shDelNy;
+	}
+	public Integer getDeleteNy() {
+		return deleteNy;
+	}
+	public void setDeleteNy(Integer deleteNy) {
+		this.deleteNy = deleteNy;
 	}
 	
 	

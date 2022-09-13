@@ -19,7 +19,7 @@
 	
 	<!-- start -->
 	
-	<form method="post" action="/code/codeInst" id="codeList">
+	<form method="post" id="codeList">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
@@ -166,21 +166,72 @@
                     </a>
                 </div>
                 <div class="col text-end">
-                    <a href="codeGroupList.html">
-                        <button type="button" style="background-color: red;">
-                            <i class="fa-solid fa-xmark" style="color:white;"></i>
-                        </button>
-                    </a>
+                    <button type="button" style="background-color: red;">
+                        <i class="fa-solid fa-xmark" style="color:white;"></i>
+                    </button>
                     <button type="button" style="background-color: white;">
                         <i class="fa-solid fa-trash-can" style="color:red;"></i>
                     </button>
-                    <button type="submit" style="background-color: white;">
+                    <button type="button" id="btnSave" style="background-color: white;">
                         <i class="fa-solid fa-bookmark" style="color:green"></i>
                     </button>
                 </div>
              </div>
         </div> <!--컨테이너 끝-->
-
+       </form>
+       
+   <!-- script -->
+   <script type="text/javascript">
+   		function test() {
+   			
+   			alert("test");
+   			
+   			alert(document.getElementById('codeNameK').value);
+   			alert(document.getElementById('codeNameEn').value);
+   			alert(document.getElementById('codeGroup').value);
+   			alert(docement.getElemntById('shDelNy').value);
+   		}
+   		
+   		
+        $(function() {
+            $( "#datepicker" ).datepicker();
+            $( "#datepicker2" ).datepicker();
+          });
+        </script>
+        
+        <script type="text/javascript">
+        
+    	var goUrlList = "/code/codeList"; 				/* #-> */
+    	var goUrlInst = "/code/codeInst"; 				/* #-> */
+    	var goUrlUpdt = "/code/codeUpdt";				/* #-> */
+    	var goUrlUele = "/code/codeUele";				/* #-> */
+    	var goUrlDele = "/code/codeDele";				/* #-> */
+    	
+   		var seq = $("input:hidden[name=seq]");				/* #-> */
+    	
+    	var form = $("form[name=form]");
+    	var formVo = $("form[name=formVo]");
+    	
+    	
+    	$("#btnSave").on("click", function(){
+    		if (seq.val() == "0" || seq.val() == ""){
+    	   		// insert
+    	   		if (validationInst() == false) return false;
+    	   		form.attr("action", goUrlInst).submit();
+    	   	} else {
+    	   		// update
+    	   		/* keyName.val(atob(keyName.val())); */
+    	   		if (validationUpdt() == false) return false;
+    	   		form.attr("action", goUrlUpdt).submit();
+    	   	}
+    	}); 
+      
+   </script>
+   
+   
+       
+    
+	<!-- script end -->
 	
 	<!-- end -->
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>

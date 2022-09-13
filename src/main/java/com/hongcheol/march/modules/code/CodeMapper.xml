@@ -53,8 +53,47 @@
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()
 		</selectKey>
-			
 	</insert>
+	
+	<update id="update">
+		UPDATE cc
+		SET
+			codeNameK = #{codeNameK}
+			,codeNameEn = #{codeNameEn}
+			,turn = #{turn}
+			,codeAn = #{codeAn}
+			,shDelNy = #{shDelNy} 
+		WHERE
+			seq = #{seq}
+	</update>
+	
+	<update id="uelete">
+		UPDATE cc
+		SET
+			codeNameK = #{codeNameK}
+			,codeNameEn = #{codeNameEn}
+			,turn = #{turn}
+			,codeAn = #{codeAn}
+			,shDelNy = #{shDelNy} 
+		WHERE
+			seq = #{seq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM cc WHERE seq = #{seq}
+	</delete>
+	
+	<select id="selectListWithoutPaging" resultMap="resultMapObj">
+		SELECT
+			a.seq
+			,a.codeGroupCode
+		FROM cc a
+		WHERE 1=1
+			AND delNY = 0
+			AND useNy = 1
+		ORDER BY a.seq DESC
+	</select>
+	
 	
 	
 	

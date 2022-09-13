@@ -11,19 +11,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
-	
-	<!-- start -->
-	<form method="get" action="/codeGroup/codeGroupList">
+	<form method="post" action="./memberList2.html">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
-			    <a class="navbar-brand" href="codeGroupList.html">
-			    	<image alt="" src="../../resources/images/kbcar.jpg" width="70px">
+			    <a class="navbar-brand" href="../listChoice/choicList.html">
+			    	<image alt="" src="../images/kbcar.jpg" width="70px">
 			    </a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 			      <span class="navbar-toggler-icon"></span>
@@ -31,7 +26,7 @@
 			    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 			      <div class="offcanvas-header">
 			        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-			        	<image alt="" src="../../resources/images/kbcar.jpg" width="100px">
+			        	<image alt="" src="./image/kbcar.jpg" width="100px">
 		        	</h5>
 			        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			      </div>
@@ -39,15 +34,15 @@
 			        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 			          <li class="nav-item">
 			            <a class="nav-link active" aria-current="page" href="#">
-			            	<image alt="" src="../../resources/images/person.png" width="100x">
+			            	<image alt="" src="./image/person.png" width="100x">
 		            	</a>
 			          </li>
 			          <hr>
 			          <li class="nav-item">
-			            <a class="nav-link" href="#" style="text-align: end;">로그인</a>
+			            <a class="nav-link" href="../Login/dminLoginForm.html" style="text-align: end;">로그인</a>
 			          </li>
 			          <li class="nav-item">
-			            <a class="nav-link" href="#" style="text-align: end;">로그아웃</a>
+			            <a class="nav-link" href="../Login/dminLoginForm.html" style="text-align: end;">로그아웃</a>
 			          </li>
 			          <hr>
 			      </div>
@@ -60,54 +55,56 @@
 			    </button>
 			    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			      <div class="navbar-nav">
-			        <a class="nav-link active" aria-current="page" href="#">Navbar</a>
-			        <a class="nav-link" href="#">회원관리</a>
-			        <a class="nav-link" href="#">서비스관리</a>
-                    <a class="nav-link" href="#">사이트관리</a>
-                    <a class="nav-link" href="#">로그관리</a>
-			        <a class="nav-link" href="#">시스템관리</a>
-			        <a class="nav-link" href="#">시스템관리</a>
+			        <a class="nav-link active" aria-current="page" href="#">Home</a>
+			        <a class="nav-link" href="#">코드그릅관리</a>
+			        <a class="nav-link" href="#">코드관리</a>
+			        <a class="nav-link disabled">회원관리</a>
 			      </div>
 			    </div>
 			</nav>
-			<img src="../../resources/images/listBg.jpg" class="rounded mx-auto d-block" alt="...">
-			<span class="fs-2">코드그룹 관리</span>
-			<!-- 코드검색 -->
-			<div class="container border px mt-3 mb-3">
-				<div class="row p-2 mt-3">
+			<img src="../images/listBg.jpg" class="rounded mx-auto d-block" alt="...">
+			<!-- 회원검색 -->
+			<div class="container border px">
+				<div class="row p-2">
 					<div class="col">
-						<select class="form-select" id="shDelNy" name="shDelNy" aria-label="Default select example">
-							<option value=""<c:if test="${empty vo.shDelNy}">selected</c:if>>삭제여부</option>
-							<option value="0" <c:if test="${vo.shDelNy eq 0}">selected</c:if>>N</option>
-							<option value="1" <c:if test="${vo.shDelNy eq 1}">selected</c:if>>Y</option>
+						<select class="form-select" aria-label="Default select example">
+							<option selected>삭제여부</option>
+							<option value="삭제">삭제</option>
+							<option value="미삭제">미삭제</option>
 						</select>
 					</div>
 					<div class="col">
 						<select class="form-select" aria-label="Default select example">
 							<option selected>날짜</option>
-							<option value="등록일">등록일</option>
+							<option value="가입일">가입일</option>
 							<option value="수정일">수정일</option>
+							<option value="생일">생일</option>
 						</select>
 					</div>
 					<div class="col mt-1">
-						<input type="text" id="datepicker" name="datepicker" value="등록일" class="form-control form-control-sm"	>
+						<input type="text" id="DateStar" value="시작일" class="form-control form-control-sm hasDatepicker" autocomplete="off"	>
 					</div>
 					<div class="col mt-1">
-						<input type="text" id="datepicker2" name="datepicker2" value="수정일" class="form-control form-control-sm">
+						<input type="text" id="DateEnd" value="종료일" class="form-control form-control-sm hasDatepicker" autocomplete="off"	>
 					</div>
 					<div class="row row-cols-sm-6">
 						<div class="col p-2">
-							<select class="form-select" id="shOption" name="shOption" aria-label="Default select example">
-								<option value="" <c:if test="${empty vo.shOption}">selected</c:if>>검색구분</option>
-								<option value="1" <c:if test="${vo.shOption eq 1}">selected</c:if>>번호</option>
-								<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>코드그룹</option>
+							<select class="form-select" aria-label="Default select example">
+								<option selected>검색구분</option>
+								<option value="번호">번호</option>
+								<option value="이름">회사명</option>
+								<option value="아이디">대표자명</option>
+								<option value="회원번호">이름</option>
 							</select>
 						</div>
-						<div class="col mt-2">
-							<input onkeyup="filter()" type="text" class="form-control" id="shValue" name="shValue" value="<c:out value="${vo.shValue}"/>" placeholder=" search">
-					  	</div>
-						<div class="col mt-2">
-							<button type="submit">
+						<div class="col p-1">
+							<div class="form-floating mb-3">
+							  <input onkeyup="filter()" type="text" class="form-control" id="value" placeholder=" search">
+							  <label for="floatingInput"> search</label>
+							</div>
+						</div>
+						<div>
+							<button type="button" class="btn btn-promary btn-sm border p-1 mt-3" >
 								<i class="fa-solid fa-magnifying-glass"></i>
 							</button>
 						</div>
@@ -120,37 +117,95 @@
 					<th>
 						<input type="checkbox" name="check" value="selectAll" onclick="selectAll(this)">
 					</th>
-					<th>#</th>
-					<th>코드그룹 코드</th>
-					<th>코드그룹 이름(한글)</th>
-					<th>코드그룹 이름(영문)</th>
-					<th>코드갯수</th>
-					<th>등록일</th>
-					<th>수정일</th>
+					<th>번호</th>
+					<th>이름</th>
+					<th>회사명</th>
+					<th>대표자명</th>
+					<th>전화번호</th>
+					<th>지역</th>
+					<th>이메일</th>
+					<th>가입일</th>
 				</tr>
-				<c:choose>
-					<c:when test="${fn:length(list) eq 0 }">
-						<tr>
-							<td class="text-center" colspan="8">There is no date!</td>
-						</tr>
-					</c:when>
-					<c:otherwise>
-						<c:forEach items="${list}" var="list" varStatus="status">
-							<tr class="search">
-								<td>
-									<input type="checkbox" name="check">
-								</td>
-								<td>${list.seq }</td>
-								<td>${list.codeGroup }</td>
-								<td><a href="/codeGroup/codeGroupView?seq=<c:out value="${list.seq }"/>">${list.codeNameK }</a></td>
-								<td>${list.codeNameEn }</td>
-								<td>${list.cnt }</td>
-								<td>${list.registrationDate }</td>
-								<td>${list.revisedDate }</td>
-							</tr>
-						</c:forEach>
-					</c:otherwise>
-				</c:choose>
+				<tr class="search">
+					<td>
+						<input type="checkbox" name="check">
+					</td>
+					<td>1</td>
+					<td>마동석</td>
+					<td class="sn">
+						<a href="../dminDealer/d_dealerModForm.html" style="color:black; text-decoration-line: none;">서울 모터스매매단지</a>
+					</td>
+					<td>마두부</td>
+					<td>02-533-6172</td>
+					<td>서울</td>
+					<td>madongsuck@naver.com</td>
+					<td>2000.04.26</td>
+				</tr>
+				<tr class="search">
+					<td>
+						<input type="checkbox" name="check">
+					</td>
+					<td>2</td>
+					<td>김소은</td>
+					<td class="sn">수원모터스매매단지</td>
+					<td>김수원</td>
+					<td>031-215-8251</td>
+					<td>수원</td>
+					<td>soeun@naver.com</td>
+					<td>2005.02.26</td>
+				</tr>
+				<tr class="search">
+					<td>
+						<input type="checkbox" name="check">
+					</td>
+					<td>3</td>
+					<td>정우성</td>
+					<td class="sn">의정부 중고차매매단지</td>
+					<td>강동원</td>
+					<td>031-817-1375</td>
+					<td>의정부</td>
+					<td>menam@nate.com</td>
+					<td>1998.10.12</td>
+				</tr>
+				<tr class="search">
+					<td>
+						<input type="checkbox" name="check">
+					</td>
+					<td>4</td>
+					<td>이너용</td>
+					<td class="sn">인천 모터스매매단지</td>
+					<td>임윤아</td>
+					<td>032-345-8762</td>
+					<td>인천</td>
+					<td>nayong@naver.com</td>
+					<td>1999.03.22</td>
+				</tr>
+				<tr class="search">
+					<td>
+						<input type="checkbox" name="check">
+					</td>
+					<td>5</td>
+					<td>송혜교</td>
+					<td class="sn">수원 자동차매매단지</td>
+					<td>김사랑</td>
+					<td>031-211-7531</td>
+					<td>수원</td>
+					<td>menam@nate.com</td>
+					<td>1998.10.12</td>
+				</tr>
+				<tr class="search">
+					<td>
+						<input type="checkbox" name="check">
+					</td>
+					<td>6</td>
+					<td>이동욱</td>
+					<td class="sn">서울 차차매매단지</td>
+					<td>남자</td>
+					<td>02-583-6648</td>
+					<td>서울</td>
+					<td>menam@nate.com</td>
+					<td>2001.08.16</td>
+				</tr>
 			</table>
 			<!-- 페이지 목록 -->
 			<div class="row justify-content-center">
@@ -198,8 +253,10 @@
 				  </div>
 				</div>
 				<div class="col-1 px-5 offset-10">
-					<a type="button" class="btn btn-outline-warning  btn-lg"  href="codeGroupRegForm">
-						<i class="fa-solid fa-user-plus"></i>
+					<a href="../dminDealer/d_dealerRegForm.html">
+						<button type="button" class="btn btn-outline-warning  btn-lg">
+							<i class="fa-solid fa-user-plus"></i>
+						</button>
 					</a>
 				</div>
 			</div>
@@ -207,7 +264,7 @@
 	</form>
 	
 	<script type="text/javascript">
-/* 		function selectAll(selectAll)  {
+	function selectAll(selectAll)  {
 		  const checkboxes 
 		       = document.getElementsByName('check');
 		  
@@ -219,10 +276,10 @@
 		const myModal = document.getElementById('myModal')
 		const myInput = document.getElementById('myInput')
 	
-		  myModal.addEventListener('shown.bs.modal', () => { 
+		myModal.addEventListener('shown.bs.modal', () => {
 		  myInput.focus()
 		})
-		 
+		
 		
 		 function filter(){
 
@@ -239,13 +296,21 @@
             item[i].style.display = "none";
           }
         }
-      }   */
-      
-      
+      }
 	</script>
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-	<script>
-   
+</body>
+</html>
+	
+	<!-- end -->
+	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
+	
+	<!-- end -->
+	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -61,6 +61,39 @@
 		</selectKey>
 	</insert>
 	
+	<update id="update">
+		UPDATE ccg
+		SET
+			codeGroup = #{codeGroup}
+			,codeNameK = #{codeNameK}
+			,codeNameEn = #{codeNameEn}
+		WHERE
+			seq=#{seq}
+	</update>
+	
+	<update id="uelete">
+		UPDATE ccg
+		SET
+		shDelNy = 1
+		WHERE seq = #{seq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM ccg 
+		WHERE seq = #{seq}
+	</delete>
+	
+	<select id="selectListWithoutPaging" resultMap="resultMapObj">
+		SELECT
+			a.seq
+			,a.codeGroup
+		FROM ccg a
+		WHERE 1=1
+			AND shDelNy =  0
+			AND UseNY = 1
+		ORDER BY a.seq DESC
+	</select>
+	
 	
 
 </mapper>	

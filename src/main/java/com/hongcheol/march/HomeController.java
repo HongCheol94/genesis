@@ -58,4 +58,11 @@ public class HomeController {
 		public String main(Model model) {
 			return "infra/main/xdmin/main";
 		}
+		
+		@RequestMapping(value = "/login/")
+		public String login(Model model) {
+			return "infra/login/xdmin/login";
+		}
+		
+	
 }

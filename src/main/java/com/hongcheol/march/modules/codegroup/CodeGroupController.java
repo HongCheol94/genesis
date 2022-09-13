@@ -48,5 +48,27 @@ public class CodeGroupController {
 		model.addAttribute("item",result);
 		return "infra/codegroup/xdmin/codeGroupRegForm";
 	}
+	@RequestMapping(value = "codeGroupUpdt")
+	public String codeGroupUpdt(CodeGroupVo vo, CodeGroup dto) throws Exception {
+		
+		service.update(dto);
+		
+		return "redirect:/codeGroup/codeGroupList";
+	}
+	@RequestMapping(value = "codeGroupUelete")
+	public String codeGroupUelete(CodeGroup dto) throws Exception {
+		
+		service.uelete(dto);
+		
+		return "redirect:/codeGroup/codeGroupList";
+	}
+	@RequestMapping(value = "codeGroupDelete")
+	public String codeGroupDelete(CodeGroup dto) throws Exception {
+		
+		service.delete(dto);
+		
+		return "redirect:/codeGroup/codeGroupList";
+	}
+	
 }
 

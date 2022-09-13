@@ -18,12 +18,12 @@
 	
 	<!-- start -->
 	
-	<form method="post" action="/codeGroup/codeGroupInst" id="codeGroupList">
+	<form method="post" id="form" name="form" action="/codeGroup/codeGroupList">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
 			    <a class="navbar-brand" href="codeList.html">
-			    	<image alt="" src="../images/kbcar.jpg" width="70px">
+			    	<image alt="" src="../../resources/images/kbcar.jpg" width="70px">
 			    </a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 			      <span class="navbar-toggler-icon"></span>
@@ -74,7 +74,8 @@
             <div class="row mt-5">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드그룹 코드</label>
-                    <input type="text" class="form-control" id="codeGroup" name="codeGroup" placeholder="영문(대소문자),숫자">
+                    <input type="text" class="form-control" id="codeGroup" name="codeGroup" placeholder="영문(대소문자),숫자" value="<c:out value="${item.seq}"/>">
+                    <input type="hidden" name="seq" value="<c:out value="${item.seq}"/>">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드그룹 코드(Another)</label>
@@ -169,47 +170,66 @@
                   </a>
                 </div>
                 <div class="col text-end">
-                  <a href="codeList.html">
-                    <button type="button" style="background-color: red;">
-                      <i class="fa-solid fa-xmark" style="color:white"></i>
-                    </button>
-                  </a> 
-                  <button type="button" style="background-color: white;">
+                	<!-- Uelete -->
+                   <button type="button" id="btnModalUelete" style="background-color: red;">
+                     <i class="fa-solid fa-xmark" style="color:white"></i>
+                   </button>
+                   <!-- Delete -->
+                  <button type="button" id="btnModalDelete" style="background-color: white;">
                     <i class="fa-solid fa-trash-can" style="color:red"></i>
                   </button>
-                  <button type="button" name="" id="btnSave" onClick="test();" style="background-color: white;">
+                  <!-- UpDate -->
+                  <button type="button" name="" id="btnSave" style="background-color: white;">
                     <i class="fa-solid fa-bookmark" style="color:green"></i>
                   </button>
+                  <!-- <button id="btnSave" class="border-0 btn btn-sm bg-success shadow" type="submit" onclick="validation()">
+                      <i class="fa-regular fa-bookmark" style="color: white;"></i>
+                  </button> -->
                 </div>
              </div>
         </div> <!--컨테이너 끝-->
        </form>
+       
+	<!-- script -->
 	
-	<script type="text/javascript">
-		function test() {
-			
-			/* alert("test");
-			
-			alert(document.getElementById('codeGroup').value);
-			alert(document.getElementById('codeNameK').value);
-			alert(document.getElementById('codeNameEn').value);
-			alert(document.getElementById('shDelNy').value); 
- 			alert(document.querySelector("input[name='gender']:checked").value);  */
- 			
-		/* 	  if(document.getElementById("codeGroup").value == '' || document.getElementById("codeGroup").value == null){
-				alert("좋은말로 할때 써넣어라!");
-				document.getElementById("codeGroup").value="";
-				document.getElementById("codeGroup").focus();
-				return false;
-			}   */
-		//document.getElementById("codeGroupList").subimt(); 
-		
-		 if(document.querySelector('input[name=hobby]:checked') == null) {
-			alert("좋은 말로 할때 골라?")
-		} 
-		
-	}
-	</script>
+	
+	  <script type="text/javascript">
+        
+    	var goUrlList = "/codeGroup/codeGroupList"; 				/* #-> */
+    	var goUrlInst = "/codeGroup/codeGroupInst"; 				/* #-> */
+    	var goUrlUpdt = "/codeGroup/codeGroupUpdt";					/* #-> */
+    	var goUrlUele = "/codeGroup/codeGroupUelete";				/* #-> */
+    	var goUrlDele = "/codeGroup/codeGroupDelete";				/* #-> */
+    	
+   		var seq = $("input:hidden[name=seq]");						/* #-> */
+    	
+    	var form = $("form[name=form]");
+    	
+    	
+    	$("#btnSave").on("click", function(){
+    		if (seq.val() == "0" || seq.val() == ""){
+    	   		// insert
+    	   		form.attr("action", goUrlInst).submit();
+    	   	} else {
+    	   		// update
+    	   		/* keyName.val(atob(keyName.val())); */
+    	   		form.attr("action", goUrlUpdt).submit();
+    	   	}
+    	}); 
+    	
+    	$("#btnModalUelete").on("click", function(){
+    		form.attr("action", goUrlUele).submit();
+    	});
+    	
+    	
+    	$("#btnModalDelete").on("click", function(){
+    		form.attr("action", goUrlDele).submit();
+    	});
+      
+   </script>
+	
+	
+	<!-- script end -->
 	
 	<!-- end -->
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>

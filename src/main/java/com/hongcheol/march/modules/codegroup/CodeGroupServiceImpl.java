@@ -36,5 +36,22 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 		System.out.println("service result :  "+ result);
 		return result;
 	}
+	
+	@Override
+	public int uelete(CodeGroup dto) throws Exception {
+		return dao.uelete(dto);
+	}
+
+	@Override
+	public int delete(CodeGroup dto) throws Exception {
+		return dao.delete(dto);
+	}
+
+	@Override
+	public int update(CodeGroup dto) throws Exception {
+		return dao.update(dto);
+	}
+	
+	
 }
 

@@ -13,6 +13,7 @@ public class CodeGroupVo {
 	private String registrationDate;
 	private String revisedDate;
 	private String seq;
+	private Integer delete;
 // ------------	
 	
 	public Integer getCnt() {
@@ -69,6 +70,12 @@ public class CodeGroupVo {
 	}
 	public void setSeq(String seq) {
 		this.seq = seq;
+	}
+	public Integer getDelete() {
+		return delete;
+	}
+	public void setDelete(Integer delete) {
+		this.delete = delete;
 	}
 
 

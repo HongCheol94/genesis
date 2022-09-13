@@ -16,7 +16,7 @@
 <body>
 	
 	<!-- start -->
-	<form method="post" action="/code/codeRegForm">
+	<form method="post" action="/code/codeList">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
