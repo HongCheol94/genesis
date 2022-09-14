@@ -42,7 +42,7 @@
 		    	<a href="#" class="top-menu">
 		    	<p class="fs-3">안내</p></a></li>
 		    <li class="breadcrumb-item active col-1 mt-1" aria-current="page">
-		    	<a href="/login/" class="top-menu">
+		    	<a href="login" class="top-menu">
 		    		<i class="fa-solid fa-user"></i>
 		    			<p class="fs-4">김홍철님</p>
 				</a>

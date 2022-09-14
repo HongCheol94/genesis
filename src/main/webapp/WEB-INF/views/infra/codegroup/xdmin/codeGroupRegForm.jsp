@@ -95,7 +95,7 @@
              <div class="row">
                 <div class="col-6">
                     <label for="exampleFormControlInput1" class="form-label">사용여부</label>
-                    <select class="form-select" id="shDelNy" name="shDelNy" aria-label="Default select example">
+                    <select class="form-select" id="shDelNy" name="" aria-label="Default select example">
                         <option selected>사용여부</option>
                         <option value="1">Y</option>
                         <option value="2">N</option>
@@ -171,7 +171,7 @@
                 </div>
                 <div class="col text-end">
                 	<!-- Uelete -->
-                   <button type="button" id="btnModalUelete" style="background-color: red;">
+                   <button type="button" id="delete" style="background-color: red;">
                      <i class="fa-solid fa-xmark" style="color:white"></i>
                    </button>
                    <!-- Delete -->

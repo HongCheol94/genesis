@@ -13,7 +13,7 @@
 <body>
 	
 	<!-- start -->
-	<form method="post" action="/member/memberInst" id="member">
+	<form method="post" action="" id="member">
 		<nav class="navbar sticky-top">
 		    <a class="navbar-brand" href="" id="">
 		    	<image alt="" src="../images/kbcar.jpg" width="70px">
@@ -74,6 +74,7 @@
 					<div class="form-floating mb-3">
 						<input type="text" class="form-control" id="ID" placeholder="성">
 						<label for="floatingInput">성</label>
+						<input type="hidden" name="seq" value="<c:out value="${item.seq}"/>">
 					</div>
 				</div>
 				<div class="col-md-2">
@@ -182,6 +183,40 @@
 		
 	
 	<!-- end -->
+		  <script type="text/javascript">
+        
+    	var goUrlList = "/codeGroup/codeGroupList"; 				/* #-> */
+    	var goUrlInst = "/codeGroup/codeGroupInst"; 				/* #-> */
+    	var goUrlUpdt = "/codeGroup/codeGroupUpdt";					/* #-> */
+    	var goUrlUele = "/codeGroup/codeGroupUelete";				/* #-> */
+    	var goUrlDele = "/codeGroup/codeGroupDelete";				/* #-> */
+    	
+   		var seq = $("input:hidden[name=seq]");						/* #-> */
+    	
+    	var form = $("form[name=form]");
+    	
+    	
+    	$("#btnSave").on("click", function(){
+    		if (seq.val() == "0" || seq.val() == ""){
+    	   		// insert
+    	   		form.attr("action", goUrlInst).submit();
+    	   	} else {
+    	   		// update
+    	   		/* keyName.val(atob(keyName.val())); */
+    	   		form.attr("action", goUrlUpdt).submit();
+    	   	}
+    	}); 
+    	
+    	$("#btnModalUelete").on("click", function(){
+    		form.attr("action", goUrlUele).submit();
+    	});
+    	
+    	
+    	$("#btnModalDelete").on("click", function(){
+    		form.attr("action", goUrlDele).submit();
+    	});
+      
+   </script>
 	
 	
 	

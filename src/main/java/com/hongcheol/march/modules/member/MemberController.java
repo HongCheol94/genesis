@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.hongcheol.march.modules.code.Code;
+//import com.hongcheol.march.modules.code.Code;
 
 @Controller
 @RequestMapping(value = "/member/")
@@ -62,8 +62,8 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "memberDelete")
-	public String memberDelete(Member dto) throws Exception {
-		service.delete(dto);
+	public String memberDelete(MemberVo vo) throws Exception {
+		service.delete(vo);
 		return "redirect:/member/member";
 	}
 	

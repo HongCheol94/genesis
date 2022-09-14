@@ -12,6 +12,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<!-- DatePicker -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 	
@@ -88,10 +93,10 @@
 						</select>
 					</div>
 					<div class="col mt-1">
-						<input type="text" id="DateStar" value="시작일" class="form-control form-control-sm hasDatepicker" autocomplete="off"	>
+						<input type="text" id="datepicker" name="datepicker"value="시작일" class="form-control form-control-sm">
 					</div>
 					<div class="col mt-1">
-						<input type="text" id="DateEnd" value="종료일" class="form-control form-control-sm hasDatepicker" autocomplete="off"	>
+						<input type="text" id="datepicker2" name="datepicker2" value="종료일" class="form-control form-control-sm">
 					</div>
 					<div class="row row-cols-sm-6">
 						<div class="col p-2">
@@ -213,6 +218,28 @@
 			</div>
 		</div>
 	</form>
+	
+	<!-- DatePicker start -->
+	 <script>
+		 $.datepicker.setDefaults({
+		        dateFormat: 'yy-mm-dd',
+		        prevText: '이전 달',
+		        nextText: '다음 달',
+		        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		        monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+		        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+		        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+		        showMonthAfterYear: true,
+		        yearSuffix: '년'
+		    });
+		 
+		  $( function() {
+		    $( "#datepicker").datepicker();
+		    $( "#datepicker2").datepicker();
+		  } );
+	  </script>
+	  <!-- DatePicker end -->
 	
 	<script type="text/javascript">
 	function selectAll(selectAll)  {

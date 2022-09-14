@@ -53,5 +53,5 @@ public class CodeController {
 	public String codeUpdt(codeVo vo, Code dto) throws Exception {
 		service.update(dto);
 		return "redirect:/code/codeList";
-	}                                  
+	}          
 }	
