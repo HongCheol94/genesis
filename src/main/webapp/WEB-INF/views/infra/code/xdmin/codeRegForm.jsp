@@ -19,11 +19,11 @@
 	
 	<!-- start -->
 	
-	<form method="post" id="codeList">
+	<form method="post" id="form" name="form">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
-			    <a class="navbar-brand" href="codeGroupList.html">
+			    <a class="navbar-brand" href="codeList">
 			    	<image alt="" src="../../resources/images/kbcar.jpg" width="70px">
 			    </a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -83,11 +83,11 @@
              <div class="row">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드</label>
-                    <input class="form-control" type="text" placeholder="자동생성" aria-label="Disabled input example" disabled>
+                    <input class="form-control" type="text" id="" name="" placeholder="자동생성" aria-label="Disabled input example" disabled>
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드(Another)</label>
-                    <input type="text" class="form-control" id="codeAn" name="codeAn" value="<c:out value="${item.codeNameK }"/>" placeholder="">
+                    <input type="text" class="form-control" id="codeAn" name="codeAn" value="<c:out value="${item.codeAn }"/>" placeholder="">
                 </div>
              </div>
              <div class="row">
@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드 이름 (영문)</label>
-                    <input type="text" class="form-control" id="codeNameEn" name="codeNameEn" value="<c:out value="${item.codeNameK }"/>" placeholder="">
+                    <input type="text" class="form-control" id="codeNameEn" name="codeNameEn" value="<c:out value="${item.codeNameEn }"/>" placeholder="">
                 </div>
              </div>
              <div class="row">
@@ -111,7 +111,7 @@
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">순서</label>
-                    <input type="text" class="form-control" id="turn" name="turn" value="<c:out value="${item.codeNameK }"/>" placeholder="숫자">
+                    <input type="text" class="form-control" id="turn" name="turn" value="<c:out value="${item.turn }"/>" placeholder="숫자">
                 </div>
              </div>
              <div class="row">
@@ -166,22 +166,27 @@
                     </a>
                 </div>
                 <div class="col text-end">
-                    <button type="button" style="background-color: red;">
-                        <i class="fa-solid fa-xmark" style="color:white;"></i>
-                    </button>
-                    <button type="button" style="background-color: white;">
-                        <i class="fa-solid fa-trash-can" style="color:red;"></i>
-                    </button>
-                    <button type="button" id="btnSave" style="background-color: white;">
-                        <i class="fa-solid fa-bookmark" style="color:green"></i>
-                    </button>
+                	<!-- Uelete -->
+                   <button type="button" id="btnModalUelete" style="background-color: red;">
+                     <i class="fa-solid fa-xmark" style="color:white"></i>
+                   </button>
+                   <!-- Delete -->
+                  <button type="button" id="btnModalDelete" style="background-color: white;">
+                    <i class="fa-solid fa-trash-can" style="color:red"></i>
+                  </button>
+                  <!-- UpDate -->
+                  <button type="button" name="" id="btnSave" style="background-color: white;">
+                    <i class="fa-solid fa-bookmark" style="color:green"></i>
+                  </button>
                 </div>
              </div>
-        </div> <!--컨테이너 끝-->
+       	 </div> <!--컨테이너 끝-->
        </form>
        
    <!-- script -->
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+	   
    <script type="text/javascript">
    		function test() {
    			
@@ -211,21 +216,25 @@
    		var seq = $("input:hidden[name=seq]");				/* #-> */
     	
     	var form = $("form[name=form]");
-    	var formVo = $("form[name=formVo]");
-    	
     	
     	$("#btnSave").on("click", function(){
     		if (seq.val() == "0" || seq.val() == ""){
     	   		// insert
-    	   		if (validationInst() == false) return false;
+    	   		//if (validationInst() == false) return false;
     	   		form.attr("action", goUrlInst).submit();
     	   	} else {
     	   		// update
     	   		/* keyName.val(atob(keyName.val())); */
-    	   		if (validationUpdt() == false) return false;
+    	   		//if (validationUpdt() == false) return false;
     	   		form.attr("action", goUrlUpdt).submit();
     	   	}
     	}); 
+    	
+    	$("#btnModalUelete").on("click", function(){
+    		form.attr("action", goUrlUele).submit();
+    	});
+    	
+    	
       
    </script>
    

@@ -15,10 +15,11 @@ public class CodeGroupController {
 	@Autowired
 	CodeGroupServiceImpl service;
 	
-
+	
+	
 	@RequestMapping(value = "codeGroupList")
 	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
-		
+		vo.setParamsPaging(service.selectOneCount(vo));
 		System.out.println("vo.getShvalue(): " + vo.getShValue());
 		System.out.println("vo.getShOption(): " + vo.getShOption());
 		
@@ -49,11 +50,11 @@ public class CodeGroupController {
 		model.addAttribute("item",result);
 		return "infra/codegroup/xdmin/codeGroupRegForm";
 	}
+	
 	@RequestMapping(value = "codeGroupUpdt")
 	public String codeGroupUpdt(CodeGroupVo vo, CodeGroup dto) throws Exception {
 		
 		service.update(dto);
-		
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	@RequestMapping(value = "codeGroupUelete")
@@ -64,10 +65,16 @@ public class CodeGroupController {
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	@RequestMapping(value = "codeGroupDelete")
-	public String codeGroupDelete(CodeGroup dto) throws Exception {
+	public String codeGroupDelete(CodeGroupVo vo) throws Exception {
 		
-		service.delete(dto);
+		service.delete(vo);
 		
+		return "redirect:/codeGroup/codeGroupList";
+	}
+	
+	@RequestMapping(value = "selectOneCount")
+	public String selectOneCount(CodeGroupVo vo) throws Exception {
+		service.selectOneCount(vo);
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	

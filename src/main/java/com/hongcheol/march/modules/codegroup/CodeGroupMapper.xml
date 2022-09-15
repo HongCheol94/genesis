@@ -8,20 +8,54 @@
 
     <resultMap id="resultMapObj" type="com.hongcheol.march.modules.codegroup.CodeGroup"></resultMap>
 	
+		<sql id ="selectCommon">
+		FROM ccg a
+		WHERE 1=1
+			<if test="shDelNy != null and !shDelNy.equals('')">AND shDelNy = #{shDelNy}</if>
+			<choose>
+				<when test="shOption == 1">AND Seq = #{shValue}</when>
+				<when test="shOption == 2">AND codeNameK LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 3">AND codeNameEn LIKE CONCAT('%',#{shValue},'%')</when>
+			</choose>
+	</sql>
+	
 	<select id="selectList" resultMap="resultMapObj">
-	<!--      select 
+		<include refid="Base.selectListUpperForMysql" />
+			SELECT
+				a.seq
+				, a.codeGroup
+				, a.codeNameK
+				, a.codeNameEn
+				, a.registrationDate
+				, a.revisedDate
+				,(select count(aa.seq) from cc aa where 1=1 and aa.shDelNy = 0 and aa.seq = a.seq) as cnt
+			<include refid="selectCommon" />
+				ORDER BY a.seq ASC
+			<include refid="Base.orderByLimitForMysql" />
+			<include refid="Base.selectListLowerForMysql" />
+	</select>
+	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon" />
+	</select>
+	
+	
+	
+<!-- 	<select id="selectList" resultMap="resultMapObj">
+	     select 
 		a.* 
 		,(SELECT COUNT(*) FROM cc b where b.ccg_seq = a.seq) as cnt
 		FROM ccg a
 		WHERE 1=1
-		and shDelNy = 0 -->
+		and shDelNy = 0
 		
 		SELECT
 			a.*
 			,(SELECT COUNT(*) FROM cc b where b.ccg_seq = a.seq) as cnt
 		FROM ccg a
 		WHERE 1=1
-			<!-- AND codeGroup LIKE CONCAT('%',#{shValue},'%') -->
+			AND codeGroup LIKE CONCAT('%',#{shValue},'%')
 		
 		<if test="shDelNy != null and !shDelNy.equals('')">AND shDelNy = #{shDelNy}</if>
 		<choose>
@@ -29,7 +63,7 @@
 			<when test="shOption == 2">AND codeGroup LIKE CONCAT('%',#{shValue},'%')</when>
 			<otherwise></otherwise>
 		</choose>
-	</select>
+	</select> -->
 	
 	<!-- ====================== -->
 	

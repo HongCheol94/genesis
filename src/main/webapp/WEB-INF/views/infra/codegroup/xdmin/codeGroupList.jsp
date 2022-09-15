@@ -20,7 +20,9 @@
 <body>
 	
 	<!-- start -->
-	<form method="get" action="/codeGroup/codeGroupList">
+	<form method="get" action="/codeGroup/codeGroupList" name="form">
+		<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
@@ -155,27 +157,9 @@
 				</c:choose>
 			</table>
 			<!-- 페이지 목록 -->
-			<div class="row justify-content-center">
-				<div class="col-10">
-					<nav aria-label="Page navigation example">
-					  <ul class="pagination justify-content-center">
-					    <li class="page-item">
-					      <a class="page-link" href="#" aria-label="Previous">
-					        <span aria-hidden="true">&laquo;</span>
-					      </a>
-					    </li>
-					    <li class="page-item"><a class="page-link" href="#">1</a></li>
-					    <li class="page-item"><a class="page-link" href="#">2</a></li>
-					    <li class="page-item"><a class="page-link" href="#">3</a></li>
-					    <li class="page-item">
-					      <a class="page-link" href="#" aria-label="Next">
-					        <span aria-hidden="true">&raquo;</span>
-					      </a>
-					    </li>
-					  </ul>
-					</nav>
-				</div>
-			</div>
+			<!-- pagination s -->
+			<%@include file="../../pagination/xdmin/pagination.jsp"%>
+			<!-- pagination e -->
 			<div class="row">
 				<div class="col-1">
 					<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -229,39 +213,48 @@
 	  </script>
 	  <!-- DatePicker end -->
 	<script type="text/javascript">
-		function selectAll(selectAll)  {
+		/* function selectAll(selectAll)  {
 		  const checkboxes 
 		       = document.getElementsByName('check');
 		  
 		  checkboxes.forEach((checkbox) => {
 		    checkbox.checked = selectAll.checked;
 		  })
-		}
+		};
 	
 		const myModal = document.getElementById('myModal')
 		const myInput = document.getElementById('myInput')
 	
 		  myModal.addEventListener('shown.bs.modal', () => { 
-		  myInput.focus()
-		})
+			  myInput.focus()
+		});
 		 
 		
 		 function filter(){
 
-        var value, name, item, i;
-
-        value = document.getElementById("value").value.toUpperCase();
-        item = document.getElementsByClassName("search");
-
-        for(i=0;i<item.length;i++){
-          name = item[i].getElementsByClassName("sn");
-          if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
-            item[i].style.display = "flex";
-          }else{
-            item[i].style.display = "none";
-          }
-        }
-      }   
+	        var value, name, item, i;
+	
+	        value = document.getElementById("value").value.toUpperCase();
+	        item = document.getElementsByClassName("search");
+	
+	        for(i=0;i<item.length;i++){
+	          name = item[i].getElementsByClassName("sn");
+	          if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
+	            item[i].style.display = "flex";
+	          }else{
+	            item[i].style.display = "none";
+	          }
+	        }
+      	}; */
+	  
+		var codeGroupList = "/codeGroup/codeGroupList";
+		
+		var form = $("form[name=form]");
+		goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action", codeGroupList).submit();
+		};
+		
       
 		
       

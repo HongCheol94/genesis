@@ -36,7 +36,8 @@
 	
 	<insert id="insert">
 		INSERT INTO cc (
-			codeNameK
+			codeGroupCode
+			,codeNameK
 			,codeNameEn
 			,turn
 			,codeAn
@@ -44,7 +45,8 @@
 			
 		)
 		VALUES(
-			#{codeNameK}
+			#{codeGroupCode}
+			.#{codeNameK}
 			,#{codeNameEn}
 			,#{turn}
 			,#{codeAn}

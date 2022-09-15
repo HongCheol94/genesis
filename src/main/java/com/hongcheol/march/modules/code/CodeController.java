@@ -53,5 +53,23 @@ public class CodeController {
 	public String codeUpdt(codeVo vo, Code dto) throws Exception {
 		service.update(dto);
 		return "redirect:/code/codeList";
-	}          
+	}
+	
+	@RequestMapping(value = "codeUelete")
+	public String codeUelete(Code dot) throws Exception {
+		
+		service.uelete(dot);
+		
+		return "redirect:/code/codeList";
+	}
+	
+	@RequestMapping(value = "codeDelete")
+	public String codeDelete(codeVo vo) throws Exception{
+		
+		service.delete(vo);
+		
+		return "redirect:/code/codeList";
+	}
+	
+	
 }	

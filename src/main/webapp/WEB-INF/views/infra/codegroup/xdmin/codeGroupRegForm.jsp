@@ -22,7 +22,7 @@
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
-			    <a class="navbar-brand" href="codeList.html">
+			    <a class="navbar-brand" href="codeGroupList">
 			    	<image alt="" src="../../resources/images/kbcar.jpg" width="70px">
 			    </a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -79,7 +79,7 @@
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드그룹 코드(Another)</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="" placeholder="영문(대소문자),숫자">
+                    <input type="text" class="form-control" id="codeAn" name="" placeholder="영문(대소문자),숫자">
                 </div>
              </div>
              <div class="row">
@@ -103,7 +103,7 @@
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">순서</label>
-                    <input type="text" class="form-control" name="" id="" placeholder="숫자">
+                    <input type="text" class="form-control" name="" id="turn" placeholder="숫자">
                 </div>
              </div>
              <div class="row">
@@ -171,7 +171,7 @@
                 </div>
                 <div class="col text-end">
                 	<!-- Uelete -->
-                   <button type="button" id="delete" style="background-color: red;">
+                   <button type="button" id="btnModalUelete" style="background-color: red;">
                      <i class="fa-solid fa-xmark" style="color:white"></i>
                    </button>
                    <!-- Delete -->
@@ -182,9 +182,6 @@
                   <button type="button" name="" id="btnSave" style="background-color: white;">
                     <i class="fa-solid fa-bookmark" style="color:green"></i>
                   </button>
-                  <!-- <button id="btnSave" class="border-0 btn btn-sm bg-success shadow" type="submit" onclick="validation()">
-                      <i class="fa-regular fa-bookmark" style="color: white;"></i>
-                  </button> -->
                 </div>
              </div>
         </div> <!--컨테이너 끝-->

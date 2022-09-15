@@ -38,10 +38,14 @@ public class CodeGroupDao {
 		return sqlSession.update(namespace + ".update", dto);
 	}
 	public int uelete(CodeGroup dto) {
-		return sqlSession.update(namespace + ".ulete", dto);
+		return sqlSession.update(namespace + ".uelete", dto);
 	}
-	public int delete(CodeGroup dto) {
-		return sqlSession.delete(namespace + ".delete", dto);
+	public int delete(CodeGroupVo vo) {
+		return sqlSession.delete(namespace + ".delete", vo);
+	}
+	public int selectOneCount(CodeGroupVo vo) {
+		int result = sqlSession.selectOne(namespace + ".selectOneCount", vo);
+		return result;
 	}
 	
 }

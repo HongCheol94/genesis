@@ -15,6 +15,7 @@ public class codeVo {
 	private Integer turn;
 	private String codeAn;
 	private String seq;
+	
 //	-------------------------------------
 	public Integer getShOption() {
 		return ShOption;
