@@ -16,8 +16,10 @@ public class CodeController {
 	
 
 	@RequestMapping(value = "codeList")
-	public String codeGroupList(Model model, codeVo vo) throws Exception {
-
+	public String codeList(Model model, codeVo vo) throws Exception {
+		//페이징 컨트롤러 추가 시작
+		vo.setParamsPaging(service.selectOneCount(vo)); 
+		//페이징 컨트롤러 추가 끝
 		System.out.println("vo.getShvalue(): " + vo.getShValue());
 		System.out.println("vo.getShoption(): "+ vo.getShOption());
 		
@@ -71,5 +73,11 @@ public class CodeController {
 		return "redirect:/code/codeList";
 	}
 	
+	@RequestMapping(value = "selectOneCount")
+	public String selectOneCount(codeVo vo) throws Exception{
+		service.selectOneCount(vo);
+		return "redirect:/code/codeList";
+		
+	}
 	
 }	

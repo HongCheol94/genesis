@@ -2,6 +2,10 @@ package com.hongcheol.march.modules.codegroup;
 
 import java.util.Date;
 
+/**
+ * @author ezen
+ *
+ */
 public class CodeGroup {
 
 // 	infr_code_group	
@@ -11,8 +15,8 @@ public class CodeGroup {
 	private Integer shDelNy;
 	private String codeNameK;
 	private String codeNameEn;
-	private String registrationDate;
-	private String revisedDate;
+	private Date registrationDate;
+	private Date revisedDate;
 	private Integer deleteNy;
 	
 	
@@ -29,16 +33,17 @@ public class CodeGroup {
 	public void setCodeNameEn(String codeNameEn) {
 		this.codeNameEn = codeNameEn;
 	}
-	public String getRegistrationDate() {
+
+	public Date getRegistrationDate() {
 		return registrationDate;
 	}
-	public void setRegistrationDate(String registrationDate) {
+	public void setRegistrationDate(Date registrationDate) {
 		this.registrationDate = registrationDate;
 	}
-	public String getRevisedDate() {
+	public Date getRevisedDate() {
 		return revisedDate;
 	}
-	public void setRevisedDate(String revisedDate) {
+	public void setRevisedDate(Date revisedDate) {
 		this.revisedDate = revisedDate;
 	}
 	public String getSeq() {

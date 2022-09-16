@@ -23,6 +23,12 @@ public class CodeDao {
 		return list;
 	}
 	
+	public List<Code> selectListPaging(codeVo vo){
+		List<Code> list = sqlSession.selectList("com.hongcheol.march.modules.code.CodeMapper.selectListPaging",vo);
+//		return sqlSession.selectList(namespace + ".selectList", ""); }
+		return list;
+	}
+	
 	public int insert(Code dto) {
 		int result = sqlSession.insert(namespace+".insert",dto);
 		System.out.println("dao result: " + result);
@@ -42,5 +48,9 @@ public class CodeDao {
 	}
 	public int delete(codeVo vo) {
 		return sqlSession.delete(namespace + ".delete", vo);
+	}
+	public int selectOneCount(codeVo vo) {
+		int result = sqlSession.selectOne(namespace + ".selectOneCount",vo);
+		return result;
 	}
 }

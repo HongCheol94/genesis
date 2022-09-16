@@ -146,7 +146,7 @@
 								</td>
 								<td>${list.seq }</td>
 								<td>${list.codeGroup }</td>
-								<td><a href="/codeGroup/codeGroupView?seq=<c:out value="${list.seq }"/>">${list.codeNameK }</a></td>
+								<td><a href="/codeGroup/codeGroupRegForm?seq=<c:out value="${list.seq }"/>">${list.codeNameK }</a></td>
 								<td>${list.codeNameEn }</td>
 								<td>${list.cnt }</td>
 								<td>${list.registrationDate }</td>
@@ -193,7 +193,7 @@
 	</form>
 	<!-- DatePicker start -->
 	 <script>
-		 $.datepicker.setDefaults({
+		   $.datepicker.setDefaults({
 		        dateFormat: 'yy-mm-dd',
 		        prevText: '이전 달',
 		        nextText: '다음 달',
@@ -211,9 +211,9 @@
 		    $( "#datepicker2").datepicker();
 		  } );
 	  </script>
-	  <!-- DatePicker end -->
+  	DatePicker end
 	<script type="text/javascript">
-		/* function selectAll(selectAll)  {
+		 function selectAll(selectAll)  {
 		  const checkboxes 
 		       = document.getElementsByName('check');
 		  
@@ -227,7 +227,7 @@
 	
 		  myModal.addEventListener('shown.bs.modal', () => { 
 			  myInput.focus()
-		});
+		}); 
 		 
 		
 		 function filter(){
@@ -245,8 +245,10 @@
 	            item[i].style.display = "none";
 	          }
 	        }
-      	}; */
-	  
+      	};
+      	</script>
+      	<script type="text/javascript">
+      	<!-- paging start -->
 		var codeGroupList = "/codeGroup/codeGroupList";
 		
 		var form = $("form[name=form]");
@@ -254,14 +256,24 @@
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action", codeGroupList).submit();
 		};
-		
-      
-		
-      
+		<!-- paging end -->
+	</script>
+	<script>
+		var seq = $("input:hidden[name=ifcgSeq]");
+	
+		$('#btnForm').on("click", function() {
+			goForm(0);                
+		});
+	
+		goForm = function(keyValue) {
+	    	/* if(keyValue != 0) seq.val(btoa(keyValue)); */
+	    	seq.val(keyValue);
+			form.attr("action", goUrlForm).submit();
+		}
 	</script>
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-	<script>
+	
    
 </body>
 </html>

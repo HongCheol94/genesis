@@ -1,5 +1,7 @@
 package com.hongcheol.march.modules.codegroup;
 
+import java.util.Date;
+
 import com.hongcheol.march.common.constants.Constants;
 
 public class CodeGroupVo {
@@ -10,10 +12,12 @@ public class CodeGroupVo {
 	private Integer cnt;
 	private String codeNameK;
 	private String cdoeNameEn;
-	private String registrationDate;
-	private String revisedDate;
+	private Date resgistrationDate;
+	private Date revisedDate;
 	private String seq;
 	private Integer delete;
+	private Integer shOptionDate;
+
 	
 //	paging
 	private int thisPage = 1;									// 현재 페이지
@@ -102,19 +106,27 @@ public void setParamsPaging(int totalRows) {
 	public void setCdoeNameEn(String cdoeNameEn) {
 		this.cdoeNameEn = cdoeNameEn;
 	}
+	
+	public Date getResgistrationDate() {
+		return resgistrationDate;
+	}
 
-	public String getRegistrationDate() {
-		return registrationDate;
+
+	public void setResgistrationDate(Date resgistrationDate) {
+		this.resgistrationDate = resgistrationDate;
 	}
-	public void setRegistrationDate(String registrationDate) {
-		this.registrationDate = registrationDate;
-	}
-	public String getRevisedDate() {
+
+
+	public Date getRevisedDate() {
 		return revisedDate;
 	}
-	public void setRevisedDate(String revisedDate) {
+
+
+	public void setRevisedDate(Date revisedDate) {
 		this.revisedDate = revisedDate;
 	}
+
+
 	public void setCnt(Integer cnt) {
 		this.cnt = cnt;
 	}
@@ -260,5 +272,15 @@ public void setParamsPaging(int totalRows) {
 	}
 
 
+	public Integer getShOptionDate() {
+		return shOptionDate;
+	}
+
+
+	public void setShOptionDate(Integer shOptionDate) {
+		this.shOptionDate = shOptionDate;
+	}
+
+	
 	
 }

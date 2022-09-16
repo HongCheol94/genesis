@@ -19,6 +19,9 @@
 	<!-- start -->
 	
 	<form method="post" id="form" name="form">
+	<!-- *Vo.jsp s -->
+	<%@include file="codeGroupVo.jsp"%>		<!-- #-> -->
+	<!-- *Vo.jsp e -->
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
@@ -75,7 +78,6 @@
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드그룹 코드</label>
                     <input type="text" class="form-control" id="codeGroup" name="codeGroup" placeholder="영문(대소문자),숫자" value="<c:out value="${item.seq}"/>">
-                    <input type="hidden" name="seq" value="<c:out value="${item.seq}"/>">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드그룹 코드(Another)</label>
@@ -85,11 +87,11 @@
              <div class="row">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드그룹 이름 (한글)</label>
-                    <input type="text" class="form-control" id="codeNameK" name="codeNameK" value="<c:out value="${item.codeNameK }"/>" placeholder="한굴,숫자">
+                    <input type="text" class="form-control" id="codeNameK" name="codeNameK" value="<c:out value="${item.codeNameK}"/>" placeholder="한굴,숫자">
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드그룹 이름 (영문)</label>
-                    <input type="text" class="form-control" id="codeNameEn" name="codeNameEn" value="<c:out value="${item.codeNameEn }"/>" placeholder="영문(대소문자),숫자">
+                    <input type="text" class="form-control" id="codeNameEn" name="codeNameEn" value="<c:out value="${item.codeNameEn}"/>" placeholder="영문(대소문자),숫자">
                 </div>
              </div>
              <div class="row">
@@ -187,6 +189,12 @@
         </div> <!--컨테이너 끝-->
        </form>
        
+       <form name="formVo" id="formVo" method="post">
+		<!-- *Vo.jsp s -->
+		<%@include file="codeGroupVo.jsp"%>		<!-- #-> -->
+		<!-- *Vo.jsp e -->
+		</form>
+       
 	<!-- script -->
 	
 	  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
@@ -202,18 +210,24 @@
    		var seq = $("input:hidden[name=seq]");						/* #-> */
     	
     	var form = $("form[name=form]");
-    	
+    	var form = $("form[name=formVo]");
     	
     	$("#btnSave").on("click", function(){
     		if (seq.val() == "0" || seq.val() == ""){
     	   		// insert
+    	   		//if (validationInst() == false) return false;
     	   		form.attr("action", goUrlInst).submit();
     	   	} else {
     	   		// update
     	   		/* keyName.val(atob(keyName.val())); */
+    	   		//if(validationUpdt() == false) return false;
     	   		form.attr("action", goUrlUpdt).submit();
     	   	}
     	}); 
+    	
+    	$("#btnList").on("click", function(){
+    		formVo.attr("action", goUrlList).submit();
+    	});
     	
     	$("#btnModalUelete").on("click", function(){
     		form.attr("action", goUrlUele).submit();
