@@ -47,6 +47,8 @@ public class CodeController {
 	public String codeGroupInst(@ModelAttribute("vo")codeVo vo,Code dto, RedirectAttributes redirectAttributes) throws Exception{
 	//	service.insert(dto); = int result = service.insert(dto); 같은뜻이다
 		int result = service.insert(dto); 
+		vo.setSeq(dto.getSeq());
+		redirectAttributes.addFlashAttribute("vo", vo);
 		System.out.println("controller result: " + result);
 		
 		return "redirect:/code/codeRegForm";
