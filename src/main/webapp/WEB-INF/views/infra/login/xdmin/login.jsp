@@ -51,7 +51,7 @@
                                 <label class="form-check-label" for="flexSwitchCheckChecked">Auto login</label>
                             </div>
                             <div class="d-grid gap-2 col-6 offset-6 mb-2">
-                                <a href="main" class="btn btn-outline-warning" href="main" type="button">로그인</a>
+                                <a href="/main" class="btn btn-outline-warning" href="main" type="button">로그인</a>
                             </div>
                             <div class="col-4 offset-4">
                                 <a href="../login/findIdPw.html" class="fs-6" mt-2 mt-sm-0 href="#">Find Id/Password</a>

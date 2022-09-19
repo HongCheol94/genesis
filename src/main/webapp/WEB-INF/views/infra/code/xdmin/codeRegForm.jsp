@@ -20,6 +20,7 @@
 	<!-- start -->
 	
 	<form method="post" id="form" name="form">
+	<%@include file="codeVo.jsp" %>
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
@@ -182,6 +183,9 @@
              </div>
        	 </div> <!--컨테이너 끝-->
        </form>
+       <form name="formVo">
+       		<%@include file="codeVo.jsp" %>
+       </form>
        
    <!-- script -->
 
@@ -216,6 +220,7 @@
    		var seq = $("input:hidden[name=seq]");				/* #-> */
     	
     	var form = $("form[name=form]");
+    	var formVo = $("form[name=formVo]");
     	
     	$("#btnSave").on("click", function(){
     		if (seq.val() == "0" || seq.val() == ""){

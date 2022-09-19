@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/login")
+@RequestMapping(value = "/")
 public class LoginController {
 	
 	@Autowired
@@ -19,11 +19,6 @@ public class LoginController {
 		List<Login> list = service.selectList();
 		model.addAttribute("list",list);
 		return "infra/login/xdmin/login";
-	}
-	
-	@RequestMapping(value = "main")
-	public String main(Model model) {
-		return "infra/main/xdmin/main";
 	}
 
 }

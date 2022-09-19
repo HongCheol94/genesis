@@ -36,8 +36,9 @@ public class CodeController {
 	
 //	RegForm
 	@RequestMapping(value = "codeRegForm")
-	public String codeRegForm(Model model) throws Exception{
-		
+	public String codeRegForm(codeVo vo, Model model) throws Exception{
+		Code result = service.selectOne(vo);
+		model.addAttribute("item",result);
 		return "infra/code/xdmin/codeRegForm";
 	}
 	
@@ -48,16 +49,16 @@ public class CodeController {
 		int result = service.insert(dto); 
 		System.out.println("controller result: " + result);
 		
-		return "redirect:/code/codeList";
+		return "redirect:/code/codeRegForm";
 	}
 	
 //	view
-	@RequestMapping(value = "codeView")
-	public String codeView(codeVo vo, Model model) throws Exception{
-		Code result = service.selectOne(vo);
-		model.addAttribute("item",result);
-		return "infra/code/xdmin/codeRegForm";
-	}
+//	@RequestMapping(value = "codeView")
+//	public String codeView(codeVo vo, Model model) throws Exception{
+//		Code result = service.selectOne(vo);
+//		model.addAttribute("item",result);
+//		return "infra/code/xdmin/codeRegForm";
+//	}
 	
 //	Updt
 	@RequestMapping(value = "codeUpdt")

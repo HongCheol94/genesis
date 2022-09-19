@@ -5,12 +5,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/main/")
+@RequestMapping(value = "/")
 public class MainController {
 
-	@RequestMapping(value = "login")
-	public String login(Model model) throws Exception{
-		
-		return "infra/login/xdmin/login";
+	@RequestMapping(value = "main")
+	public String main(Model model) {
+		return "infra/main/xdmin/main";
 	}
 }

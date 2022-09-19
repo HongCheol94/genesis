@@ -4,7 +4,7 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.hongcheol.march.modules.buyDetails.buyDetailsMapper">
+<mapper namespace="com.hongcheol.march.modules.buyDetails.BuyDetailsMapper">
 
     <resultMap id="resultMapObj" type="com.hongcheol.march.modules.buyDetails.BuyDetails"></resultMap>
     

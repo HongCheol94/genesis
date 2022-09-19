@@ -72,7 +72,7 @@ public class CodeGroupController {
 		vo.setSeq(dto.getSeq());
 		redirectAttributes.addFlashAttribute("vo", vo);
 		
-		return "redirect:/codeGroup/codeGroupList";
+		return "redirect:/codeGroup/codeGroupRegForm";
 	}
 	
 //	Uelete

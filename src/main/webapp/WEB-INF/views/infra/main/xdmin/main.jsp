@@ -48,7 +48,7 @@
 				</a>
 			</li>
 		    <li class="breadcrumb-item active col-1 mt-1" aria-current="page">
-		    	<a href="../loing/xdmin/login.jsp" class="top-menu">
+		    	<a href="/login" class="top-menu">
 		    		<i class="fa-solid fa-right-from-bracket"></i>
 		    			<p class="fs-4">로그아웃</p>
 				</a>

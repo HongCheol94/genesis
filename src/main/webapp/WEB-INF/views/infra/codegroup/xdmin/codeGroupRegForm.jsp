@@ -165,11 +165,9 @@
              <!-- 하단 아이콘 -->
              <div class="row">
                 <div class="col">
-                  <a href="codeGroupList" style="color:black">
-                    <button type="button" style="background-color: white;">
+                    <button type="button" id="btnList" style="background-color: white;">
                       <i class="fa-solid fa-bars"></i>
                     </button>
-                  </a>
                 </div>
                 <div class="col text-end">
                 	<!-- Uelete -->

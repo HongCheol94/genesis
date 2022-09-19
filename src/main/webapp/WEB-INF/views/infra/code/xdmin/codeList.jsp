@@ -24,6 +24,7 @@
 	<form method="post" name="form">
 		<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+		<input type="hidden" name="seq" value="<c:out value="${vo.seq}"/>">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
@@ -236,7 +237,7 @@
 		  })
 		}
 	
-		const myModal = document.getElementById('myModal')
+		/* const myModal = document.getElementById('myModal')
 		const myInput = document.getElementById('myInput')
 	
 		myModal.addEventListener('shown.bs.modal', () => {
@@ -259,14 +260,14 @@
             item[i].style.display = "none";
           }
         }
-      }
+      } */
 	</script>
 	
 	<!-- paging start -->
 	<script type="text/javascript">
-		var codelist = "/code/codeList";
+		var codeList = "/code/codeList";
 		var form = $("form[name=form]");
-		goList = (function(thisPage) {
+		goList = function(thisPage) {
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action",codeList).submit();
 		}
