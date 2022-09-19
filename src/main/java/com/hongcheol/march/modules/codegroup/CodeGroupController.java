@@ -25,8 +25,7 @@ public class CodeGroupController {
 	
 	@RequestMapping(value = "codeGroupList")
 	public String codeGroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
-		//setSearchAndPaging(vo);
-		vo.setShDelNy(vo.getShDelNy() == null ? 0 : vo.getShDelNy());
+		setSearchAndPaging(vo);
 		System.out.println("vo.getShvalue(): " + vo.getShValue());
 		System.out.println("vo.getShOption(): " + vo.getShOption());
 		
@@ -36,6 +35,7 @@ public class CodeGroupController {
 		return "infra/codegroup/xdmin/codeGroupList";
 	}
 	
+//	RegForm,View
 	@RequestMapping(value = "codeGroupRegForm")
 	public String codeGroupRegForm(CodeGroup dto, @ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception{
 		CodeGroup result = service.selectOne(vo);
@@ -44,24 +44,26 @@ public class CodeGroupController {
 		return "infra/codegroup/xdmin/codeGroupRegForm";
 	}
 	
+//	Insert
 	@RequestMapping(value = "codeGroupInst")
 	public String codeGroupInst(@ModelAttribute("vo") CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception{
-		int result = service.insert(dto);
+		service.insert(dto);
+		
 		vo.setSeq(dto.getSeq());
-		System.out.println("dto.codeNameK(): "+ dto.getCodeNameK());
 		redirectAttributes.addFlashAttribute("vo", vo);
-		System.out.println("controller result: " + result);
-		System.out.println(vo.getSeq());
+		
 		return "redirect:/codeGroup/codeGroupRegForm";
 	}
 	
-	/*
-	 * @RequestMapping(value = "codeGroupView") public String
-	 * codeGroupView(CodeGroupVo vo, Model model) throws Exception{ CodeGroup result
-	 * = service.selectOne(vo); model.addAttribute("item",result); return
-	 * "infra/codegroup/xdmin/codeGroupRegForm"; }
-	 */
 	
+//	  @RequestMapping(value = "codeGroupView") 
+// 	  public String codeGroupView(CodeGroupVo vo, Model model) throws Exception{
+//		  CodeGroup result = service.selectOne(vo); 
+//		  model.addAttribute("item",result);
+//		  return "infra/codegroup/xdmin/codeGroupRegForm"; }
+	 
+	
+//	Updt
 	@RequestMapping(value = "codeGroupUpdt")
 	public String codeGroupUpdt(CodeGroupVo vo, CodeGroup dto) throws Exception {
 		
@@ -69,6 +71,7 @@ public class CodeGroupController {
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	
+//	Uelete
 	@RequestMapping(value = "codeGroupUelete")
 	public String codeGroupUelete(CodeGroup dto) throws Exception {
 		
@@ -77,6 +80,7 @@ public class CodeGroupController {
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	
+//	Delete
 	@RequestMapping(value = "codeGroupDelete")
 	public String codeGroupDelete(CodeGroupVo vo) throws Exception {
 		
@@ -85,6 +89,7 @@ public class CodeGroupController {
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	
+//	selectOneCount
 	@RequestMapping(value = "selectOneCount")
 	public String selectOneCount(CodeGroupVo vo) throws Exception {
 		service.selectOneCount(vo);

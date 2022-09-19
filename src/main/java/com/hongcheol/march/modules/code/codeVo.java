@@ -17,6 +17,7 @@ public class codeVo {
 	private Integer turn;
 	private String codeAn;
 	private String seq;
+	private Integer delNy;
 	
 // paging
 	private int thisPage = 1;									//	현재 페이지
@@ -241,6 +242,14 @@ public void setParamsPaging(int totalRows) {
 
 	public void setStartRnumForMysql(int startRnumForMysql) {
 		this.startRnumForMysql = startRnumForMysql;
+	}
+
+	public Integer getDelNy() {
+		return delNy;
+	}
+
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
 	}
 
 	

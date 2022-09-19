@@ -11,5 +11,4 @@ public interface CodeService {
 	public int uelete(Code dto) throws Exception;
 	public int delete(codeVo vo) throws Exception;
 	public int selectOneCount(codeVo vo) throws Exception;
-	public List<Code> selectListPaging(codeVo vo) throws Exception;
 }

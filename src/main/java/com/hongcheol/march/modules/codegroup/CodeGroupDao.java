@@ -7,6 +7,9 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.hongcheol.march.modules.code.codeVo;
 
 @Repository
 public class CodeGroupDao {
@@ -34,15 +37,19 @@ public class CodeGroupDao {
 		System.out.println("dao result: " + result);
 		return result;
 	}
+	
 	public int update(CodeGroup dto) {
 		return sqlSession.update(namespace + ".update", dto);
 	}
+	
 	public int uelete(CodeGroup dto) {
 		return sqlSession.update(namespace + ".uelete", dto);
 	}
+	
 	public int delete(CodeGroupVo vo) {
 		return sqlSession.delete(namespace + ".delete", vo);
 	}
+	
 	public int selectOneCount(CodeGroupVo vo) {
 		int result = sqlSession.selectOne(namespace + ".selectOneCount", vo);
 		return result;

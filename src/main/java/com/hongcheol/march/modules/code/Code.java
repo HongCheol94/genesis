@@ -19,6 +19,7 @@ public class Code {
 	private Integer turn;
 	private String registrationDate;
 	private String revisedDate;
+	private Integer delNy;
 //	------------------------------
 	public String getSeq() {
 		return seq;
@@ -103,6 +104,12 @@ public class Code {
 	}
 	public void setRevisedDate(String revisedDate) {
 		this.revisedDate = revisedDate;
+	}
+	public Integer getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
 	}
 	
 

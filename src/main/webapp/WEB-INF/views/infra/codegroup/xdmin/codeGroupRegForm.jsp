@@ -210,7 +210,7 @@
    		var seq = $("input:hidden[name=seq]");						/* #-> */
     	
     	var form = $("form[name=form]");
-    	var form = $("form[name=formVo]");
+    	var formVo = $("form[name=formVo]");
     	
     	$("#btnSave").on("click", function(){
     		if (seq.val() == "0" || seq.val() == ""){

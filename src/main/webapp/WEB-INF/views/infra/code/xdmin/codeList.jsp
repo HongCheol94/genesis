@@ -21,7 +21,7 @@
 <body>
 	
 	<!-- start -->
-	<form method="post" action="/code/codeList" name="form">
+	<form method="post" name="form">
 		<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 		<!-- 상단목록 -->
@@ -120,6 +120,7 @@
 				</div>
 			</div>
 			<!-- 회원리스트 -->
+			<c:out value="totoal : ${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + status.index) }"/>
 			<table class="table table-hover">
 				<tr class="table-warning sear">
 					<th>
@@ -262,10 +263,9 @@
 	</script>
 	
 	<!-- paging start -->
-	<script>
+	<script type="text/javascript">
 		var codelist = "/code/codeList";
-		
-		var form = $("form(name=form)");
+		var form = $("form[name=form]");
 		goList = (function(thisPage) {
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action",codeList).submit();
