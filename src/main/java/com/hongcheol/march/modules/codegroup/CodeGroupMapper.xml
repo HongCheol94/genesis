@@ -82,6 +82,8 @@
 			,codeNameEn
 			,codeGroup
 			,shDelNy
+			,registrationDate
+			,revisedDate
 			
 		)
 		VALUES(
@@ -89,6 +91,8 @@
 			,#{codeNameEn}
 			,#{codeGroup}
 			,0
+			,#{registartionDate}
+			,#{revisedDate}
 		)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()

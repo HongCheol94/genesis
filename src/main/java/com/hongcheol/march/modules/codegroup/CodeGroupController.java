@@ -65,9 +65,13 @@ public class CodeGroupController {
 	
 //	Updt
 	@RequestMapping(value = "codeGroupUpdt")
-	public String codeGroupUpdt(CodeGroupVo vo, CodeGroup dto) throws Exception {
+	public String codeGroupUpdt(CodeGroupVo vo, CodeGroup dto,RedirectAttributes redirectAttributes) throws Exception {
 		
 		service.update(dto);
+		
+		vo.setSeq(dto.getSeq());
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
 		return "redirect:/codeGroup/codeGroupList";
 	}
 	
@@ -95,11 +99,5 @@ public class CodeGroupController {
 		service.selectOneCount(vo);
 		return "redirect:/codeGroup/codeGroupList";
 	}
-	
-	
-	
-
-	
-	
 }
 

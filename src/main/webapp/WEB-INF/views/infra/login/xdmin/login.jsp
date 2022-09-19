@@ -76,7 +76,7 @@
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
                 <div class="row">
                     <div class="col-12 mb-5 text-center">
-                        <a href="../maine/mainForm.html">
+                        <a href="main">
                             <img alt="로그인 이미지" src="../../resources/images/loginbg.png">
                         </a>
                     </div>

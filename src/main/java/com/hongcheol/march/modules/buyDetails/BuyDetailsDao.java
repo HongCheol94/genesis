@@ -15,7 +15,7 @@ public class BuyDetailsDao {
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.hongcheol.march.modules.buyDetails.BuyDetailsMapping";
+	private static String namespace = "com.hongcheol.march.modules.buyDetails.BuyDetailsMapper";
 	
 	public List<BuyDetails> selectList() {
 		return sqlSession.selectList(namespace + ".selectList","");
