@@ -1,6 +1,7 @@
 package com.hongcheol.march.modules.code;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Code {
 
@@ -8,7 +9,7 @@ public class Code {
 	private String seq;
 	private String codeGroupCode;
 	private String codeGroupNameK;
-	private Integer ccg_seq;
+	private String ccg_seq;
 	private Integer shDelNy;
 	private Integer code;
 	private String substituteCode;
@@ -21,6 +22,10 @@ public class Code {
 	private String revisedDate;
 	private Integer delNy;
 //	------------------------------
+	
+//	for cache
+	public static List<Code> cachedCodeArrayList = new ArrayList<Code>();
+	
 	public String getSeq() {
 		return seq;
 	}
@@ -39,10 +44,10 @@ public class Code {
 	public void setCodeGroupNameK(String codeGroupNameK) {
 		this.codeGroupNameK = codeGroupNameK;
 	}
-	public Integer getCcg_seq() {
+	public String getCcg_seq() {
 		return ccg_seq;
 	}
-	public void setCcg_seq(Integer ccg_seq) {
+	public void setCcg_seq(String ccg_seq) {
 		this.ccg_seq = ccg_seq;
 	}
 	public Integer getShDelNy() {

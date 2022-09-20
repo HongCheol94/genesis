@@ -36,7 +36,7 @@ public class CodeController {
 	
 //	RegForm
 	@RequestMapping(value = "codeRegForm")
-	public String codeRegForm(codeVo vo, Model model) throws Exception{
+	public String codeRegForm(Code dto, @ModelAttribute("vo") codeVo vo, Model model) throws Exception{
 		Code result = service.selectOne(vo);
 		model.addAttribute("item",result);
 		return "infra/code/xdmin/codeRegForm";
@@ -64,16 +64,19 @@ public class CodeController {
 	
 //	Updt
 	@RequestMapping(value = "codeUpdt")
-	public String codeUpdt(codeVo vo, Code dto) throws Exception {
+	public String codeUpdt(@ModelAttribute("vo")codeVo vo, Code dto, RedirectAttributes redirectAttributes) throws Exception {
 		service.update(dto);
+		vo.setSeq(dto.getSeq());
+		redirectAttributes.addFlashAttribute("vo", vo);
+
 		return "redirect:/code/codeList";
 	}
 	
 //	Uelete
 	@RequestMapping(value = "codeUelete")
-	public String codeUelete(Code dot) throws Exception {
+	public String codeUelete(Code dto) throws Exception {
 		
-		service.uelete(dot);
+		service.uelete(dto);
 		
 		return "redirect:/code/codeList";
 	}

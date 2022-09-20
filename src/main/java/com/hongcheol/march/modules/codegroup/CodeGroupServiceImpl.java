@@ -32,7 +32,7 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	
 	@Override
 	public CodeGroup selectOne(CodeGroupVo vo) throws Exception {
-		CodeGroup result = dao.seletOne(vo);
+		CodeGroup result = dao.selectOne(vo);
 		System.out.println("service result :  "+ result);
 		return result;
 	}

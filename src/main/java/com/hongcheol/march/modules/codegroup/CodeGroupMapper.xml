@@ -123,7 +123,7 @@
 		FROM ccg a
 		WHERE 1=1
 			AND shDelNy =  0
-			AND UseNY = 1
+			AND useNy = 1
 		ORDER BY a.seq DESC
 	</select>
 	

@@ -32,7 +32,7 @@ public class CodeGroupDao {
 		return result;
 	}
 	
-	public CodeGroup seletOne(CodeGroupVo vo) {
+	public CodeGroup selectOne(CodeGroupVo vo) {
 		CodeGroup result = sqlSession.selectOne(namespace+".selectOne" , vo);
 		System.out.println("dao result: " + result);
 		return result;

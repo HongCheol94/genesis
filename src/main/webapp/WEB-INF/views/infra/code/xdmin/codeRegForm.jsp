@@ -84,7 +84,7 @@
              <div class="row">
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드</label>
-                    <input class="form-control" type="text" id="" name="" placeholder="자동생성" aria-label="Disabled input example" disabled>
+                    <input class="form-control" type="text" id="" name="" value="<c:out value="${item.seq }"/>" placeholder="자동생성" aria-label="Disabled input example" disabled>
                 </div>
                 <div class="col-6 mb-3">
                     <label for="exampleFormControlInput1" class="form-label">코드(Another)</label>
@@ -104,7 +104,7 @@
              <div class="row">
                 <div class="col-6">
                     <label for="exampleFormControlInput1" class="form-label">사용여부</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" name="" aria-label="Default select example">
                         <option selected>사용여부</option>
                         <option value="1">Y</option>
                         <option value="2">N</option>
@@ -122,10 +122,9 @@
                 </div>
                 <div class="col-6">
                     <label for="exampleFormControlInput1" class="form-label">삭제여부</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>삭제여부</option>
-                        <option value="1">Y</option>
-                        <option value="2">N</option>
+                    <select class="form-select" name="delNy" aria-label="Default select example">
+                        <option value="0"<c:if test="${vo.shDelNy eq 0}">selected</c:if>>N</option>
+                        <option value="1"<c:if test="${vo.shDelNy eq 1}">selected</c:if>>Y</option>
                       </select>
                 </div>
              </div>
@@ -168,13 +167,30 @@
                 </div>
                 <div class="col text-end">
                 	<!-- Uelete -->
-                   <button type="button" id="btnModalUelete" style="background-color: red;">
+                   <button type="button" id="btnUelete" style="background-color: red;">
                      <i class="fa-solid fa-xmark" style="color:white"></i>
                    </button>
                    <!-- Delete -->
-                  <button type="button" id="btnModalDelete" style="background-color: white;">
-                    <i class="fa-solid fa-trash-can" style="color:red"></i>
-                  </button>
+                 	<button type="button" id="btnDelete" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: white;">
+					   <i class="fa-solid fa-trash-can" style="color:red"></i>
+					</button>
+					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="exampleModalLabel">정말 지울거야? 후회 안해?</h5>
+					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					      </div>
+					      <div class="modal-body">
+					        삭제하시겠습니까?
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">아니요</button>
+					        <button type="button" class="btn btn-warning">예</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
                   <!-- UpDate -->
                   <button type="button" name="" id="btnSave" style="background-color: white;">
                     <i class="fa-solid fa-bookmark" style="color:green"></i>
@@ -214,8 +230,8 @@
     	var goUrlList = "/code/codeList"; 				/* #-> */
     	var goUrlInst = "/code/codeInst"; 				/* #-> */
     	var goUrlUpdt = "/code/codeUpdt";				/* #-> */
-    	var goUrlUele = "/code/codeUele";				/* #-> */
-    	var goUrlDele = "/code/codeDele";				/* #-> */
+    	var goUrlUelete = "/code/codeUelete";				/* #-> */
+    	var goUrlDelete = "/code/codeDelete";				/* #-> */
     	
    		var seq = $("input:hidden[name=seq]");				/* #-> */
     	
@@ -235,8 +251,34 @@
     	   	}
     	}); 
     	
-    	$("#btnModalUelete").on("click", function(){
-    		form.attr("action", goUrlUele).submit();
+    	$("#btnUelete").on("click", function(){
+    		form.attr("action", goUrlUelete).submit();
+    	});
+    	
+    	$("#btnDelete").on("click", function(){
+    		form.attr("action", goUrlDelete).submit();
+    	});
+    	
+    	/* 버튼 모달 */
+    	
+    	$("#btnDelete").on("click", function(){
+    		action = "Delete"
+    		modal.modal('show');
+    	});
+    	
+    	$("#btnUelete").on("click", function(){
+    		action = "Uelete"
+    		modal.modal('show');
+    	});
+    	
+    	$("#DeleteYn").on("click",function(){
+    		if(action == "Uelete"){
+    			from.attr("action", goUrlelete).sumbit();
+    		}else if(action == "Delete") {
+    			form.attr("action", goUrDelete).sumbit();
+    		}else {
+    			
+    		}
     	});
     	
     	

@@ -35,11 +35,13 @@
 			id
 			,password
 			,name
+			,gender
 		)
 		VALUES(
 			#{id}
 			,#{password}
 			,#{name}
+			,#{gender}
 		)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()

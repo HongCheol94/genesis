@@ -91,8 +91,8 @@
 					<div class="col">
 						<select class="form-select" aria-label="Default select example">
 							<option selected>날짜</option>
-							<option value="수정일">Y</option>
-							<option value="생일">N</option>
+							<option value="등록일">등록일</option>
+							<option value="수정일">수정일</option>
 						</select>
 					</div>
 					<div class="col mt-1">
@@ -105,8 +105,9 @@
 						<div class="col p-2">
 							<select class="form-select" id="shOption" name="shOption" aria-label="Default select example">
 								<option value=""<c:if test="${empty vo.shOption}">selected</c:if>>검색구분</option>
-								<option value="1"<c:if test="${vo.shOption}">selected</c:if>>번호</option>
-								<option value="2"<c:if test="${vo.shOption}">selected</c:if>>코드</option>
+								<option value="1"<c:if test="${vo.shOption eq 1}">selected</c:if>>번호</option>
+								<option value="2"<c:if test="${vo.shOption eq 2}">selected</c:if>>코드이름(한글)</option>
+								<option value="3"<c:if test="${vo.shOption eq 3}">selected</c:if>>코드이름(영어)</option>
 							</select>
 						</div>
 						<div class="col mt-2">
@@ -156,7 +157,7 @@
 						<td>${list.codeGroupNameK}</td>
 						<td>${list.code}</td>
 						<td>${list.substituteCode}</td>
-						<td><a href="/code/codeView?seq=<c:out value="${list.seq }"/>">${list.codeNameK}</a></td>
+						<td><a href="/code/codeRegForm?seq=<c:out value="${list.seq }"/>">${list.codeNameK}</a></td>
 						<td>${list.codeNameEn}</td>
 						<td>${list.useNy}</td>
 						<td>${list.turn}</td>

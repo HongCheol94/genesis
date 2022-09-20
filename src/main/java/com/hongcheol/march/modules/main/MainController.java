@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/")
+//@RequestMapping(value = "")
 public class MainController {
 
 	@RequestMapping(value = "main")
