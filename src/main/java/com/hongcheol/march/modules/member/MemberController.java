@@ -16,6 +16,7 @@ public class MemberController {
 	@Autowired
 	MemberServiceImpl service;
 	
+	
 
 	@RequestMapping(value = "member")
 	public String member(Model model, MemberVo vo) throws Exception {

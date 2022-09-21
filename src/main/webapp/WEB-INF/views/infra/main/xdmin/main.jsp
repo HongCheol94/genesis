@@ -21,7 +21,7 @@
 		  <ol class="breadcrumb">
 		  	<li class="breadcrumb-item col-1"><a href="../maine/mainForm.html"><image src="../../resources/images/kblogo.png"></a></li>
 		    <li class="breadcrumb-item col-1 offset-4 mt-4">
-		    	<a href="../buy/userBuy.html" class="top-menu">
+		    	<a href="/buy" class="top-menu">
 		    		<p class="fs-3">살때</p>
 		   		</a>
 		   	</li>

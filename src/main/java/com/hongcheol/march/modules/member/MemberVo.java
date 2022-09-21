@@ -2,6 +2,8 @@ package com.hongcheol.march.modules.member;
 
 import java.util.Date;
 
+import com.hongcheol.march.common.constants.Constants;
+
 public class MemberVo {
 
 	private Integer shOption;
@@ -10,6 +12,7 @@ public class MemberVo {
 	private Date registrationDate;
 	private Date revisDate;
 	private String seq;
+	
 	
 //	-------------------------------
 	
@@ -49,4 +52,8 @@ public class MemberVo {
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}
+
+	
+
+	
 }

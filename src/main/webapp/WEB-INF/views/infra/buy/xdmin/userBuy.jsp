@@ -810,7 +810,7 @@
 					<p class="fs-4">인증 및 진단 매물</p>
 					<div class="row">
 						<div class="col-3 mb-5">
-							<a href="buyDetails.html">
+							<a href="/buyDetails">
 							    <div class="card">
 							      <img src="../../resources/images/buy/buycarso.jpg" class="card-img-top" alt="...">
 							      <div class="card-body">

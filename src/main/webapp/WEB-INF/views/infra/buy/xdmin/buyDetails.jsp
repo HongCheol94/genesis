@@ -52,7 +52,7 @@
 			<div class="col-2 common-left-area">
 				<h1 class="logo">
 					<a href="../maine/mainForm.html">
-				<img src="../images/kblogo.png">
+				<img src="../../resources/images/kblogo.png">
 					</a>
 				</h1>
 				<ul class="nav flex-column">
@@ -91,7 +91,7 @@
 				
 				</div>
 				<div>
-					<img src="../images/sideHero.png">
+					<img src="../../resources/images/sideHero.png">
 				</div>
 			</div>
 		<!-- 좌측메뉴 end -->
@@ -116,64 +116,64 @@
 				  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 					  <div class="carousel-inner mt-3">
 					    <div class="carousel-item active">
-					      <img src="../images/buyDetails/buyDetailsMain/so(1).jpg" class="d-block w-100" alt="...">
+					       <img src="../../resources/images/buy/buyDetails/carousel/so(1).jpg" class="d-block w-100" alt="...">
 					    </div>
 					    <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(2).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(2).jpg" class="d-block w-100" alt="...">
 					    </div>
 					    <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(3).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(3).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(4).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(4).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(5).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(5).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(6).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(6).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(7).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(7).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(8).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(8).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(9).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(9).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(10).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(10).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(11).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(11).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(12).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(12).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(13).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(13).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(14).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(14).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(15).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(15).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(16).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(16).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(17).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(17).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(18).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(18).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(19).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(19).jpg" class="d-block w-100" alt="...">
 					    </div>
 					     <div class="carousel-item">
-					      <img src="../images/buyDetails/buyDetailsMain/so(20).jpg" class="d-block w-100" alt="...">
+					      <img src="../../resources/images/buy/buyDetails/carousel/so(20).jpg" class="d-block w-100" alt="...">
 					    </div>
 					  </div>
 					  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -187,27 +187,27 @@
 					</div>
 				  	<div class="card-body">
 					    <p class="card-text">
-					    	<img src="../images/buyDetails/so(02-1).jpg">
-					    	<img src="../images/buyDetails/so(03-1).jpg">
-					    	<img src="../images/buyDetails/so(04-1).jpg">
-					    	<img src="../images/buyDetails/so(05-1).jpg">
-					    	<img src="../images/buyDetails/so(06-1).jpg">
-					    	<img src="../images/buyDetails/so(07-1).jpg">
-					    	<img src="../images/buyDetails/so(08-1).jpg">
-					    	<img src="../images/buyDetails/so(09-1).jpg">
-					    	<img src="../images/buyDetails/so(10-1).jpg">
-					    	<img src="../images/buyDetails/so(11-1).jpg">
-					    	<img src="../images/buyDetails/so(12-1).jpg">
-					    	<img src="../images/buyDetails/so(13-1).jpg">
-					    	<img src="../images/buyDetails/so(14-1).jpg">
-					    	<img src="../images/buyDetails/so(15-1).jpg">
-					    	<img src="../images/buyDetails/so(16-1).jpg">
-					    	<img src="../images/buyDetails/so(17-1).jpg">
-					    	<img src="../images/buyDetails/so(18-1).jpg">
-					    	<img src="../images/buyDetails/so(19-1).jpg">
-					    	<img src="../images/buyDetails/so(20-1).jpg">
-					    	<img src="../images/buyDetails/so(21-1).jpg">
-					    	<img src="../images/buyDetails/so(22-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(02-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(03-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(04-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(05-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(06-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(07-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(08-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(09-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(10-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(11-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(12-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(13-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(14-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(15-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(16-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(17-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(18-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(19-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(20-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(21-1).jpg">
+					    	<img src="../../resources/images/buy/buyDetails/cardBody/so(22-1).jpg">
 					    </p>
 				  	</div>
 				</div>
@@ -234,28 +234,28 @@
 							<ul>
 								<li>
 									<div class="col">
-									<img src="../images/buyDetails/buyDetailsMain/buyDS_1.jpg">
+									<img src="../../resources/images/buy/buyDetails/buyDS_1.jpg">
 									<span>성능점검</span>
 									<div class="vr"></div>
 									</div>
 								</li>
 								<li>
 									<div class="col">
-									<img src="../images/buyDetails/buyDetailsMain/buyDS_2.jpg">
+									<img src="../../resources/images/buy/buyDetails/buyDS_2.jpg">
 									<span>보험이력</span>
 									<div class="vr"></div>
 									</div>
 								</li>
 								<li>
 									<div class="col">
-									<img src="../images/buyDetails/buyDetailsMain/buyDS_3.jpg">
+									<img src="../../resources/images/buy/buyDetails/buyDS_3.jpg">
 									<span>주행거리</span>
 									<div class="vr"></div>
 									</div>
 								</li>
 								<li>
 									<div class="col">	
-									<img src="../images/buyDetails/buyDetailsMain/buyDS_4.jpg">
+									<img src=".../../resources/images/buy/buyDetails/buyDS_4.jpg">
 									<span>기본정보</span>
 									<div class="vr"></div>
 									</div>
@@ -289,7 +289,7 @@
 					</div>
 					<div class="row">
 						<div class="col mt-3">
-							<img src="../images/buyDetails/buyDetailsMain/hero(1).png" style="width:920px">
+							<img src="../../resources/images/buy/buyDetails/hero(1).png" style="width:920px">
 						</div>
 					</div>
 				</div>
@@ -348,11 +348,11 @@
 			<!-- 차량정보 end -->
 			<!-- 딜러 정보 start -->
 					<div class="col text-center">
-						<img src="../images/buyDetails/buyDetailsMain/buyDD.png" class="rounded mx-auto d-block" alt="...">
+						<img src="../../resources/images/buy/buyDetails/buyDD.png" class="rounded mx-auto d-block" alt="...">
 						<p class="fs-5 mt-4">김정수 딜러</p>
 						<p class="fs-5 mt-4">의정부 부대찌개 모터스</p>
 						<p class="fs-5 mt-4">
-							<img src="../images/buyDetails/buyDetailsMain/buy_1.png">031-875-5121
+							<img src="../../resources/images/buy/buyDetails/buy_1.png">031-875-5121
 						</p>
 						<button type="button" class="btn btn-outline-primary btn-lg">판매중:27대</button>
 						<button type="button" class="btn btn-outline-primary btn-lg">판매완료:427대</button>
@@ -362,14 +362,14 @@
 		<div class="row">
 		 	<div class="row mt-5">
 			 	<div class="col-5 offset-2">
-			 		<img src="../images/buyhero.png" class="rounded mx-auto d-block" alt="" style="width:1550px; height:150px" >
+			 		<img src="../../resources/images/buy/buyhero.png" class="rounded mx-auto d-block" alt="" style="width:1550px; height:150px" >
 			   </div>	
 		   </div>
 	   </div>	
 		<!-- 풋 start -->
 		<div class="row mt-5">
 				<div class="col offset-2">
-					<br><image alt="" src="../images/kbfoot.png"></image>
+					<br><image alt="" src="../../resources/images/kbfoot.png"></image>
 					<br>
 					<br>이용약관 ㅣ 개인정보처리방침 ㅣ 위치기반서비스 이용약관
 					<br>

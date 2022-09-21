@@ -45,5 +45,6 @@ public class MemberServiceImpl implements MemberService {
 	public int update(Member dto) throws Exception {
 		return dao.update(dto);
 	}
+
 }	
 	

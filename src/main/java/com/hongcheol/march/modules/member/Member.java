@@ -19,6 +19,8 @@ public class Member {
 	private String email;
 	private Integer memberDefaultNy;
 	private Integer shDelNy;
+	private String roadAddress;
+	private String numberAddress;
 	
 //	---------------------------------
 	
@@ -63,6 +65,19 @@ public class Member {
 	}
 	public void setAddressNumber(Integer addressNumber) {
 		this.addressNumber = addressNumber;
+	}
+	
+	public String getRoadAddress() {
+		return roadAddress;
+	}
+	public void setRoadAddress(String roadAddress) {
+		this.roadAddress = roadAddress;
+	}
+	public String getNumberAddress() {
+		return numberAddress;
+	}
+	public void setNumberAddress(String numberAddress) {
+		this.numberAddress = numberAddress;
 	}
 	public String getAddress() {
 		return address;

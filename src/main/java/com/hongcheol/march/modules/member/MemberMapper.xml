@@ -8,6 +8,8 @@
 
     <resultMap id="resultMapObj" type="com.hongcheol.march.modules.member.Member"></resultMap>
 	
+	
+	
 	<select id="selectList" resultMap="resultMapObj">
 	<!--      select 
 		a.* 
@@ -36,12 +38,20 @@
 			,password
 			,name
 			,gender
+			,addressNumber
+			,roadAddress
+			,numberAddress
+			,detailedAddress
 		)
 		VALUES(
 			#{id}
 			,#{password}
 			,#{name}
 			,#{gender}
+			,#{addressNumber}
+			,#{roadAddress}
+			,#{numberAddress}
+			,#{detailedAddress}
 		)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()
