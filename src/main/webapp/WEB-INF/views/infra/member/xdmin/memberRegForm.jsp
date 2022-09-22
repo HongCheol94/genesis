@@ -159,6 +159,20 @@
 				</div>
 			</div>
 			<div class="row justify-content-center">
+				<div class="col-md-2">
+					<div class="form-floating mb-3 mt-3">
+						<input type="text" class="form-control" id="lng" name="lng" placeholder="위도">
+						<label for="floatingInput">위도</label>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-floating mb-3 mt-3">
+						<input type="text" class="form-control" id="lat" name="lat" placeholder="경도">
+						<label for="floatingInput">경도</label>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
 				<div class="col-md-4">
 					<div class="form-floating mt-3">
 					  <input type="text" class="form-control" id="floatingPassword" name="detailedAddress" value="<c:out value="${item.detailedAddress }"/>"  placeholder="callnumber">
@@ -207,6 +221,8 @@
 	<!-- end -->
 	
 	<!-- 카카오맵API -->
+	<!-- 우편번호 --> 
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a4110429842172d8d27ea6bb34d77957&libraries=services"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script>
 	    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
@@ -239,7 +255,7 @@
 	                document.getElementById("sample4_roadAddress").value = roadAddr;
 	                document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
 	                
-	                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+	          /*       // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
 	                if(roadAddr !== ''){
 	                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
 	                } else {
@@ -260,11 +276,30 @@
 	                } else {
 	                    guideTextBox.innerHTML = '';
 	                    guideTextBox.style.display = 'none';
-	                }
+	                } */
+			<!-- 위도/경도 -->
+			/* lat and lng from address s */
+				
+			// 주소-좌표 변환 객체를 생성
+			var geocoder = new daum.maps.services.Geocoder();
+			
+			// 주소로 좌표를 검색
+			geocoder.addressSearch(roadAddr, function(result, status) {
+			 
+				// 정상적으로 검색이 완료됐으면,
+				if (status == daum.maps.services.Status.OK) {
+					
+					document.getElementById("lng").value=result[0].y;
+					document.getElementById("lat").value=result[0].x;
+				}
+			});
+			/* lat and lng from address e */
+		<!-- 위도/경도 end -->
 	            }
 	        }).open();
 	    }
 	</script>
+	<!-- 우편번호 end -->
 	<!-- 카카오맵API end -->
 		  <script type="text/javascript">
         

@@ -40,11 +40,12 @@ public class MemberController {
 		
 		return "infra/member/xdmin/memberRegForm";
 	}
-	
+//	Insert	
 	@RequestMapping(value = "memberInst")
 	public String memberInst(Member dto) throws Exception{
 		
 		int result = service.insert(dto);
+		
 		System.out.println("controller result: " + result);
 		
 		return "redirect:/member/member";
