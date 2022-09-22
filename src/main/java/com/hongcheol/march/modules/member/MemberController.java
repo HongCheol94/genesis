@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-//import com.hongcheol.march.modules.code.Code;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping(value = "/member/")
@@ -16,11 +16,15 @@ public class MemberController {
 	@Autowired
 	MemberServiceImpl service;
 	
-	
-
-	@RequestMapping(value = "member")
-	public String member(Model model, MemberVo vo) throws Exception {
+	public void setSearchAndPaging(MemberVo vo) throws Exception {
+		vo.setShDelNy(vo.getShDelNy() == null ? 0 : vo.getShDelNy());
 		
+		vo.setParamsPaging(service.selectOneCount(vo));
+	}
+	
+	@RequestMapping(value = "member")
+	public String member(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		setSearchAndPaging(vo);
 		System.out.println("vo.getShvalue(): " + vo.getShValue());
 		System.out.println("vo.getShoption(): "+ vo.getShOption());
 		
@@ -30,11 +34,9 @@ public class MemberController {
 		return "infra/member/xdmin/member";
 	}
 	
-//	View포함
-	
+//	RegForm/ View포함
 	@RequestMapping(value = "memberRegForm")    
-	public String memberRegForm(Model model, MemberVo vo) throws Exception{
-		
+	public String memberRegForm(Member dto, @ModelAttribute("vo") MemberVo vo, Model model) throws Exception{
 		Member item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		
@@ -42,30 +44,42 @@ public class MemberController {
 	}
 //	Insert	
 	@RequestMapping(value = "memberInst")
-	public String memberInst(Member dto) throws Exception{
+	public String memberInst(@ModelAttribute("vo") MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception{
 		
 		int result = service.insert(dto);
-		
+		vo.setSeq(dto.getSeq());
+		redirectAttributes.addFlashAttribute("vo",vo);
 		System.out.println("controller result: " + result);
 		
+		return "redirect:/member/memberRegForm";
+	}
+	
+//	Updt	
+	@RequestMapping(value = "memberUpdt")
+	public String memberUpdt(@ModelAttribute("vo")MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+		service.update(dto);
+		vo.setSeq(dto.getSeq());
+		redirectAttributes.addFlashAttribute("vo",vo);
+
 		return "redirect:/member/member";
 	}
-	
-	@RequestMapping(value = "memberUpdt")
-	public String memberUpdt(MemberVo vo, Member dto) throws Exception {
-		service.update(dto);
-		return "redirect:/code/codeList";
-	}
-	
+//	Uelete
 	@RequestMapping(value = "memberUelete")
 	public String memberUelete(Member dto) throws Exception {
 		service.uelete(dto);
 		return "redirect:/member/member";
 	}
-	
+//	Delete	
 	@RequestMapping(value = "memberDelete")
 	public String memberDelete(MemberVo vo) throws Exception {
 		service.delete(vo);
+		return "redirect:/member/member";
+	}
+	
+//	SelectOneCount
+	@RequestMapping(value = "selectOneCount")
+	public String selectOneCount(MemberVo vo) throws Exception{
+		service.selectOne(vo);
 		return "redirect:/member/member";
 	}
 	

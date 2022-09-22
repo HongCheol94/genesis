@@ -75,18 +75,14 @@ public class CodeController {
 //	Uelete
 	@RequestMapping(value = "codeUelete")
 	public String codeUelete(Code dto) throws Exception {
-		
 		service.uelete(dto);
-		
 		return "redirect:/code/codeList";
 	}
 	
 //	Delete
 	@RequestMapping(value = "codeDelete")
 	public String codeDelete(codeVo vo) throws Exception{
-		
 		service.delete(vo);
-		
 		return "redirect:/code/codeList";
 	}
 	

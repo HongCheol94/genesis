@@ -21,7 +21,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<form method="post" action="/member/member">
+	<form method="post" name="form">
 		<!-- 상단목록 -->
 		<div class="container-md">
 			<nav class="navbar sticky-top">
@@ -140,6 +140,7 @@
 			<!-- 회원리스트 -->
 			<c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('2')}"/>
 			<c:set var="listCodeAddress" value="${CodeServiceImpl.selectListCachedCode('3')}"/>
+			<c:out value="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + status.index) }"/>
 			<table class="table table-hover">
 				<tr class="table-warning sear">
 					<th><input type="checkbox" name="check" value="selectAll"
@@ -191,23 +192,9 @@
 				</c:choose>
 			</table>
 			<!-- 페이지 목록 -->
-			<div class="row justify-content-center">
-				<div class="col-10">
-					<nav aria-label="Page navigation example">
-						<ul class="pagination justify-content-center">
-							<li class="page-item"><a class="page-link" href="#"
-								aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-							</a></li>
-							<li class="page-item"><a class="page-link" href="#">1</a></li>
-							<li class="page-item"><a class="page-link" href="#">2</a></li>
-							<li class="page-item"><a class="page-link" href="#">3</a></li>
-							<li class="page-item"><a class="page-link" href="#"
-								aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-							</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
+			<!-- pagination s -->
+			<%@include file="../../pagination/xdmin/pagination.jsp"%>
+			<!-- pagination e -->
 			<div class="row">
 				<div class="col-1">
 					<button type="button" class="btn btn-warning"
@@ -279,6 +266,16 @@
         }
       }
 	</script>
+		<!-- paging start -->
+	<script type="text/javascript">
+		var codeList = "/code/codeList";
+		var form = $("form[name=form]");
+		goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action",codeList).submit();
+		}
+	</script>
+	<!-- paging end-->
 	<script src="https://kit.fontawesome.com/df50a53180.js"
 		crossorigin="anonymous"></script>
 	<script
