@@ -53,11 +53,7 @@ public class MemberServiceImpl implements MemberService {
 	
 //	@Override
 	public int idCheck(Member dto) throws Exception {
-		if(dao.idCheck(dto) == 0) {
-			return 0;
-		}else {
-			return 1;
-		}
+		return dao.idCheck(dto);
 	}
 	
 

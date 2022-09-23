@@ -1,4 +1,4 @@
-package com.hongcheol.march.modules.buy;
+package com.hongcheol.march.modules.sellRegForm;
 
 import java.util.List;
 
@@ -9,15 +9,15 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class BuyDao {
+public class SellRegFormDao {
 
 	@Inject
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.hongcheol.march.modules.buy.BuyMapper";
+	private static String namespace = "com.hongcheol.march.sellRegForm.SellRegFormMapper";
 	
-	public List<Buy> selectList() {
-		return sqlSession.selectList(namespace + ".selectList","");
+	public List<SellRegForm> selectList() {
+		return sqlSession.selectList(namespace + ".selectList", "");
 	}
 }

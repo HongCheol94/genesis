@@ -47,7 +47,7 @@ public class MemberDao {
 		return result;
 	}
 	public int idCheck(Member dto) {
-		return sqlSession.selectOne(namespace + ".idcheck",dto);
+		return sqlSession.selectOne(namespace + ".idCheck", dto);
 	}
 	
 }

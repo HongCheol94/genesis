@@ -94,6 +94,7 @@ public class MemberController {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
 		int result = service.idCheck(dto);
+		System.out.println("result : " + result);
 
 		if (result > 0) {
 			returnMap.put("rt", "fail");

@@ -79,7 +79,7 @@
 				</div>
 				<div class="col-md-2">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="ID" name="name" value="<c:out value="${item.name }"/>" placeholder="이름">
+						<input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name }"/>" placeholder="이름">
 						<label for="floatingInput">이름</label>
 					</div>
 				</div>
@@ -87,7 +87,8 @@
 			<div class="row justify-content-center">
 				<div class="col-md-4">
 					<div class="form-floating mb-3">
-					  <input type="ID" class="form-control" id="ID" name="id" value="<c:out value="${item.id }"/>" placeholder="ID">
+					  <input type="text" class="form-control" id="id" name="id" value="<c:out value="${item.id }"/>" placeholder="ID" <c:if test="${not empty item.id }">readonly</c:if>>
+					  <div id="ifmmIdFeedback"></div>
 					  <label for="floatingInput">아이디</label>
 					</div>
 				</div>
@@ -224,6 +225,7 @@
 	<!-- 우편번호 --> 
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a4110429842172d8d27ea6bb34d77957&libraries=services"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
 	<script>
 	    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 	    function sample4_execDaumPostcode() {
@@ -335,6 +337,37 @@
     	});
       
    </script>
+   <!-- id 중복확인 -->
+	<script>
+	$("#id").on("focusout", function(){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "/member/checkId"
+				/* ,data : $("#formLogin").serialize() */
+				,data : { "id" : $("#id").val() }
+				,success: function(response) {
+					if(response.rt == "success") {
+						/* document.getElementById("ifmmIdFeedback").classList.remove('invalid-feedback');
+						document.getElementById("ifmmIdFeedback").classList.add('valid-feedback');
+						document.getElementById("ifmmIdFeedback").innerText = "사용 가능 합니다."; */
+						 $("#ifmmIdFeedback").text("사용가능");
+					} else {
+						/* document.getElementById("ifmmIdFeedback").classList.remove('valid-feedback');
+						document.getElementById("ifmmIdFeedback").classList.add('invalid-feedback');
+						document.getElementById("ifmmIdFeedback").innerText = "사용 불가능 합니다"; */
+						$("#ifmmIdFeedback").text("사용 불가능 합니다");
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+	});
+	</script>
+	<!-- id 중복확인end -->
 	
 	
 	
