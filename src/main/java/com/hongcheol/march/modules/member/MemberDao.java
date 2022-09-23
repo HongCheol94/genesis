@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.hongcheol.march.modules.code.Code;
 
 @Repository
 public class MemberDao {
@@ -19,6 +18,7 @@ public class MemberDao {
 	
 	private static String namespace = "com.hongcheol.march.modules.member.MemberMapper";
 	
+//	for cache
 	public List<Member> selectList(MemberVo vo) {
 		List<Member> list = sqlSession.selectList("com.hongcheol.march.modules.member.MemberMapper.selectList",vo);
 //	return sqlSession.selectList(namespace + ".selectList", ""); }
@@ -45,6 +45,9 @@ public class MemberDao {
 	public int selectOneCount(MemberVo vo) {
 		int result = sqlSession.selectOne(namespace + ".selectOneCount",vo);
 		return result;
+	}
+	public int idCheck(Member dto) {
+		return sqlSession.selectOne(namespace + ".idcheck",dto);
 	}
 	
 }

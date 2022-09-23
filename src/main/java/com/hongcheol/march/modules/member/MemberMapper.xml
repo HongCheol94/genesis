@@ -14,8 +14,8 @@
     		<if test="shDelNy != null and !shDelNy.equals('')">AND delNy = #{shDelNy}</if>
     		<choose>
     			<when test="shOption == 1">AND seq = #{shValue}</when>
-    			<when test="shOption == 2">AND codeNameK LIKE CONCAT('%',#{shValue},'%')</when>
-    			<when test="shOption == 3">AND codeNameEn LIKE CONCAT('%',#{shValue},'%')</when>
+    			<when test="shOption == 2">AND id LIKE CONCAT('%',#{shValue},'%')</when>
+    			<when test="shOption == 3">AND name LIKE CONCAT('%',#{shValue},'%')</when>
     		</choose>
     </sql>
     
@@ -128,5 +128,15 @@
 			AND delNY = 0
 			AND useNy = 1
 		ORDER BY a.seq DESC
+	</select>
+	
+	<!-- 아이디 중복체크 -->
+	<select id="idCheck" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			member
+		WHERE
+			id = #{id}
 	</select>
 </mapper>
