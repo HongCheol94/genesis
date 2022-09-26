@@ -51,7 +51,7 @@
 		<!-- 좌측메뉴 start -->
 			<div class="col-2 common-left-area">
 				<h1 class="logo">
-					<a href="../maine/mainForm.html">
+					<a href="main">
 				<img src="../../resources/images/kblogo.png">
 					</a>
 				</h1>

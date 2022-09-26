@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-	<link href="../css/userRegistration.css" rel="stylesheet" type="text/css">
+	<link href="../../resources/css/userSellRegForm.css" rel="stylesheet" type="text/css">
 	
 </head>
 <body>
@@ -21,8 +21,8 @@
 		<!-- 좌측 메뉴 -->
 		<div class="common-left-area">
 			<h1 class="logo">
-				<a href="../maine/mainForm.html">
-					<img src="../images/kblogo.png">
+				<a href="main">
+					<img src="../../resources/images/kblogo.png">
 				</a>
 			</h1>
 			<ul class="nav flex-column">

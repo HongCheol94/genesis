@@ -200,7 +200,7 @@
 			<div class="foot">
 				<div class="row justify-content-center">
 					<div class="col text-center">
-						<br><image alt="" src="../images/kbfoot.png"></image>
+						<br><image alt="" src="../../resources/images/kbfoot.png"></image>
 						<br>
 						<br>이용약관 ㅣ 개인정보처리방침 ㅣ 위치기반서비스 이용약관
 						<br>

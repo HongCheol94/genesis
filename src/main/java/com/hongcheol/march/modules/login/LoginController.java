@@ -20,5 +20,9 @@ public class LoginController {
 		model.addAttribute("list",list);
 		return "infra/login/xdmin/login";
 	}
-
+	
+	@RequestMapping(value = "findIdPw")
+	public String findIdPw(Model model) throws Exception{
+		return "infra/login/xdmin/findIdPw";
+	}
 }

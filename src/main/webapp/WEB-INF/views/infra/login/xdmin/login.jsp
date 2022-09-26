@@ -33,7 +33,7 @@
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                     <div class="row">
                         <div class="col-12 mb-5 text-center">
-                            <a href="../maine/mainForm.html">
+                            <a href="main">
                                 <img alt="로그인 이미지" src="../../resources/images/loginbg.png">
                             </a>
                         </div>
@@ -55,6 +55,9 @@
                             </div>
                             <div class="col-4 offset-4">
                                 <a href="../login/findIdPw.html" class="fs-6" mt-2 mt-sm-0 href="#">Find Id/Password</a>
+                            </div>
+                            <div class="col-4 offset-4">
+                                <a href="memberRegForm" class="fs-6" mt-2 mt-sm-0 href="#">회원가입</a>
                             </div>
                             <div class="col">
                                 <hr>
@@ -99,7 +102,9 @@
                         <a href="../login/findIdPw.html">
                             <button type="button" class="btn btn-outline-warning col-3" style="margin-left: 70px; margin-right: 70px;">PW찾기</button>
                         </a>
-                        <a href="../member/joinMemberForm.html">
+                    </div>
+                    <div>
+                        <a href="/member/memberRegForm">
                             <button type="button" class="btn btn-outline-warning col-3">회원가입</button>
                         </a>
                     </div>

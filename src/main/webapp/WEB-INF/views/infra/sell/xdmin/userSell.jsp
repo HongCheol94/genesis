@@ -19,7 +19,7 @@
 	<!-- 좌측 메뉴바 start -->
 		<div class="common-left-area">
 			<h1 class="logo">
-				<a href="../maine/mainForm.html">
+				<a href="main">
 					<img src="../../resources/images/kblogo.png">
 				</a>
 			</h1> 
@@ -77,14 +77,14 @@
 			    </form>
 			    <ul class="nav justify-content-end">
 				  <li class="nav-item">
-				    <a class="nav-link active" aria-current="page" href="#" style="color: green">
+				    <a class="nav-link active" aria-current="page" href="myPage" style="color: green">
 				    	<p class="fs-3">
 				    		<i class="fa-solid fa-user"></i>
 			    		</p>	
 			    	</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#" style="color:black">
+				    <a class="nav-link" href="login" style="color:black">
 				    	<p class="fs-4">
 				    		<i class="fa-solid fa-right-to-bracket"></i>
 			    		</p>
@@ -133,10 +133,10 @@
 			</div>
 			<div class="col-7 offset-1">
 				<p class="fs-5">step 1 차량등록</p>
-				<a href="../Sell/userRegistration.html">
+				<a href="sellRegForm">
 					<div class="d-grid gap-2 col-8 mb-2">
 						<button class="btn btn-primary text-start" type="button">
-							<img src="../images/sell/sell_1.jpg">내 차 등록하기
+							<img src="../../resources/images/sell/sell_1.jpg">내 차 등록하기
 						</button>
 					</div>
 				</a>	

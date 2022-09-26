@@ -15,7 +15,7 @@ public class SellRegFormDao {
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.hongcheol.march.sellRegForm.SellRegFormMapper";
+	private static String namespace = "com.hongcheol.march.modules.sellRegForm.SellRegFormMapper";
 	
 	public List<SellRegForm> selectList() {
 		return sqlSession.selectList(namespace + ".selectList", "");

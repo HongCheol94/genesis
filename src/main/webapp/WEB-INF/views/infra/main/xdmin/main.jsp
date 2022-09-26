@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-	<link href="../css/main.css" rel="stylesheet" type="text/css">
+	<link href="../../resources/css/main.css" rel="stylesheet" type="text/css">
 	</head>
 <body>
 	<form method="post" actoin="/main/main">
@@ -26,7 +26,7 @@
 		   		</a>
 		   	</li>
 		    <li class="breadcrumb-item active col-1 mt-4" aria-current="page">
-		    	<a href="../sell/userSellForm.html" class="top-menu">
+		    	<a href="sell" class="top-menu">
 		    		<p class="fs-3">팔때</p>
 		   		</a>
 			</li>
@@ -42,7 +42,7 @@
 		    	<a href="#" class="top-menu">
 		    	<p class="fs-3">안내</p></a></li>
 		    <li class="breadcrumb-item active col-1 mt-1" aria-current="page">
-		    	<a href="login" class="top-menu">
+		    	<a href="myPage" class="top-menu">
 		    		<i class="fa-solid fa-user"></i>
 		    			<p class="fs-4">김홍철님</p>
 				</a>
