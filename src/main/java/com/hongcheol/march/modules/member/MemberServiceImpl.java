@@ -59,10 +59,11 @@ public class MemberServiceImpl implements MemberService {
 	public int idCheck(Member dto) throws Exception {
 		return dao.idCheck(dto);
 	}
-	
+//	암호화,로그인
 	@Override
-	public Member login(Member dto) throws Exception {
-		return dao.login(dto);
+	public Member selectLogin(Member dto) throws Exception {
+		dto.setPassword(UtilSecurity.encryptSha256(dto.getPassword()));
+		return dao.selectLogin(dto);
 	}
 	
 

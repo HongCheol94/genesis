@@ -7,17 +7,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.hongcheol.march.modules.member.MemberServiceImpl;
+
 @Controller
 //@RequestMapping(value = "/")
 public class LoginController {
 	
 	@Autowired
-	LoginServiceImpl service;
+	MemberServiceImpl service;
 	
 	@RequestMapping(value = "login")
-	public String login(Model model) throws Exception {
-		List<Login> list = service.selectList();
-		model.addAttribute("list",list);
+	public String login() throws Exception {
 		return "infra/login/xdmin/login";
 	}
 	

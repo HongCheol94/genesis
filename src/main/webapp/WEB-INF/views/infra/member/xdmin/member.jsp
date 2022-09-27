@@ -19,9 +19,14 @@
 	rel="stylesheet"
 	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
 	crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 	<form method="post" name="form">
+	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
+   	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
+   	<input type="hidden" name="seq" value='<c:out value="${vo.seq }"></c:out>'>
 		<!-- 상단목록 -->
 		<div class="container-md">
 			<nav class="navbar sticky-top">
@@ -157,7 +162,7 @@
 				<c:choose>
 					<c:when test="${fn:length(list) eq 0 }">
 						<tr>
-							<td class="text-center" colspan="8">There is no date!</td>
+							<td class="text-center" colspan="12">There is no date!</td>
 						</tr>
 					</c:when>
 					<c:otherwise>
@@ -271,6 +276,7 @@
 		var codeList = "/code/codeList";
 		var form = $("form[name=form]");
 		goList = function(thisPage) {
+			alert("test");
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action",codeList).submit();
 		}

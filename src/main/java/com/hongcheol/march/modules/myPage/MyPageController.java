@@ -1,5 +1,6 @@
 package com.hongcheol.march.modules.myPage;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //@RequestMapping(value = "")
 public class MyPageController {
 
+	
 //	마이페이지
 	@RequestMapping(value = "myPage")
 	public String myPage(Model model) {
@@ -28,4 +30,5 @@ public class MyPageController {
 	public String myPageMod(Model model) throws Exception {
 		return "infra/member/xdmin/myPageForm";
 	}
+	
 }

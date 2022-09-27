@@ -12,6 +12,8 @@
 	<title>Bootstrap demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="../../resources/css/loginForm.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 	
@@ -19,9 +21,6 @@
     <div class="container-mb">
         <div style="height:80px">
             <!-- 여백 -->
-            sessSeq: <c:out value="${sessSeq }"/><br>
-			sessName: <c:out value="${sessName }"/><br>
-			sessId: <c:out value="${sessId }"/><br>
         </div>
         <ul class="nav nav-pills offset-4 mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -54,7 +53,7 @@
                                 <label class="form-check-label" for="flexSwitchCheckChecked">Auto login</label>
                             </div>
                             <div class="d-grid gap-2 col-6 offset-6 mb-2">
-                                <a href="/main" class="btn btn-outline-warning" href="main" type="button" id="id">로그인</a>
+                                <button class="btn btn-outline-warning" type="button" id="btnLogin">로그인</button>
                             </div>
                             <div class="col-4 offset-4">
                                 <a href="../login/findIdPw.html" class="fs-6" mt-2 mt-sm-0 href="#">Find Id/Password</a>
@@ -113,11 +112,9 @@
                     </div>
                     <a href="">
                         <div class="col-8 offset-2 d-grid mb-3">
-                            <a href="main">
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                    <button class="btn btn-warning" type="button">로그인</button>
+                                    <button class="btn btn-warning"  type="button">로그인</button>
                                 </div>
-                            </a>
                         </div>
                     </a>
                     <div class="col-12 text-center mb-3">
@@ -152,8 +149,8 @@
 	
 	<!-- 로그인 -->
 	<script >
+	
 	$("#btnLogin").on("click", function(){
-		if(validation() == false) return false;
 		
 		$.ajax({
 			async: true 
@@ -165,11 +162,7 @@
 			,data : { "id" : $("#id").val(), "password" : $("#password").val(), "autoLogin" : $("#autoLogin").is(":checked")}
 			,success: function(response) {
 				if(response.rt == "success") {
-					if(response.changePwd == "true") {
-						location.href = URL_CHANGE_PWD_FORM;
-					} else {
-						location.href = URL_INDEX_ADMIN;
-					}
+						location.href = "main";
 				} else {
 					alert("회원없음");
 				}
@@ -181,11 +174,7 @@
 	});
 	</script >
 	<!-- 로그인 end -->
-	<script>
-		$("btnLogin").on("click", function() {
-			form.attr("action",goUrSubmit).submit();
-		});
-	</script>
+	
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

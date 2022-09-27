@@ -27,9 +27,7 @@ public class MemberDao {
 	
 //	insert
 	public int insert(Member dto) {
-		int result = sqlSession.insert(namespace+".insert",dto);
-		System.out.println("dao result: " + result);
-		return result;
+		return sqlSession.insert(namespace+".insert",dto);
 	}
 	
 //	selectOne
@@ -65,8 +63,8 @@ public class MemberDao {
 	}
 	
 //	login
-	public Member login(Member dto) {
-		return sqlSession.selectOne(namespace + ".login", dto);
+	public Member selectLogin(Member dto) {
+		return sqlSession.selectOne(namespace + ".selectLogin", dto);
 	}
 	
 }

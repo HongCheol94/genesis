@@ -70,8 +70,6 @@
 			,name
 			,gender
 			,addressNumber
-			,roadAddress
-			,numberAddress
 			,detailedAddress
 		)
 		VALUES(
@@ -80,8 +78,6 @@
 			,#{name}
 			,#{gender}
 			,#{addressNumber}
-			,#{roadAddress}
-			,#{numberAddress}
 			,#{detailedAddress}
 		)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
@@ -95,6 +91,18 @@
 		FROM member a
 		WHERE 1=1
 			AND seq = #{seq}
+	</select>
+	
+	<select id="selectLogin" resultMap="resultMapObj">
+		SELECT
+			a.id
+			, a.name
+			, a.email
+			, a.seq
+		FROM member a
+		WHERE 1=1
+			AND id = #{id}
+			AND password = #{password}
 	</select>
 	
 	<update id="update">

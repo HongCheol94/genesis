@@ -13,5 +13,5 @@ public interface MemberService {
 	public int delete(MemberVo vo) throws Exception;
 	public int selectOneCount(MemberVo vo) throws Exception;
 	public int idCheck(Member dto) throws Exception;
-	public Member login(Member dto) throws Exception;
+	public Member selectLogin(Member dto) throws Exception;
 }

@@ -55,7 +55,7 @@ public class MemberController {
 		vo.setSeq(dto.getSeq());
 		redirectAttributes.addFlashAttribute("vo", vo);
 		System.out.println("controller result: " + result);
-		return "redirect:/member/memberRegForm";
+		return "redirect:/member/member";
 		
 	}
 
@@ -115,16 +115,20 @@ public class MemberController {
 	@RequestMapping(value = "loginProc")
 	public Map<String, Object> loginProc(Member dto, HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-			Member rtMember2 = service.login(dto);
 			
+			Member rtMember = service.selectLogin(dto);
+			
+			if (rtMember != null) {
 				
 				httpSession.setMaxInactiveInterval(60 * 30); // 60second * 30 = 30minute
-				httpSession.setAttribute("sessSeq", rtMember2.getSeq());
-				httpSession.setAttribute("sessId", rtMember2.getId());
-				httpSession.setAttribute("sessName", rtMember2.getName());
-
-
-
+				httpSession.setAttribute("sessSeq", rtMember.getSeq());
+				httpSession.setAttribute("sessId", rtMember.getId());
+				httpSession.setAttribute("sessName", rtMember.getName());
+				System.out.println("rtMember.getseq : "  + rtMember.getId());
+				returnMap.put("rt", "success");
+			}else {
+				returnMap.put("rt", "fail");
+			}
 			return returnMap;
 
 

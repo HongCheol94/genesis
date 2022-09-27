@@ -13,7 +13,7 @@
 <body>
 	
 	<!-- start -->
-	<form method="post" action="" id="member">
+	<form method="post" action="" id="member" name="form">
 		<nav class="navbar sticky-top">
 		    <a class="navbar-brand" href="" id="">
 		    	<image alt="" src="../images/kbcar.jpg" width="70px">
@@ -191,8 +191,8 @@
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-2 p-4 offset-1 px-0">
-					  <button type="submit" class="btn btn-outline-warning">회원가입</button>
-					<a href="../list/memberList.html"> 
+					  <button type="button" class="btn btn-outline-warning" id="btnSave">회원가입</button>
+					<a href=""> 
 					  <button type="button" class="btn btn-outline-warning">&nbsp;취&nbsp;&nbsp;&nbsp;&nbsp;소&nbsp;</button>
 					</a> 	
 				</div>
@@ -305,11 +305,11 @@
 	<!-- 카카오맵API end -->
 		  <script type="text/javascript">
         
-    	var goUrlList = "/codeGroup/codeGroupList"; 				/* #-> */
-    	var goUrlInst = "/codeGroup/codeGroupInst"; 				/* #-> */
-    	var goUrlUpdt = "/codeGroup/codeGroupUpdt";					/* #-> */
-    	var goUrlUele = "/codeGroup/codeGroupUelete";				/* #-> */
-    	var goUrlDele = "/codeGroup/codeGroupDelete";				/* #-> */
+    	var goUrlList = "/member/member"; 				/* #-> */
+    	var goUrlInst = "/member/memberInst"; 				/* #-> */
+    	var goUrlUpdt = "/member/memberUpdt";					/* #-> */
+    	var goUrlUele = "/member/memberUelete";				/* #-> */
+    	var goUrlDele = "/member/memberDelete";				/* #-> */
     	
    		var seq = $("input:hidden[name=seq]");						/* #-> */
     	
