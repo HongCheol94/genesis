@@ -16,4 +16,6 @@ public class LoginServiceImpl implements LoginService{
 		List<Login> list = dao.selectList();
 		return list;
 	}
+	
+	
 }

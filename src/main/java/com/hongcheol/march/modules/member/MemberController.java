@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,70 +20,73 @@ public class MemberController {
 
 	@Autowired
 	MemberServiceImpl service;
-	
+
 	public void setSearchAndPaging(MemberVo vo) throws Exception {
 		vo.setShDelNy(vo.getShDelNy() == null ? 0 : vo.getShDelNy());
-		
+
 		vo.setParamsPaging(service.selectOneCount(vo));
 	}
-	
+
 	@RequestMapping(value = "member")
 	public String member(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 		setSearchAndPaging(vo);
 		System.out.println("vo.getShvalue(): " + vo.getShValue());
 		System.out.println("vo.getShoption(): "+ vo.getShOption());
-		
+
 		List<Member> list = service.selectList(vo);
 		model.addAttribute("list", list);
-		
+
 		return "infra/member/xdmin/member";
 	}
-	
+
 //	RegForm/ View포함
-	@RequestMapping(value = "memberRegForm")    
-	public String memberRegForm(Member dto, @ModelAttribute("vo") MemberVo vo, Model model) throws Exception{
+	@RequestMapping(value = "memberRegForm")
+	public String memberRegForm(Member dto, @ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
 		Member item = service.selectOne(vo);
 		model.addAttribute("item", item);
-		
 		return "infra/member/xdmin/memberRegForm";
 	}
+
 //	Insert	
 	@RequestMapping(value = "memberInst")
-	public String memberInst(@ModelAttribute("vo") MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception{
-		
+	public String memberInst(@ModelAttribute("vo") MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+
 		int result = service.insert(dto);
 		vo.setSeq(dto.getSeq());
-		redirectAttributes.addFlashAttribute("vo",vo);
+		redirectAttributes.addFlashAttribute("vo", vo);
 		System.out.println("controller result: " + result);
-		
 		return "redirect:/member/memberRegForm";
+		
 	}
-	
+
 //	Updt	
 	@RequestMapping(value = "memberUpdt")
-	public String memberUpdt(@ModelAttribute("vo")MemberVo vo, Member dto, RedirectAttributes redirectAttributes) throws Exception {
+	public String memberUpdt(@ModelAttribute("vo") MemberVo vo, Member dto, RedirectAttributes redirectAttributes)
+			throws Exception {
 		service.update(dto);
 		vo.setSeq(dto.getSeq());
-		redirectAttributes.addFlashAttribute("vo",vo);
+		redirectAttributes.addFlashAttribute("vo", vo);
 
 		return "redirect:/member/member";
 	}
+
 //	Uelete
 	@RequestMapping(value = "memberUelete")
 	public String memberUelete(Member dto) throws Exception {
 		service.uelete(dto);
 		return "redirect:/member/member";
 	}
+
 //	Delete	
 	@RequestMapping(value = "memberDelete")
 	public String memberDelete(MemberVo vo) throws Exception {
 		service.delete(vo);
 		return "redirect:/member/member";
 	}
-	
+
 //	SelectOneCount
 	@RequestMapping(value = "selectOneCount")
-	public String selectOneCount(MemberVo vo) throws Exception{
+	public String selectOneCount(MemberVo vo) throws Exception {
 		service.selectOne(vo);
 		return "redirect:/member/member";
 	}
@@ -92,7 +97,7 @@ public class MemberController {
 	public Map<String, Object> checkId(Member dto) throws Exception {
 
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-		
+
 		int result = service.idCheck(dto);
 		System.out.println("result : " + result);
 
@@ -104,5 +109,25 @@ public class MemberController {
 		return returnMap;
 	}
 
-	
+//	로그인
+
+	@ResponseBody
+	@RequestMapping(value = "loginProc")
+	public Map<String, Object> loginProc(Member dto, HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+			Member rtMember2 = service.login(dto);
+			
+				
+				httpSession.setMaxInactiveInterval(60 * 30); // 60second * 30 = 30minute
+				httpSession.setAttribute("sessSeq", rtMember2.getSeq());
+				httpSession.setAttribute("sessId", rtMember2.getId());
+				httpSession.setAttribute("sessName", rtMember2.getName());
+
+
+
+			return returnMap;
+
+
+	}
 }
+//로그인 end

@@ -19,6 +19,9 @@
     <div class="container-mb">
         <div style="height:80px">
             <!-- 여백 -->
+            sessSeq: <c:out value="${sessSeq }"/><br>
+			sessName: <c:out value="${sessName }"/><br>
+			sessId: <c:out value="${sessId }"/><br>
         </div>
         <ul class="nav nav-pills offset-4 mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -39,11 +42,11 @@
                         </div>
                         <div class="col-4 offset-4">
                             <div class="form-floating mb-3">
-                                <input type="id" class="form-control" id="floatingInput" placeholder="아이디">
+                                <input type="id" class="form-control" id="id" placeholder="아이디">
                                 <label for="floatingInput">아이디</label>
                             </div>
                             <div class="form-floating">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                <input type="password" class="form-control" id="password" placeholder="Password">
                                 <label for="floatingPassword">비밀번호</label>
                             </div>
                             <div class="col-4 mt-2">
@@ -51,7 +54,7 @@
                                 <label class="form-check-label" for="flexSwitchCheckChecked">Auto login</label>
                             </div>
                             <div class="d-grid gap-2 col-6 offset-6 mb-2">
-                                <a href="/main" class="btn btn-outline-warning" href="main" type="button">로그인</a>
+                                <a href="/main" class="btn btn-outline-warning" href="main" type="button" id="id">로그인</a>
                             </div>
                             <div class="col-4 offset-4">
                                 <a href="../login/findIdPw.html" class="fs-6" mt-2 mt-sm-0 href="#">Find Id/Password</a>
@@ -131,6 +134,8 @@
 	
 	<!-- end -->
 	<div id="fb-root"></div>
+	
+	<!-- 로그인 페이지 전환 -->
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v14.0" nonce="GE4xuZTk"></script>
 	<script >
 		const triggerTabList = document.querySelectorAll('#myTab button')
@@ -142,6 +147,44 @@
 			tabTrigger.show()
 		})
 		})
+	</script>
+	<!-- 로그인 페이지 전환 end-->
+	
+	<!-- 로그인 -->
+	<script >
+	$("#btnLogin").on("click", function(){
+		if(validation() == false) return false;
+		
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			/* ,dataType:"json" */
+			,url: "/member/loginProc"
+			/* ,data : $("#formLogin").serialize() */
+			,data : { "id" : $("#id").val(), "password" : $("#password").val(), "autoLogin" : $("#autoLogin").is(":checked")}
+			,success: function(response) {
+				if(response.rt == "success") {
+					if(response.changePwd == "true") {
+						location.href = URL_CHANGE_PWD_FORM;
+					} else {
+						location.href = URL_INDEX_ADMIN;
+					}
+				} else {
+					alert("회원없음");
+				}
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+	});
+	</script >
+	<!-- 로그인 end -->
+	<script>
+		$("btnLogin").on("click", function() {
+			form.attr("action",goUrSubmit).submit();
+		});
 	</script>
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

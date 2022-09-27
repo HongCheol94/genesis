@@ -13,5 +13,18 @@
     		a.*
    		FROM car a
    		WHERE 1=1
+   			AND delNy = 0
+   			AND seq LIKE CONCAT('%'.#{shValue}),'%')
 	</select>
+	
+<!-- 	<sql id = "selectCommon">
+		FORM member a
+		WHERE 1=1
+			<if test ="shDelNy" != null and !shDelNy.equals('')> AND delNy = #{shDelNy}</if>
+			<choose>
+				<when test="shOption == 1 ">AND  madeBy = #{shValue}</when>
+				<when test="shOption == 2 ">AND  model LIKE CONCAT{shValue},'%'</when>
+				<when test="shOption == 3 ">AND  carName LIKE CONCT{shValue},'%'</when>
+			</choose>
+	</sql> -->
 </mapper>

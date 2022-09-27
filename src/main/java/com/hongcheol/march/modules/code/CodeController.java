@@ -50,7 +50,6 @@ public class CodeController {
 		vo.setSeq(dto.getSeq());
 		redirectAttributes.addFlashAttribute("vo", vo);
 		System.out.println("controller result: " + result);
-		
 		return "redirect:/code/codeRegForm";
 	}
 	

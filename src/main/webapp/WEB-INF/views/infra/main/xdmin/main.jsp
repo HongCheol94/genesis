@@ -26,7 +26,7 @@
 		   		</a>
 		   	</li>
 		    <li class="breadcrumb-item active col-1 mt-4" aria-current="page">
-		    	<a href="sell" class="top-menu">
+		    	<a href="userSell" class="top-menu">
 		    		<p class="fs-3">팔때</p>
 		   		</a>
 			</li>

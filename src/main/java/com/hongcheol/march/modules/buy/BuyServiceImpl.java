@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hongcheol.march.modules.main.MainVo;
+
 
 @Service
 public class BuyServiceImpl implements BuyService {
@@ -17,4 +19,11 @@ public class BuyServiceImpl implements BuyService {
 		List<Buy> list = dao.selectList();
 		return list;
 	}
+
+	@Override
+	public List<Buy> selectListOne(MainVo vo) throws Exception {
+		return dao.selectListOne(vo);
+	}
+	
+	
 }
