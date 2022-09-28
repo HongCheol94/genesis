@@ -114,7 +114,7 @@
                         <div class="col-8 offset-2 d-grid mb-3">
                             <div class="d-grid gap-2 col-6 mx-auto">
                                     <button class="btn btn-warning"  type="button">로그인</button>
-                                </div>
+                            </div>
                         </div>
                     </a>
                     <div class="col-12 text-center mb-3">

@@ -19,6 +19,7 @@ public class Member {
 	private String email;
 	private Integer memberDefaultNy;
 	private Integer shDelNy;
+	private Integer delNy;
 	private String roadAddress;
 	private String numberAddress;
 	
@@ -126,6 +127,12 @@ public class Member {
 	}
 	public void setShDelNy(Integer shDelNy) {
 		this.shDelNy = shDelNy;
+	}
+	public Integer getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
 	}
 	
 	

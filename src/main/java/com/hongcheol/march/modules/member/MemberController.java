@@ -55,7 +55,7 @@ public class MemberController {
 		vo.setSeq(dto.getSeq());
 		redirectAttributes.addFlashAttribute("vo", vo);
 		System.out.println("controller result: " + result);
-		return "redirect:/member/member";
+		return "redirect:/member/memberRegForm";
 		
 	}
 
@@ -110,7 +110,6 @@ public class MemberController {
 	}
 
 //	로그인
-
 	@ResponseBody
 	@RequestMapping(value = "loginProc")
 	public Map<String, Object> loginProc(Member dto, HttpSession httpSession) throws Exception {
@@ -133,5 +132,19 @@ public class MemberController {
 
 
 	}
+	
+//	로그아웃
+	@ResponseBody
+	@RequestMapping(value = "logoutProc")
+	public Map<String, Object> logoutProc(HttpSession httpSession) throws Exception{
+		Map<String,Object> returnMap = new HashMap<String,Object>();
+		httpSession.invalidate();
+		returnMap.put("rt", "success");
+		return returnMap;
+	}
+	
 }
-//로그인 end
+
+
+	
+

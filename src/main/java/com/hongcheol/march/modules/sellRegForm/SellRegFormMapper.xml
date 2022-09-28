@@ -14,4 +14,50 @@
    		FROM car a
    		WHERE 1=1
 	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM car a
+		WHERE 1=1
+			AND seq = #{seq}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO car (
+			carNumber
+			,carAge
+			,carMleage
+			,carEngine
+			,carGearbox
+			,carFuelEfficiency
+			,carKind
+			,carCc
+			,color
+			,taxe
+			,seize
+			,collateral
+			,presentNumber
+			,delNy
+		)
+		VALUES(
+			#{carNumber}
+			,#{carAge}
+			,#{carMleage}
+			,#{carEngine}
+			,#{carGearbox}
+			,#{carFuelEfficiency}
+			,#{carKind}
+			,#{carCc}
+			,#{color}
+			,#{taxe}
+			,#{seize}
+			,#{collateral}
+			,#{presentNumber}
+			,0
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey> 
+	</insert>
 </mapper>

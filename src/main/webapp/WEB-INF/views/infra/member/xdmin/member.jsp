@@ -273,10 +273,9 @@
 	</script>
 		<!-- paging start -->
 	<script type="text/javascript">
-		var codeList = "/code/codeList";
+		var codeList = "/member/member";
 		var form = $("form[name=form]");
 		goList = function(thisPage) {
-			alert("test");
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action",codeList).submit();
 		}

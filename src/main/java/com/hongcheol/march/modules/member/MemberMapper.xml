@@ -71,6 +71,10 @@
 			,gender
 			,addressNumber
 			,detailedAddress
+			,shDelNy
+			,delNy
+			,email
+			,number
 		)
 		VALUES(
 			#{id}
@@ -79,6 +83,10 @@
 			,#{gender}
 			,#{addressNumber}
 			,#{detailedAddress}
+			,0
+			,0
+			,#{email}
+			,#{number}
 		)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()

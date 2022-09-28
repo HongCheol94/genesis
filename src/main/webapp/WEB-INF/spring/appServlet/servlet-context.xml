@@ -23,6 +23,20 @@
 	
 	<context:component-scan base-package="com.hongcheol.march" />
 	
+		<!-- session interceptor s 2022.03.13 for logincheck -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/**"/>
+			<exclude-mapping path="/resources/**" />
+			<exclude-mapping path="/member/loginForm" />
+			<exclude-mapping path="/member/loginProc" />
+			<exclude-mapping path="/member/memberList" />
+			<exclude-mapping path="/main" />
+			<exclude-mapping path="/login" />
+			<beans:bean id="checkLoginSessionInterception" class="com.hongcheol.march.common.interceptor.CheckLoginSessionInterception"/>
+		</interceptor>
+	</interceptors>	
+	<!-- session interceptor e 2022.03.13 for logincheck -->
 	
 	
 </beans:beans>

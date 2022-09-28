@@ -23,10 +23,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int insert(Member dto) throws Exception {
 		dto.setPassword(UtilSecurity.encryptSha256(dto.getPassword()));
-    	dao.insert(dto);
-		int result = dao.insert(dto);
-		System.out.println("service result: " + result);
-		return result;
+		return dao.insert(dto);
 	}
 	
 	@Override
@@ -66,8 +63,5 @@ public class MemberServiceImpl implements MemberService {
 		return dao.selectLogin(dto);
 	}
 	
-
-
-
 }	
 	

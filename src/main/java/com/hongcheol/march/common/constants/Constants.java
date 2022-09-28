@@ -9,5 +9,6 @@ public final class Constants {
 	
 //	데이터 유지 시간
 	public static final int SESSION_MINUTE = 30;
+	public static final String URL_LOGINFORM = "/login";
 	
 }

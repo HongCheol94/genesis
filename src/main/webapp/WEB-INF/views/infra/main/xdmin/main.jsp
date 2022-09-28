@@ -12,11 +12,16 @@
 	<title>Bootstrap demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<link href="../../resources/css/main.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 <body>
 	<form method="post" actoin="/main/main">
 		<div class="container-md">
 		<!-- 상단목록 -->
+		sessSeq: <c:out value="${sessSeq }"/><br>
+		sessName: <c:out value="${sessName }"/><br>
+		sessId: <c:out value="${sessId }"/><br>
 		<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
 		  <ol class="breadcrumb">
 		  	<li class="breadcrumb-item col-1"><a href="../maine/mainForm.html"><image src="../../resources/images/kblogo.png"></a></li>
@@ -45,13 +50,15 @@
 		    	<a href="myPage" class="top-menu">
 		    		<i class="fa-solid fa-user"></i>
 		    			<p class="fs-4">김홍철님</p>
+		    			sessSeq: <c:out value="${sessSeq }"/><br>
+						sessName: <c:out value="${sessName }"/><br>
+						sessId: <c:out value="${sessId }"/><br>
 				</a>
 			</li>
 		    <li class="breadcrumb-item active col-1 mt-1" aria-current="page">
-		    	<a href="/login" class="top-menu">
-		    		<i class="fa-solid fa-right-from-bracket"></i>
-		    			<p class="fs-4">로그아웃</p>
-				</a>
+		    	<button type="button" id="btnLogout" style="background-color:white;">
+	    			<i class="fa-solid fa-right-from-bracket"></i>
+    			</button>
 			</li>
 		  </ol>
 		</nav>
@@ -333,6 +340,27 @@
 		
 		
 	<!-- end -->
+	<script>
+	$("#btnLogout").on("click", function(){
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			,url: "/member/logoutProc"
+			,data: {}
+			,success: function(response) {
+				if(response.rt == "success") {
+					location.href = "login";
+				} else {
+					// by pass
+				}
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+	});
+	</script>
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

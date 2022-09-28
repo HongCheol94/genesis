@@ -18,7 +18,7 @@
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
 			    <a class="navbar-brand" href="../listChoice/choicList.html">
-			    	<image alt="" src="../images/kbcar.jpg" width="70px">
+			    	<image alt="" src="../../resources/images/kbcar.jpg" width="70px">
 			    </a>
 			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 			      <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
 			    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 			      <div class="offcanvas-header">
 			        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-			        	<image alt="" src="./image/kbcar.jpg" width="100px">
+			        	<image alt="" src="../../resources/image/kbcar.jpg" width="100px">
 		        	</h5>
 			        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			      </div>
@@ -34,7 +34,7 @@
 			        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 			          <li class="nav-item">
 			            <a class="nav-link active" aria-current="page" href="#">
-			            	<image alt="" src="./image/person.png" width="100x">
+			            	<image alt="" src="../../resources/image/person.png" width="100x">
 		            	</a>
 			          </li>
 			          <hr>
@@ -62,7 +62,7 @@
 			      </div>
 			    </div>
 			</nav>
-			<img src="../images/listBg.jpg" class="rounded mx-auto d-block" alt="...">
+			<img src="../../resources/images/listBg.jpg" class="rounded mx-auto d-block" alt="...">
 			<!-- 회원검색 -->
 			<div class="container border px">
 				<div class="row p-2">
@@ -140,71 +140,6 @@
 					<td>서울</td>
 					<td>madongsuck@naver.com</td>
 					<td>2000.04.26</td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>2</td>
-					<td>김소은</td>
-					<td class="sn">수원모터스매매단지</td>
-					<td>김수원</td>
-					<td>031-215-8251</td>
-					<td>수원</td>
-					<td>soeun@naver.com</td>
-					<td>2005.02.26</td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>3</td>
-					<td>정우성</td>
-					<td class="sn">의정부 중고차매매단지</td>
-					<td>강동원</td>
-					<td>031-817-1375</td>
-					<td>의정부</td>
-					<td>menam@nate.com</td>
-					<td>1998.10.12</td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>4</td>
-					<td>이너용</td>
-					<td class="sn">인천 모터스매매단지</td>
-					<td>임윤아</td>
-					<td>032-345-8762</td>
-					<td>인천</td>
-					<td>nayong@naver.com</td>
-					<td>1999.03.22</td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>5</td>
-					<td>송혜교</td>
-					<td class="sn">수원 자동차매매단지</td>
-					<td>김사랑</td>
-					<td>031-211-7531</td>
-					<td>수원</td>
-					<td>menam@nate.com</td>
-					<td>1998.10.12</td>
-				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>6</td>
-					<td>이동욱</td>
-					<td class="sn">서울 차차매매단지</td>
-					<td>남자</td>
-					<td>02-583-6648</td>
-					<td>서울</td>
-					<td>menam@nate.com</td>
-					<td>2001.08.16</td>
 				</tr>
 			</table>
 			<!-- 페이지 목록 -->

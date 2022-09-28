@@ -65,19 +65,12 @@
 				<div class="col-md-2">
 					<image alt="" src="../images/cUpListbg.jpg" width="300px"></image>
 				</div>
-				<div class="col-md-2 mt-5 px-0">
+				<div class="col-md-4 mt-5 px-0">
 					<p class="fs-1">회원가입</p>
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-md-2">
-					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="ID" placeholder="성">
-						<label for="floatingInput">성</label>
-						<input type="hidden" name="seq" value="<c:out value="${item.seq}"/>">
-					</div>
-				</div>
-				<div class="col-md-2">
+				<div class="col-md-4">
 					<div class="form-floating mb-3">
 						<input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name }"/>" placeholder="이름">
 						<label for="floatingInput">이름</label>
@@ -112,7 +105,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-2">
 					<div class="form-floating mt-3">
-						<input type="text" class="form-control" id="floatingPassword"  placeholder="인증번호입력">
+						<input type="text" class="form-control" id="floatingPassword" value="<c:out value="${item.email }"/>"  placeholder="인증번호입력">
 						<label for="floatingEmail">이메일</label>
 					</div>
 				</div>
@@ -195,6 +188,35 @@
 					<a href=""> 
 					  <button type="button" class="btn btn-outline-warning">&nbsp;취&nbsp;&nbsp;&nbsp;&nbsp;소&nbsp;</button>
 					</a> 	
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-4 offset-4">
+	                   <a href="codeGroupList.html">
+	                       <button type="button" id="btnModalUelete" style="background-color: red;">
+	                           <i class="fa-solid fa-xmark" style="color:white;"></i>
+	                       </button>
+	                   </a>
+					<button type="button" id="btnModalDelete" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: white;">
+					   <i class="fa-solid fa-trash-can" style="color:red"></i>
+					</button>
+					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="exampleModalLabel">정말 지울거야? 후회 안해?</h5>
+					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					      </div>
+					      <div class="modal-body">
+					        삭제하시겠습니까?
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">아니요</button>
+					        <button type="button" class="btn btn-warning">예</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
 				</div>
 			</div>
 			<div class="foot">
@@ -303,7 +325,7 @@
 	</script>
 	<!-- 우편번호 end -->
 	<!-- 카카오맵API end -->
-		  <script type="text/javascript">
+  	<script type="text/javascript">
         
     	var goUrlList = "/member/member"; 				/* #-> */
     	var goUrlInst = "/member/memberInst"; 				/* #-> */
@@ -369,12 +391,6 @@
 	</script>
 	<!-- id 중복확인end -->
 	
-	
-	
-	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-</body>
-</html>
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
