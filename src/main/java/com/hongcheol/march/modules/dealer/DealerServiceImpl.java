@@ -13,11 +13,7 @@ public class DealerServiceImpl implements DealerService{
 	
 	@Override
 	public List<Dealer> selectList(DealerVo vo) throws Exception{
-		List<Dealer> list = dao.selectList(vo);
-		return list;
+		return dao.selectList(vo);
+		 
 	}
-	
-	
-
-	
 }

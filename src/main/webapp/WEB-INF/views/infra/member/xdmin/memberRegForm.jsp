@@ -2,18 +2,28 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<jsp:useBean id="CodeServiceImpl"
+	class="com.hongcheol.march.modules.code.CodeServiceImpl" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap demo</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap demo</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 	
 	<!-- start -->
 	<form method="post" action="" id="member" name="form">
+	<c:set var="listCodeEmail"
+				value="${CodeServiceImpl.selectListCachedCode('16')}" />
+	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+	<input type="hidden" name="seq" value="<c:out value="${vo.seq}"/>">
 		<nav class="navbar sticky-top">
 		    <a class="navbar-brand" href="" id="">
 		    	<image alt="" src="../images/kbcar.jpg" width="70px">
@@ -72,14 +82,6 @@
 			<div class="row justify-content-center">
 				<div class="col-md-4">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name }"/>" placeholder="이름">
-						<label for="floatingInput">이름</label>
-					</div>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-4">
-					<div class="form-floating mb-3">
 					  <input type="text" class="form-control" id="id" name="id" value="<c:out value="${item.id }"/>" placeholder="ID" <c:if test="${not empty item.id }">readonly</c:if>>
 					  <div id="ifmmIdFeedback"></div>
 					  <label for="floatingInput">아이디</label>
@@ -89,7 +91,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-4">
 					<div class="form-floating">
-					  <input type="password" class="form-control" id="floatingPassword" name="password" value="<c:out value="${item.password }"/>" placeholder="Password">
+					  <input type="password" class="form-control" id="" name="password" value="<c:out value="${item.password }"/>" placeholder="Password">
 					  <label for="floatingPassword">비밀번호</label>
 					</div>
 				</div>
@@ -97,29 +99,71 @@
 			<div class="row justify-content-center">
 				<div class="col-md-4">
 					<div class="form-floating mb-1 mt-3" >
-					  <input type="passwordre" class="form-control" id="passwordre" placeholder="Passwordre">
+					  <input type="password" class="form-control" id="passwordre" placeholder="Passwordre">
 					  <label for="floatingInput">비밀번호 확인</label>
 			   	   </div>
 			   </div>
 			</div>
 			<div class="row justify-content-center">
+				<div class="col-md-4 mt-3">
+					<div class="form-floating mb-3">
+						<input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name }"/>" placeholder="이름">
+						<label for="floatingInput">이름</label>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-4">
+					<div class="form-floating mb-3">
+						<input type="text" class="form-control" id="" name="" value="<c:out value="${item.name }"/>" placeholder="생년월일">
+						<label for="floatingInput">생년월일(ex19940322)</label>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+			   <div class="col-1 md-4 mt-3">
+					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+ 					 <label class="form-check-label" for="inlineRadio1">남성</label>
+			   </div>
+			   <div class="col-1 md-4 mt-3">
+					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+ 					 <label class="form-check-label" for="inlineRadio1">여성</label>
+			   </div>
+			   <div class="col-1 md-4 mt-3">
+					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+ 					 <label class="form-check-label" for="inlineRadio1">기타</label>
+			   </div>
+			</div>
+			<div class="row justify-content-center">
 				<div class="col-md-2">
 					<div class="form-floating mt-3">
-						<input type="text" class="form-control" id="floatingPassword" value="<c:out value="${item.email }"/>"  placeholder="인증번호입력">
+						<input type="text" class="form-control" id="" name="email" value="<c:out value="${item.email }"/>"  placeholder="인증번호입력">
 						<label for="floatingEmail">이메일</label>
 					</div>
 				</div>
-				<div class="col-md-2 mt-4 btn-group">
+			<div class="col-md-2 mt-3">
+				<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name = "email">
+				  <option selected>@Email</option>
+				  <c:forEach items="${listCodeEmail}" var="listEmail" varStatus="statusEmail">
+						<option value="${listEmail.seq}" <c:if test="${list.email eq listEmail.seq}">selected</c:if>>${listEmail.codeGroupCode}</option>
+				  </c:forEach>
+				</select>
+			</div>
+				<%-- <div class="col-md-2 mt-4 btn-group">
 					  <button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 					    @Email
 					  </button>
 					  <ul class="dropdown-menu">
-					    <li><a class="dropdown-item" href="#">naver.com</a></li>
-					    <li><a class="dropdown-item" href="#">daum.net</a></li>
-					    <li><a class="dropdown-item" href="#">gmail.com</a></li>
-					    <li><a class="dropdown-item" href="#">nate.com</a></li>
+					  	<c:forEach items="${listCodeEmail}" var="listEmail" varStatus="statusEmail">
+					  		<li><a class="dropdown-item" href="#">
+					  		<c:if test = "${list.email eq listEmail.seq }">
+					  			<c:out value="${listEmail.codeGroupCode }" />
+				  			</c:if>
+				  			</a>
+				  			</li>
+					    </c:forEach>
 					  </ul>
-				</div>
+				</div> --%>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-4">
@@ -131,7 +175,7 @@
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-2 form-floating mt-3 md-4">
-					<input type="text" class="form-control" id="sample4_postcode" name="addressNumber" value="<c:out value="${item.addressNumber }"/>" placeholder="인증번호입력">
+					<input type="text" class="form-control" id="sample4_postcode" name="postNumber" value="<c:out value="${item.postNumber }"/>" placeholder="우편번호">
 					<label for="floatingadress">우편번호</label>
 				</div>
 				<div class="col-md-2 mt-3 btn-group">
@@ -175,14 +219,6 @@
 			  </div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-md-4">
-					<div class="form-floating mt-3">
-					  <input type="text" class="form-control" id="floatingPassword" name="address" value="<c:out value="${item.address }"/>" placeholder="callnumber">
-					  <label for="floatingaddress">주소</label>
-				  </div>
-			  </div>
-			</div>
-			<div class="row justify-content-center">
 				<div class="col-2 p-4 offset-1 px-0">
 					  <button type="button" class="btn btn-outline-warning" id="btnSave">회원가입</button>
 					<a href=""> 
@@ -212,7 +248,7 @@
 					      </div>
 					      <div class="modal-footer">
 					        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">아니요</button>
-					        <button type="button" class="btn btn-warning">예</button>
+					        <button type="button" class="btn btn-warning" id="btnDelete">예</button>
 					      </div>
 					    </div>
 					  </div>
@@ -327,13 +363,13 @@
 	<!-- 카카오맵API end -->
   	<script type="text/javascript">
         
-    	var goUrlList = "/member/member"; 				/* #-> */
+    	var goUrlList = "/member/member"; 					/* #-> */
     	var goUrlInst = "/member/memberInst"; 				/* #-> */
-    	var goUrlUpdt = "/member/memberUpdt";					/* #-> */
+   		var goUrlUpdt = "/member/memberUpdt";				/* #-> */
     	var goUrlUele = "/member/memberUelete";				/* #-> */
     	var goUrlDele = "/member/memberDelete";				/* #-> */
     	
-   		var seq = $("input:hidden[name=seq]");						/* #-> */
+		var seq = $("input:hidden[name=seq]");				/* #-> */
     	
     	var form = $("form[name=form]");
     	
@@ -341,7 +377,9 @@
     	$("#btnSave").on("click", function(){
     		if (seq.val() == "0" || seq.val() == ""){
     	   		// insert
+    	   		alert('test');
     	   		form.attr("action", goUrlInst).submit();
+    	   		alert('test313');
     	   	} else {
     	   		// update
     	   		/* keyName.val(atob(keyName.val())); */
@@ -349,14 +387,24 @@
     	   	}
     	}); 
     	
-    	$("#btnModalUelete").on("click", function(){
+    	$("#btnUelete").on("click", function(){
+    		form.attr("action", goUrlUelete).submit();
+    	});
+    	
+    	$("#btnDelete").on("click", function(){
+    		form.attr("action", goUrlDelete).submit();
+    	});
+    	
+   /*  	$("#btnModalUelete").on("click", function(){
     		form.attr("action", goUrlUele).submit();
     	});
-    	
+    	*/
     	
     	$("#btnModalDelete").on("click", function(){
+    		alert("test")
     		form.attr("action", goUrlDele).submit();
-    	});
+    		alert("test")
+    	}); 
       
    </script>
    <!-- id 중복확인 -->
@@ -389,7 +437,32 @@
 			});
 	});
 	</script>
+	<script>
 	<!-- id 중복확인end -->
+	<!-- gender DB -->
+		 // $_POST is way cooler than $_REQUEST
+		  if (isset($_POST['gender']) && !empty($_POST['gender'])) {
+		
+		      // sql injection sucks
+		      $gender = my_real_escape_string($_POST['gender']);
+		
+		      // cast it as an integer, sql inject impossible
+		      $id = intval($_GET['id']);
+		
+		      if($id) {
+		          // spit out the boolean INSERT result for use by client side JS
+		          if(mysql_query("UPDATE users SET gender=$gender WHERE id=$id")) {
+		              echo '1';
+		              exit;
+		          } else {
+		              echo '0';
+		              exit;
+		          }
+		      }
+		  }
+	</script>
+	<!-- gender DB end -->
+	
 	
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

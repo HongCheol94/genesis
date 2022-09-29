@@ -6,23 +6,14 @@
     
 <mapper namespace ="com.hongcheol.march.modules.dealer.DealerMapper">
 	
-	<resultMap id = "resultMapObj" type="com.hongcheol.march.modules.dealer.Dealer"></resultMap>
+	<resultMap id= "resultMapObj" type="com.hongcheol.march.modules.dealer.Dealer"></resultMap>
 	
-	<select id="selectlist" resultMap="resultMapObj">
+	<select id="selectList" resultMap="resultMapObj">
 		SELECT
 			a.*
-		FROM dealer a
+		FROM dealer a 
 		WHERE 1=1
+			<if test="shDelNy != null and !shDelNy.equals('')">AND delNy = #{shDelNy}</if>
 	</select>
 	
-	<select id="selectOne" resultMap="resultMapObj">
-		SELECT
-			a.*
-		FROM dealer a
-		WHERE 1=1
-			AND seq = #{seq}
-	</select>
-	
-		
 </mapper>
-

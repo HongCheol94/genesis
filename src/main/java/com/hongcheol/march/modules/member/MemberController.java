@@ -32,6 +32,7 @@ public class MemberController {
 		setSearchAndPaging(vo);
 		System.out.println("vo.getShvalue(): " + vo.getShValue());
 		System.out.println("vo.getShoption(): "+ vo.getShOption());
+		System.out.println("vo.getShDelNy(): "+ vo.getShDelNy());
 
 		List<Member> list = service.selectList(vo);
 		model.addAttribute("list", list);
@@ -54,6 +55,7 @@ public class MemberController {
 		int result = service.insert(dto);
 		vo.setSeq(dto.getSeq());
 		redirectAttributes.addFlashAttribute("vo", vo);
+		System.out.println("seq");
 		System.out.println("controller result: " + result);
 		return "redirect:/member/memberRegForm";
 		

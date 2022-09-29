@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SellController {
 
 	@RequestMapping(value = "userSell")
-	public String sell(Model model) {
+	public String sell() {
 		return "infra/sell/xdmin/userSell";
 	}
 	

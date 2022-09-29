@@ -1,7 +1,8 @@
 package com.hongcheol.march.modules.dealer;
 
 public class Dealer {
-
+	
+	private String seq;
 	private String id;
 	private String password;
 	private String dealerName;
@@ -9,8 +10,25 @@ public class Dealer {
 	private String grade;
 	private String dealerNumber;
 	private String company;
+	private Integer delNy;
+	
+//	------------------------------
+	
+	
 	public String getId() {
 		return id;
+	}
+	public Integer getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
+	}
+	public String getSeq() {
+		return seq;
+	}
+	public void setSeq(String seq) {
+		this.seq = seq;
 	}
 	public void setId(String id) {
 		this.id = id;

@@ -15,10 +15,10 @@ public class DealerDao {
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namesapce="con.hongcheol.march.modules.dealer.DealerMapper";
-//	view
+	private static String namesapce="com.hongcheol.march.modules.dealer.DealerMapper";
+									 
 	public List<Dealer> selectList(DealerVo vo) {
-		return sqlSession.selectList(namesapce + ".selectList","vo");
+		return sqlSession.selectList(namesapce + ".selectList", vo);
 	}
 	
 }

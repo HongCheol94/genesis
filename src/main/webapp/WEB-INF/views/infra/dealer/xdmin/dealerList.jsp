@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +10,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-	<form method="post" action="./memberList2.html">
+	<form method="post" action="dealer" name="form">
 		<!-- 상단목록 -->
 		 <div class="container-md">
 			<nav class="navbar sticky-top">
@@ -67,10 +68,13 @@
 			<div class="container border px">
 				<div class="row p-2">
 					<div class="col">
-						<select class="form-select" aria-label="Default select example">
-							<option selected>삭제여부</option>
-							<option value="삭제">삭제</option>
-							<option value="미삭제">미삭제</option>
+						<select class="form-select" id="shDelNy" name="shDelNy" aria-label="Default select example">
+							<option value="" 
+								<c:if test="${empty vo.shDelNy}">selected</c:if>>삭제여부</option>
+							<option value="0"
+								<c:if test="${vo.shDelNy eq 0 }">selected</c:if>>N</option>
+							<option value="1"
+								<c:if test="${vo.shDelNy eq 1 }">selected</c:if>>Y</option>
 						</select>
 					</div>
 					<div class="col">
@@ -104,7 +108,7 @@
 							</div>
 						</div>
 						<div>
-							<button type="button" class="btn btn-promary btn-sm border p-1 mt-3" >
+							<button type="submit" class="btn btn-promary btn-sm border p-1 mt-3" id="searchBtn" >
 								<i class="fa-solid fa-magnifying-glass"></i>
 							</button>
 						</div>
@@ -120,27 +124,28 @@
 					<th>번호</th>
 					<th>이름</th>
 					<th>회사명</th>
-					<th>대표자명</th>
 					<th>전화번호</th>
-					<th>지역</th>
-					<th>이메일</th>
-					<th>가입일</th>
 				</tr>
-				<tr class="search">
-					<td>
-						<input type="checkbox" name="check">
-					</td>
-					<td>1</td>
-					<td>마동석</td>
-					<td class="sn">
-						<a href="../dminDealer/d_dealerModForm.html" style="color:black; text-decoration-line: none;">서울 모터스매매단지</a>
-					</td>
-					<td>마두부</td>
-					<td>02-533-6172</td>
-					<td>서울</td>
-					<td>madongsuck@naver.com</td>
-					<td>2000.04.26</td>
-				</tr>
+				<c:choose>
+					<c:when test="${fn:length(list) eq 0 }">
+						<tr>
+							<td class="text-center" colspan="12"> There is no date!</td>
+						</tr>
+					</c:when>
+					<c:otherwise>
+						<c:forEach items="${list}" var="list" varStatus="status">
+							<tr class="search">
+								<td>
+									<input type="checkbox" name="check">
+								</td>
+								<td>${list.seq }</td>
+								<td>${list.dealerName }</td>
+								<td>${list.company }</td>
+								<td>${dealerNumber }</td>
+							</tr>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>
 			</table>
 			<!-- 페이지 목록 -->
 			<div class="row justify-content-center">
@@ -199,6 +204,7 @@
 	</form>
 	
 	<script type="text/javascript">
+	/* 전체체크 */
 	function selectAll(selectAll)  {
 		  const checkboxes 
 		       = document.getElementsByName('check');
@@ -207,43 +213,16 @@
 		    checkbox.checked = selectAll.checked;
 		  })
 		}
-	
-		const myModal = document.getElementById('myModal')
-		const myInput = document.getElementById('myInput')
-	
-		myModal.addEventListener('shown.bs.modal', () => {
-		  myInput.focus()
-		})
-		
-		
-		 function filter(){
-
-        var value, name, item, i;
-
-        value = document.getElementById("value").value.toUpperCase();
-        item = document.getElementsByClassName("search");
-
-        for(i=0;i<item.length;i++){
-          name = item[i].getElementsByClassName("sn");
-          if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
-            item[i].style.display = "flex";
-          }else{
-            item[i].style.display = "none";
-          }
-        }
-      }
 	</script>
-	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-</body>
-</html>
-	
-	<!-- end -->
-	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-</body>
-</html>
-	
+		
+	<script>
+		var goUrlList = "/dealer";
+		var form = $("form[name=form]");
+		
+		$("#searchBtn").on("click", function() {
+			form.attr("action", goUrlList).submit();
+		})
+	</script>
 	<!-- end -->
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

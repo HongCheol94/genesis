@@ -10,15 +10,14 @@ public class Member {
 	private String name;
 	private Integer gender;
 	private Date dob;
-	private Integer addressNumber;
-	private String address;
+	private Integer postNumber;
+	private String area;
 	private String detailedAddress;
 	private String number;
 	private String ea;
 	private String eAe;
 	private String email;
 	private Integer memberDefaultNy;
-	private Integer shDelNy;
 	private Integer delNy;
 	private String roadAddress;
 	private String numberAddress;
@@ -61,11 +60,11 @@ public class Member {
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
-	public Integer getAddressNumber() {
-		return addressNumber;
+	public Integer getPostNumber() {
+		return postNumber;
 	}
-	public void setAddressNumber(Integer addressNumber) {
-		this.addressNumber = addressNumber;
+	public void setPostNumber(Integer postNumber) {
+		this.postNumber = postNumber;
 	}
 	
 	public String getRoadAddress() {
@@ -80,11 +79,11 @@ public class Member {
 	public void setNumberAddress(String numberAddress) {
 		this.numberAddress = numberAddress;
 	}
-	public String getAddress() {
-		return address;
+	public String getArea() {
+		return area;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setArea(String area) {
+		this.area = area;
 	}
 	public String getDetailedAddress() {
 		return detailedAddress;
@@ -121,12 +120,6 @@ public class Member {
 	}
 	public void setMemberDefaultNy(Integer memberDefaultNy) {
 		this.memberDefaultNy = memberDefaultNy;
-	}
-	public Integer getShDelNy() {
-		return shDelNy;
-	}
-	public void setShDelNy(Integer shDelNy) {
-		this.shDelNy = shDelNy;
 	}
 	public Integer getDelNy() {
 		return delNy;

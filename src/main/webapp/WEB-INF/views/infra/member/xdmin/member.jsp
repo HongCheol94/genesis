@@ -1,32 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<jsp:useBean id="CodeServiceImpl" class="com.hongcheol.march.modules.code.CodeServiceImpl"/>
-                                         
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags"%>
+<jsp:useBean id="CodeServiceImpl"
+	class="com.hongcheol.march.modules.code.CodeServiceImpl" />
+
 <%-- <%@ page import = "com.hongcheol.march.modules.code.*" %> --%>
 
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap demo</title>
-<style type="text/css">
-</style>
-<link
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap demo</title>
+	<style type="text/css"></style>
+	<link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
 	crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 	<form method="post" name="form">
-	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>">
-   	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>">
-   	<input type="hidden" name="seq" value='<c:out value="${vo.seq }"></c:out>'>
+		<input type="hidden" name="thisPage"
+			value="<c:out value="${vo.thisPage }" default="1"/>"> <input
+			type="hidden" name="rowNumToShow"
+			value="<c:out value="${vo.rowNumToShow }"/>"> <input
+			type="hidden" name="seq" value='<c:out value="${vo.seq }"></c:out>'>
 		<!-- 상단목록 -->
 		<div class="container-md">
 			<nav class="navbar sticky-top">
@@ -134,8 +138,8 @@
 							</div>
 						</div>
 						<div>
-							<button type="submit"
-								class="btn btn-promary btn-sm border p-1 mt-3">
+							<button type="button"
+								class="btn btn-promary btn-sm border p-1 mt-3" id="searchBtn">
 								<i class="fa-solid fa-magnifying-glass"></i>
 							</button>
 						</div>
@@ -143,9 +147,12 @@
 				</div>
 			</div>
 			<!-- 회원리스트 -->
-			<c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('2')}"/>
-			<c:set var="listCodeAddress" value="${CodeServiceImpl.selectListCachedCode('3')}"/>
-			<c:out value="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + status.index) }"/>
+			<c:set var="listCodeGender"
+				value="${CodeServiceImpl.selectListCachedCode('2')}" />
+			<c:set var="listCodearea"
+				value="${CodeServiceImpl.selectListCachedCode('3')}" />
+			<c:out
+				value="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + status.index) }" />
 			<table class="table table-hover">
 				<tr class="table-warning sear">
 					<th><input type="checkbox" name="check" value="selectAll"
@@ -171,24 +178,22 @@
 								<td><input type="checkbox" name="check"></td>
 								<td>${list.seq }</td>
 								<td>${list.id }</td>
-								<td>
-									<a href="/member/memberRegForm?seq=<c:out value="${list.seq }"/>">${list.name}</a>
+								<td><a
+									href="/member/memberRegForm?seq=<c:out value="${list.seq }"/>">${list.name}</a>
 								</td>
-								<td>
-									<c:forEach items="${listCodeGender}" var="listgender" varStatus="statusGender">
+								<td><c:forEach items="${listCodeGender}" var="listgender"
+										varStatus="statusGender">
 										<c:if test="${list.gender eq listgender.seq}">
 											<c:out value="${listgender.codeGroupCode }" />
 										</c:if>
-									</c:forEach>
-								</td>
+									</c:forEach></td>
 								<td>${list.number}</td>
-								<td>
-									<c:forEach items="${listCodeaddress}" var="listaddress" varStatus="statusAddress">
-										<c:if test="${list.address eq listaddress.seq}">
-											<c:out value="${listaddress.codeGroupCode }" />
+								<td><c:forEach items="${listCodearea}" var="listarea"
+										varStatus="statusarea">
+										<c:if test="${list.area eq listarea.seq}">
+											<c:out value="${listarea.codeGroupCode }" />
 										</c:if>
-									</c:forEach>
-								</td>
+									</c:forEach></td>
 								<td>${list.email}</td>
 								<td>${list.dob}</td>
 							</tr>
@@ -271,7 +276,17 @@
         }
       }
 	</script>
-		<!-- paging start -->
+	<!-- paging start -->
+	
+	<script>
+		var goUrlList = "/member/member";
+		var from = $("form[name=form]");
+		
+		$("#searchBtn").on("click", function() {
+			form.attr("action", goUrlList).submit();
+		})
+	</script>
+	
 	<script type="text/javascript">
 		var codeList = "/member/member";
 		var form = $("form[name=form]");
@@ -281,8 +296,7 @@
 		}
 	</script>
 	<!-- paging end-->
-	<script src="https://kit.fontawesome.com/df50a53180.js"
-		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

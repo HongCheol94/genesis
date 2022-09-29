@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
     
 <!DOCTYPE html>
 <html lang="ko">
@@ -19,9 +19,6 @@
 	<form method="post" actoin="/main/main">
 		<div class="container-md">
 		<!-- 상단목록 -->
-		sessSeq: <c:out value="${sessSeq }"/><br>
-		sessName: <c:out value="${sessName }"/><br>
-		sessId: <c:out value="${sessId }"/><br>
 		<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
 		  <ol class="breadcrumb">
 		  	<li class="breadcrumb-item col-1"><a href="../maine/mainForm.html"><image src="../../resources/images/kblogo.png"></a></li>

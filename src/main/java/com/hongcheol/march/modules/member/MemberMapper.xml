@@ -27,7 +27,7 @@
 	    			, a.name
 	    			, a.gender
 	    			, a.number
-	    			, a.address
+	    			, a.area
 	    			, a.email
 	    			, a.dob
 	   			<include refid="selectCommon" />
@@ -69,24 +69,30 @@
 			,password
 			,name
 			,gender
-			,addressNumber
+			,postNumber
+			,roadAddress
+			,numberAddress
 			,detailedAddress
 			,shDelNy
 			,delNy
 			,email
 			,number
+			,dob
 		)
 		VALUES(
 			#{id}
 			,#{password}
 			,#{name}
 			,#{gender}
-			,#{addressNumber}
+			,#{postNumber}
+			,#{roadAddress}
+			,#{numberAddress}
 			,#{detailedAddress}
 			,0
 			,0
 			,#{email}
 			,#{number}
+			,#{dob}
 		)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()

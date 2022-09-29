@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -222,31 +222,7 @@
 		  })
 		};
 	
-		const myModal = document.getElementById('myModal')
-		const myInput = document.getElementById('myInput')
-	
-		  myModal.addEventListener('shown.bs.modal', () => { 
-			  myInput.focus()
-		}); 
-		 
-		
-		 function filter(){
-
-	        var value, name, item, i;
-	
-	        value = document.getElementById("value").value.toUpperCase();
-	        item = document.getElementsByClassName("search");
-	
-	        for(i=0;i<item.length;i++){
-	          name = item[i].getElementsByClassName("sn");
-	          if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
-	            item[i].style.display = "flex";
-	          }else{
-	            item[i].style.display = "none";
-	          }
-	        }
-      	};
-      	</script>
+   	</script>
       	<!-- paging start -->
       	<script type="text/javascript">
 			var codeGroupList = "/codeGroup/codeGroupList";
