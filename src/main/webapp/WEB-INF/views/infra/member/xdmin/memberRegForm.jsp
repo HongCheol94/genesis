@@ -92,7 +92,7 @@
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-4">
-					<div class="form-floating mb-3">
+					<div class="form-floating mb-2">
 					  <input type="text" class="form-control" id="id" name="id" value="<c:out value="${item.id }"/>" placeholder="ID" <c:if test="${not empty item.id }">readonly</c:if>>
 					  <div id="ifmmIdFeedback"></div>
 					  <label for="floatingInput">아이디</label>
@@ -100,21 +100,24 @@
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-md-4">
+				<div class="col-md-4 mt-1">
 					<div class="form-floating">
+					  <input type="hidden" id="passwordAllowedNy" name="passwordAllowedNy">
 					  <input type="password" class="form-control" id="password" name="password" value="<c:out value="${item.password }"/>" placeholder="Password" <c:if test="${not empty item.password }">readonly</c:if>>
-					  <div id="ifmmIdFeedback"></div>
+					  <div class="invalid-feedback" id="passwordFeedback"></div>
 					  <label for="floatingPassword">비밀번호</label>
 					</div>
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-md-4">
-					<div class="form-floating mb-1 mt-3" >
-					  <input type="password" class="form-control" id="passwordre" placeholder="Passwordre">
-					  <label for="floatingInput">비밀번호 확인</label>
-			   	   </div>
-			   </div>
+				<div class="col-md-4 mt-3">
+					<div class="form-floating">
+					  <input type="hidden" id="passwordAllowedNy" name="passwordAllowedNy">
+					  <input type="password" class="form-control" id="passwordCheck" name="passwordCheck" value="<c:out value="${item.password }"/>" placeholder="passwordCheck" <c:if test="${not empty item.password }">readonly</c:if>>
+					  <div class="invalid-feedback" id="passwordCheckFeedback"></div>
+					  <label for="floatingPassword">비밀번호 확인</label>
+					</div>
+				</div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-4 mt-3">
@@ -427,6 +430,64 @@
 	});
 	</script>
 	<!-- id 중복확인end -->
+	
+	<!-- 비밀번호 일치 확인 -->
+	<script type="text/javascript">
+// 패스워드 확인
+	$("#password").on("focusout", function(){
+		var pw = $("#password").val();
+		var num = pw.search(/[0-9]/g);
+		var eng = pw.search(/[a-z]/ig);
+		var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+		
+		if(pw.length < 10 || pw.length > 20){
+			document.getElementById("password").classList.add('is-invalid');
+			document.getElementById("passwordFeedback").classList.remove('valid-feedback');
+			document.getElementById("passwordFeedback").classList.add('invalid-feedback');
+			document.getElementById("passwordFeedback").innerText = "10자리 ~ 20자리 이내로 입력해주세요.";
+			document.getElementById("passwordAllowedNy").value = 0;
+			return false;
+		}else if(pw.search(/\s/) != -1){
+			document.getElementById("ifmmPassword").classList.add('is-invalid');
+			document.getElementById("passwordFeedback").classList.remove('valid-feedback');
+			document.getElementById("passwordFeedback").classList.add('invalid-feedback');
+			document.getElementById("passwordFeedback").innerText = "비밀번호는 공백 없이 입력해주세요.";
+			document.getElementById("passwordAllowedNy").value = 0;
+			return false;
+		}else if( (num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0) ){
+			document.getElementById("password").classList.add('is-invalid');
+			document.getElementById("passwordFeedback").classList.remove('valid-feedback');
+			document.getElementById("passwordFeedback").classList.add('invalid-feedback');
+			document.getElementById("passwordFeedback").innerText = "영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.";
+			document.getElementById("passwordAllowedNy").value = 0;
+			return false;
+		}else {
+			document.getElementById("password").classList.add('is-valid');
+			document.getElementById("password").classList.remove('is-invalid');
+			document.getElementById("passwordFeedback").classList.remove('invalid-feedback');
+			document.getElementById("passwordFeedback").classList.add('valid-feedback');
+			document.getElementById("passwordFeedback").innerText = "사용 가능 합니다.";
+			document.getElementById("passwordAllowedNy").value = 1;
+		}
+	});
+	$("#passwordCheck").on("focusout", function(){
+		if($('#password').val() != $('#passwordCheck').val()){
+			document.getElementById("passwordCheck").classList.add('is-invalid');
+			document.getElementById("passwordCheckFeedback").classList.remove('valid-feedback');
+			document.getElementById("passwordCheckFeedback").classList.add('invalid-feedback');
+			document.getElementById("passwordCheckFeedback").innerText = "비밀번호가 일치하지 않습니다.";
+			document.getElementById("ifmmPasswordChkAllowedNy").value = 0;
+        } else{
+        	document.getElementById("passwordCheck").classList.add('is-valid');
+			document.getElementById("passwordCheck").classList.remove('is-invalid');
+			document.getElementById("passwordCheckFeedback").classList.remove('invalid-feedback');
+			document.getElementById("passwordCheckFeedback").classList.add('valid-feedback');
+			document.getElementById("passwordCheckFeedback").innerText = "비밀번호가 일치합니다.";
+			document.getElementById("ifmmPasswordChkAllowedNy").value = 1;
+        }
+	});
+</script>
+	<!-- 비밀번호 일치 확인  end-->
 	<!-- gender DB -->
 	<script>
 		 // $_POST is way cooler than $_REQUEST
