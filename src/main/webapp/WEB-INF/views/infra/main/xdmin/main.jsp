@@ -18,6 +18,14 @@
 <body>
 	<form method="post" actoin="/main/main">
 		<div class="container-md">
+			<div class=text-end>
+				<a href="myPage">
+					<p class="fs-3">
+						 <!-- sessName: --><c:out value="${sessName }님"/>
+						 <%-- sessId:<c:out value="${sessId }"/> --%>
+					 </p>
+				 </a>
+			</div>
 		<!-- 상단목록 -->
 		<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
 		  <ol class="breadcrumb">
@@ -44,18 +52,18 @@
 		    	<a href="#" class="top-menu">
 		    	<p class="fs-3">안내</p></a></li>
 		    <li class="breadcrumb-item active col-1 mt-1" aria-current="page">
-		    	<a href="myPage" class="top-menu">
-		    		<i class="fa-solid fa-user"></i>
-		    			<p class="fs-4">김홍철님</p>
-		    			sessSeq: <c:out value="${sessSeq }"/><br>
-						sessName: <c:out value="${sessName }"/><br>
-						sessId: <c:out value="${sessId }"/><br>
+		    	<a href="member/memberRegForm" class="top-menu">
+		    		<p class="fs-1 mt-1">
+		    			<i class=" fas fa-light fa-user-plus"></i>
+	    			</p>
 				</a>
 			</li>
 		    <li class="breadcrumb-item active col-1 mt-1" aria-current="page">
-		    	<button type="button" id="btnLogout" style="background-color:white;">
-	    			<i class="fa-solid fa-right-from-bracket"></i>
-    			</button>
+		    	<p class="fs-4 mt-3">
+			    	<button type="button" id="btnLogout" style="background-color:white;">
+		    				<i class="fa-solid fa-right-from-bracket"></i>
+	    			</button>
+    			</p>
 			</li>
 		  </ol>
 		</nav>

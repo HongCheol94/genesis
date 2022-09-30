@@ -67,7 +67,7 @@
 			    	</a>
 				  </li>
 				  <li class="nav-item mt-4">
-				    <a class="nav-link top-menu" href="../Sell/userSellForm.html" style="color:red;">
+				    <a class="nav-link top-menu" href="userSell" style="color:red;">
 			    		<p class="fs-3"><i class="fa-solid fa-copyright"></i>팔때</p>
 		    		</a>
 				  </li>

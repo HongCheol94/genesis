@@ -500,12 +500,12 @@
 					 </div>
 				  </div>
 				  <div class="accordion-item">
-				    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-				      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+				    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+				      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
 				       <p class="fs-4">연식</p>
 				      </button>
 				    </h2>
-				    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+				    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
 				      <!-- 연식 내용 start -->
 				      <div class="accordion-body">
 					      <div class="col">
@@ -569,12 +569,12 @@
 				    </div>
 				  </div>
 				  <div class="accordion-item">
-				    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-				      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+				    <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+				      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
 				       <p class="fs-4">주행거리</p>
 				      </button>
 				    </h2>
-				    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+				    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
 				      <div class="accordion-body">
 				      	 <div class="col">
 						    <select class="form-select" id="validationCustom04" required>
@@ -632,12 +632,12 @@
 				    </div>
 				  </div>
 			  	  <div class="accordion-item">
-				    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-				      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+				    <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+				      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
 				       <p class="fs-4">가격</p>
 				      </button>
 				    </h2>
-				    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+				    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
 				      <!-- 가격 내용 start -->
 				      <div class="accordion-body">
 				      	 <div class="col">
@@ -716,12 +716,12 @@
 				    <!-- 가격 내용 end -->
 				  </div>
 			  	  <div class="accordion-item">
-				    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-				      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+				    <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+				      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
 				       <p class="fs-4">연료</p>
 				      </button>
 				    </h2>
-				    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+				    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
 				      <!-- 연료 내용 start -->
 				      <div class="accordion-body">
 				      		<div class="row">

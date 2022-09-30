@@ -34,6 +34,11 @@
 			<exclude-mapping path="/main" />
 			<exclude-mapping path="/dealer" />
 			<exclude-mapping path="/login" />
+			<exclude-mapping path="/member/member" />
+			<exclude-mapping path="/member/memberRegForm" />
+			<exclude-mapping path="/code/codeList" />
+			<exclude-mapping path="/codeGroup/codeGroupList" />
+			
 			<beans:bean id="checkLoginSessionInterception" class="com.hongcheol.march.common.interceptor.CheckLoginSessionInterception"/>
 		</interceptor>
 	</interceptors>	

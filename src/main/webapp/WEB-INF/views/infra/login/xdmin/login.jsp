@@ -104,8 +104,6 @@
                         <a href="../login/findIdPw.html">
                             <button type="button" class="btn btn-outline-warning col-3" style="margin-left: 70px; margin-right: 70px;">PW찾기</button>
                         </a>
-                    </div>
-                    <div>
                         <a href="/member/memberRegForm">
                             <button type="button" class="btn btn-outline-warning col-3">회원가입</button>
                         </a>

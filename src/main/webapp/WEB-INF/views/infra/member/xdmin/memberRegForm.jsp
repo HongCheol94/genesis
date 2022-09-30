@@ -14,19 +14,28 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+	<!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 	
 	<!-- start -->
 	<form method="post" action="" id="member" name="form">
-	<c:set var="listCodeEmail"
-				value="${CodeServiceImpl.selectListCachedCode('16')}" />
+	<c:set var="listCodeEmail" value="${CodeServiceImpl.selectListCachedCode('16')}" />
+	<c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('2')}" />
+	
 	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 	<input type="hidden" name="seq" value="<c:out value="${vo.seq}"/>">
+	
+	
+	<!-- 상단 나브바 -->
 		<nav class="navbar sticky-top">
-		    <a class="navbar-brand" href="" id="">
-		    	<image alt="" src="../images/kbcar.jpg" width="70px">
+		    <a class="navbar-brand" href="/main" id="">
+		    	<image alt="" src="../../resources/images/kbcar.jpg" width="70px">
 		    </a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 		      <span class="navbar-toggler-icon"></span>
@@ -56,7 +65,7 @@
 		      </div>
 		    </div>
 		</nav>
-		<nav class="navbar navbar-expand-lg bg-warning">
+		<nav class="navbar navbar-expand-lg" style="background-color:lightyellow">
 		    <a class="navbar-brand" href="#"></a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
@@ -70,6 +79,8 @@
 		      </div>
 		    </div>
 		</nav>
+		<!-- 상단 나브바 end -->
+		<!-- 회원가입 입력란 -->
 		<div class="container-fluid">
 			<div class="row justify-content-center">
 				<div class="col-md-2">
@@ -91,7 +102,8 @@
 			<div class="row justify-content-center">
 				<div class="col-md-4">
 					<div class="form-floating">
-					  <input type="password" class="form-control" id="" name="password" value="<c:out value="${item.password }"/>" placeholder="Password">
+					  <input type="password" class="form-control" id="password" name="password" value="<c:out value="${item.password }"/>" placeholder="Password" <c:if test="${not empty item.password }">readonly</c:if>>
+					  <div id="ifmmIdFeedback"></div>
 					  <label for="floatingPassword">비밀번호</label>
 					</div>
 				</div>
@@ -113,57 +125,34 @@
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-md-4">
-					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="" name="" value="<c:out value="${item.name }"/>" placeholder="생년월일">
-						<label for="floatingInput">생년월일(ex19940322)</label>
-					</div>
+				<div class="col-md-2 mt-3 offset">
+					<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="gender" id="gender">
+						<option value="0">성별</option>
+						<c:forEach items="${listCodeGender }" var="listGender" varStatus="statusGender">
+							<option value="${listGender.seq }" <c:if test="${item.gender eq listGender.seq }">selected</c:if>>${listGender.codeGroupCode }</option>
+						</c:forEach>
+					  </select>
 				</div>
-			</div>
-			<div class="row justify-content-center">
-			   <div class="col-1 md-4 mt-3">
-					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
- 					 <label class="form-check-label" for="inlineRadio1">남성</label>
-			   </div>
-			   <div class="col-1 md-4 mt-3">
-					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
- 					 <label class="form-check-label" for="inlineRadio1">여성</label>
-			   </div>
-			   <div class="col-1 md-4 mt-3">
-					<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
- 					 <label class="form-check-label" for="inlineRadio1">기타</label>
-			   </div>
+				<div class="col-md-2 form-floating mt-3 md-4">
+					<input type="date" class="form-control" id="datepicker" name="dob" value='<fmt:formatDate value="${item.dob}" pattern="yyyy-MM-dd" />' placeholder="생년월일">
+					<label for="floatingadress">생년월일</label>
+				</div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-2">
 					<div class="form-floating mt-3">
-						<input type="text" class="form-control" id="" name="email" value="<c:out value="${item.email }"/>"  placeholder="인증번호입력">
+						<input type="text" class="form-control" id="" name="emailId" value="<c:out value="${item.email }"/>"  placeholder="인증번호입력">
 						<label for="floatingEmail">이메일</label>
 					</div>
 				</div>
-			<div class="col-md-2 mt-3">
-				<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name = "email">
-				  <option selected>@Email</option>
-				  <c:forEach items="${listCodeEmail}" var="listEmail" varStatus="statusEmail">
-						<option value="${listEmail.seq}" <c:if test="${list.email eq listEmail.seq}">selected</c:if>>${listEmail.codeGroupCode}</option>
-				  </c:forEach>
-				</select>
-			</div>
-				<%-- <div class="col-md-2 mt-4 btn-group">
-					  <button type="button" class="btn btn-outline-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-					    @Email
-					  </button>
-					  <ul class="dropdown-menu">
-					  	<c:forEach items="${listCodeEmail}" var="listEmail" varStatus="statusEmail">
-					  		<li><a class="dropdown-item" href="#">
-					  		<c:if test = "${list.email eq listEmail.seq }">
-					  			<c:out value="${listEmail.codeGroupCode }" />
-				  			</c:if>
-				  			</a>
-				  			</li>
-					    </c:forEach>
-					  </ul>
-				</div> --%>
+				<div class="col-md-2 mt-3">
+					<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name = "email">
+					  <option selected>@Email</option>
+					  <c:forEach items="${listCodeEmail}" var="listEmail" varStatus="statusEmail">
+							<option value="${listEmail.seq}" <c:if test="${item.email eq listEmail.seq}">selected</c:if>>${listEmail.codeGroupCode}</option>
+					  </c:forEach>
+					</select>
+				</div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-4">
@@ -226,6 +215,8 @@
 					</a> 	
 				</div>
 			</div>
+			<!-- 회원가입 입력란 end -->
+			<!-- 하단 버튼 -->
 			<div class="row justify-content-center">
 				<div class="col-4 offset-4">
 	                   <a href="codeGroupList.html">
@@ -255,6 +246,8 @@
 					</div>
 				</div>
 			</div>
+			<!-- 하단 버튼 end -->
+			<!-- 바닥글 -->
 			<div class="foot">
 				<div class="row justify-content-center">
 					<div class="col text-center">
@@ -275,6 +268,7 @@
 			</div>
 		</div>
 	</form>
+	<!-- 바닥글 end-->
 		
 	
 	<!-- end -->
@@ -283,7 +277,6 @@
 	<!-- 우편번호 --> 
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a4110429842172d8d27ea6bb34d77957&libraries=services"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
 	<script>
 	    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 	    function sample4_execDaumPostcode() {
@@ -377,9 +370,7 @@
     	$("#btnSave").on("click", function(){
     		if (seq.val() == "0" || seq.val() == ""){
     	   		// insert
-    	   		alert('test');
     	   		form.attr("action", goUrlInst).submit();
-    	   		alert('test313');
     	   	} else {
     	   		// update
     	   		/* keyName.val(atob(keyName.val())); */
@@ -401,9 +392,7 @@
     	*/
     	
     	$("#btnModalDelete").on("click", function(){
-    		alert("test")
     		form.attr("action", goUrlDele).submit();
-    		alert("test")
     	}); 
       
    </script>
@@ -415,7 +404,7 @@
 				,cache: false
 				,type: "post"
 				/* ,dataType:"json" */
-				,url: "/member/checkId"
+				,url: "/member/checkId" /* checkId는 dto부터 만들어야한다 */
 				/* ,data : $("#formLogin").serialize() */
 				,data : { "id" : $("#id").val() }
 				,success: function(response) {
@@ -437,9 +426,9 @@
 			});
 	});
 	</script>
-	<script>
 	<!-- id 중복확인end -->
 	<!-- gender DB -->
+	<script>
 		 // $_POST is way cooler than $_REQUEST
 		  if (isset($_POST['gender']) && !empty($_POST['gender'])) {
 		
@@ -462,6 +451,27 @@
 		  }
 	</script>
 	<!-- gender DB end -->
+	
+		<!-- DatePicker start -->
+	 <script>
+		 $.datepicker.setDefaults({
+		        dateFormat: 'yy-mm-dd',
+		        prevText: '이전 달',
+		        nextText: '다음 달',
+		        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		        monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+		        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+		        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+		        showMonthAfterYear: true,
+		        yearSuffix: '년'
+		    });
+		 
+		  $( function() {
+		    $( "#datepicker").datepicker();
+		  } );
+	  </script>
+	  <!-- DatePicker end -->
 	
 	
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>

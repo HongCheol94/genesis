@@ -2,6 +2,8 @@ package com.hongcheol.march.modules.member;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Member {
 	
 	private String seq;
@@ -9,13 +11,13 @@ public class Member {
 	private String password;
 	private String name;
 	private Integer gender;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dob;
 	private Integer postNumber;
 	private String area;
 	private String detailedAddress;
 	private String number;
-	private String ea;
-	private String eAe;
+	private String emailId;
 	private String email;
 	private Integer memberDefaultNy;
 	private Integer delNy;
@@ -98,16 +100,10 @@ public class Member {
 		this.number = number;
 	}
 	public String getEa() {
-		return ea;
+		return emailId;
 	}
 	public void setEa(String ea) {
-		this.ea = ea;
-	}
-	public String geteAe() {
-		return eAe;
-	}
-	public void seteAe(String eAe) {
-		this.eAe = eAe;
+		this.emailId = emailId;
 	}
 	public String getEmail() {
 		return email;
