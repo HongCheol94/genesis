@@ -138,10 +138,10 @@
 								<td>
 									<input type="checkbox" name="check">
 								</td>
-								<td>${list.seq }</td>
-								<td>${list.dealerName }</td>
+								<td>${list.dSeq }</td>
+								<td>${list.dName }</td>
 								<td>${list.company }</td>
-								<td>${dealerNumber }</td>
+								<td>${dNumber }</td>
 							</tr>
 						</c:forEach>
 					</c:otherwise>

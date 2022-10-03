@@ -2,66 +2,61 @@ package com.hongcheol.march.modules.dealer;
 
 public class Dealer {
 	
-	private String seq;
-	private String id;
-	private String password;
-	private String dealerName;
-	private String gender;
-	private String grade;
-	private String dealerNumber;
+	private String dSeq;
+	private String dId;
+	private String dPassword;
+	private String dName;
+	private String dGender;
+	private String dGrade;
+	private String dNumber;
 	private String company;
-	private Integer delNy;
+	private Integer dDelNy;
+	private Integer dUseNy;
 	
 //	------------------------------
 	
 	
-	public String getId() {
-		return id;
+	public String getdSeq() {
+		return dSeq;
 	}
-	public Integer getDelNy() {
-		return delNy;
+	public void setdSeq(String dSeq) {
+		this.dSeq = dSeq;
 	}
-	public void setDelNy(Integer delNy) {
-		this.delNy = delNy;
+	public String getdId() {
+		return dId;
 	}
-	public String getSeq() {
-		return seq;
+	public void setdId(String dId) {
+		this.dId = dId;
 	}
-	public void setSeq(String seq) {
-		this.seq = seq;
+	public String getdPassword() {
+		return dPassword;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setdPassword(String dPassword) {
+		this.dPassword = dPassword;
 	}
-	public String getPassword() {
-		return password;
+	public String getdName() {
+		return dName;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setdName(String dName) {
+		this.dName = dName;
 	}
-	public String getDealerName() {
-		return dealerName;
+	public String getdGender() {
+		return dGender;
 	}
-	public void setDealerName(String dealerName) {
-		this.dealerName = dealerName;
+	public void setdGender(String dGender) {
+		this.dGender = dGender;
 	}
-	public String getGender() {
-		return gender;
+	public String getdGrade() {
+		return dGrade;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setdGrade(String dGrade) {
+		this.dGrade = dGrade;
 	}
-	public String getGrade() {
-		return grade;
+	public String getdNumber() {
+		return dNumber;
 	}
-	public void setGrade(String grade) {
-		this.grade = grade;
-	}
-	public String getDealerNumber() {
-		return dealerNumber;
-	}
-	public void setDealerNumber(String dealerNumber) {
-		this.dealerNumber = dealerNumber;
+	public void setdNumber(String dNumber) {
+		this.dNumber = dNumber;
 	}
 	public String getCompany() {
 		return company;
@@ -69,5 +64,22 @@ public class Dealer {
 	public void setCompany(String company) {
 		this.company = company;
 	}
+	public Integer getdDelNy() {
+		return dDelNy;
+	}
+	public void setdDelNy(Integer dDelNy) {
+		this.dDelNy = dDelNy;
+	}
+	public Integer getdUseNy() {
+		return dUseNy;
+	}
+	public void setdUseNy(Integer dUseNy) {
+		this.dUseNy = dUseNy;
+	}
+	
+
+	
+	
+	
 	
 }
