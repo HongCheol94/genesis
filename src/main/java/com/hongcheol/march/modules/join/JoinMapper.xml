@@ -44,7 +44,7 @@
 			,#{detailedAddress}
 			,#{shDelNy}
 			,#{delNy}
-			,#{eamil}
+			,#{email}
 			,#{number}
 			,#{dob}
 			,#{eamilId}

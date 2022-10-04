@@ -26,16 +26,16 @@ public class JoinController {
 	}
 	
 //	insert Member
-	@RequestMapping(value = "insertMember")
-	public String inserMember(Member dto) throws Exception{
-		int result = service.insertM(dto);
-		return "infra/join/xdmin/joinForm";
+	@RequestMapping(value = "memberInsert")
+	public String memberInsert(Member dto) throws Exception{
+		service.insertM(dto);
+		return "infra/join/xdmin/login";
 	}
 	
 //	inset Dealer
-	@RequestMapping(value = "insertDealer")
-	public String insertDealer(Dealer dto) throws Exception{
-		int result = service.insertD(dto);
+	@RequestMapping(value = "dealerInsert")
+	public String dealerInsert(Dealer dto) throws Exception{
+		service.insertD(dto);
 		return "infra/join/xdmin/joinForm";
 	}
 	

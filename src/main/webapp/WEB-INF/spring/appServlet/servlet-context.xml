@@ -36,6 +36,7 @@
 			<exclude-mapping path="/login" />
 			<exclude-mapping path="/joinForm" />
 			<exclude-mapping path="/joinMember" />
+			<exclude-mapping path="/memberInsert" />
 			<exclude-mapping path="/joinDealer" />
 			<exclude-mapping path="/member/member" />
 			<exclude-mapping path="/member/memberRegForm" />
