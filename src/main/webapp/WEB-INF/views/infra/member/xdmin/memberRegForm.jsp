@@ -357,6 +357,8 @@
 	</script>
 	<!-- 우편번호 end -->
 	<!-- 카카오맵API end -->
+	
+	<!-- insert -->
   	<script type="text/javascript">
         
     	var goUrlList = "/member/member"; 					/* #-> */
@@ -399,6 +401,7 @@
     	}); 
       
    </script>
+   <!-- insert end -->
    <!-- id 중복확인 -->
 	<script>
 	$("#id").on("focusout", function(){

@@ -15,6 +15,80 @@
 		FROM member a
 		left join dealer b
 		on a.seq = b.dSeq
-		
 	</select>
+	
+	<insert id="insertM">
+		INSERT INTO member(
+			id
+			,password
+			,name
+			,gender
+			,postNumber
+			,roadAddress
+			,numberAddress
+			,detailedAddress
+			,shDelNy
+			,delNy
+			,email
+			,number
+			,dob
+			,emailId
+		)
+		VALUE(
+			#{id}
+			,#{password}
+			,#{gender}
+			,#{postNumber}
+			,#{roadAddress}
+			,#{numberAddress}
+			,#{detailedAddress}
+			,#{shDelNy}
+			,#{delNy}
+			,#{eamil}
+			,#{number}
+			,#{dob}
+			,#{eamilId}
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<insert id="insertD">
+		INSERT INTO dealer (
+			dId
+			,dPassword
+			,dName
+			,dGender
+			,dNumber
+			,company
+			,dDelNy
+			,dUseNy
+			,dEmail
+			,dEmailId
+			,companyNum
+			,leader
+			,dRoadAddress
+			,dNumberAddress
+			,dDetailedAddress
+		)
+		VALUE (
+			#{pId}
+			#{dPassword}
+			#{dName}
+			#{dGender}
+			#{dNumber}
+			#{company}
+			#{dDelNy}
+			#{dUseNy}
+			#{dEmail}
+			#{dEmailId}
+			#{companyNum}
+			#{leader}
+			#{dRoadAddress}
+			#{dNumberAddress}
+			#{dDetailedAddress}
+		)
+		
+	</insert>
 </mapper>

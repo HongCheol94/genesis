@@ -33,6 +33,15 @@ public class Join {
 	private String company;
 	private Integer dDelNy;
 	private Integer dUseNy;
+	private String leader;
+	private String companyNum;
+	private Integer dPostNumber;
+	private String dRoadAddress;
+	private String dNumberAddress;
+	private String dDetailedAddress;
+	private String dEmail;
+	private String dEmailId;
+	
 	
 //	---------------------------
 	
@@ -192,6 +201,59 @@ public class Join {
 	public void setdUseNy(Integer dUseNy) {
 		this.dUseNy = dUseNy;
 	}
+	public String getLeader() {
+		return leader;
+	}
+	public void setLeader(String leader) {
+		this.leader = leader;
+	}
+	public String getCompanyNum() {
+		return companyNum;
+	}
+	public void setCompanyNum(String companyNum) {
+		this.companyNum = companyNum;
+	}
+	public Integer getdPostNumber() {
+		return dPostNumber;
+	}
+	public void setdPostNumber(Integer dPostNumber) {
+		this.dPostNumber = dPostNumber;
+	}
+	public String getdRoadAddress() {
+		return dRoadAddress;
+	}
+	public void setdRoadAddress(String dRoadAddress) {
+		this.dRoadAddress = dRoadAddress;
+	}
+	public String getdNumberAddress() {
+		return dNumberAddress;
+	}
+	public void setdNumberAddress(String dNumberAddress) {
+		this.dNumberAddress = dNumberAddress;
+	}
+	public String getdDetailedAddress() {
+		return dDetailedAddress;
+	}
+	public void setdDetailedAddress(String dDetailedAddress) {
+		this.dDetailedAddress = dDetailedAddress;
+	}
+	public String getdEamil() {
+		return dEmail;
+	}
+	public String getdEmail() {
+		return dEmail;
+	}
+	public void setdEmail(String dEmail) {
+		this.dEmail = dEmail;
+	}
+	public String getdEmailId() {
+		return dEmailId;
+	}
+	public void setdEmailId(String dEmailId) {
+		this.dEmailId = dEmailId;
+	}
+	
+	
 	
 	
 	

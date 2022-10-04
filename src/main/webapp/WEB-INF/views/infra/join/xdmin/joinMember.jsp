@@ -36,13 +36,6 @@
 			<div class="col">
 				<small style="margin: 1em; font-famlily: '나눔스퀘어라운드 Regular'; color: red;">필수정보</small>
 			</div>
-			<div class="col-3">
-				<select class="form-select" aria-label="Default select example">
-					<option selected>회원구분</option>
-					<option value="1">일반</option>
-					<option value="2">딜러</option>
-				</select>
-			</div>
 		</div>
 	  		<table class="table align-middle">
 		  <!-- 아이디 -->
@@ -51,7 +44,7 @@
 		  				<div class="row">
 		  					<div class="col">
 		  						<div class="form-floating mt-3">
-			  						<input type="text" name="id" id="\" value class="form-control" placeholder=아이디" 
+			  						<input type="text" name="id" id="" value class="form-control" placeholder=아이디" 
 			  						aria-label="First name" style="border-color:white;" autocomplete="off">
 			  						<label for="floatingPassword">아이디</label>
 		  						</div>
@@ -85,7 +78,7 @@
   				<!-- 비밀번호확인 -->
 	  				<td>
 	  					<div class="form-floating mt-3">
-	   			 			<input type="password" id="passwordCheck" value="" class="form-control pw" placeholder="비밀번호확인" aria-label="First name" style="border-color:white;" autocomplete="off">
+	   			 			<input type="password" id="" value="" class="form-control pw" placeholder="비밀번호확인" aria-label="First name" style="border-color:white;" autocomplete="off">
 	   			 			<label for="floatingPassword">비밀번호확인</label>
    			 			</div>
 		  			</td>
@@ -95,7 +88,7 @@
 				<tr>
 					<td>
 						<div class="form-floating mt-3">
-							<input type="text" class="form-control" name="eamil" placeholder="이메일 계정" style="border-color:white; display:inline-block;" autocomplete="off">
+							<input type="text" class="form-control" name="email" placeholder="이메일 계정" style="border-color:white; display:inline-block;" autocomplete="off">
 							<label for="floatingPassword">이메일</label>
 						</div>
 					</td>
@@ -149,12 +142,12 @@
 				  				</th>
 				  				<!--성별-->
 				  				<th>
-									<div class="col-md-3 mt-3 offset-3">
+									<div class="col-md-3 mt-3 ">
 										<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="gender" id="gender">
 											<option value="0">성별</option>
-											<c:forEach items="${listCodeGender }" var="listGender" varStatus="statusGender">
+											<!-- <c:forEach items="${listCodeGender }" var="listGender" varStatus="statusGender">
 												<option value="${listGender.seq }" <c:if test="${item.gender eq listGender.seq }">selected</c:if>>${listGender.codeGroupCode }</option>
-											</c:forEach>
+											</c:forEach> -->
 										  </select>
 									</div>
 				  				</th>
@@ -165,7 +158,7 @@
 					  				<div class="row">
 					  					<div class="col">
 					  						<div class="form-floating mt-3">
-						  						<input type="text" name="" id="" value class="form-control" placeholder="전화번호"
+						  						<input type="text" name="number" id="" value class="form-control" placeholder="전화번호"
 						  						aria-label="First name" style="border-color:white;" autocomplete="off">
 						  						<label for="floatingPassword">전화번호</label>
 					  						</div>
@@ -174,12 +167,12 @@
 				  				</th>
 				  				<!--통신사-->
 				  				<th>
-									<div class="col-md-3 mt-3 offset-3">
+									<div class="col-md-3 mt-3 ">
 										<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="" id="">
 											<option value="0">통신사</option>
-											<c:forEach items="${listCodeGender }" var="listGender" varStatus="statusGender">
+											<!-- <c:forEach items="${listCodeGender }" var="listGender" varStatus="statusGender">
 												<option value="${listGender.seq }" <c:if test="${item.gender eq listGender.seq }">selected</c:if>>${listGender.codeGroupCode }</option>
-											</c:forEach>
+											</c:forEach> -->
 										  </select>
 									</div>
 				  				</th>
@@ -199,7 +192,7 @@
 			  					</th>
 			  					<th>
 			  						<div class="row">
-			  							<div class="col-md-4 mt-3 offset-3">
+			  							<div class="col-md-4 mt-3 ">
 			  								<button type="button" class="btn btn-outline-warning btn-lg">우편번호</button>
 			  							</div>
 			  						</div>
@@ -220,7 +213,7 @@
 								</th>
 								<th>
 									<div class="row">
-										<div class="col-md-4 mt-3 offset-3">
+										<div class="col-md-4 mt-3 ">
 											<div class="form-floating mt-3">
 												<input type="text" name="numberAddress" id=""  value class="form-control" placeholder="지번주소"
 												aria-label="first name" style="border-color:white;" autocomplete="off">
@@ -244,7 +237,7 @@
 							  </th>
 							  <th>
 								  <div class="row">
-									  <div class="col-md-4 mt-3">
+									  <div class="col-md-4 mt-3 ">
 										  <div class="form-floating mt-3">
 											  <input type="text" name="" id=""  value class="form-control" placeholder="경도"
 											  aria-label="first name" style="border-color:white;" autocomplete="off">
@@ -260,159 +253,6 @@
 										<div class="col">
 											<div class="form-floating mt-3">
 												<input type="text" name="detailedAddress" id="" value class="form-control" placeholder="상세주소"
-												aria-label="First name" style="border-color:white;" autocomplete="off">
-												<label for="floatingPassword">상세주소</label>
-											</div>
-										</div>
-									</div>
-								</th>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 딜러 정보 입력 -->
-	<div class="container my-wrap" style="font-family: '나눔스퀘어라운드 Regular';">
-		<div class="accordion">
-			<h2 class="accordion-header" id="headingTwo">
-			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-	        	딜러 입력란
-	        </button>
-		</h2>
-		<div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-				<div class="accordion-body">
-					<div class="table" style="font-family: '나눔스퀘어라운드 Regular';">
-						<table class="table align-middle">
-							<!--회사명-->
-							<tr>
-								<th>
-									<div class="row">
-										<div class="col">
-											<div class="form-floating mt-3">
-												<input type="text" name="company" id="" value class="form-control" placeholder="회사명"
-												aria-label="first name" style="border-color:white;" autocomplete="off">
-												<label for="floatingPassword">회사명</label>
-											</div>
-										</div>
-								  </div>
-							  </th>
-							  <!-- 대표자명 -->
-							  <th>
-								  <div class="row">
-									<div class="col">
-										  <div class="form-floating mt-3">
-											  <input type="text" name="leader" id=""  value class="form-control" placeholder="대표자명"
-											  aria-label="first name" style="border-color:white;" autocomplete="off">
-											  <label for="floatingPassword">대표자명</label>
-										  </div>
-									  </div>
-								  </div>
-							  </th>
-			  				</tr>
-			  				<!-- 회사번호 -->
-							<tr>
-					  			<th>
-					  				<div class="row">
-					  					<div class="col">
-					  						<div class="form-floating mt-3">
-						  						<input type="text" name="dNumber" id="" value class="form-control" placeholder="회사번호"
-						  						aria-label="First name" style="border-color:white;" autocomplete="off">
-						  						<label for="floatingPassword">회사번호</label>
-					  						</div>
-					  					</div>
-					  				</div>
-				  				</th>
-				  				<!--사업자번호-->
-				  				<th>
-									<div class="row">
-										<div class="col">
-											<div class="form-floating mt-3">
-												<input type="text" name="companyNum" id="" value class="form-control" placeholder="사업자번호"
-												aria-label="First name" style="border-color:white;" autocomplete="off">
-												<label for="floatingPassword">사업자번호</label>
-											</div>
-										</div>
-									</div>
-				  				</th>
-			  				</tr>
-			  				<!-- 우편번호 -->
-			  				<tr>
-			  					<th>
-			  						<div class="row">
-			  							<div class="col">
-			  								<div class="form-floating mt-3">
-				  								<input type="text" name="dPostNumber" id="" value class="form-control" placeholder="우편번호"
-					  							aria-label="first name" style="border-color:white;" autocomplete="off">
-					  							<label for="floatingPassword">우편번호</label>
-				  							</div>
-			  							</div>
-			  						</div>
-			  					</th>
-			  					<th>
-			  						<div class="row">
-										<div class="col">
-			  								<button type="button" class="btn btn-outline-warning btn-lg">우편번호</button>
-			  							</div>
-			  						</div>
-			  					</th>
-			  				</tr>
-			  				<!-- 주소 -->
-			  				<tr>
-			  					<th>
-			  						<div class="row">
-			  							<div class="col">
-			  								<div class="form-floating mt-3">
-				  								<input type="text" name="dRoadAddress" id="" value class="form-control" placeholder="도로명주소"
-					  							aria-label="first name" style="border-color:white;" autocomplete="off">
-					  							<label for="floatingPassword">도로명주소</label>
-				  							</div>
-			  							</div>
-									</div>
-								</th>
-								<th>
-									<div class="row">
-										<div class="col">
-											<div class="form-floating mt-3">
-												<input type="text" name="dNumberAddress" id=""  value class="form-control" placeholder="지번주소"
-												aria-label="first name" style="border-color:white;" autocomplete="off">
-												<label for="floatingPassword">지번주소</label>
-											</div>
-										</div>
-									</div>
-								</th>
-		  					</tr>
-							  <tr>
-								<th>
-									<div class="row">
-										<div class="col">
-											<div class="form-floating mt-3">
-												<input type="text" name="" id="" value class="form-control" placeholder="위도"
-												aria-label="first name" style="border-color:white;" autocomplete="off">
-												<label for="floatingPassword">위도</label>
-											</div>
-										</div>
-								  </div>
-							  </th>
-							  <th>
-								  <div class="row">
-									<div class="col">
-										  <div class="form-floating mt-3">
-											  <input type="text" name="" id=""  value class="form-control" placeholder="경도"
-											  aria-label="first name" style="border-color:white;" autocomplete="off">
-											  <label for="floatingPassword">경도</label>
-										  </div>
-									  </div>
-								  </div>
-							  </th>
-							</tr>
-							<tr>
-								<th>
-									<div class="row">
-										<div class="col">
-											<div class="form-floating mt-3">
-												<input type="text" name="dDetailedAddress" id="" value class="form-control" placeholder="상세주소"
 												aria-label="First name" style="border-color:white;" autocomplete="off">
 												<label for="floatingPassword">상세주소</label>
 											</div>
@@ -458,6 +298,13 @@
 	
 				
 	<!-- end -->
+	
+	<!-- script -->
+	<script>
+		var goUrl = "/join/"
+	</script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

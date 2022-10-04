@@ -8,6 +8,9 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.hongcheol.march.modules.dealer.Dealer;
+import com.hongcheol.march.modules.member.Member;
+
 @Repository
 public class JoinDao {
 
@@ -19,5 +22,14 @@ public class JoinDao {
 	
 	public List<Join> selectList() {
 		return sqlSession.selectList(namespace + ".selectList","");
+	}
+//	맴버insert
+	public int insertM(Member dto) {
+		return sqlSession.insert(namespace + ".insertM", dto);
+	}
+	
+//	딜러insert
+	public int insertD(Dealer dto) {
+		return sqlSession.insert(namespace + "insertD", dto);
 	}
 }
