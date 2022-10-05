@@ -73,12 +73,13 @@
 			,roadAddress
 			,numberAddress
 			,detailedAddress
-			,shDelNy
 			,delNy
+			,useNy
 			,email
 			,number
 			,dob
 			,emailId
+			,telecom
 		)
 		VALUES(
 			#{id}
@@ -95,6 +96,7 @@
 			,#{number}
 			,#{dob}
 			,#{emailId}
+			,#{telecom}
 		)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()

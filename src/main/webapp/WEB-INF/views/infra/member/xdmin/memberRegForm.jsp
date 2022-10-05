@@ -516,7 +516,7 @@
 	</script>
 	<!-- gender DB end -->
 	
-		<!-- DatePicker start -->
+	<!-- DatePicker start -->
 	 <script>
 		 $.datepicker.setDefaults({
 		        dateFormat: 'yy-mm-dd',

@@ -27,34 +27,37 @@
 			,roadAddress
 			,numberAddress
 			,detailedAddress
-			,shDelNy
 			,delNy
+			,useNy
 			,email
 			,number
 			,dob
 			,emailId
+			,telecom
 		)
 		VALUE(
 			#{id}
 			,#{password}
+			,#{name}
 			,#{gender}
 			,#{postNumber}
 			,#{roadAddress}
 			,#{numberAddress}
 			,#{detailedAddress}
-			,#{shDelNy}
-			,#{delNy}
+			,0
+			,0
 			,#{email}
 			,#{number}
 			,#{dob}
-			,#{eamilId}
+			,#{emailId}
+			,#{telecom}
 		)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()
 		</selectKey>
 	</insert>
 	
-	<insert id="insertD">
+	<!-- <insert id="insertD">
 		INSERT INTO dealer (
 			dId
 			,dPassword
@@ -89,6 +92,9 @@
 			#{dNumberAddress}
 			#{dDetailedAddress}
 		)
-		
-	</insert>
+		<selectKey resultType="String" keyProperty="dSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert> -->
+	
 </mapper>

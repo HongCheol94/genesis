@@ -52,7 +52,7 @@
 		    	<a href="#" class="top-menu">
 		    	<p class="fs-3">안내</p></a></li>
 		    <li class="breadcrumb-item active col-1 mt-1" aria-current="page">
-		    	<a href="joinForm" class="top-menu">
+		    	<a href="joinMember" class="top-menu">
 		    		<p class="fs-1 mt-1">
 		    			<i class=" fas fa-light fa-user-plus"></i>
 	    			</p>

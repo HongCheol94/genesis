@@ -17,10 +17,12 @@ public class Join {
 	private String area;
 	private String detailedAddress;
 	private String number;
+	private Integer telecom;
 	private String emailId;
 	private String email;
 	private Integer memberDefaultNy;
 	private Integer delNy;
+	private Integer useNy;
 	private String roadAddress;
 	private String numberAddress;
 	private String dSeq;
@@ -41,6 +43,7 @@ public class Join {
 	private String dDetailedAddress;
 	private String dEmail;
 	private String dEmailId;
+	
 	
 	
 //	---------------------------
@@ -99,6 +102,12 @@ public class Join {
 	public void setDetailedAddress(String detailedAddress) {
 		this.detailedAddress = detailedAddress;
 	}
+	public Integer getTelecom() {
+		return telecom;
+	}
+	public void setTelecom(Integer telecom) {
+		this.telecom = telecom;
+	}
 	public String getNumber() {
 		return number;
 	}
@@ -128,6 +137,12 @@ public class Join {
 	}
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
+	}
+	public Integer getUseNy() {
+		return useNy;
+	}
+	public void setUseNy(Integer useNy) {
+		this.useNy = useNy;
 	}
 	public String getRoadAddress() {
 		return roadAddress;

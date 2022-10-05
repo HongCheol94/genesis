@@ -29,7 +29,7 @@ public class JoinController {
 	@RequestMapping(value = "memberInsert")
 	public String memberInsert(Member dto) throws Exception{
 		service.insertM(dto);
-		return "infra/join/xdmin/login";
+		return "infra/login/xdmin/login";
 	}
 	
 //	inset Dealer

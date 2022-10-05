@@ -11,6 +11,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
+	
+	<!-- datePicker -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<!-- datePicker end -->
 	<style>
 		
 		.foot {
@@ -27,6 +38,9 @@
 	
 	<!-- start -->
 	<form method="post" action="" id="" name="form">
+	<c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('2')}" />
+	<c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('1')}" />
+	<c:set var="listCodeEmail" value="${CodeServiceImpl.selectListCachedCode('16')}" />
 	
 		<div class="h-25"></div>
 		<div class="container">
@@ -95,23 +109,12 @@
 							</div>
 						</td>
 						<td>
-							<select id="mvmeEmailDomainCd" name="mvmeEmailDomainCd" class="form-select">
-								<option="">
-									이메일
-								</option>
-								<option="16"
-									>naver.com
-								</option>
-								<option="17"
-									>hanmail.net
-								</option>
-								<option="18"
-									>google.com
-								</option>
-								<option="19"
-									>직접입력
-								</option>
-							</select>						
+							<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name = "email">
+							  <option selected>@Email</option>
+							  <c:forEach items="${listCodeEmail}" var="listEmail" varStatus="statusEmail">
+									<option value="${listEmail.seq}" <c:if test="${item.email eq listEmail.seq}">selected</c:if>>${listEmail.codeGroupCode}</option>
+							  </c:forEach>
+							</select>			
 						</td>
 					</tr>
 				</table>
@@ -135,8 +138,8 @@
 						  				<div class="row">
 						  					<div class="col">
 						  						<div class="form-floating mt-3">
-							  						<input type="text" name="dob" id="" class="form-control" placeholder="생년월일"
-							  						aria-label="First name" style="border-color:white;" autocomplete="off">
+							  						<input type="text" name="dob" id="datepicker" class="form-control" placeholder="생년월일"
+							  						 style="border-color:white;">
 							  						<label for="floatingPassword">생년월일</label>
 						  						</div>
 						  					</div>
@@ -146,10 +149,10 @@
 					  				<th>
 										<div class="col-md-3 mt-3 ">
 											<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="gender" id="gender">
-												<option="0">성별</option>
-												<!-- <c:forEach items="${listCodeGender }" var="listGender" varStatus="statusGender">
-													<option="${listGender.seq }" <c:if test="${item.gender eq listGender.seq }">selected</c:if>>${listGender.codeGroupCode }</option>
-												</c:forEach> -->
+												<option value="0">성별</option>
+												<c:forEach items="${listCodeGender }" var="listGender" varStatus="statusGender">
+													<option value="${listGender.seq }" <c:if test="${item.gender eq listGender.seq }">selected</c:if>>${listGender.codeGroupCode }</option>
+												</c:forEach>
 											  </select>
 										</div>
 					  				</th>
@@ -170,11 +173,11 @@
 					  				<!--통신사-->
 					  				<th>
 										<div class="col-md-3 mt-3 ">
-											<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="" id="">
-												<option="0">통신사</option>
-												<!-- <c:forEach items="${listCodeGender }" var="listGender" varStatus="statusGender">
-													<option="${listGender.seq }" <c:if test="${item.gender eq listGender.seq }">selected</c:if>>${listGender.codeGroupCode }</option>
-												</c:forEach> -->
+											<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="telecom" id="telecom">
+												<option value="0">통신사</option>
+												<c:forEach items="${listCodetelecom }" var="listTelecom" varStatus="statusTelecom">
+													<option value="${listtelecom.seq }" <c:if test="${item.telecom eq listtelecom.seq }">selected</c:if>>${listtelecom.codeGroupCode }</option>
+												</c:forEach>
 											  </select>
 										</div>
 					  				</th>
@@ -185,7 +188,7 @@
 				  						<div class="row">
 				  							<div class="col">
 				  								<div class="form-floating mt-3">
-					  								<input type="text" name="postNumber" id="" class="form-control" placeholder="우편번호"
+					  								<input type="text" name="postNumber" id="sample4_postcode" class="form-control" placeholder="우편번호"
 						  							aria-label="first name" style="border-color:white;" autocomplete="off">
 						  							<label for="floatingPassword">우편번호</label>
 					  							</div>
@@ -195,7 +198,7 @@
 				  					<th>
 				  						<div class="row">
 				  							<div class="col-md-4 mt-3 ">
-				  								<button type="button" class="btn btn-outline-warning btn-lg">우편번호</button>
+				  								<button type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="btn btn-outline-warning btn-lg">우편번호</button>
 				  							</div>
 				  						</div>
 				  					</th>
@@ -206,7 +209,7 @@
 				  						<div class="row">
 				  							<div class="col">
 				  								<div class="form-floating mt-3">
-					  								<input type="text" name="roadAddress" id="" class="form-control" placeholder="도로명주소"
+					  								<input type="text" name="roadAddress" id="sample4_roadAddress" class="form-control" placeholder="도로명주소"
 						  							aria-label="first name" style="border-color:white;" autocomplete="off">
 						  							<label for="floatingPassword">도로명주소</label>
 					  							</div>
@@ -217,7 +220,7 @@
 										<div class="row">
 											<div class="col-md-4 mt-3 ">
 												<div class="form-floating mt-3">
-													<input type="text" name="numberAddress" id=""  class="form-control" placeholder="지번주소"
+													<input type="text" name="numberAddress" id="sample4_jibunAddress"  class="form-control" placeholder="지번주소"
 													aria-label="first name" style="border-color:white;" autocomplete="off">
 													<label for="floatingPassword">지번주소</label>
 												</div>
@@ -230,7 +233,7 @@
 										<div class="row">
 											<div class="col">
 												<div class="form-floating mt-3">
-													<input type="text" name="" id="" class="form-control" placeholder="위도"
+													<input type="text" name="lat" id="lng" class="form-control" placeholder="위도"
 													aria-label="first name" style="border-color:white;" autocomplete="off">
 													<label for="floatingPassword">위도</label>
 												</div>
@@ -241,7 +244,7 @@
 									  <div class="row">
 										  <div class="col-md-4 mt-3 ">
 											  <div class="form-floating mt-3">
-												  <input type="text" name="" id=""  class="form-control" placeholder="경도"
+												  <input type="text" name="lat" id="lat"  class="form-control" placeholder="경도"
 												  aria-label="first name" style="border-color:white;" autocomplete="off">
 												  <label for="floatingPassword">경도</label>
 											  </div>
@@ -298,11 +301,93 @@
 				
 	<!-- end -->
 	
-	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	
 	<!-- script -->
+	
+	<!-- 카카오맵API -->
+	<!-- 우편번호 --> 
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a4110429842172d8d27ea6bb34d77957&libraries=services"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
+	    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+	    function sample4_execDaumPostcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+	
+	                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var roadAddr = data.roadAddress; // 도로명 주소 변수
+	                var extraRoadAddr = ''; // 참고 항목 변수
+	
+	                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+	                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+	                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                    extraRoadAddr += data.bname;
+	                }
+	                // 건물명이 있고, 공동주택일 경우 추가한다.
+	                if(data.buildingName !== '' && data.apartment === 'Y'){
+	                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                }
+	                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+	                if(extraRoadAddr !== ''){
+	                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+	                }
+	
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('sample4_postcode').value = data.zonecode;
+	                document.getElementById("sample4_roadAddress").value = roadAddr;
+	                document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+	                
+	          /*       // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+	                if(roadAddr !== ''){
+	                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+	                } else {
+	                    document.getElementById("sample4_extraAddress").value = '';
+	                }
+	
+	                var guideTextBox = document.getElementById("guide");
+	                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+	                if(data.autoRoadAddress) {
+	                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+	                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+	                    guideTextBox.style.display = 'block';
+	
+	                } else if(data.autoJibunAddress) {
+	                    var expJibunAddr = data.autoJibunAddress;
+	                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+	                    guideTextBox.style.display = 'block';
+	                } else {
+	                    guideTextBox.innerHTML = '';
+	                    guideTextBox.style.display = 'none';
+	                } */
+			<!-- 위도/경도 -->
+			/* lat and lng from address s */
+				
+			// 주소-좌표 변환 객체를 생성
+			var geocoder = new daum.maps.services.Geocoder();
+			
+			// 주소로 좌표를 검색
+			geocoder.addressSearch(roadAddr, function(result, status) {
+			 
+				// 정상적으로 검색이 완료됐으면,
+				if (status == daum.maps.services.Status.OK) {
+					
+					document.getElementById("lng").value=result[0].y;
+					document.getElementById("lat").value=result[0].x;
+				}
+			});
+			/* lat and lng from address e */
+		<!-- 위도/경도 end -->
+	            }
+	        }).open();
+	    }
+	</script>
+	<!-- 우편번호 end -->
+	<!-- 카카오맵API end -->
+	
+	
+	<!-- insert -->
 	<script>
 		var goUrlInsert = "/memberInsert";
 		
@@ -313,5 +398,27 @@
 			form.attr("action",goUrlInsert).submit();
 		})
 	</script>
+	<!-- insert end-->
+	
+	<!-- DatePicker start -->
+	 <script>
+		 $.datepicker.setDefaults({
+		        dateFormat: 'yy-mm-dd',
+		        prevText: '이전 달',
+		        nextText: '다음 달',
+		        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		        monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+		        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+		        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+		        showMonthAfterYear: true,
+		        yearSuffix: '년'
+		    });
+		 
+		  $( function() {
+		    $( "#datepicker").datepicker();
+		  } );
+	  </script>
+	  <!-- DatePicker end -->
 </body>
 </html>

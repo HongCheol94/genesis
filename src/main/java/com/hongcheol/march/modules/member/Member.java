@@ -21,8 +21,10 @@ public class Member {
 	private String email;
 	private Integer memberDefaultNy;
 	private Integer delNy;
+	private Integer useNy;
 	private String roadAddress;
 	private String numberAddress;
+	private Integer telecom;
 	
 //	---------------------------------
 	
@@ -123,6 +125,26 @@ public class Member {
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
 	}
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	public Integer getUseNy() {
+		return useNy;
+	}
+	public void setUseNy(Integer useNy) {
+		this.useNy = useNy;
+	}
+	public Integer getTelecom() {
+		return telecom;
+	}
+	public void setTelecom(Integer telecom) {
+		this.telecom = telecom;
+	}
+	
+	
 	
 	
 	
