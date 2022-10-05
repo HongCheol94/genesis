@@ -52,7 +52,8 @@ public class MemberServiceImpl implements MemberService {
 		return dao.selectOneCount(vo);
 	}
 	
-//	@Override
+//	id중복체크
+	@Override
 	public int idCheck(Member dto) throws Exception {
 		return dao.idCheck(dto);
 	}

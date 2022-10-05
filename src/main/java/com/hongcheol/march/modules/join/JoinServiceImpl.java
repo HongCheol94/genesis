@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hongcheol.march.modules.dealer.Dealer;
 import com.hongcheol.march.modules.member.Member;
 
 @Service
@@ -25,9 +24,9 @@ public class JoinServiceImpl implements JoinService {
 		return dao.insertM(dto);
 	}
 
-//	딜러insert
+//	id중복확인
 	@Override
-	public int insertD(Dealer dto) throws Exception{
-		return dao.insertD(dto);
+	public int checkId(Member dto) throws Exception{
+		return dao.checkId(dto);
 	}
 }

@@ -4,6 +4,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+<jsp:useBean id="CodeServiceImpl" class="com.hongcheol.march.modules.code.CodeServiceImpl" />
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,6 +17,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	
 	<!-- datePicker -->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -37,9 +40,11 @@
 <body>
 	
 	<!-- start -->
+	
 	<form method="post" action="" id="" name="form">
+	
+	<c:set var="listCodetelecom" value="${CodeServiceImpl.selectListCachedCode('1')}" />
 	<c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('2')}" />
-	<c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('1')}" />
 	<c:set var="listCodeEmail" value="${CodeServiceImpl.selectListCachedCode('16')}" />
 	
 		<div class="h-25"></div>
@@ -60,8 +65,9 @@
 			  				<div class="row">
 			  					<div class="col">
 			  						<div class="form-floating mt-3">
-				  						<input type="text" name="id" id="" class="form-control" placeholder=아이디" 
+				  						<input type="text" name="id" id="id" class="form-control" placeholder=아이디"  value=""
 				  						aria-label="First name" style="border-color:white;" autocomplete="off">
+				  						<div id="idFeedback"></div>
 				  						<label for="floatingPassword">아이디</label>
 			  						</div>
 			  					</div>
@@ -83,10 +89,10 @@
 	  				<!-- 비밀번호 -->
 	  				<tr>
 	  					<td style="text-align: center;">
-	  						<div class="form-floating mt-3">			 			 	
-					   			<input type="password" name="password" id=""="" class="form-control pw" placeholder="비밀번호" style="border-color:white;" autocomplete="off">
-								<span id="alert-success" style="display: none; color: blue; text-align: left;">비밀번호가 일치합니다.</span>
-								<span id="alert-danger" style="display: none; color: red; text-align: left;">비밀번호가 일치하지 않습니다.</span>		  			
+	  						<div class="form-floating mt-3">
+	  							<input type="hidden" id="passwordAllowedNy" name="passwordAllowedNy">			 			 	
+					   			<input type="password" name="password" id="password" class="form-control pw" placeholder="비밀번호" style="border-color:white;" autocomplete="off">
+								<div class="invalid-feedback" id="passwordFeedback"></div>
 								<label for="floatingPassword">비밀번호</label>
 							</div>
 		  				</td>
@@ -94,7 +100,9 @@
 	  				<!-- 비밀번호확인 -->
 		  				<td>
 		  					<div class="form-floating mt-3">
-		   			 			<input type="password" id=""="" class="form-control pw" placeholder="비밀번호확인" aria-label="First name" style="border-color:white;" autocomplete="off">
+		   			 			<input type="password" id="passwordCheck" class="form-control pw" placeholder="비밀번호확인" aria-label="First name" style="border-color:white;" autocomplete="off">
+		   			 			<input type="hidden" id="passwordAllowedNy" name="passwordAllowedNy">
+		   			 			 <div class="invalid-feedback" id="passwordCheckFeedback"></div>
 		   			 			<label for="floatingPassword">비밀번호확인</label>
 	   			 			</div>
 			  			</td>
@@ -150,7 +158,7 @@
 										<div class="col-md-3 mt-3 ">
 											<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="gender" id="gender">
 												<option value="0">성별</option>
-												<c:forEach items="${listCodeGender }" var="listGender" varStatus="statusGender">
+												<c:forEach items="${listCodeGender}" var="listGender" varStatus="statusGender">
 													<option value="${listGender.seq }" <c:if test="${item.gender eq listGender.seq }">selected</c:if>>${listGender.codeGroupCode }</option>
 												</c:forEach>
 											  </select>
@@ -176,7 +184,7 @@
 											<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="telecom" id="telecom">
 												<option value="0">통신사</option>
 												<c:forEach items="${listCodetelecom }" var="listTelecom" varStatus="statusTelecom">
-													<option value="${listtelecom.seq }" <c:if test="${item.telecom eq listtelecom.seq }">selected</c:if>>${listtelecom.codeGroupCode }</option>
+													<option value="${listTelecom.seq }" <c:if test="${item.telecom eq listTelecom.seq }">selected</c:if>>${listTelecom.codeGroupCode }</option>
 												</c:forEach>
 											  </select>
 										</div>
@@ -386,6 +394,97 @@
 	<!-- 우편번호 end -->
 	<!-- 카카오맵API end -->
 	
+	<!-- id 중복확인 -->
+	<script>
+	$("#id").on("focusout", function(){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "checkId" 							/* checkId는 dto부터 만들어야한다 */
+				/* ,data : $("#formLogin").serialize() */
+				,data : { "id" : $("#id").val() }
+				,success: function(response) {
+					if(response.rt == "success") {
+						document.getElementById("idFeedback").classList.add('is-valid');
+						document.getElementById("idFeedback").classList.remove('invalid-feedback');
+						document.getElementById("idFeedback").classList.add('valid-feedback');
+						 $("#idFeedback").text("사용가능");
+					} else {
+						document.getElementById("idFeedback").classList.add('is-invalid');
+						document.getElementById("idFeedback").classList.remove('valid-feedback');
+						document.getElementById("idFeedback").classList.add('invalid-feedback');
+						$("#idFeedback").text("사용 불가능 합니다");
+					}
+				}
+				
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+	});
+	</script>
+	<!-- id 중복확인end -->
+	
+	<!-- 비밀번호 일치 확인 -->
+	<script type="text/javascript">
+		$("#password").on("focusout", function(){
+			var pw = $("#password").val();
+			var num = pw.search(/[0-9]/g);
+			var eng = pw.search(/[a-z]/ig);
+			var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+			
+			if(pw.length < 10 || pw.length > 20){
+				document.getElementById("password").classList.add('is-invalid');
+				document.getElementById("passwordFeedback").classList.remove('valid-feedback');
+				document.getElementById("passwordFeedback").classList.add('invalid-feedback');
+				document.getElementById("passwordFeedback").innerText = "10자리 ~ 20자리 이내로 입력해주세요.";
+				document.getElementById("passwordAllowedNy").value = 0;
+				return false;
+			}else if(pw.search(/\s/) != -1){
+				document.getElementById("ifmmPassword").classList.add('is-invalid');
+				document.getElementById("passwordFeedback").classList.remove('valid-feedback');
+				document.getElementById("passwordFeedback").classList.add('invalid-feedback');
+				document.getElementById("passwordFeedback").innerText = "비밀번호는 공백 없이 입력해주세요.";
+				document.getElementById("passwordAllowedNy").value = 0;
+				return false;
+			}else if( (num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0) ){
+				document.getElementById("password").classList.add('is-invalid');
+				document.getElementById("passwordFeedback").classList.remove('valid-feedback');
+				document.getElementById("passwordFeedback").classList.add('invalid-feedback');
+				document.getElementById("passwordFeedback").innerText = "영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.";
+				document.getElementById("passwordAllowedNy").value = 0;
+				return false;
+			}else {
+				document.getElementById("password").classList.add('is-valid');
+				document.getElementById("password").classList.remove('is-invalid');
+				document.getElementById("passwordFeedback").classList.remove('invalid-feedback');
+				document.getElementById("passwordFeedback").classList.add('valid-feedback');
+				document.getElementById("passwordFeedback").innerText = "사용 가능 합니다.";
+				document.getElementById("passwordAllowedNy").value = 1;
+			}
+		});
+		$("#passwordCheck").on("focusout", function(){
+			if($('#password').val() != $('#passwordCheck').val()){
+				document.getElementById("passwordCheck").classList.add('is-invalid');
+				document.getElementById("passwordCheckFeedback").classList.remove('valid-feedback');
+				document.getElementById("passwordCheckFeedback").classList.add('invalid-feedback');
+				document.getElementById("passwordCheckFeedback").innerText = "비밀번호가 일치하지 않습니다.";
+				document.getElementById("ifmmPasswordChkAllowedNy").value = 0;
+	        } else{
+	        	document.getElementById("passwordCheck").classList.add('is-valid');
+				document.getElementById("passwordCheck").classList.remove('is-invalid');
+				document.getElementById("passwordCheckFeedback").classList.remove('invalid-feedback');
+				document.getElementById("passwordCheckFeedback").classList.add('valid-feedback');
+				document.getElementById("passwordCheckFeedback").innerText = "비밀번호가 일치합니다.";
+				document.getElementById("ifmmPasswordChkAllowedNy").value = 1;
+	        }
+		});
+	</script>
+	
+	
+	
 	
 	<!-- insert -->
 	<script>
@@ -394,7 +493,6 @@
 		var form =$("form[name=form]");
 		
 		$("#btnSave").on("click", function() {
-			/* alert("test"); */
 			form.attr("action",goUrlInsert).submit();
 		})
 	</script>
@@ -420,5 +518,6 @@
 		  } );
 	  </script>
 	  <!-- DatePicker end -->
+	  
 </body>
 </html>

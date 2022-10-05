@@ -28,8 +28,8 @@ public class JoinDao {
 		return sqlSession.insert(namespace + ".insertM", dto);
 	}
 	
-//	딜러insert
-	public int insertD(Dealer dto) {
-		return sqlSession.insert(namespace + "insertD", dto);
+//	id중복확인
+	public int checkId(Member dto) {
+		return sqlSession.selectOne(namespace + ".checkId",dto);
 	}
 }

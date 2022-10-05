@@ -97,4 +97,13 @@
 		</selectKey>
 	</insert> -->
 	
+	<select id="checkId" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			member
+		WHERE
+			id= #{id}
+	</select>
+	
 </mapper>

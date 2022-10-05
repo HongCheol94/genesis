@@ -3,8 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
-<jsp:useBean id="CodeServiceImpl"
-	class="com.hongcheol.march.modules.code.CodeServiceImpl" />
+<jsp:useBean id="CodeServiceImpl" class="com.hongcheol.march.modules.code.CodeServiceImpl" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -436,60 +435,59 @@
 	
 	<!-- 비밀번호 일치 확인 -->
 	<script type="text/javascript">
-// 패스워드 확인
-	$("#password").on("focusout", function(){
-		var pw = $("#password").val();
-		var num = pw.search(/[0-9]/g);
-		var eng = pw.search(/[a-z]/ig);
-		var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
-		
-		if(pw.length < 10 || pw.length > 20){
-			document.getElementById("password").classList.add('is-invalid');
-			document.getElementById("passwordFeedback").classList.remove('valid-feedback');
-			document.getElementById("passwordFeedback").classList.add('invalid-feedback');
-			document.getElementById("passwordFeedback").innerText = "10자리 ~ 20자리 이내로 입력해주세요.";
-			document.getElementById("passwordAllowedNy").value = 0;
-			return false;
-		}else if(pw.search(/\s/) != -1){
-			document.getElementById("ifmmPassword").classList.add('is-invalid');
-			document.getElementById("passwordFeedback").classList.remove('valid-feedback');
-			document.getElementById("passwordFeedback").classList.add('invalid-feedback');
-			document.getElementById("passwordFeedback").innerText = "비밀번호는 공백 없이 입력해주세요.";
-			document.getElementById("passwordAllowedNy").value = 0;
-			return false;
-		}else if( (num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0) ){
-			document.getElementById("password").classList.add('is-invalid');
-			document.getElementById("passwordFeedback").classList.remove('valid-feedback');
-			document.getElementById("passwordFeedback").classList.add('invalid-feedback');
-			document.getElementById("passwordFeedback").innerText = "영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.";
-			document.getElementById("passwordAllowedNy").value = 0;
-			return false;
-		}else {
-			document.getElementById("password").classList.add('is-valid');
-			document.getElementById("password").classList.remove('is-invalid');
-			document.getElementById("passwordFeedback").classList.remove('invalid-feedback');
-			document.getElementById("passwordFeedback").classList.add('valid-feedback');
-			document.getElementById("passwordFeedback").innerText = "사용 가능 합니다.";
-			document.getElementById("passwordAllowedNy").value = 1;
-		}
-	});
-	$("#passwordCheck").on("focusout", function(){
-		if($('#password').val() != $('#passwordCheck').val()){
-			document.getElementById("passwordCheck").classList.add('is-invalid');
-			document.getElementById("passwordCheckFeedback").classList.remove('valid-feedback');
-			document.getElementById("passwordCheckFeedback").classList.add('invalid-feedback');
-			document.getElementById("passwordCheckFeedback").innerText = "비밀번호가 일치하지 않습니다.";
-			document.getElementById("ifmmPasswordChkAllowedNy").value = 0;
-        } else{
-        	document.getElementById("passwordCheck").classList.add('is-valid');
-			document.getElementById("passwordCheck").classList.remove('is-invalid');
-			document.getElementById("passwordCheckFeedback").classList.remove('invalid-feedback');
-			document.getElementById("passwordCheckFeedback").classList.add('valid-feedback');
-			document.getElementById("passwordCheckFeedback").innerText = "비밀번호가 일치합니다.";
-			document.getElementById("ifmmPasswordChkAllowedNy").value = 1;
-        }
-	});
-</script>
+		$("#password").on("focusout", function(){
+			var pw = $("#password").val();
+			var num = pw.search(/[0-9]/g);
+			var eng = pw.search(/[a-z]/ig);
+			var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+			
+			if(pw.length < 10 || pw.length > 20){
+				document.getElementById("password").classList.add('is-invalid');
+				document.getElementById("passwordFeedback").classList.remove('valid-feedback');
+				document.getElementById("passwordFeedback").classList.add('invalid-feedback');
+				document.getElementById("passwordFeedback").innerText = "10자리 ~ 20자리 이내로 입력해주세요.";
+				document.getElementById("passwordAllowedNy").value = 0;
+				return false;
+			}else if(pw.search(/\s/) != -1){
+				document.getElementById("ifmmPassword").classList.add('is-invalid');
+				document.getElementById("passwordFeedback").classList.remove('valid-feedback');
+				document.getElementById("passwordFeedback").classList.add('invalid-feedback');
+				document.getElementById("passwordFeedback").innerText = "비밀번호는 공백 없이 입력해주세요.";
+				document.getElementById("passwordAllowedNy").value = 0;
+				return false;
+			}else if( (num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0) ){
+				document.getElementById("password").classList.add('is-invalid');
+				document.getElementById("passwordFeedback").classList.remove('valid-feedback');
+				document.getElementById("passwordFeedback").classList.add('invalid-feedback');
+				document.getElementById("passwordFeedback").innerText = "영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.";
+				document.getElementById("passwordAllowedNy").value = 0;
+				return false;
+			}else {
+				document.getElementById("password").classList.add('is-valid');
+				document.getElementById("password").classList.remove('is-invalid');
+				document.getElementById("passwordFeedback").classList.remove('invalid-feedback');
+				document.getElementById("passwordFeedback").classList.add('valid-feedback');
+				document.getElementById("passwordFeedback").innerText = "사용 가능 합니다.";
+				document.getElementById("passwordAllowedNy").value = 1;
+			}
+		});
+		$("#passwordCheck").on("focusout", function(){
+			if($('#password').val() != $('#passwordCheck').val()){
+				document.getElementById("passwordCheck").classList.add('is-invalid');
+				document.getElementById("passwordCheckFeedback").classList.remove('valid-feedback');
+				document.getElementById("passwordCheckFeedback").classList.add('invalid-feedback');
+				document.getElementById("passwordCheckFeedback").innerText = "비밀번호가 일치하지 않습니다.";
+				document.getElementById("ifmmPasswordChkAllowedNy").value = 0;
+	        } else{
+	        	document.getElementById("passwordCheck").classList.add('is-valid');
+				document.getElementById("passwordCheck").classList.remove('is-invalid');
+				document.getElementById("passwordCheckFeedback").classList.remove('invalid-feedback');
+				document.getElementById("passwordCheckFeedback").classList.add('valid-feedback');
+				document.getElementById("passwordCheckFeedback").innerText = "비밀번호가 일치합니다.";
+				document.getElementById("ifmmPasswordChkAllowedNy").value = 1;
+	        }
+		});
+	</script>
 	<!-- 비밀번호 일치 확인  end-->
 	<!-- gender DB -->
 	<script>

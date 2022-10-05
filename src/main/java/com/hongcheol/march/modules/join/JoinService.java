@@ -9,5 +9,5 @@ public interface JoinService {
 
 	public List<Join> selectList() throws Exception; 
 	public int insertM(Member dto) throws Exception;
-	public int insertD(Dealer dto) throws Exception;
+	public int checkId(Member dto) throws Exception;
 }
