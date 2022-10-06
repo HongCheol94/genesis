@@ -16,6 +16,11 @@ public class MainController {
 	
 	@Autowired
 	MainServiceImpl service;
+	
+	@RequestMapping(value = "choiceList")
+	public String choiceList() throws Exception{
+		return "infra/main/xdmin/choiceList";
+	}
 
 	
 	  @RequestMapping(value = "main") 

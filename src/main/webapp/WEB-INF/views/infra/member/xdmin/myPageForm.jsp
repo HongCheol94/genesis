@@ -3,6 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<jsp:useBean id="CodeServiceImpl" class="com.hongcheol.march.modules.code.CodeServiceImpl" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +15,6 @@
 	<link href="../../resources/css/memberModForm.css" rel="stylesheet">
 </head>
 <body>
-	
 	<!-- start -->
 	<!-- 좌측메뉴 -->
 	<div id="sidebar">
@@ -188,11 +189,10 @@
 							</div>
 							<div class="col">
 								<select class="form-select" aria-label="Default select example">
-									<option>::직접입력::</option>
-									<option>naver.com</option>
-									<option>daum.com</option>
-									<option>nate.com</option>
-									<option>gmail.com</option>
+									<option selected>@Email</option>
+							 		<c:forEach items="${listCodeEmail}" var="listEmail" varStatus="statusEmail">
+										<option value="${listEmail.seq}" <c:if test="${item.email eq listEmail.seq}">selected</c:if>>${listEmail.codeGroupCode}</option>
+									</c:forEach>
 								</select>
 							</div>
 						</div>
