@@ -32,4 +32,8 @@ public class JoinDao {
 	public int checkId(Member dto) {
 		return sqlSession.selectOne(namespace + ".checkId",dto);
 	}
+//	login
+	public Member selectLogin(Member dto) {
+		return sqlSession.selectOne(namespace + ".selectLogin", dto);
+	}
 }

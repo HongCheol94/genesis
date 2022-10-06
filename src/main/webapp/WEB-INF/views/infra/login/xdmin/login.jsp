@@ -148,7 +148,7 @@
 	<!-- 로그인 -->
 	<script >
 	
-	$("#btnLogin").on("click", function(){
+ 	$("#btnLogin").on("click", function(){
 		
 		$.ajax({
 			async: true 
@@ -169,7 +169,8 @@
 				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
 			}
 		});
-	});
+	});  
+ 	
 	</script >
 	<!-- 로그인 end -->
 	

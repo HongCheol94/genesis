@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.hongcheol.march.modules.buy.Buy;
 import com.hongcheol.march.modules.buy.BuyServiceImpl;
 
 @Controller
@@ -15,12 +15,18 @@ import com.hongcheol.march.modules.buy.BuyServiceImpl;
 public class MainController {
 	
 	@Autowired
-	BuyServiceImpl service;
+	MainServiceImpl service;
 
-	@RequestMapping(value = "main")
-	public String main(Model model) {
-		return "infra/main/xdmin/main";
-	}
+	
+	  @RequestMapping(value = "main") 
+	  public String main(@ModelAttribute("vo") MainVo vo, Model model) throws Exception {
+		  List<Main> list = service.selectList(vo);
+		  model.addAttribute("list", list);
+		  return "infra/main/xdmin/main";
+	  }
+	  
+
+	 
 	
 /// search	
 //	@RequestMapping(value = "main")

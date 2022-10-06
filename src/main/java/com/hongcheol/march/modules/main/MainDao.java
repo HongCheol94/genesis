@@ -16,8 +16,8 @@ public class MainDao {
 	private SqlSession sqlSession;
 	
 	private static String namespace = "com.hongcheol.march.modules.main.MainMapper";
-	public List<Main> selectList() {
-		return sqlSession.selectList(namespace + ".selectList","");
+	public List<Main> selectList(MainVo vo) {
+		return sqlSession.selectList(namespace + ".selectList",vo);
 	}
 	
 }

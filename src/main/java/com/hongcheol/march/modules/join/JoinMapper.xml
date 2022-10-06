@@ -106,4 +106,15 @@
 			id= #{id}
 	</select>
 	
+	<select id="selectLogin" resultMap="resultMapObj">
+		SELECT
+			a.id
+			,a.name
+			,a.seq
+		FORM member a
+		WHERE 1=1
+			AND id = #{id}
+			AND password = #{password}
+	</select>
+	
 </mapper>

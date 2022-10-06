@@ -12,8 +12,8 @@ public class MainServiceImpl implements MainService {
 	MainDao dao;
 	
 	@Override
-	public List<Main> selectList() throws Exception {
-		List<Main> list = dao.selectList();
+	public List<Main> selectList(MainVo vo) throws Exception {
+		List<Main> list = dao.selectList(vo);
 		return list;
 	}
 }

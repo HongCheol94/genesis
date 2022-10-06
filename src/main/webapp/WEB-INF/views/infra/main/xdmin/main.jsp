@@ -4,6 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
     
+ <jsp:useBean id="CodeServiceImpl" class="com.hongcheol.march.modules.code.CodeServiceImpl" />
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,7 +17,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 <body>
+	<!-- start -->
+	
 	<form method="post" actoin="/main/main">
+		<c:set var="listCodemadeby" value="${CodeServiceImpl.selectListCachedCode('13')}" />
+		<c:set var="listCodemodel" value="${CodeServiceImpl.selectListCachedCode('12')}" />
+		<c:set var="listCodeMadeCountry" value="${CodeServiceImpl.selectListCachedCode('15')}" />
 		<div class="container-md">
 			<div class=text-end>
 				<a href="myPage">
@@ -109,26 +115,26 @@
 			<div class="row border mt-5">
 				<div class="col-3 mt-4 mb-4">
 				<select class="form-select" aria-label="Default select example">
-					  <option selected>제조사</option>
-					  <option value="1">One</option>
-					  <option value="2">Two</option>
-					  <option value="3">Three</option>
+					  <option value="0">제조국</option>
+					 <c:forEach items="${listCodeMadeCountry}" var="listmadeCountry" varStatus="statusGender">
+						<option value="${listmadeCountry.seq }" <c:if test="${item.MadeCountry eq listmadeCountry.seq }">selected</c:if>>${listmadeCountry.codeGroupCode }</option>
+					</c:forEach>
+				</select>
+				</div>
+				<div class="col-3 mt-4 mb-4">
+				<select class="form-select" aria-label="Default select example" id="madeby">
+					  <option value="0">제조사</option>
+					  <c:forEach items="${listCodemadeby}" var="listMadeby" varStatus="statusMadeby">
+					  	<option value="${listMadeby.seq}" <c:if test="${item.madeby eq listMadeby.seq}">selected</c:if>>${listMadeby.codeGroupCode }</option>
+					  </c:forEach>
 				</select>
 				</div>
 				<div class="col-3 mt-4 mb-4">
 				<select class="form-select" aria-label="Default select example">
-					  <option selected>대표모델</option>
-					  <option value="1">One</option>
-					  <option value="2">Two</option>
-					  <option value="3">Three</option>
-				</select>
-				</div>
-				<div class="col-3 mt-4 mb-4">
-				<select class="form-select" aria-label="Default select example">
-					  <option selected>세부모델</option>
-					  <option value="1">One</option>
-					  <option value="2">Two</option>
-					  <option value="3">Three</option>
+					<option value="0">모델</option>
+					<c:forEach items="${listCodemodel}" var="listmodel" varStatus="statusGender">
+						<option value="${listmodel.seq }" <c:if test="${item.model eq listmodel.seq }">selected</c:if>>${listmodel.codeGroupCode }</option>
+					</c:forEach>
 				</select>
 				</div>
 				<div class="d-grid gap-2 col-3 mx-auto mt-3">
@@ -151,7 +157,7 @@
 			</div>
 			<div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
 			  <div class="col">
-				<a href="../Buy/buyDetails.html" style="color:black">
+				<a href="/buy" style="color:black">
 					<div class="card">
 					<img src="../../resources/images/main/mainCar(1).jpg" class="card-img-top" alt="...">
 					<div class="card-body">
