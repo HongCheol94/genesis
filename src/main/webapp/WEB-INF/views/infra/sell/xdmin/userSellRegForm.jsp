@@ -3,6 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<jsp:useBean id="CodeServiceImpl" class="com.hongcheol.march.modules.code.CodeServiceImpl" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +19,10 @@
 	
 	<!-- start -->
 	<form method="post" id="" name="form">
+	<c:set var="listCodeCarGear" value="${CodeServiceImpl.selectListCachedCode('5')}" />
+	<c:set var="listCodeTaxe" value="${CodeServiceImpl.selectListCachedCode('8')}" />
+	<c:set var="listCodeSeize" value="${CodeServiceImpl.selectListCachedCode('9')}" />
+	<c:set var="listCodeCollateral" value="${CodeServiceImpl.selectListCachedCode('10')}" />
 	<input type="hidden" name="seq" value="<c:out value="${item.seq}"/>">
 		<div class="contanier">
 			<!-- 좌측 메뉴 -->
@@ -114,14 +120,14 @@
 							<th>차량번호</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="floatingInputGrid" value="<c:out value="${item.carNumber}"/>" placeholder="차량번호" value="차량번호">
+									<input type="text" class="form-control" id="" name="carNumber" value="<c:out value="${item.carNumber}"/>" placeholder="차량번호" value="차량번호">
 									<label for="floatingInputGrid">차량번호</label>
 								</div>
 							</td>
 							<th>연&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;식</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="floatingInputGrid" value="<c:out value="${item.carAge}"/>" placeholder="연식" value="연식">
+									<input type="text" class="form-control" id="" name="carAge" value="<c:out value="${item.carAge}"/>" placeholder="연식" value="연식">
 									<label for="floatingInputGrid">연식</label>
 								</div>
 							</td>
@@ -134,14 +140,14 @@
 							<th>주행거리</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="floatingInputGrid" value="<c:out value="${item.carMleage}"/>" placeholder="주행거리" value="주행거리">
+									<input type="text" class="form-control" id="" name="carMleage" value="<c:out value="${item.carMleage}"/>" placeholder="주행거리" value="주행거리">
 									<label for="floatingInputGrid">주행거리</label>
 								</div>
 							</td>
 							<th>연&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;료</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="floatingInputGrid" value="<c:out value="${item.carEngine}"/>" placeholder="연료" value="연료">
+									<input type="text" class="form-control" id="" name="carEngine" value="<c:out value="${item.carEngine}"/>" placeholder="연료" value="연료">
 									<label for="floatingInputGrid">연료</label>
 								</div>
 							</td>
@@ -153,13 +159,17 @@
 							<!-- <td></td> -->
 							<th>변&nbsp;&nbsp;속&nbsp;기</td>
 							<td style="text-align: center;">
-								<input type="radio" name="route">오토
-								<input type="radio" name="route" style="margin-left: 35pt;">수동
+								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="gender" id="gender">
+									<option value="0">::선택::</option>
+									<c:forEach items="${listCodeCarGear}" var="listcarGear" varStatus="statuscarGear">
+										<option value="${listcarGear.seq }" <c:if test="${item.CarGear eq listcarGear.seq }">selected</c:if>>${listcarGear.codeGroupCode }</option>
+									</c:forEach>
+								</select>
 							</td>
 							<th>연&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="floatingInputGrid" value="<c:out value="${item.carFuelEfficiency}"/>" placeholder="연비" value="연비">
+									<input type="text" class="form-control" id="" name="carFuelEfficiency" value="<c:out value="${item.carFuelEfficiency}"/>" placeholder="연비" value="연비">
 									<label for="floatingInputGrid">연비</label>
 								</div>
 							</td>
@@ -172,14 +182,14 @@
 							<th>차&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;종</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="floatingInputGrid" value="<c:out value="${item.carKind}"/>" placeholder="차종" value="차종">
+									<input type="text" class="form-control" id="" name="carKind" value="<c:out value="${item.carKind}"/>" placeholder="차종" value="차종">
 									<label for="floatingInputGrid">차종</label>
 								</div>
 							</td>
 							<th>배&nbsp;&nbsp;기&nbsp;량</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="floatingInputGrid" value="<c:out value="${item.carCc}"/>" placeholder="배기량" value="배기량">
+									<input type="text" class="form-control" id="" name="carCc" value="<c:out value="${item.carCc}"/>" placeholder="배기량" value="배기량">
 									<label for="floatingInputGrid">배기량</label>
 								</div>
 							</td>
@@ -192,16 +202,18 @@
 							<th>색&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="floatingInputGrid" value="<c:out value="${item.color}"/>" placeholder="색상" value="색상">
+									<input type="text" class="form-control" id="" name="color value="<c:out value="${item.color}"/>" placeholder="색상" value="색상">
 									<label for="floatingInputGrid">색상</label>
 								</div>
 							</td>
 							<th>세금미납</th>
 							<td>
-								<div class="form-floating">
-									<input type="text" class="form-control" id="floatingInputGrid" value="<c:out value="${item.tax}"/>" placeholder="세금미납" value="세금미납">
-									<label for="floatingInputGrid">세금미납</label>
-								</div>
+								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="gender" id="gender">
+									<option value="0">::선택::</option>
+									<c:forEach items="${listCodeTaxe}" var="listcartaxe" varStatus="statuscarGear">
+										<option value="${listcartaxe.seq }" <c:if test="${item.Taxe eq listcartaxe.seq }">selected</c:if>>${listcartaxe.codeGroupCode }</option>
+									</c:forEach>
+								</select>
 							</td>
 						</tr>
 						<tr>
@@ -211,13 +223,21 @@
 							<!-- <td></td> -->
 							<th>압&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;류</th>
 							<td style="text-align: center;">
-								<input type="radio" name="route">있음
-								<input type="radio" name="route" style="margin-left: 35pt;">없음
+								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="gender" id="gender">
+									<option value="0">::선택::</option>
+									<c:forEach items="${listCodeSeize}" var="listseize" varStatus="statusSeize">
+										<option value="${listseize.seq }" <c:if test="${item.Seize eq listseize.seq }">selected</c:if>>${listseize.codeGroupCode }</option>
+									</c:forEach>
+								</select>
 							</td>
 							<th>저&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;당</th>
 							<td style="text-align: center;">
-								<input type="radio" name="route">있음
-								<input type="radio" name="route" style="margin-left: 35pt;">없음
+								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="gender" id="gender">
+									<option value="0">::선택::</option>
+									<c:forEach items="${listCodeCollateral}" var="listcollateral" varStatus="statusGender">
+										<option value="${listcollateral.seq }" <c:if test="${item.Collateral eq listcollateral.seq }">selected</c:if>>${listcollateral.codeGroupCode }</option>
+									</c:forEach>
+								</select>
 							</td>
 						</tr>
 						<tr>
@@ -228,7 +248,7 @@
 							<th>제시번호</th>
 							<td colspan="3">
 								<div class="form-floating">
-									<input type="number" class="form-control" id="floatingInputGrid" value="<c:out value="${item.presentNumber}"/>" placeholder="제시번호" value="제시번호">
+									<input type="number" class="form-control" id="" name="presentNumber" value="<c:out value="${item.presentNumber}"/>" placeholder="제시번호" value="제시번호">
 									<label for="floatingInputGrid">제시번호</label>
 								</div>
 							</td>
@@ -317,38 +337,13 @@
 	</form>
 	<!-- end -->
 	<script type="text/javascript">
-        
-    	var goUrlList = "/userSellRegForm/userSell"; 				/* #-> */
-    	var goUrlInst = "/userSellRegForm/sellInst"; 				/* #-> */
-    	var goUrlUpdt = "/userSellRegForm/sellUpdt";					/* #-> */
-    	var goUrlUele = "/userSellRegForm/sellUelete";				/* #-> */
-    	var goUrlDele = "/userSellRegForm/sellDelete";				/* #-> */
-    	
-   		var seq = $("input:hidden[name=seq]");						/* #-> */
-    	
-    	var form = $("form[name=form]");
-    	
-    	
-    	$("#btnSave").on("click", function(){
-    		if (seq.val() == "0" || seq.val() == ""){
-    	   		// insert
-    	   		form.attr("action", goUrlInst).submit();
-    	   	} else {
-    	   		// update
-    	   		/* keyName.val(atob(keyName.val())); */
-    	   		form.attr("action", goUrlUpdt).submit();
-    	   	}
-    	}); 
-    	
-    	$("#btnModalUelete").on("click", function(){
-    		form.attr("action", goUrlUele).submit();
-    	});
-    	
-    	
-    	$("#btnModalDelete").on("click", function(){
-    		form.attr("action", goUrlDele).submit();
-    	});
-      
+		var goUrlInsert = "sellInsert";
+		
+		var form =$("form[name=form]");
+		
+		$("#btnSave").on("click", function() {
+			form.attr("action",goUrlInsert).submit();
+		})
    </script>
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

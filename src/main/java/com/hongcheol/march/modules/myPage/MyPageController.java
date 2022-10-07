@@ -31,4 +31,5 @@ public class MyPageController {
 		return "infra/member/xdmin/myPageForm";
 	}
 	
+	
 }

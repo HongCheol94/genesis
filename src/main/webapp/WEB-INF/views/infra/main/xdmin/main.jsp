@@ -344,34 +344,77 @@
 			</div>
 		</form>
 		
-		
-			
-			
-		
-		
-		
 	<!-- end -->
-	<script>
-	$("#btnLogout").on("click", function(){
-		$.ajax({
-			async: true 
-			,cache: false
-			,type: "post"
-			,url: "/member/logoutProc"
-			,data: {}
-			,success: function(response) {
-				if(response.rt == "success") {
-					location.href = "login";
-				} else {
-					// by pass
+	
+	<!-- script -->
+		
+		<!-- 3단검색 -->
+		<!-- <script>
+			function setSelectbox(o) {
+			 	var selectVal = o.value;
+			 	var upper = $(o).parent().parent(); 	// 셀렉트 박스의 상위 객체
+			 	
+			 	var cnt = $('select', upper).size; 		//셀렉트 박스 갯수
+			 	var idx = $('select', upper).index(o); 	//현재 셀렉트 박스의 순서
+			 	var depth = idx + 1 ; // 선택한 selectbox가 몇 depth인지
+			 	var level = 4 + idx ; // 
 				}
-			}
-			,error : function(jqXHR, textStatus, errorThrown){
-				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-			}
+			
+			$("#id").on("focusout", function(){
+					$.ajax({
+						async: true 
+						,cache: false
+						,type: "post"
+						/* ,dataType:"json" */
+						,url: "checkId" 							/* checkId는 dto부터 만들어야한다 */
+						/* ,data : $("#formLogin").serialize() */
+						,data : { "id" : $("#id").val() }
+						,success: function(response) {
+							if(response.rt == "success") {
+								document.getElementById("idFeedback").classList.add('is-valid');
+								document.getElementById("idFeedback").classList.remove('invalid-feedback');
+								document.getElementById("idFeedback").classList.add('valid-feedback');
+								 $("#idFeedback").text("사용가능");
+							} else {
+								document.getElementById("idFeedback").classList.add('is-invalid');
+								document.getElementById("idFeedback").classList.remove('valid-feedback');
+								document.getElementById("idFeedback").classList.add('invalid-feedback');
+								$("#idFeedback").text("사용 불가능 합니다");
+							}
+						}
+						
+						,error : function(jqXHR, textStatus, errorThrown){
+							alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+						}
+					});
+			});
+		</script> -->
+		<!-- 3단검색 end -->
+	
+		<!-- 로그아웃 -->
+		<script>
+		$("#btnLogout").on("click", function(){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				,url: "/member/logoutProc"
+				,data: {}
+				,success: function(response) {
+					if(response.rt == "success") {
+						location.href = "login";
+					} else {
+						// by pass
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
 		});
-	});
-	</script>
+		</script>
+		<!-- 로그아웃end -->
+	
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

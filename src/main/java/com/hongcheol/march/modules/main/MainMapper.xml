@@ -38,7 +38,7 @@
 		WHERE 1=1
 	</select>
 	
-		<select id="searcmodel" resultMap="resultMapObj">
+	<select id="searchModel" resultMap="resultMapObj">
 		SELECT
 			a.*
 		FROM mainSearch a

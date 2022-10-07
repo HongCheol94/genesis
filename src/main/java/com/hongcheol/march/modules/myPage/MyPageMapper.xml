@@ -14,4 +14,12 @@
 		FROM member a
 		where 1=1
  	</select>
+ 	
+ 	<select id="selectOne" resultMap="resultMapObj">
+ 		SELECT
+			a.*
+		FROM member a
+		WHERE 1=1
+			AND seq = #{seq}
+ 	</select>
  </mapper>

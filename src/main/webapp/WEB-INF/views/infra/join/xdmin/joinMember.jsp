@@ -280,6 +280,16 @@
 			</div>
 		</div>
 		<div class="row justify-content-center">
+				<div class="input col-4 mb-3 mt-3">
+				  <input type="file" class="form-control" id="img" multiple="multiple">
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="input col-4">
+				  <input type="file" class="form-control" id="img2" multiple="multiple">
+				</div>
+			</div>
+		<div class="row justify-content-center">
 			<div class="col-3 offset-1">
 				<button class="btn btn-outline-warning btn-lg" id="btnSave" type="button">회원가입</button>
 				<button class="btn btn-outline-warning btn-lg" type="button">&nbsp;취&nbsp;&nbsp;&nbsp;&nbsp;소&nbsp;</button>
@@ -518,6 +528,28 @@
 		  } );
 	  </script>
 	  <!-- DatePicker end -->
+	  
+	  <script>
+		validationInst = function() {
+			
+			var obj = document.getElementById("img").files;
+			var obj2 = document.querySelector("#img2").files;
+			
+			alert(obj);
+			alert(obj.length);
+			alert(obj.name);
+			
+			for(var i=0, i<obj.length; i++){
+				alert(obj[i].name + " : " + obj[i].size);
+			}
+			alert(obj2);
+			alert(obj2.length);
+			
+			for(var i=0, i<obj2.length; i++){
+				alert(obj2[i].name + ":" + obj2[i].size);
+			}
+		}
+	</script>
 	  
 </body>
 </html>

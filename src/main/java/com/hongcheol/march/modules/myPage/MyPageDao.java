@@ -8,6 +8,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.hongcheol.march.modules.member.Member;
+
 @Repository
 public class MyPageDao {
 	
@@ -18,5 +20,9 @@ public class MyPageDao {
 	private static String namespace = "com.hongcheol.march.modules.myPage.MyPageMapper";
 	public List<MyPage> selectList() {
 		return sqlSession.selectList(namespace + ".selectList","");
+	}
+	public MyPage selectOne() {
+		 MyPage item = sqlSession.selectOne(namespace + ".selectOne","");
+		 return item;
 	}
 }

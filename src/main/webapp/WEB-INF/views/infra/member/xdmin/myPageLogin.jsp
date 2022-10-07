@@ -167,7 +167,7 @@
 						</div>
 						<a href="myPageForm">
 							<div class="d-grid gap-2 col-12 mt-3 mx-auto">
-								<button class="btn btn-warning" type="button">확인</button>
+								<button class="btn btn-warning" type="button" id="btnLogin">확인</button>
 							</div>
 						</a>
 					</div>
@@ -208,30 +208,31 @@
 				<!-- SNS 로그인 설정 end	 -->
 		</div>
 	<!-- 회원정보 end -->
-        
 	</main>
 	<footer>
-		<div class="row mt-5">
-			<hr>
-			<div class="col">
-				<br><image alt="" src="../../resources/images/kbfoot.png"></image>
-				<br>
-				<br>이용약관 ㅣ 개인정보처리방침 ㅣ 위치기반서비스 이용약관
-				<br>
-				<br>대표이사: 황수남 ㅣ 주소: 서울특별시 서초대로 301 동익성봉빌딩
-				<br>
-				<br>사업자등록번호 : 214-85-08573 ㅣ >준법감시인 심의필 번호 : 20201101-0007
-				<br>준법감시인 심의필 번호 : 20201101-0007
-				<br>
-				<br>KB차차차가 제공하는 서비스는 온라인 거래장소 및 기타 부가정보 제공에 한하며, 실제 거래의 모든 책임은 판매자와 구매자에게 있음을 안내드립니다.
-				<br>본 사이트/앱 상의 모든 정보, 콘텐츠, UI 등에 대한 무단 복제, 배포, 스크래핑 등의 행위는 법에 의하여 엄격히 금지됩니다.
-				<br>
-				<br>COPYRIGHT 2018 KB CAPITAL.CO.,LTD. ALL RIGHTS RESERVED.
+			<div class="row mt-5">
+				<hr>
+				<div class="col">
+					<br><image alt="" src="../../resources/images/kbfoot.png"></image>
+					<br>
+					<br>이용약관 ㅣ 개인정보처리방침 ㅣ 위치기반서비스 이용약관
+					<br>
+					<br>대표이사: 황수남 ㅣ 주소: 서울특별시 서초대로 301 동익성봉빌딩
+					<br>
+					<br>사업자등록번호 : 214-85-08573 ㅣ >준법감시인 심의필 번호 : 20201101-0007
+					<br>준법감시인 심의필 번호 : 20201101-0007
+					<br>
+					<br>KB차차차가 제공하는 서비스는 온라인 거래장소 및 기타 부가정보 제공에 한하며, 실제 거래의 모든 책임은 판매자와 구매자에게 있음을 안내드립니다.
+					<br>본 사이트/앱 상의 모든 정보, 콘텐츠, UI 등에 대한 무단 복제, 배포, 스크래핑 등의 행위는 법에 의하여 엄격히 금지됩니다.
+					<br>
+					<br>COPYRIGHT 2018 KB CAPITAL.CO.,LTD. ALL RIGHTS RESERVED.
+				</div>
 			</div>
-		</div>
-	</footer>
-	<!-- end -->
+		</footer>
 	<div id="fb-root"></div>
+	<!-- end -->
+	
+	<!-- script -->
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v14.0" nonce="u6wxcWyc"></script>
 	<script>
 		const triggerTabList = document.querySelectorAll('#myTab button')
@@ -244,6 +245,33 @@
 			})
 			})
 	</script>
+	
+	<!-- 로그인 -->
+	<script >
+ 	$("#btnLogin").on("click", function(){
+		
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			/* ,dataType:"json" */
+			,url: "/member/loginProc"
+			/* ,data : $("#formLogin").serialize() */
+			,data : { "id" : $("#id").val(), "password" : $("#password").val(), "autoLogin" : $("#autoLogin").is(":checked")}
+			,success: function(response) {
+				if(response.rt == "success") {
+						location.href = "myPageForm";
+				} else {
+					alert("회원없음");
+				}
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+	});  
+	</script >
+	<!-- 로그인 end -->
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

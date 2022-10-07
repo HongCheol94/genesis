@@ -24,6 +24,4 @@ public class BuyServiceImpl implements BuyService {
 	public List<Buy> selectListOne(MainVo vo) throws Exception {
 		return dao.selectListOne(vo);
 	}
-	
-	
 }
