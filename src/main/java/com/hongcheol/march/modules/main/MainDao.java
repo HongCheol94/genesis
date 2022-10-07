@@ -20,4 +20,18 @@ public class MainDao {
 		return sqlSession.selectList(namespace + ".selectList",vo);
 	}
 	
+	public List<Main> searchMadeCountry(Main dto) {
+		return sqlSession.selectList(namespace + ".searchMadeCountry",dto);
+	}
+	
+	public List<Main> searchMadeby(Main dto) {
+		return sqlSession.selectList(namespace + ".searchMadeby",dto);
+	}
+	
+	public List<Main> searchModel(Main dto) {
+		return sqlSession.selectList(namespace + ".searchModel",dto);
+	}
+		
+	
+	
 }

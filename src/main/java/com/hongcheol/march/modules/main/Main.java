@@ -29,6 +29,12 @@ public class Main {
 	private Integer member_seq;
 	private Integer dealer_seq;
 	private Integer carDefaultNy;
+	private Integer msSeq;
+	
+	
+	
+	
+	
 	
 //	-------------------------------
 	
@@ -182,6 +188,13 @@ public class Main {
 	public void setCarDefaultNy(Integer carDefaultNy) {
 		this.carDefaultNy = carDefaultNy;
 	}
+	public Integer getMsSeq() {
+		return msSeq;
+	}
+	public void setMsSeq(Integer msSeq) {
+		this.msSeq = msSeq;
+	}
+	
 	
 	
 }

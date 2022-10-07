@@ -24,9 +24,14 @@ public class MainController {
 
 	
 	  @RequestMapping(value = "main") 
-	  public String main(@ModelAttribute("vo") MainVo vo, Model model) throws Exception {
+	  public String main(@ModelAttribute("vo") MainVo vo, Main dto, Model model) throws Exception {
 		  List<Main> list = service.selectList(vo);
 		  model.addAttribute("list", list);
+		  
+		  List<Main> searchMadeCountry = service.searchMadeCountry(dto);
+		  List<Main> searchMadeby = service.searchMadeby(dto);
+		  List<Main> searcmodel = service.searchModel(dto);
+		  
 		  return "infra/main/xdmin/main";
 	  }
 	  

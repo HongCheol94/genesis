@@ -23,4 +23,25 @@
 				<when test="shOption == 1">AND madeCountry = #{shValue}</when>
 			</choose>
 	</select> 
+	
+	<select id="searchMadeCountry" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM mainSearch a
+		WHERE 1=1
+	</select>
+	
+		<select id="searchMadeby" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM mainSearch a
+		WHERE 1=1
+	</select>
+	
+		<select id="searcmodel" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM mainSearch a
+		WHERE 1=1
+	</select>
 </mapper>
