@@ -20,8 +20,8 @@ public class SellRegFormController {
 //	insert
 	@RequestMapping(value = "sellInsert")
 	public String sellInsert(SellRegForm dto) throws Exception{
-		int result = service.insert(dto);
-		return "redirect:/sell/userSellRegForm";
+		service.insert(dto);
+		return "redirect:/sell/userSell";
 		
 	}
 }

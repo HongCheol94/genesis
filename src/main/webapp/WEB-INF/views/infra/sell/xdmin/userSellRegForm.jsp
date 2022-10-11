@@ -120,14 +120,14 @@
 							<th>차량번호</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="" name="carNumber" value="<c:out value="${item.carNumber}"/>" placeholder="차량번호" value="차량번호">
+									<input type="text" class="form-control" id="" name="carNumber" value="" placeholder="차량번호" value="차량번호">
 									<label for="floatingInputGrid">차량번호</label>
 								</div>
 							</td>
 							<th>연&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;식</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="" name="carAge" value="<c:out value="${item.carAge}"/>" placeholder="연식" value="연식">
+									<input type="text" class="form-control" id="" name="carAge" value="" placeholder="연식" value="연식">
 									<label for="floatingInputGrid">연식</label>
 								</div>
 							</td>
@@ -140,14 +140,14 @@
 							<th>주행거리</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="" name="carMleage" value="<c:out value="${item.carMleage}"/>" placeholder="주행거리" value="주행거리">
+									<input type="text" class="form-control" id="" name="carMleage" value="" placeholder="주행거리" value="주행거리">
 									<label for="floatingInputGrid">주행거리</label>
 								</div>
 							</td>
 							<th>연&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;료</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="" name="carEngine" value="<c:out value="${item.carEngine}"/>" placeholder="연료" value="연료">
+									<input type="text" class="form-control" id="" name="carEngine" value="" placeholder="연료" value="연료">
 									<label for="floatingInputGrid">연료</label>
 								</div>
 							</td>
@@ -182,14 +182,14 @@
 							<th>차&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;종</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="" name="carKind" value="<c:out value="${item.carKind}"/>" placeholder="차종" value="차종">
+									<input type="text" class="form-control" id="" name="carKind" value="" placeholder="차종" value="차종">
 									<label for="floatingInputGrid">차종</label>
 								</div>
 							</td>
 							<th>배&nbsp;&nbsp;기&nbsp;량</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="" name="carCc" value="<c:out value="${item.carCc}"/>" placeholder="배기량" value="배기량">
+									<input type="text" class="form-control" id="" name="carCc" value="" placeholder="배기량" value="배기량">
 									<label for="floatingInputGrid">배기량</label>
 								</div>
 							</td>
@@ -202,7 +202,7 @@
 							<th>색&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="" name="color value="<c:out value="${item.color}"/>" placeholder="색상" value="색상">
+									<input type="text" class="form-control" id="" name="color" value="" placeholder="색상" value="색상">
 									<label for="floatingInputGrid">색상</label>
 								</div>
 							</td>
@@ -248,7 +248,7 @@
 							<th>제시번호</th>
 							<td colspan="3">
 								<div class="form-floating">
-									<input type="number" class="form-control" id="" name="presentNumber" value="<c:out value="${item.presentNumber}"/>" placeholder="제시번호" value="제시번호">
+									<input type="number" class="form-control" id="" name="presentNumber" value="" placeholder="제시번호" value="제시번호">
 									<label for="floatingInputGrid">제시번호</label>
 								</div>
 							</td>
