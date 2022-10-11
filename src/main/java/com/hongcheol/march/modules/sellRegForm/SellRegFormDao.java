@@ -19,7 +19,7 @@ public class SellRegFormDao {
 	private static String namespace = "com.hongcheol.march.modules.sellRegForm.SellRegFormMapper";
 	
 	public List<SellRegForm> selectList(SellRegFormVo vo) {
-		return sqlSession.selectList("com.hongcheol.march.modules.sellRegFrom.SellRegFromMapper" + ".selectList", vo);
+		return sqlSession.selectList("com.hongcheol.march.modules.sellRegForm.SellRegFormMapper" + ".selectList", vo);
 	}
 	
 //	insert

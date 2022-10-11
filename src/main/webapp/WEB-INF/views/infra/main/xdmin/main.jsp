@@ -117,7 +117,7 @@
 				<select class="form-select" aria-label="Default select example">
 					  <option value="0">제조국</option>
 					 <c:forEach items="${listCodeMadeCountry}" var="listmadeCountry" varStatus="statusGender">
-						<option value="${listmadeCountry.seq }" <c:if test="${item.MadeCountry eq listmadeCountry.seq }">selected</c:if>>${listmadeCountry.codeGroupCode }</option>
+						<option value="${listmadeCountry.seq }" onchange="searchM(list.seq)" <c:if test="${item.MadeCountry eq listmadeCountry.seq }">selected</c:if>>${listmadeCountry.codeGroupCode }</option>
 					</c:forEach>
 				</select>
 				</div>
@@ -403,6 +403,27 @@
 				,success: function(response) {
 					if(response.rt == "success") {
 						location.href = "login";
+					} else {
+						// by pass
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		});
+		
+		searchM = function(seq){
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				,url: ""
+				,data: {"", seq}
+				,success: function(response) {
+					if(response.rt == "success") {
+						var.korList = date.reuslt
+						
 					} else {
 						// by pass
 					}

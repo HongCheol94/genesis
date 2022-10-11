@@ -13,7 +13,17 @@
 	<title>Bootstrap demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<link href="../../resources/css/userSellRegForm.css" rel="stylesheet" type="text/css">
-	
+	<!-- 버튼 작동 안될시 -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 버튼 작동 안될시 end -->
+    <!-- datePicker -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<!-- datePicker end -->
+    
 </head>
 <body>
 	
@@ -127,7 +137,7 @@
 							<th>연&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;식</th>
 							<td>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="" name="carAge" value="" placeholder="연식" value="연식">
+									<input type="text" class="form-control" id="datepicker" name="carAge" value="" placeholder="연식" value="연식">
 									<label for="floatingInputGrid">연식</label>
 								</div>
 							</td>
@@ -248,7 +258,7 @@
 							<th>제시번호</th>
 							<td colspan="3">
 								<div class="form-floating">
-									<input type="number" class="form-control" id="" name="presentNumber" value="" placeholder="제시번호" value="제시번호">
+									<input type="text" class="form-control" id="" name="presentNumber" value="" placeholder="제시번호" value="제시번호">
 									<label for="floatingInputGrid">제시번호</label>
 								</div>
 							</td>
@@ -260,11 +270,9 @@
 							<button class="btn btn-warning btn-lg" type="button" style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 10rem; --bs-btn-font-size: .75rem;">
 								<span class="fs-5">취소</span>
 							</button>
-						<a href="../Sell/userSellForm.html">
 							<button class="btn btn-warning btn-lg" type="button" id="btnSave"  style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 10rem; --bs-btn-font-size: .75rem;">
 								<span class="fs-5">등록하기</span>
 							</button>
-						</a>	
 					</div>
 				</div>
 				<div class="row mt-5">
@@ -336,13 +344,39 @@
 		 </div> <!-- 컨테이너 end -->
 	</form>
 	<!-- end -->
+	
+	<!-- script -->
+	
+		<!-- DatePicker start -->
+	 <script>
+		 $.datepicker.setDefaults({
+		        dateFormat: 'yy-mm-dd',
+		        prevText: '이전 달',
+		        nextText: '다음 달',
+		        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		        monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+		        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+		        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+		        showMonthAfterYear: true,
+		        yearSuffix: '년'
+		    });
+		 
+		  $( function() {
+		    $( "#datepicker").datepicker();
+		  } );
+	  </script>
+	  <!-- DatePicker end -->
+	
 	<script type="text/javascript">
 		var goUrlInsert = "sellInsert";
 		
 		var form =$("form[name=form]");
 		
 		$("#btnSave").on("click", function() {
+			alert("test");
 			form.attr("action",goUrlInsert).submit();
+			alert("test");
 		})
    </script>
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>

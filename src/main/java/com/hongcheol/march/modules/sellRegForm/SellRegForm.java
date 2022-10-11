@@ -2,6 +2,8 @@ package com.hongcheol.march.modules.sellRegForm;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class SellRegForm {
 
 		private String seq;
@@ -10,6 +12,7 @@ public class SellRegForm {
 		private Integer carEngine;
 		private Integer area;
 		private String carNumber;
+		@DateTimeFormat(pattern = "yyyy-MM-dd")
 		private Date carAge;
 		private Integer Mleage;
 		private Integer carGearBox;

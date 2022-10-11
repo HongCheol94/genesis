@@ -428,12 +428,8 @@
 	</div>
 	<div class="row justify-content-center">
 		<div class="col-3 offset-1">
-			<a href="../dminDealer/d_dealerView.html">
 				<button class="btn btn-outline-warning btn-lg" type="button">회원가입</button>
-			</a>
-			<a href="../list/dealerList.html">
 				<button class="btn btn-outline-warning btn-lg" type="button">&nbsp;취&nbsp;&nbsp;&nbsp;&nbsp;소&nbsp;</button>
-			</a>	
 		</div>
 	</div>
 

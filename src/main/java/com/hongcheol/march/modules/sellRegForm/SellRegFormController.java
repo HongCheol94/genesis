@@ -21,7 +21,7 @@ public class SellRegFormController {
 	@RequestMapping(value = "sellInsert")
 	public String sellInsert(SellRegForm dto) throws Exception{
 		service.insert(dto);
-		return "redirect:/sell/userSell";
+		return "infra/sell/xdmin/userSell";
 		
 	}
 }

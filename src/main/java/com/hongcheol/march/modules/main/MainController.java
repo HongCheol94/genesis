@@ -28,9 +28,14 @@ public class MainController {
 		  List<Main> list = service.selectList(vo);
 		  model.addAttribute("list", list);
 		  
-//		  List<Main> searchMadeCountry = service.searchMadeCountry(dto);
-//		  List<Main> searchMadeby = service.searchMadeby(dto);
-//		  List<Main> searchModel = service.searchModel(dto);
+		  List<Main> searchMadeCountry = service.searchMadeCountry(dto);
+		  model.addAttribute("searchMadeCountry", searchMadeCountry);
+		  
+		  List<Main> searchMadeby = service.searchMadeby(dto);
+		  model.addAttribute("searchMadeby", searchMadeby);
+		  
+		  List<Main> searchModel = service.searchModel(dto);
+		  model.addAttribute("searchModel", searchModel);
 		  
 		  return "infra/main/xdmin/main";
 	  }

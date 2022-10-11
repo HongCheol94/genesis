@@ -8,7 +8,7 @@
 	
 	<resultMap id = "resultMapObj" type="com.hongcheol.march.modules.sellRegForm.SellRegForm"></resultMap>
 	
-	<select id="selectlist" resultMap="resultMapObj">
+<!-- 	<select id="selectlist" resultMap="resultMapObj">
 		SELECT
     		a.*
    		FROM car a
@@ -21,9 +21,9 @@
 		FROM car a
 		WHERE 1=1
 			AND seq = #{seq}
-	</select>
+	</select> -->
 	
-	<insert id="insert">
+	<insert id="insert" >
 		INSERT INTO car (
 			carNumber
 			,carAge
