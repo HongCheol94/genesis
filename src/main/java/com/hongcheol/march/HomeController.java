@@ -64,6 +64,10 @@ public class HomeController {
 			return "infra/buy/xdmin/userBuy";
 		}
 		
+		@RequestMapping(value = "test")
+		public String test() {
+			return "infra/test";
+		}
 	
 	
 }
