@@ -169,7 +169,7 @@
 							<!-- <td></td> -->
 							<th>변&nbsp;&nbsp;속&nbsp;기</td>
 							<td style="text-align: center;">
-								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="gender" id="gender">
+								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="carGearBox" id="carGearBox">
 									<option value="0">::선택::</option>
 									<c:forEach items="${listCodeCarGear}" var="listcarGear" varStatus="statuscarGear">
 										<option value="${listcarGear.seq }" <c:if test="${item.CarGear eq listcarGear.seq }">selected</c:if>>${listcarGear.codeGroupCode }</option>
@@ -218,7 +218,7 @@
 							</td>
 							<th>세금미납</th>
 							<td>
-								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="gender" id="gender">
+								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="taxe" id="taxe">
 									<option value="0">::선택::</option>
 									<c:forEach items="${listCodeTaxe}" var="listcartaxe" varStatus="statuscarGear">
 										<option value="${listcartaxe.seq }" <c:if test="${item.Taxe eq listcartaxe.seq }">selected</c:if>>${listcartaxe.codeGroupCode }</option>
@@ -233,7 +233,7 @@
 							<!-- <td></td> -->
 							<th>압&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;류</th>
 							<td style="text-align: center;">
-								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="gender" id="gender">
+								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="seize" id="seize">
 									<option value="0">::선택::</option>
 									<c:forEach items="${listCodeSeize}" var="listseize" varStatus="statusSeize">
 										<option value="${listseize.seq }" <c:if test="${item.Seize eq listseize.seq }">selected</c:if>>${listseize.codeGroupCode }</option>
@@ -242,7 +242,7 @@
 							</td>
 							<th>저&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;당</th>
 							<td style="text-align: center;">
-								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="gender" id="gender">
+								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="collateral" id="collateral">
 									<option value="0">::선택::</option>
 									<c:forEach items="${listCodeCollateral}" var="listcollateral" varStatus="statusGender">
 										<option value="${listcollateral.seq }" <c:if test="${item.Collateral eq listcollateral.seq }">selected</c:if>>${listcollateral.codeGroupCode }</option>

@@ -57,46 +57,6 @@
 		</selectKey>
 	</insert>
 	
-	<!-- <insert id="insertD">
-		INSERT INTO dealer (
-			dId
-			,dPassword
-			,dName
-			,dGender
-			,dNumber
-			,company
-			,dDelNy
-			,dUseNy
-			,dEmail
-			,dEmailId
-			,companyNum
-			,leader
-			,dRoadAddress
-			,dNumberAddress
-			,dDetailedAddress
-		)
-		VALUE (
-			#{pId}
-			#{dPassword}
-			#{dName}
-			#{dGender}
-			#{dNumber}
-			#{company}
-			#{dDelNy}
-			#{dUseNy}
-			#{dEmail}
-			#{dEmailId}
-			#{companyNum}
-			#{leader}
-			#{dRoadAddress}
-			#{dNumberAddress}
-			#{dDetailedAddress}
-		)
-		<selectKey resultType="String" keyProperty="dSeq" order="AFTER">
-			SELECT last_insert_id()
-		</selectKey>
-	</insert> -->
-	
 	<select id="checkId" resultType="int">
 		SELECT
 			COUNT(*)

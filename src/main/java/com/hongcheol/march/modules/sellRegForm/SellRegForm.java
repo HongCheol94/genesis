@@ -16,7 +16,7 @@ public class SellRegForm {
 		private Date carAge;
 		private Integer Mleage;
 		private Integer carGearBox;
-		private Double carFuelEfficiency;
+		private String carFuelEfficiency;
 		private Integer carKind;
 		private Integer carCc;
 		private Integer color;
@@ -32,6 +32,7 @@ public class SellRegForm {
 		private Integer member_seq;
 		private Integer dealer_seq;
 		private Integer carDefaultNy;
+		private Integer carMleage;
 		
 //		----------------------------------
 		
@@ -89,10 +90,10 @@ public class SellRegForm {
 		public void setCarGearBox(Integer carGearBox) {
 			this.carGearBox = carGearBox;
 		}
-		public Double getCarFuelEfficiency() {
+		public String getCarFuelEfficiency() {
 			return carFuelEfficiency;
 		}
-		public void setCarFuelEfficiency(Double carFuelEfficiency) {
+		public void setCarFuelEfficiency(String carFuelEfficiency) {
 			this.carFuelEfficiency = carFuelEfficiency;
 		}
 		public Integer getCarKind() {
@@ -184,6 +185,12 @@ public class SellRegForm {
 		}
 		public void setCarDefaultNy(Integer carDefaultNy) {
 			this.carDefaultNy = carDefaultNy;
+		}
+		public Integer getCarMleage() {
+			return carMleage;
+		}
+		public void setCarMleage(Integer carMleage) {
+			this.carMleage = carMleage;
 		}
 	
 		

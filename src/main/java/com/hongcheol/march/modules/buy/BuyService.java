@@ -8,5 +8,6 @@ public interface BuyService {
 
 	public List<Buy> selectList() throws Exception;
 	public List<Buy> selectListOne(MainVo vo) throws Exception;
+	public int selectOneCount(BuyVo vo) throws Exception;
 	
 }

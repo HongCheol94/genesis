@@ -1,35 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE mapper
-    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
-<mapper namespace ="com.hongcheol.march.modules.sellRegForm.sellRegFormMapper">
+	PUBLIC "-//mybatis.org //DTD Mpaaer 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	
-	<resultMap id = "resultMapObj" type="com.hongcheol.march.modules.sellRegForm.SellRegForm"></resultMap>
+<mapper namespace="com.hongcheol.march.modules.sellRegForm.SellRegFormMapper">
 	
-<!-- 	<select id="selectlist" resultMap="resultMapObj">
-		SELECT
-    		a.*
-   		FROM car a
-   		WHERE 1=1
-	</select>
+	<resultMap id="resultMapObj" type="com.hongcheol.march.modules.sellRegForm.SellRegForm"></resultMap>
 	
-	<select id="selectOne" resultMap="resultMapObj">
-		SELECT
-			a.*
-		FROM car a
-		WHERE 1=1
-			AND seq = #{seq}
-	</select> -->
-	
-	<insert id="insert" >
-		INSERT INTO car (
+	<insert id="insert">
+		INSERT INTO car{
 			carNumber
 			,carAge
 			,carMleage
 			,carEngine
-			,carGearbox
+			,carGearBox
 			,carFuelEfficiency
 			,carKind
 			,carCc
@@ -38,14 +23,13 @@
 			,seize
 			,collateral
 			,presentNumber
-			,delNy
-		)
-		VALUES(
+		}
+		VALUE (
 			#{carNumber}
 			,#{carAge}
 			,#{carMleage}
 			,#{carEngine}
-			,#{carGearbox}
+			,#{carGearBox}
 			,#{carFuelEfficiency}
 			,#{carKind}
 			,#{carCc}
@@ -54,10 +38,10 @@
 			,#{seize}
 			,#{collateral}
 			,#{presentNumber}
-			,0
 		)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()
-		</selectKey> 
+		</selectKey>
 	</insert>
 </mapper>
+

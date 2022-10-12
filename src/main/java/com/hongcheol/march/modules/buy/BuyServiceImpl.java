@@ -24,4 +24,9 @@ public class BuyServiceImpl implements BuyService {
 	public List<Buy> selectListOne(MainVo vo) throws Exception {
 		return dao.selectListOne(vo);
 	}
+	
+	@Override
+	public int selectOneCount(BuyVo vo) throws Exception {
+		return dao.selectOneCount(vo);
+	}
 }

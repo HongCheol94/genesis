@@ -35,7 +35,7 @@
 		<!-- 상단목록 -->
 		<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
 		  <ol class="breadcrumb">
-		  	<li class="breadcrumb-item col-1"><a href="../maine/mainForm.html"><image src="../../resources/images/kblogo.png"></a></li>
+		  	<li class="breadcrumb-item col-1"><a href="main"><image src="../../resources/images/kblogo.png"></a></li>
 		    <li class="breadcrumb-item col-1 offset-4 mt-4">
 		    	<a href="/buy" class="top-menu">
 		    		<p class="fs-3">살때</p>
@@ -423,7 +423,7 @@
 				,success: function(response) {
 					if(response.rt == "success") {
 						var.korList = date.reuslt
-						
+						var.korList = 
 					} else {
 						// by pass
 					}

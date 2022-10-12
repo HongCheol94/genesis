@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.hongcheol.march.modules.main.MainVo;
+import com.hongcheol.march.modules.member.MemberVo;
 
 @Repository
 public class BuyDao {
@@ -25,5 +26,11 @@ public class BuyDao {
 // search	
 	public List<Buy> selectListOne(MainVo vo) {
 		return sqlSession.selectList(namespace + ".selectList", vo);
+	}
+	
+//	selectOneCount
+	public int selectOneCount(BuyVo vo) {
+		int result = sqlSession.selectOne(namespace + ".selectOneCount",vo);
+		return result;
 	}
 }
