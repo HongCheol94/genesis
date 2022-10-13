@@ -117,7 +117,7 @@
 				<select class="form-select" aria-label="Default select example">
 					  <option value="0">제조국</option>
 					 <c:forEach items="${listCodeMadeCountry}" var="listmadeCountry" varStatus="statusGender">
-						<option value="${listmadeCountry.seq }" onchange="searchM(list.seq)" <c:if test="${item.MadeCountry eq listmadeCountry.seq }">selected</c:if>>${listmadeCountry.codeGroupCode }</option>
+						<option value="${listmadeCountry.seq }" onchange="serCombox1(this)" <c:if test="${item.MadeCountry eq listmadeCountry.seq }">selected</c:if>>${listmadeCountry.codeGroupCode }</option>
 					</c:forEach>
 				</select>
 				</div>
@@ -125,7 +125,7 @@
 				<select class="form-select" aria-label="Default select example" id="madeby">
 					  <option value="0">제조사</option>
 					  <c:forEach items="${listCodemadeby}" var="listMadeby" varStatus="statusMadeby">
-					  	<option value="${listMadeby.seq}" <c:if test="${item.madeby eq listMadeby.seq}">selected</c:if>>${listMadeby.codeGroupCode }</option>
+					  	<option value="${listMadeby.seq}"  onchange="serCombox2(this)" <c:if test="${item.madeby eq listMadeby.seq}">selected</c:if>>${listMadeby.codeGroupCode }</option>
 					  </c:forEach>
 				</select>
 				</div>
@@ -133,7 +133,7 @@
 				<select class="form-select" aria-label="Default select example">
 					<option value="0">모델</option>
 					<c:forEach items="${listCodemodel}" var="listmodel" varStatus="statusGender">
-						<option value="${listmodel.seq }" <c:if test="${item.model eq listmodel.seq }">selected</c:if>>${listmodel.codeGroupCode }</option>
+						<option value="${listmodel.seq }"  onchange="serCombox3(this)" <c:if test="${item.model eq listmodel.seq }">selected</c:if>>${listmodel.codeGroupCode }</option>
 					</c:forEach>
 				</select>
 				</div>
@@ -348,18 +348,8 @@
 	
 	<!-- script -->
 		
-		<!-- 3단검색 -->
+		
 		<!-- <script>
-			function setSelectbox(o) {
-			 	var selectVal = o.value;
-			 	var upper = $(o).parent().parent(); 	// 셀렉트 박스의 상위 객체
-			 	
-			 	var cnt = $('select', upper).size; 		//셀렉트 박스 갯수
-			 	var idx = $('select', upper).index(o); 	//현재 셀렉트 박스의 순서
-			 	var depth = idx + 1 ; // 선택한 selectbox가 몇 depth인지
-			 	var level = 4 + idx ; // 
-				}
-			
 			$("#id").on("focusout", function(){
 					$.ajax({
 						async: true 
@@ -389,7 +379,6 @@
 					});
 			});
 		</script> -->
-		<!-- 3단검색 end -->
 	
 		<!-- 로그아웃 -->
 		<script>
@@ -412,29 +401,49 @@
 				}
 			});
 		});
+		<!-- 로그아웃 end -->
 		
-		searchM = function(seq){
+		<!-- 3단검색 -->
+		function setComboBox1(0){
 			$.ajax({
 				async: true 
 				,cache: false
 				,type: "post"
-				,url: ""
-				,data: {"", seq}
+				,url: "/main/main"
+				,data: {"madeCountry", seq}
 				,success: function(response) {
-					if(response.rt == "success") {
-						var.korList = date.reuslt
-						var.korList = 
-					} else {
-						// by pass
+					
+					<c:set var="listCodemadeby" value="${CodeServiceImpl.selectListCachedCode('13')}"/>
+					var arr = new Array();
+					<c:forEach items="${listCodemadeby}" var="listMadeby" varStatus="statusMadeby">
+						arr.push({
+							num : "${listmadeby.seq}"				/* 여기 */
+						,name : "${listmadeby.name}"   				/* 여기 */
+						});
+					</c:forEach>
+					for(var i=0; i<response.madeby.length; i++){
+						var list = response.madeby[i];
+						var num = 0;
+						for(var j=0; j<arr.length; j++){
+							if(list.madeby == arr[j].num){
+								list.madeby == arr[j].name;
+								num = arr[j].num
+							}
+						}
+						$("#madeby").append('<option value=" <c:if test="${'+ list.madeby + 'eq' + num + '}">selected</c:if>>'+ list.event+'<option>')
 					}
 				}
 				,error : function(jqXHR, textStatus, errorThrown){
 					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
 				}
 			});
-		});
+		}
+		
+		function setComboBox2(o){
+			
+		}); 
 		</script>
-		<!-- 로그아웃end -->
+		<!-- 3단검색 end -->
 	
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

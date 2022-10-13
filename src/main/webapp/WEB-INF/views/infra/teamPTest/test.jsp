@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap demo</title>
-	<link rel="stylesheet" href="../css/memberFrom.css">
+	<link rel="stylesheet" href="../../resources/css/test/memberForm.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -97,28 +97,34 @@
 			<div class="row mt-3">
 				<div class="col">
 					<div class="row">
-						<div class="col-3">
+						<div class="col">
 							<label>우편번호</label>
 							<input type="text" class="form-control" id="sample4_postcode">
 						</div>
 						<div class="col mt-4">
 							<button type="button" class="btn btn-primary" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">우편번호</button>
 						</div>
-							<!-- 지도 -->
-							<div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
-							<!-- 지도 end-->
-						<div class="row mt-2">
-							<div class="col-5">
-								<input type="text" class="form-control" id="sample4_roadAddress">
-							</div>
-						</div>
-						<div class="row mt-2">
-							<div class="col-5">
-								<input type="text" class="form-control" id="sample4_jibunAddress">
-							</div>
-							<div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
+					</div>
+					<div class="row mt-2">
+						<div class="col">
+							<input type="text" class="form-control" id="sample4_roadAddress">
 						</div>
 					</div>
+					<div class="row mt-2">
+						<div class="col">
+							<input type="text" class="form-control" id="sample4_jibunAddress">
+						</div>
+					</div>
+					<div class="row mt-2">
+						<div class="col">
+							<input type="text" class="form-control" id="">
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<!-- 지도 -->
+						<div id="map" style="width:100%;height:100%;"></div>
+					<!-- 지도 end-->
 				</div>
 			</div>
 			<div class="row mt-3">
@@ -156,7 +162,8 @@
 	 </script>
 	 <!-- DatePicker end -->
 
-	 <!-- 우편번호 --> 
+	 	<!-- 카카오맵API -->
+	<!-- 우편번호 --> 
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a4110429842172d8d27ea6bb34d77957&libraries=services"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script>
@@ -171,22 +178,17 @@
 	                var roadAddr = data.roadAddress; // 도로명 주소 변수
 	                var extraRoadAddr = ''; // 참고 항목 변수
 	                
-	                var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-			           mapOption = {
-			               center: new daum.maps.LatLng(37.537187, 127.005476), // 지도의 중심좌표
-			               level: 5 // 지도의 확대 레벨
-			           };
-		
-			       //지도를 미리 생성
-			       var map = new daum.maps.Map(mapContainer, mapOption);
-			       //주소-좌표 변환 객체를 생성
-			       var geocoder = new daum.maps.services.Geocoder();
-			       //마커를 미리 생성
-			       var marker = new daum.maps.Marker({
-			           position: new daum.maps.LatLng(37.537187, 127.005476),
-			           map: map
-			       });
-			       
+	                /* 지도생성 */
+	                var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	                mapOption = { 
+	                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+	                    level: 3 // 지도의 확대 레벨
+	                };
+
+		            // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+		            var map = new kakao.maps.Map(mapContainer, mapOption); 
+		            /* 지도생성 end */
+		            
 	                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
 	                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
 	                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
@@ -228,33 +230,30 @@
 	                    guideTextBox.innerHTML = '';
 	                    guideTextBox.style.display = 'none';
 	                } */
-	                            var addr = data.address; // 최종 주소 변수
-
-	                            // 주소 정보를 해당 필드에 넣는다.
-	                            document.getElementById("sample4_postcode").value = addr;
-	                            // 주소로 상세 정보를 검색
-	                            geocoder.addressSearch(data.address, function(results, status) {
-	                                // 정상적으로 검색이 완료됐으면
-	                                if (status === daum.maps.services.Status.OK) {
-
-	                                    var result = results[0]; //첫번째 결과의 값을 활용
-
-	                                    // 해당 주소에 대한 좌표를 받아서
-	                                    var coords = new daum.maps.LatLng(result.y, result.x);
-	                                    // 지도를 보여준다.
-	                                    mapContainer.style.display = "block";
-	                                    map.relayout();
-	                                    // 지도 중심을 변경한다.
-	                                    map.setCenter(coords);
-	                                    // 마커를 결과값으로 받은 위치로 옮긴다.
-	                                    marker.setPosition(coords)
-	                                }
-	                            });
+			<!-- 위도/경도 -->
+			/* lat and lng from address s */
+				
+			// 주소-좌표 변환 객체를 생성
+			var geocoder = new daum.maps.services.Geocoder();
+			
+			// 주소로 좌표를 검색
+			geocoder.addressSearch(roadAddr, function(result, status) {
+			 
+				// 정상적으로 검색이 완료됐으면,
+				if (status == daum.maps.services.Status.OK) {
+					
+					document.getElementById("lng").value=result[0].y;
+					document.getElementById("lat").value=result[0].x;
+				}
+			});
+			/* lat and lng from address e */
+		<!-- 위도/경도 end -->
 	            }
 	        }).open();
 	    }
 	</script>
 	<!-- 우편번호 end -->
+	<!-- 카카오맵API end -->
 
 
 	

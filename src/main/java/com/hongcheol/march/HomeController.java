@@ -66,7 +66,7 @@ public class HomeController {
 		
 		@RequestMapping(value = "test")
 		public String test() {
-			return "infra/test";
+			return "infra/teamPTest/test";
 		}
 	
 	
