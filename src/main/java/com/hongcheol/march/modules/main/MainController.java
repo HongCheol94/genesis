@@ -42,7 +42,7 @@ public class MainController {
 	  }
 	  
 	  @ResponseBody
-	  @RequestMapping(value = "searchMadeCountry")
+	  @RequestMapping(value = "madeCountry")
 	  public Map<String,Object> searchMadeCountry(Main dto) throws Exception{
 		  Map<String, Object> returnMap = new HashMap<String, Object>();
 		  
@@ -58,7 +58,7 @@ public class MainController {
 	  }
 	  
 	  @ResponseBody
-	  @RequestMapping(value = "searchMadeby")
+	  @RequestMapping(value = "madeby")
 	  public Map<String, Object> searchMadeby(Main dto) throws Exception {
 		  Map<String, Object> returnMap = new HashMap<String, Object>();
 		  

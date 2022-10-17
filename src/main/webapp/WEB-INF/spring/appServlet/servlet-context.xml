@@ -42,6 +42,9 @@
 			<exclude-mapping path="/member/memberRegForm" />
 			<exclude-mapping path="/code/codeList" />
 			<exclude-mapping path="/codeGroup/codeGroupList" />
+			<exclude-mapping path="/test" />
+			<exclude-mapping path="/madeCountry" />
+			<exclude-mapping path="/madeby" />
 			
 			<beans:bean id="checkLoginSessionInterception" class="com.hongcheol.march.common.interceptor.CheckLoginSessionInterception"/>
 		</interceptor>

@@ -123,7 +123,7 @@
 				</div>
 				<div class="col">
 					<!-- 지도 -->
-						<div id="map" style="width:100%;height:100%;"></div>
+						<div id="map" style="width:65%;height:100%;"></div>
 					<!-- 지도 end-->
 				</div>
 			</div>

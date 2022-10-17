@@ -19,7 +19,7 @@
 <body>
 	<!-- start -->
 	
-	<form method="post" actoin="/main/main">
+	<form method="post">
 		<c:set var="listCodemadeby" value="${CodeServiceImpl.selectListCachedCode('13')}" />
 		<c:set var="listCodemodel" value="${CodeServiceImpl.selectListCachedCode('12')}" />
 		<c:set var="listCodeMadeCountry" value="${CodeServiceImpl.selectListCachedCode('15')}" />
@@ -114,7 +114,7 @@
 			</div>
 			<div class="row border mt-5">
 				<div class="col-3 mt-4 mb-4">
-				<select class="form-select" aria-label="Default select example" id="madeCountry" onchange="serCombox1(this)">
+				<select class="form-select" aria-label="Default select example" id="madeCountry" onchange="setComboBox1(this)">
 					 <option value="0">제조국</option>
 					 <c:forEach items="${listCodeMadeCountry}" var="listmadeCountry" varStatus="statusMadeCountry">
 						<option value="${listmadeCountry.seq }" <c:if test="${item.MadeCountry eq listmadeCountry.seq }">selected</c:if>><c:out value="${listmadeCountry.codeGroupCode }"/></option>
@@ -122,7 +122,7 @@
 				</select>
 				</div>
 				<div class="col-3 mt-4 mb-4">
-				<select class="form-select" aria-label="Default select example" id="madeby" onchange="serCombox2(this)">
+				<select class="form-select" aria-label="Default select example" id="madeby" onchange="setComboBox2(this)">
 					  <option value="0">제조사</option>
 					  <c:forEach items="${listCodemadeby}" var="listMadeby" varStatus="statusMadeby">
 					  	<option class="select1" value="${listMadeby.seq}"  <c:if test="${item.madeby eq listMadeby.seq}">selected</c:if>><c:out value="${listMadeby.codeGroupCode }"/></option>
@@ -131,9 +131,9 @@
 				</div>
 				<div class="col-3 mt-4 mb-4">
 				<select class="form-select" aria-label="Default select example">
-					<option class="select2"  value="0">모델</option>
+					<option value="0">모델</option>
 					<c:forEach items="${listCodemodel}" var="listmodel" varStatus="statusGender">
-						<option value="${listmodel.seq }"  onchange="" <c:if test="${item.model eq listmodel.seq }">selected</c:if>><c:out value="${listmodel.codeGroupCode }"/></option>
+						<option class="select2" value="${listmodel.seq }"  onchange="" <c:if test="${item.model eq listmodel.seq }">selected</c:if>><c:out value="${listmodel.codeGroupCode }"/></option>
 					</c:forEach>
 				</select>
 				</div>
@@ -408,35 +408,35 @@
 		function setComboBox1(o){
 			var code = o.value;
 			
-			$("option").remove("select");
+			$("option").remove("select1");
 			$("option").remove("select2");
 			
 			$.ajax({
 				async: true 
 				,cache: false
 				,type: "post"
-				,url: "/main/madeCountry"
-				,data: {"madeCountry", seq}
+				,url: "madeCountry"
+				,data: {"madeCountry" : code}
 				,success: function(response) {
 					
 					<c:set var="listCodemadeby" value="${CodeServiceImpl.selectListCachedCode('13')}"/>
 					var arr = new Array();
 					<c:forEach items="${listCodemadeby}" var="listMadeby" varStatus="statusMadeby">
 						arr.push({
-							num : "${listmadeby.seq}"				/* 여기 */
-							,name : "${listmadeby.name}"   				/* 여기 */
+							num : "${listMadeby.seq}"				/* 여기 */
+							,name : "${listMadeby.codeGroupCode}"   				/* 여기 */
 						});
 					</c:forEach>
-					for(var i=0; i<response.madeby.length; i++){
-						var list = response.madeby[i];
+					for(var i=0; i<response.searchMadeby.length; i++){
+						var list = response.searchMadeby[i];
 						var num = 0;
 						for(var j=0; j<arr.length; j++){
-							if(list.madeby == arr[j].num){
-								list.madeby == arr[j].name;
+							if(list.searchMadeby == arr[j].num){
+								list.searchMadeby == arr[j].name;
 								num = arr[j].num
 							}
 						}
-						$("#madeby").append('<option value="' + num +'" <c:if test="${'+ list.madeby + 'eq' + num + '}">selected</c:if>>'+ list.event+'<option>')
+						$("#madeby").append('<option class="select1" value="' + num +'" <c:if test="${'+ list.searchMadeby + 'eq' + num + '}">selected</c:if>>'+ list.searchMadeby+'<option>')
 					}
 				}
 				,error : function(jqXHR, textStatus, errorThrown){
@@ -447,36 +447,36 @@
 		
 		function setComboBox2(o){
 			var code = o.value;
-			var madeCountry = $("mMadeCountry").val
+			var madeCountry = $("madeCountry").val()
 			
    			$.ajax({
    				async: true 
    				,cache: false
    				,type: "post"
    				/* ,dataType:"json" */
-   				,url: "/main/model"
+   				,url: "madeby"
    				/* ,data : $("#formLogin").serialize() */
-   				,data : {"model" : code , "mMadeCountry" : madeCountry}
+   				,data : {"model" : code , "madeCountry" : madeCountry}
    				,success: function(response) {
    					
    					<c:set var="listCodemodel" value="${CodeServiceImpl.selectListCachedCode('12') }" />
 					var arr = new Array();
 					<c:forEach items="${listCodemodel}" var="listmodel" varStatus="statusmodel">
 						arr.push({
-							num : "${listStadium.ccSeq}"
-							,name : "${listStadium.ifccName}"
+							num : "${listmodel.seq}"
+							,name : "${listmodel.codeGroupCode}"
 						});
 					</c:forEach>
-					for(var i=0; i<response.stadium.length; i++){
-						 var list = response.stadium[i];
+					for(var i=0; i<response.model.length; i++){
+						 var list = response.model[i];
 						 var num =0;
 						 for(var j=0; j<arr.length; j++){
-							 if(list.stadium == arr[j].num){
-						 		 list.stadium = arr[j].name;
+							 if(list.model == arr[j].num){
+						 		 list.model = arr[j].name;
 						 		 num = arr[j].num
 							 }
 						 }
-						 $("#model").append('<option value="' + num +'" <c:if test="${'+ list.stadium +'eq '+ num + ' }">selected</c:if>>'+ list.stadium+'</option>')
+						 $("#model").append('<option class="select2" value="' + num +'" <c:if test="${'+ list.model +'eq '+ num + ' }">selected</c:if>>'+ list.model+'</option>')
 					}  
    				}
    				,error : function(jqXHR, textStatus, errorThrown){
