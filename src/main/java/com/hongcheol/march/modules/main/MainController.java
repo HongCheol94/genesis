@@ -73,14 +73,15 @@ public class MainController {
 		  return returnMap;
 	  }
 	  
-	  @ResponseBody
-	  @RequestMapping(value= "searchModel")
-	  public Map<String, Object> searchModel(Main dto) throws Exception {
-		Map<String, Object> returnMap = new HashMap<String, Object>();
-		
-		return returnMap;
-	  }
-	  
+		/*
+		 * @ResponseBody
+		 * 
+		 * @RequestMapping(value= "searchModel") public Map<String, Object>
+		 * searchModel(Main dto) throws Exception { Map<String, Object> returnMap = new
+		 * HashMap<String, Object>();
+		 * 
+		 * return returnMap; }
+		 */
 
 	 
 	

@@ -28,14 +28,17 @@
 		SELECT
 			a.*
 		FROM mainSearch a
-		WHERE 1=1
+		WHERE 1=1 
+		group by madeCountry
 	</select>
 	
-		<select id="searchMadeby" resultMap="resultMapObj">
+	<select id="searchMadeby" resultMap="resultMapObj">
 		SELECT
 			a.*
 		FROM mainSearch a
 		WHERE 1=1
+			AND madeCountry = #{madeCountry}
+		group by madeby
 	</select>
 	
 	<select id="searchModel" resultMap="resultMapObj">
@@ -43,5 +46,8 @@
 			a.*
 		FROM mainSearch a
 		WHERE 1=1
+			AND madeCountry = #{madeCountry}
+			AND madeby = #{madeby} 
+		group by model
 	</select>
 </mapper>

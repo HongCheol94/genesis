@@ -17,6 +17,7 @@ public class MainServiceImpl implements MainService {
 		return list;
 	}
 	
+	/* main Search */
 	@Override
 	public List<Main> searchMadeCountry(Main dto) throws Exception {
 		List<Main> list = dao.searchMadeCountry(dto);

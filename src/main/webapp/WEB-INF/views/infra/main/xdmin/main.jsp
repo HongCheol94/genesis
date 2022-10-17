@@ -114,26 +114,26 @@
 			</div>
 			<div class="row border mt-5">
 				<div class="col-3 mt-4 mb-4">
-				<select class="form-select" aria-label="Default select example">
-					  <option value="0">제조국</option>
-					 <c:forEach items="${listCodeMadeCountry}" var="listmadeCountry" varStatus="statusGender">
-						<option value="${listmadeCountry.seq }" onchange="serCombox1(this)" <c:if test="${item.MadeCountry eq listmadeCountry.seq }">selected</c:if>>${listmadeCountry.codeGroupCode }</option>
+				<select class="form-select" aria-label="Default select example" id="madeCountry" onchange="serCombox1(this)">
+					 <option value="0">제조국</option>
+					 <c:forEach items="${listCodeMadeCountry}" var="listmadeCountry" varStatus="statusMadeCountry">
+						<option value="${listmadeCountry.seq }" <c:if test="${item.MadeCountry eq listmadeCountry.seq }">selected</c:if>><c:out value="${listmadeCountry.codeGroupCode }"/></option>
 					</c:forEach>
 				</select>
 				</div>
 				<div class="col-3 mt-4 mb-4">
-				<select class="form-select" aria-label="Default select example" id="madeby">
+				<select class="form-select" aria-label="Default select example" id="madeby" onchange="serCombox2(this)">
 					  <option value="0">제조사</option>
 					  <c:forEach items="${listCodemadeby}" var="listMadeby" varStatus="statusMadeby">
-					  	<option value="${listMadeby.seq}"  onchange="serCombox2(this)" <c:if test="${item.madeby eq listMadeby.seq}">selected</c:if>>${listMadeby.codeGroupCode }</option>
+					  	<option class="select1" value="${listMadeby.seq}"  <c:if test="${item.madeby eq listMadeby.seq}">selected</c:if>><c:out value="${listMadeby.codeGroupCode }"/></option>
 					  </c:forEach>
 				</select>
 				</div>
 				<div class="col-3 mt-4 mb-4">
 				<select class="form-select" aria-label="Default select example">
-					<option value="0">모델</option>
+					<option class="select2"  value="0">모델</option>
 					<c:forEach items="${listCodemodel}" var="listmodel" varStatus="statusGender">
-						<option value="${listmodel.seq }"  onchange="serCombox3(this)" <c:if test="${item.model eq listmodel.seq }">selected</c:if>>${listmodel.codeGroupCode }</option>
+						<option value="${listmodel.seq }"  onchange="" <c:if test="${item.model eq listmodel.seq }">selected</c:if>><c:out value="${listmodel.codeGroupCode }"/></option>
 					</c:forEach>
 				</select>
 				</div>
@@ -403,13 +403,19 @@
 		});
 		<!-- 로그아웃 end -->
 		
-		<!-- 3단검색 -->
-		function setComboBox1(0){
+		<!-- 3단검색 ajax -->
+		
+		function setComboBox1(o){
+			var code = o.value;
+			
+			$("option").remove("select");
+			$("option").remove("select2");
+			
 			$.ajax({
 				async: true 
 				,cache: false
 				,type: "post"
-				,url: "/main/main"
+				,url: "/main/madeCountry"
 				,data: {"madeCountry", seq}
 				,success: function(response) {
 					
@@ -418,7 +424,7 @@
 					<c:forEach items="${listCodemadeby}" var="listMadeby" varStatus="statusMadeby">
 						arr.push({
 							num : "${listmadeby.seq}"				/* 여기 */
-						,name : "${listmadeby.name}"   				/* 여기 */
+							,name : "${listmadeby.name}"   				/* 여기 */
 						});
 					</c:forEach>
 					for(var i=0; i<response.madeby.length; i++){
@@ -430,7 +436,7 @@
 								num = arr[j].num
 							}
 						}
-						$("#madeby").append('<option value=" <c:if test="${'+ list.madeby + 'eq' + num + '}">selected</c:if>>'+ list.event+'<option>')
+						$("#madeby").append('<option value="' + num +'" <c:if test="${'+ list.madeby + 'eq' + num + '}">selected</c:if>>'+ list.event+'<option>')
 					}
 				}
 				,error : function(jqXHR, textStatus, errorThrown){
@@ -440,10 +446,49 @@
 		}
 		
 		function setComboBox2(o){
+			var code = o.value;
+			var madeCountry = $("mMadeCountry").val
 			
-		}); 
+   			$.ajax({
+   				async: true 
+   				,cache: false
+   				,type: "post"
+   				/* ,dataType:"json" */
+   				,url: "/main/model"
+   				/* ,data : $("#formLogin").serialize() */
+   				,data : {"model" : code , "mMadeCountry" : madeCountry}
+   				,success: function(response) {
+   					
+   					<c:set var="listCodemodel" value="${CodeServiceImpl.selectListCachedCode('12') }" />
+					var arr = new Array();
+					<c:forEach items="${listCodemodel}" var="listmodel" varStatus="statusmodel">
+						arr.push({
+							num : "${listStadium.ccSeq}"
+							,name : "${listStadium.ifccName}"
+						});
+					</c:forEach>
+					for(var i=0; i<response.stadium.length; i++){
+						 var list = response.stadium[i];
+						 var num =0;
+						 for(var j=0; j<arr.length; j++){
+							 if(list.stadium == arr[j].num){
+						 		 list.stadium = arr[j].name;
+						 		 num = arr[j].num
+							 }
+						 }
+						 $("#model").append('<option value="' + num +'" <c:if test="${'+ list.stadium +'eq '+ num + ' }">selected</c:if>>'+ list.stadium+'</option>')
+					}  
+   				}
+   				,error : function(jqXHR, textStatus, errorThrown){
+   					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+   				}
+   			});
+	 
+		}
+		
+	
 		</script>
-		<!-- 3단검색 end -->
+		<!-- 3단검색 ajax end -->
 	
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
