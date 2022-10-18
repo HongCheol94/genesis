@@ -22,7 +22,7 @@
 	<form method="post">
 		<c:set var="listCodemadeby" value="${CodeServiceImpl.selectListCachedCode('13')}" />
 		<c:set var="listCodemodel" value="${CodeServiceImpl.selectListCachedCode('12')}" />
-		<c:set var="listCodeMadeCountry" value="${CodeServiceImpl.selectListCachedCode('15')}" />
+		<c:set var="listCodemadeCountry" value="${CodeServiceImpl.selectListCachedCode('15')}" />
 		<div class="container-md">
 			<div class=text-end>
 				<a href="myPage">
@@ -116,8 +116,8 @@
 				<div class="col-3 mt-4 mb-4">
 				<select class="form-select" aria-label="Default select example" id="madeCountry" onchange="setComboBox1(this)">
 					 <option value="0">제조국</option>
-					 <c:forEach items="${listCodeMadeCountry}" var="listmadeCountry" varStatus="statusMadeCountry">
-						<option value="${listmadeCountry.seq }" <c:if test="${item.MadeCountry eq listmadeCountry.seq }">selected</c:if>><c:out value="${listmadeCountry.codeGroupCode }"/></option>
+					 <c:forEach items="${listCodemadeCountry}" var="listmadeCountry" varStatus="statusmadeCountry">
+						<option value="${listmadeCountry.seq }" <c:if test="${item.madeCountry eq listmadeCountry.seq }">selected</c:if>><c:out value="${listmadeCountry.codeGroupCode }"/></option>
 					</c:forEach>
 				</select>
 				</div>
@@ -130,7 +130,7 @@
 				</select>
 				</div>
 				<div class="col-3 mt-4 mb-4">
-				<select class="form-select" aria-label="Default select example">
+				<select class="form-select" aria-label="Default select example" id="model" name="model">
 					<option value="0">모델</option>
 					<c:forEach items="${listCodemodel}" var="listmodel" varStatus="statusGender">
 						<option class="select2" value="${listmodel.seq }"  onchange="" <c:if test="${item.model eq listmodel.seq }">selected</c:if>><c:out value="${listmodel.codeGroupCode }"/></option>
@@ -408,8 +408,8 @@
 		function setComboBox1(o){
 			var code = o.value;
 			
-			$("option").remove("select1");
-			$("option").remove("select2");
+			$("option").remove(".select1");
+			$("option").remove(".select2");
 			
 			$.ajax({
 				async: true 
@@ -421,22 +421,22 @@
 					
 					<c:set var="listCodemadeby" value="${CodeServiceImpl.selectListCachedCode('13')}"/>
 					var arr = new Array();
-					<c:forEach items="${listCodemadeby}" var="listMadeby" varStatus="statusMadeby">
+					<c:forEach items="${listCodemadeby}" var="listmadeby" varStatus="statusmadeby">
 						arr.push({
-							num : "${listMadeby.seq}"				/* 여기 */
-							,name : "${listMadeby.codeGroupCode}"   				/* 여기 */
+							num : "${listmadeby.seq}"				/* 여기 */
+							,name : "${listmadeby.codeGroupCode}"   				/* 여기 */
 						});
 					</c:forEach>
 					for(var i=0; i<response.searchMadeby.length; i++){
 						var list = response.searchMadeby[i];
 						var num = 0;
 						for(var j=0; j<arr.length; j++){
-							if(list.searchMadeby == arr[j].num){
-								list.searchMadeby == arr[j].name;
+							if(list.madeby == arr[j].num){
+								list.madeby = arr[j].name;
 								num = arr[j].num
 							}
 						}
-						$("#madeby").append('<option class="select1" value="' + num +'" <c:if test="${'+ list.searchMadeby + 'eq' + num + '}">selected</c:if>>'+ list.searchMadeby+'<option>')
+						$("#madeby").append('<option class="select1" value="' + num +'" <c:if test="${'+ list.madeby +'eq '+ num + ' }">selected</c:if>>'+ list.madeby+'</option>')
 					}
 				}
 				,error : function(jqXHR, textStatus, errorThrown){
@@ -447,8 +447,10 @@
 		
 		function setComboBox2(o){
 			var code = o.value;
-			var madeCountry = $("madeCountry").val()
+			var madeCountry = $("#madeCountry").val();
 			
+			$("option").remove(".select2");
+
    			$.ajax({
    				async: true 
    				,cache: false
@@ -456,19 +458,19 @@
    				/* ,dataType:"json" */
    				,url: "madeby"
    				/* ,data : $("#formLogin").serialize() */
-   				,data : {"model" : code , "madeCountry" : madeCountry}
+   				,data : { "madeby" : code, "madeCountry" : madeCountry }
    				,success: function(response) {
-   					
-   					<c:set var="listCodemodel" value="${CodeServiceImpl.selectListCachedCode('12') }" />
+   					   					
+   					<c:set var="listCodeModel" value="${CodeServiceImpl.selectListCachedCode('12') }" />
 					var arr = new Array();
-					<c:forEach items="${listCodemodel}" var="listmodel" varStatus="statusmodel">
+					<c:forEach items="${listCodeModel}" var="listModel" varStatus="statusModel">
 						arr.push({
-							num : "${listmodel.seq}"
-							,name : "${listmodel.codeGroupCode}"
+							num : "${listModel.seq}"
+							,name : "${listModel.codeGroupCode}"
 						});
 					</c:forEach>
-					for(var i=0; i<response.model.length; i++){
-						 var list = response.model[i];
+					for(var i=0; i<response.searchModel.length; i++){
+						 var list = response.searchModel[i];
 						 var num =0;
 						 for(var j=0; j<arr.length; j++){
 							 if(list.model == arr[j].num){
@@ -477,7 +479,7 @@
 							 }
 						 }
 						 $("#model").append('<option class="select2" value="' + num +'" <c:if test="${'+ list.model +'eq '+ num + ' }">selected</c:if>>'+ list.model+'</option>')
-					}  
+					}                                                                                                                                                                              
    				}
    				,error : function(jqXHR, textStatus, errorThrown){
    					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
@@ -485,8 +487,6 @@
    			});
 	 
 		}
-		
-	
 		</script>
 		<!-- 3단검색 ajax end -->
 	

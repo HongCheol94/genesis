@@ -69,35 +69,21 @@
 		</div>
 		
 		<!-- 중앙 상단 나브바 -->
-		<nav class="navbar bg-warning">
-		  <div class="container-fluid">
-		    <form class="d-flex mx-auto" role="search">
-		      <input class="form-control me-2" type="search" placeholder="164.266대의 차량이 있습니다." aria-label="Search">
-		      <button class="btn btn-outline-success" type="submit">Search</button>
-		    </form>
-		    <ul class="nav justify-content-end">
-			  <li class="nav-item">
-			    <a class="nav-link active" aria-current="page" href="#" style="color: green">
-			    	<p class="fs-3">
-			    		<i class="fa-solid fa-user"></i>
-		    		</p>	
-		    	</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link" href="#" style="color:black">
-			    	<p class="fs-4">
-			    		<i class="fa-solid fa-right-to-bracket"></i>
-		    		</p>
-		    	</a>
-			  </li>
-			</ul>
-		  </div>
-		</nav>
-		
+		<div class="container">
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-3 offset-3 mt-5">
+					<input class="form-control me-2" type="search" placeholder="164.266대의 차량이 있습니다." aria-label="Search">
+				</div>
+				<div class="col-1 mt-5">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</div>
+			</div>
+		</div>
 		<!-- 중앙 내용 start -->
 		<div style="height: 100px">
 		
 		</div>
+		<hr>
 		<div class=container-md>
 			<div class="row">
 			<!-- 사이드 드롭다운 stary -->
@@ -116,694 +102,2048 @@
 					<div class="tab-content" id="myTabContent">
 					<!-- 사이드 드롭다운 전체 start -->
 					  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-					  	<div class="col-5 text-end">
-					  		<p class="fs-3">163,424대</p>
-					  	</div>
 					  	<div class="col">
 					  		<div class="accordion" id="accordionPanelsStayOpenExample">
-					  <div class="accordion-item">
-					    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-					      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-					        <p class="fs-4">차종</p>
-					      </button>
-					    </h2>
-					    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-					       <!-- 차종 내용 start -->
-					      <div class="accordion-body">
-					      	<div class="row">
-					      		<div class="col">
-					      			<input type="checkbox">경차
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			15,376대
-					      		</div>
-					      	</div>
-				      		<div class="row">
-					      		<div class="col ">
-					      			<input type="checkbox">소형
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			5,751대
-					      		</div>
-					      	</div>
-					      	<div class="row">
-					      		<div class="col">
-					      			<input type="checkbox">준준형
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			19,723대
-					      		</div>
-					      	</div>
-					      	<div class="row">
-					      		<div class="col">
-					      			<input type="checkbox">중형
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			25,870대
-					      		</div>
-					      	</div>
-					      	<div class="row">
-					      		<div class="col">
-					      			<input type="checkbox">대형
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			25,8886대
-					      		</div>
-					      	</div>
-					      	<div class="row">
-					      		<div class="col">
-					      			<input type="checkbox">스포츠카
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			1,633대
-					      		</div>
-					      	</div>
-				      		<div class="row">
-					      		<div class="col">
-					      			<input type="checkbox">RV
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			6,094대
-					      		</div>
-					      	</div>
-					      	<div class="row">
-					      		<div class="col">
-					      			<input type="checkbox">SUV
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			41,486대
-					      		</div>
-					      	</div>
-					      	<div class="row">
-					      		<div class="col">
-					      			<input type="checkbox">승합
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			4,143대
-					      		</div>
-					      	</div>
-					      	<div class="row">
-					      		<div class="col">
-					      			<input type="checkbox">버스
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			138대
-					      		</div>
-					      	</div>
-					      	<div class="row">
-					      		<div class="col">
-					      			<input type="checkbox">트럭
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			17,260대
-					      		</div>
-					      	</div>
-				      		<div class="row">
-					      		<div class="col">
-					      			<input type="checkbox">특수
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			3대
-					      		</div>
-					      	</div>
-					      	<div class="row">
-					      		<div class="col">
-					      			<input type="checkbox">중기
-					      		</div>
-					      		<div class="col offset-2 text-end">
-					      			14대
-					      		</div>
-					      	</div>
-					      </div>
-					      <!-- 차종 내용 end -->
-					    </div>
-					  </div>
-					  <div class="accordion-item">
-					    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-					      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-					       <p class="fs-4">제조사/모델</p>
-					      </button>
-					    </h2>
-					    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-					      <!-- 제조사 모델 내용 start -->
-					      <div class="accordion-body">
-						      <div class="col">
-							  	 <nav id="navbar-example2" class="navbar px-3 mb-3">
-								   <a class="navbar-brand" href="#">제조사/모델</a>
-								   <ul class="nav nav-pills">
-								     <li class="nav-item">
-								       <a class="nav-link" href="#scrollspyHeading1">국산차</a>
-								     </li>
-								     <li class="nav-item">
-								       <a class="nav-link" href="#scrollspyHeading2">수입차</a>
-								     </li>
-								   </ul>
-								 </nav>
-								 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2" tabindex="0">
-								   <h4 id="scrollspyHeading1" style="background-color:lightgray">국산차</h4>
-								   <!-- 국산차 -->
-									   <div class="row">
-										   <div class="col text-starr">
-										   		현대
-										   </div>
-										   <div class="col text-end">
-										   		50,587대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		기아
-										   </div>
-										   <div class="col text-end">
-										   		46,048대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		한국GM
-										   </div>
-										   <div class="col text-end">
-										   		11,575대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		쌍용
-										   </div>
-										   <div class="col text-end">
-										   		8,722대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		르노코리아
-										   </div>
-										   <div class="col text-end">
-										   		8,353대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		제네시스
-										   </div>
-										   <div class="col text-end">
-										   		4,520대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		기타
-										   </div>
-										   <div class="col text-end">
-										   		21대
-										   </div>
-									   </div>
-								   <!-- 수입차목록 -->
-								   <h4 id="scrollspyHeading2" style="background-color:lightgray">수입차</h4>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		벤츠
-										   </div>
-										   <div class="col text-end">
-										   		7,998대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		BMW
-										   </div>
-										   <div class="col text-end">
-										   		7,630대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		아우디
-										   </div>
-										   <div class="col text-end">
-										   		3,695대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		폭스바겐
-										   </div>
-										   <div class="col text-end">
-										   		2,236대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		미니
-										   </div>
-										   <div class="col text-end">
-										   		1,641대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		랜드로버
-										   </div>
-										   <div class="col text-end">
-										   		1,415대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		qhfqh
-										   </div>
-										   <div class="col text-end">
-										   		1,151대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		지프
-										   </div>
-										   <div class="col text-end">
-										   		909대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		포드
-										   </div>
-										   <div class="col text-end">
-										   		879대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		포르쉐
-										   </div>
-										   <div class="col text-end">
-										   		809대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		재규어
-										   </div>
-										   <div class="col text-end">
-										   		731대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		렉서스
-										   </div>
-										   <div class="col text-end">
-										   		543대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		푸조
-										   </div>
-										   <div class="col text-end">
-										   		534대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		인피니티
-										   </div>
-										   <div class="col text-end">
-										   		401대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		혼다
-										   </div>
-										   <div class="col text-end">
-										   		372대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		마세라티
-										   </div>
-										   <div class="col text-end">
-										   		370대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		닛산
-										   </div>
-										   <div class="col text-end">
-										   		354대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		링컨
-										   </div>
-										   <div class="col text-end">
-										   		333대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		도요타
-										   </div>
-										   <div class="col text-end">
-										   		276대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		캐딜락
-										   </div>
-										   <div class="col text-end">
-										   		229대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		크라이슬러
-										   </div>
-										   <div class="col text-end">
-										   		217대
-										   </div>
-									   </div>
-									   <div class="row">
-										   <div class="col text-starr">
-										   		테슬라
-									  	   </div>
-										   <div class="col text-end">
-										   		151대
-										   </div>
-								   	   </div>
-				  					 </div>
-						 	 	</div>
-							 </div>
-							 <!-- 제조사/모델 내용 end -->
-						 </div>
-					  </div>
-					  <div class="accordion-item">
-					    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-					      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-					       <p class="fs-4">연식</p>
-					      </button>
-					    </h2>
-					    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-					      <!-- 연식 내용 start -->
-					      <div class="accordion-body">
-						      <div class="col">
-							    <select class="form-select" id="validationCustom04" required>
-							      <option selected disabled value="">최소</option>
-							      <option>2000년</option>
-							      <option>2001년</option>
-							      <option>2002년</option>
-							      <option>2003년</option>
-							      <option>2004년</option>
-							      <option>2005년</option>
-							      <option>2006년</option>
-							      <option>2007년</option>
-							      <option>2008년</option>
-							      <option>2009년</option>
-							      <option>2010년</option>
-							      <option>2011년</option>
-							      <option>2012년</option>
-							      <option>2013년</option>
-							      <option>2014년</option>
-							      <option>2015년</option>
-							      <option>2016년</option>
-							      <option>2017년</option>
-							      <option>2018년</option>
-							      <option>2019년</option>
-							      <option>2020년</option>
-							      <option>2021년</option>
-							      <option>2022년</option>
-							    </select>
-					    	  </div> ~
-					    	  <div class="col">
-							     <select class="form-select" id="validationCustom04" required>
-							      <option selected disabled value="">최대</option>
-							      <option>2000년</option>
-							      <option>2001년</option>
-							      <option>2002년</option>
-							      <option>2003년</option>
-							      <option>2004년</option>
-							      <option>2005년</option>
-							      <option>2006년</option>
-							      <option>2007년</option>
-							      <option>2008년</option>
-							      <option>2009년</option>
-							      <option>2010년</option>
-							      <option>2011년</option>
-							      <option>2012년</option>
-							      <option>2013년</option>
-							      <option>2014년</option>
-							      <option>2015년</option>
-							      <option>2016년</option>
-							      <option>2017년</option>
-							      <option>2018년</option>
-							      <option>2019년</option>
-							      <option>2020년</option>
-							      <option>2021년</option>
-							      <option>2022년</option>
-							    </select>
-							  </div>
-					      </div>
-					      <!-- 연식 내용 end -->
-					    </div>
-					  </div>
-					  <div class="accordion-item">
-					    <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-					      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-					       <p class="fs-4">주행거리</p>
-					      </button>
-					    </h2>
-					    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
-					      <div class="accordion-body">
-					      	 <div class="col">
-							    <select class="form-select" id="validationCustom04" required>
-							      <option selected disabled value="">최소</option>
-							      <option>0km</option>
-							      <option>10,000km</option>
-							      <option>20,000km</option>
-							      <option>30,000km</option>
-							      <option>40,000km</option>
-							      <option>50,000km</option>
-							      <option>60,000km</option>
-							      <option>70,000km</option>
-							      <option>80,000km</option>
-							      <option>90,000km</option>
-							      <option>100,000km</option>
-							      <option>110,000km</option>
-							      <option>120,000km</option>
-							      <option>130,000km</option>
-							      <option>140,000km</option>
-							      <option>150,000km</option>
-							      <option>160,000km</option>
-							      <option>170,000km</option>
-							      <option>180,000km</option>
-							      <option>190,000km</option>
-							      <option>200,000km</option>
-							    </select>
-							  </div> ~
-							   <div class="col">
-							    <select class="form-select" id="validationCustom04" required>
-							      <option selected disabled value="">최대</option>
-							      <option>0km</option>
-							      <option>10,000km</option>
-							      <option>20,000km</option>
-							      <option>30,000km</option>
-							      <option>40,000km</option>
-							      <option>50,000km</option>
-							      <option>60,000km</option>
-							      <option>70,000km</option>
-							      <option>80,000km</option>
-							      <option>90,000km</option>
-							      <option>100,000km</option>
-							      <option>110,000km</option>
-							      <option>120,000km</option>
-							      <option>130,000km</option>
-							      <option>140,000km</option>
-							      <option>150,000km</option>
-							      <option>160,000km</option>
-							      <option>170,000km</option>
-							      <option>180,000km</option>
-							      <option>190,000km</option>
-							      <option>200,000km</option>
-							    </select>
-							  </div>
-					      </div>
-					    </div>
-					  </div>
-				  	  <div class="accordion-item">
-					    <h2 class="accordion-header" id="panelsStayOpen-headingFive">
-					      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
-					       <p class="fs-4">가격</p>
-					      </button>
-					    </h2>
-					    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
-					      <!-- 가격 내용 start -->
-					      <div class="accordion-body">
-					      	 <div class="col">
-							    <select class="form-select" id="validationCustom04" required>
-							      <option selected disabled value="">최소</option>
-							      <option>0만원</option>
-							      <option>100만원</option>
-							      <option>200만원</option>
-							      <option>300만원</option>
-							      <option>400만원</option>
-							      <option>500만원</option>
-							      <option>600만원</option>
-							      <option>700만원</option>
-							      <option>800만원</option>
-							      <option>900만원</option>
-							      <option>1,000만원</option>
-							      <option>1,100만원</option>
-							      <option>1,200만원</option>
-							      <option>1,300만원</option>
-							      <option>1,400만원</option>
-							      <option>1,500만원</option>
-							      <option>1,600만원</option>
-							      <option>1,700만원</option>
-							      <option>1,800만원</option>
-							      <option>1,900만원</option>
-							      <option>2,000만원</option>
-							      <option>2,500만원</option>
-							      <option>3,000만원</option>
-							      <option>3,500만원</option>
-							      <option>4,500만원</option>
-							      <option>5,000만원</option>
-							      <option>6,000만원</option>
-							      <option>7,000만원</option>
-							      <option>8,000만원</option>
-							      <option>9,000만원</option>
-							      <option>1억원</option>
-							    </select>
-							  </div> ~
-							  <div class="col">
-							    <select class="form-select" id="validationCustom04" required>
-							      <option selected disabled value="">최대</option>
-							      <option>0만원</option>
-							      <option>100만원</option>
-							      <option>200만원</option>
-							      <option>300만원</option>
-							      <option>400만원</option>
-							      <option>500만원</option>
-							      <option>600만원</option>
-							      <option>700만원</option>
-							      <option>800만원</option>
-							      <option>900만원</option>
-							      <option>1,000만원</option>
-							      <option>1,100만원</option>
-							      <option>1,200만원</option>
-							      <option>1,300만원</option>
-							      <option>1,400만원</option>
-							      <option>1,500만원</option>
-							      <option>1,600만원</option>
-							      <option>1,700만원</option>
-							      <option>1,800만원</option>
-							      <option>1,900만원</option>
-							      <option>2,000만원</option>
-							      <option>2,500만원</option>
-							      <option>3,000만원</option>
-							      <option>3,500만원</option>
-							      <option>4,500만원</option>
-							      <option>5,000만원</option>
-							      <option>6,000만원</option>
-							      <option>7,000만원</option>
-							      <option>8,000만원</option>
-							      <option>9,000만원</option>
-							      <option>1억원</option>
-							    </select>
-							  </div>
-					    </div>
-					    <!-- 가격 내용 end -->
-					  </div>
-				  	  <div class="accordion-item">
-					    <h2 class="accordion-header" id="panelsStayOpen-headingSix">
-					      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
-					       <p class="fs-4">연료</p>
-					      </button>
-					    </h2>
-					    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
-					      <!-- 연료 내용 start -->
-					      <div class="accordion-body">
-					      		<div class="row">
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+						      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+						        <p class="fs-4">차종</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+						       <!-- 차종 내용 start -->
+						      <div class="accordion-body">
+						      	<div class="row">
 						      		<div class="col">
-						      			<input type="checkbox">가솔린
+						      			<input type="checkbox">경차
 						      		</div>
 						      		<div class="col offset-2 text-end">
-						      			74,078
+						      			15,376대
 						      		</div>
 						      	</div>
 					      		<div class="row">
 						      		<div class="col ">
-						      			<input type="checkbox">디젤
+						      			<input type="checkbox">소형
 						      		</div>
 						      		<div class="col offset-2 text-end">
-						      			73,345대
+						      			5,751대
 						      		</div>
 						      	</div>
 						      	<div class="row">
 						      		<div class="col">
-						      			<input type="checkbox">LGP
+						      			<input type="checkbox">준준형
 						      		</div>
 						      		<div class="col offset-2 text-end">
-						      			10,219대
+						      			19,723대
 						      		</div>
 						      	</div>
 						      	<div class="row">
 						      		<div class="col">
-						      			<input type="checkbox">가솔린+LPG
+						      			<input type="checkbox">중형
 						      		</div>
 						      		<div class="col offset-2 text-end">
-						      			27대
+						      			25,870대
 						      		</div>
 						      	</div>
 						      	<div class="row">
 						      		<div class="col">
-						      			<input type="checkbox">하이브리드(LPG)
+						      			<input type="checkbox">대형
 						      		</div>
 						      		<div class="col offset-2 text-end">
-						      			80대
+						      			25,8886대
 						      		</div>
 						      	</div>
 						      	<div class="row">
 						      		<div class="col">
-						      			<input type="checkbox">CNG
+						      			<input type="checkbox">스포츠카
 						      		</div>
 						      		<div class="col offset-2 text-end">
-						      			16대
+						      			1,633대
 						      		</div>
 						      	</div>
 					      		<div class="row">
 						      		<div class="col">
-						      			<input type="checkbox">전기
+						      			<input type="checkbox">RV
 						      		</div>
 						      		<div class="col offset-2 text-end">
-						      			1,067대
+						      			6,094대
 						      		</div>
 						      	</div>
 						      	<div class="row">
 						      		<div class="col">
-						      			<input type="checkbox">기타
+						      			<input type="checkbox">SUV
 						      		</div>
 						      		<div class="col offset-2 text-end">
-						      			53대
+						      			41,486대
 						      		</div>
 						      	</div>
-					      	</div>
-					      	<!-- 연료 내용 end -->
-					    </div>
-					  </div>
-					</div>
-				  	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">승합
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			4,143대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">버스
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			138대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">트럭
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			17,260대
+						      		</div>
+						      	</div>
+					      		<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">특수
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			3대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">중기
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			14대
+						      		</div>
+						      	</div>
+						      </div>
+						      <!-- 차종 내용 end -->
+						    </div>
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+						       <p class="fs-4">제조사/모델</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+						      <!-- 제조사 모델 내용 start -->
+						      <div class="accordion-body">
+							      <div class="col">
+								  	 <nav id="navbar-example2" class="navbar px-3 mb-3">
+									   <a class="navbar-brand" href="#">제조사/모델</a>
+									   <ul class="nav nav-pills">
+									     <li class="nav-item">
+									       <a class="nav-link" href="#scrollspyHeading1">국산차</a>
+									     </li>
+									     <li class="nav-item">
+									       <a class="nav-link" href="#scrollspyHeading2">수입차</a>
+									     </li>
+									   </ul>
+									 </nav>
+									 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2" tabindex="0">
+									   <h4 id="scrollspyHeading1" style="background-color:lightgray">국산차</h4>
+									   <!-- 국산차 -->
+										   <div class="row">
+											   <div class="col text-starr">
+											   		현대
+											   </div>
+											   <div class="col text-end">
+											   		50,587대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		기아
+											   </div>
+											   <div class="col text-end">
+											   		46,048대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		한국GM
+											   </div>
+											   <div class="col text-end">
+											   		11,575대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		쌍용
+											   </div>
+											   <div class="col text-end">
+											   		8,722대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		르노코리아
+											   </div>
+											   <div class="col text-end">
+											   		8,353대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		제네시스
+											   </div>
+											   <div class="col text-end">
+											   		4,520대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		기타
+											   </div>
+											   <div class="col text-end">
+											   		21대
+											   </div>
+										   </div>
+									   <!-- 수입차목록 -->
+									   <h4 id="scrollspyHeading2" style="background-color:lightgray">수입차</h4>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		벤츠
+											   </div>
+											   <div class="col text-end">
+											   		7,998대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		BMW
+											   </div>
+											   <div class="col text-end">
+											   		7,630대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		아우디
+											   </div>
+											   <div class="col text-end">
+											   		3,695대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		폭스바겐
+											   </div>
+											   <div class="col text-end">
+											   		2,236대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		미니
+											   </div>
+											   <div class="col text-end">
+											   		1,641대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		랜드로버
+											   </div>
+											   <div class="col text-end">
+											   		1,415대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		qhfqh
+											   </div>
+											   <div class="col text-end">
+											   		1,151대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		지프
+											   </div>
+											   <div class="col text-end">
+											   		909대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		포드
+											   </div>
+											   <div class="col text-end">
+											   		879대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		포르쉐
+											   </div>
+											   <div class="col text-end">
+											   		809대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		재규어
+											   </div>
+											   <div class="col text-end">
+											   		731대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		렉서스
+											   </div>
+											   <div class="col text-end">
+											   		543대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		푸조
+											   </div>
+											   <div class="col text-end">
+											   		534대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		인피니티
+											   </div>
+											   <div class="col text-end">
+											   		401대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		혼다
+											   </div>
+											   <div class="col text-end">
+											   		372대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		마세라티
+											   </div>
+											   <div class="col text-end">
+											   		370대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		닛산
+											   </div>
+											   <div class="col text-end">
+											   		354대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		링컨
+											   </div>
+											   <div class="col text-end">
+											   		333대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		도요타
+											   </div>
+											   <div class="col text-end">
+											   		276대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		캐딜락
+											   </div>
+											   <div class="col text-end">
+											   		229대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		크라이슬러
+											   </div>
+											   <div class="col text-end">
+											   		217대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		테슬라
+										  	   </div>
+											   <div class="col text-end">
+											   		151대
+											   </div>
+									   	   </div>
+					  					 </div>
+							 	 	</div>
+								 </div>
+								 <!-- 제조사/모델 내용 end -->
+							 </div>
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+						       <p class="fs-4">연식</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+						      <!-- 연식 내용 start -->
+						      <div class="accordion-body">
+							      <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최소</option>
+								      <option>2000년</option>
+								      <option>2001년</option>
+								      <option>2002년</option>
+								      <option>2003년</option>
+								      <option>2004년</option>
+								      <option>2005년</option>
+								      <option>2006년</option>
+								      <option>2007년</option>
+								      <option>2008년</option>
+								      <option>2009년</option>
+								      <option>2010년</option>
+								      <option>2011년</option>
+								      <option>2012년</option>
+								      <option>2013년</option>
+								      <option>2014년</option>
+								      <option>2015년</option>
+								      <option>2016년</option>
+								      <option>2017년</option>
+								      <option>2018년</option>
+								      <option>2019년</option>
+								      <option>2020년</option>
+								      <option>2021년</option>
+								      <option>2022년</option>
+								    </select>
+						    	  </div> ~
+						    	  <div class="col">
+								     <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최대</option>
+								      <option>2000년</option>
+								      <option>2001년</option>
+								      <option>2002년</option>
+								      <option>2003년</option>
+								      <option>2004년</option>
+								      <option>2005년</option>
+								      <option>2006년</option>
+								      <option>2007년</option>
+								      <option>2008년</option>
+								      <option>2009년</option>
+								      <option>2010년</option>
+								      <option>2011년</option>
+								      <option>2012년</option>
+								      <option>2013년</option>
+								      <option>2014년</option>
+								      <option>2015년</option>
+								      <option>2016년</option>
+								      <option>2017년</option>
+								      <option>2018년</option>
+								      <option>2019년</option>
+								      <option>2020년</option>
+								      <option>2021년</option>
+								      <option>2022년</option>
+								    </select>
+								  </div>
+						      </div>
+						      <!-- 연식 내용 end -->
+						    </div>
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+						       <p class="fs-4">주행거리</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+						      <div class="accordion-body">
+						      	 <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최소</option>
+								      <option>0km</option>
+								      <option>10,000km</option>
+								      <option>20,000km</option>
+								      <option>30,000km</option>
+								      <option>40,000km</option>
+								      <option>50,000km</option>
+								      <option>60,000km</option>
+								      <option>70,000km</option>
+								      <option>80,000km</option>
+								      <option>90,000km</option>
+								      <option>100,000km</option>
+								      <option>110,000km</option>
+								      <option>120,000km</option>
+								      <option>130,000km</option>
+								      <option>140,000km</option>
+								      <option>150,000km</option>
+								      <option>160,000km</option>
+								      <option>170,000km</option>
+								      <option>180,000km</option>
+								      <option>190,000km</option>
+								      <option>200,000km</option>
+								    </select>
+								  </div> ~
+								   <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최대</option>
+								      <option>0km</option>
+								      <option>10,000km</option>
+								      <option>20,000km</option>
+								      <option>30,000km</option>
+								      <option>40,000km</option>
+								      <option>50,000km</option>
+								      <option>60,000km</option>
+								      <option>70,000km</option>
+								      <option>80,000km</option>
+								      <option>90,000km</option>
+								      <option>100,000km</option>
+								      <option>110,000km</option>
+								      <option>120,000km</option>
+								      <option>130,000km</option>
+								      <option>140,000km</option>
+								      <option>150,000km</option>
+								      <option>160,000km</option>
+								      <option>170,000km</option>
+								      <option>180,000km</option>
+								      <option>190,000km</option>
+								      <option>200,000km</option>
+								    </select>
+								  </div>
+						      </div>
+						    </div>
+						  </div>
+					  	  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+						       <p class="fs-4">가격</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+						      <!-- 가격 내용 start -->
+						      <div class="accordion-body">
+						      	 <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최소</option>
+								      <option>0만원</option>
+								      <option>100만원</option>
+								      <option>200만원</option>
+								      <option>300만원</option>
+								      <option>400만원</option>
+								      <option>500만원</option>
+								      <option>600만원</option>
+								      <option>700만원</option>
+								      <option>800만원</option>
+								      <option>900만원</option>
+								      <option>1,000만원</option>
+								      <option>1,100만원</option>
+								      <option>1,200만원</option>
+								      <option>1,300만원</option>
+								      <option>1,400만원</option>
+								      <option>1,500만원</option>
+								      <option>1,600만원</option>
+								      <option>1,700만원</option>
+								      <option>1,800만원</option>
+								      <option>1,900만원</option>
+								      <option>2,000만원</option>
+								      <option>2,500만원</option>
+								      <option>3,000만원</option>
+								      <option>3,500만원</option>
+								      <option>4,500만원</option>
+								      <option>5,000만원</option>
+								      <option>6,000만원</option>
+								      <option>7,000만원</option>
+								      <option>8,000만원</option>
+								      <option>9,000만원</option>
+								      <option>1억원</option>
+								    </select>
+								  </div> ~
+								  <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최대</option>
+								      <option>0만원</option>
+								      <option>100만원</option>
+								      <option>200만원</option>
+								      <option>300만원</option>
+								      <option>400만원</option>
+								      <option>500만원</option>
+								      <option>600만원</option>
+								      <option>700만원</option>
+								      <option>800만원</option>
+								      <option>900만원</option>
+								      <option>1,000만원</option>
+								      <option>1,100만원</option>
+								      <option>1,200만원</option>
+								      <option>1,300만원</option>
+								      <option>1,400만원</option>
+								      <option>1,500만원</option>
+								      <option>1,600만원</option>
+								      <option>1,700만원</option>
+								      <option>1,800만원</option>
+								      <option>1,900만원</option>
+								      <option>2,000만원</option>
+								      <option>2,500만원</option>
+								      <option>3,000만원</option>
+								      <option>3,500만원</option>
+								      <option>4,500만원</option>
+								      <option>5,000만원</option>
+								      <option>6,000만원</option>
+								      <option>7,000만원</option>
+								      <option>8,000만원</option>
+								      <option>9,000만원</option>
+								      <option>1억원</option>
+								    </select>
+								  </div>
+						    </div>
+						    <!-- 가격 내용 end -->
+						  </div>
+					  	  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+						       <p class="fs-4">연료</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
+						      <!-- 연료 내용 start -->
+						      <div class="accordion-body">
+						      		<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">가솔린
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			74,078
+							      		</div>
+							      	</div>
+						      		<div class="row">
+							      		<div class="col ">
+							      			<input type="checkbox">디젤
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			73,345대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">LGP
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			10,219대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">가솔린+LPG
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			27대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">하이브리드(LPG)
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			80대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">CNG
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			16대
+							      		</div>
+							      	</div>
+						      		<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">전기
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			1,067대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">기타
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			53대
+							      		</div>
+							      	</div>
+						      	</div>
+						      	<!-- 연료 내용 end -->
+						    </div>
+						  </div>
+						</div>
+					  	</div>
 				  </div>
 				  </div>
-				  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+<!-- 국산 -->		  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
 				  	 <!-- 국산내용 -->
+				  	 <div class="col">
+					  		<div class="accordion" id="accordionPanelsStayOpenExample">
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+						      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+						        <p class="fs-4">차종</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+						       <!-- 차종 내용 start -->
+						      <div class="accordion-body">
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">경차
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			15,376대
+						      		</div>
+						      	</div>
+					      		<div class="row">
+						      		<div class="col ">
+						      			<input type="checkbox">소형
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			5,751대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">준준형
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			19,723대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">중형
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			25,870대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">대형
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			25,8886대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">스포츠카
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			1,633대
+						      		</div>
+						      	</div>
+					      		<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">RV
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			6,094대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">SUV
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			41,486대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">승합
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			4,143대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">버스
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			138대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">트럭
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			17,260대
+						      		</div>
+						      	</div>
+					      		<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">특수
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			3대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">중기
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			14대
+						      		</div>
+						      	</div>
+						      </div>
+						      <!-- 차종 내용 end -->
+						    </div>
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+						       <p class="fs-4">제조사/모델</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+						      <!-- 제조사 모델 내용 start -->
+						      <div class="accordion-body">
+							      <div class="col">
+								  	 <nav id="navbar-example2" class="navbar px-3 mb-3">
+									   <a class="navbar-brand" href="#">제조사/모델</a>
+									   <ul class="nav nav-pills">
+									     <li class="nav-item">
+									       <a class="nav-link" href="#scrollspyHeading1">국산차</a>
+									     </li>
+									     <li class="nav-item">
+									       <a class="nav-link" href="#scrollspyHeading2">수입차</a>
+									     </li>
+									   </ul>
+									 </nav>
+									 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2" tabindex="0">
+									   <h4 id="scrollspyHeading1" style="background-color:lightgray">국산차</h4>
+									   <!-- 국산차 -->
+										   <div class="row">
+											   <div class="col text-starr">
+											   		현대
+											   </div>
+											   <div class="col text-end">
+											   		50,587대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		기아
+											   </div>
+											   <div class="col text-end">
+											   		46,048대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		한국GM
+											   </div>
+											   <div class="col text-end">
+											   		11,575대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		쌍용
+											   </div>
+											   <div class="col text-end">
+											   		8,722대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		르노코리아
+											   </div>
+											   <div class="col text-end">
+											   		8,353대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		제네시스
+											   </div>
+											   <div class="col text-end">
+											   		4,520대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		기타
+											   </div>
+											   <div class="col text-end">
+											   		21대
+											   </div>
+										   </div>
+									   <!-- 수입차목록 -->
+									   <h4 id="scrollspyHeading2" style="background-color:lightgray">수입차</h4>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		벤츠
+											   </div>
+											   <div class="col text-end">
+											   		7,998대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		BMW
+											   </div>
+											   <div class="col text-end">
+											   		7,630대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		아우디
+											   </div>
+											   <div class="col text-end">
+											   		3,695대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		폭스바겐
+											   </div>
+											   <div class="col text-end">
+											   		2,236대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		미니
+											   </div>
+											   <div class="col text-end">
+											   		1,641대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		랜드로버
+											   </div>
+											   <div class="col text-end">
+											   		1,415대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		qhfqh
+											   </div>
+											   <div class="col text-end">
+											   		1,151대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		지프
+											   </div>
+											   <div class="col text-end">
+											   		909대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		포드
+											   </div>
+											   <div class="col text-end">
+											   		879대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		포르쉐
+											   </div>
+											   <div class="col text-end">
+											   		809대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		재규어
+											   </div>
+											   <div class="col text-end">
+											   		731대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		렉서스
+											   </div>
+											   <div class="col text-end">
+											   		543대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		푸조
+											   </div>
+											   <div class="col text-end">
+											   		534대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		인피니티
+											   </div>
+											   <div class="col text-end">
+											   		401대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		혼다
+											   </div>
+											   <div class="col text-end">
+											   		372대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		마세라티
+											   </div>
+											   <div class="col text-end">
+											   		370대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		닛산
+											   </div>
+											   <div class="col text-end">
+											   		354대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		링컨
+											   </div>
+											   <div class="col text-end">
+											   		333대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		도요타
+											   </div>
+											   <div class="col text-end">
+											   		276대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		캐딜락
+											   </div>
+											   <div class="col text-end">
+											   		229대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		크라이슬러
+											   </div>
+											   <div class="col text-end">
+											   		217대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		테슬라
+										  	   </div>
+											   <div class="col text-end">
+											   		151대
+											   </div>
+									   	   </div>
+					  					 </div>
+							 	 	</div>
+								 </div>
+								 <!-- 제조사/모델 내용 end -->
+							 </div>
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+						       <p class="fs-4">연식</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+						      <!-- 연식 내용 start -->
+						      <div class="accordion-body">
+							      <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최소</option>
+								      <option>2000년</option>
+								      <option>2001년</option>
+								      <option>2002년</option>
+								      <option>2003년</option>
+								      <option>2004년</option>
+								      <option>2005년</option>
+								      <option>2006년</option>
+								      <option>2007년</option>
+								      <option>2008년</option>
+								      <option>2009년</option>
+								      <option>2010년</option>
+								      <option>2011년</option>
+								      <option>2012년</option>
+								      <option>2013년</option>
+								      <option>2014년</option>
+								      <option>2015년</option>
+								      <option>2016년</option>
+								      <option>2017년</option>
+								      <option>2018년</option>
+								      <option>2019년</option>
+								      <option>2020년</option>
+								      <option>2021년</option>
+								      <option>2022년</option>
+								    </select>
+						    	  </div> ~
+						    	  <div class="col">
+								     <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최대</option>
+								      <option>2000년</option>
+								      <option>2001년</option>
+								      <option>2002년</option>
+								      <option>2003년</option>
+								      <option>2004년</option>
+								      <option>2005년</option>
+								      <option>2006년</option>
+								      <option>2007년</option>
+								      <option>2008년</option>
+								      <option>2009년</option>
+								      <option>2010년</option>
+								      <option>2011년</option>
+								      <option>2012년</option>
+								      <option>2013년</option>
+								      <option>2014년</option>
+								      <option>2015년</option>
+								      <option>2016년</option>
+								      <option>2017년</option>
+								      <option>2018년</option>
+								      <option>2019년</option>
+								      <option>2020년</option>
+								      <option>2021년</option>
+								      <option>2022년</option>
+								    </select>
+								  </div>
+						      </div>
+						      <!-- 연식 내용 end -->
+						    </div>
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+						       <p class="fs-4">주행거리</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+						      <div class="accordion-body">
+						      	 <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최소</option>
+								      <option>0km</option>
+								      <option>10,000km</option>
+								      <option>20,000km</option>
+								      <option>30,000km</option>
+								      <option>40,000km</option>
+								      <option>50,000km</option>
+								      <option>60,000km</option>
+								      <option>70,000km</option>
+								      <option>80,000km</option>
+								      <option>90,000km</option>
+								      <option>100,000km</option>
+								      <option>110,000km</option>
+								      <option>120,000km</option>
+								      <option>130,000km</option>
+								      <option>140,000km</option>
+								      <option>150,000km</option>
+								      <option>160,000km</option>
+								      <option>170,000km</option>
+								      <option>180,000km</option>
+								      <option>190,000km</option>
+								      <option>200,000km</option>
+								    </select>
+								  </div> ~
+								   <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최대</option>
+								      <option>0km</option>
+								      <option>10,000km</option>
+								      <option>20,000km</option>
+								      <option>30,000km</option>
+								      <option>40,000km</option>
+								      <option>50,000km</option>
+								      <option>60,000km</option>
+								      <option>70,000km</option>
+								      <option>80,000km</option>
+								      <option>90,000km</option>
+								      <option>100,000km</option>
+								      <option>110,000km</option>
+								      <option>120,000km</option>
+								      <option>130,000km</option>
+								      <option>140,000km</option>
+								      <option>150,000km</option>
+								      <option>160,000km</option>
+								      <option>170,000km</option>
+								      <option>180,000km</option>
+								      <option>190,000km</option>
+								      <option>200,000km</option>
+								    </select>
+								  </div>
+						      </div>
+						    </div>
+						  </div>
+					  	  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+						       <p class="fs-4">가격</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+						      <!-- 가격 내용 start -->
+						      <div class="accordion-body">
+						      	 <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최소</option>
+								      <option>0만원</option>
+								      <option>100만원</option>
+								      <option>200만원</option>
+								      <option>300만원</option>
+								      <option>400만원</option>
+								      <option>500만원</option>
+								      <option>600만원</option>
+								      <option>700만원</option>
+								      <option>800만원</option>
+								      <option>900만원</option>
+								      <option>1,000만원</option>
+								      <option>1,100만원</option>
+								      <option>1,200만원</option>
+								      <option>1,300만원</option>
+								      <option>1,400만원</option>
+								      <option>1,500만원</option>
+								      <option>1,600만원</option>
+								      <option>1,700만원</option>
+								      <option>1,800만원</option>
+								      <option>1,900만원</option>
+								      <option>2,000만원</option>
+								      <option>2,500만원</option>
+								      <option>3,000만원</option>
+								      <option>3,500만원</option>
+								      <option>4,500만원</option>
+								      <option>5,000만원</option>
+								      <option>6,000만원</option>
+								      <option>7,000만원</option>
+								      <option>8,000만원</option>
+								      <option>9,000만원</option>
+								      <option>1억원</option>
+								    </select>
+								  </div> ~
+								  <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최대</option>
+								      <option>0만원</option>
+								      <option>100만원</option>
+								      <option>200만원</option>
+								      <option>300만원</option>
+								      <option>400만원</option>
+								      <option>500만원</option>
+								      <option>600만원</option>
+								      <option>700만원</option>
+								      <option>800만원</option>
+								      <option>900만원</option>
+								      <option>1,000만원</option>
+								      <option>1,100만원</option>
+								      <option>1,200만원</option>
+								      <option>1,300만원</option>
+								      <option>1,400만원</option>
+								      <option>1,500만원</option>
+								      <option>1,600만원</option>
+								      <option>1,700만원</option>
+								      <option>1,800만원</option>
+								      <option>1,900만원</option>
+								      <option>2,000만원</option>
+								      <option>2,500만원</option>
+								      <option>3,000만원</option>
+								      <option>3,500만원</option>
+								      <option>4,500만원</option>
+								      <option>5,000만원</option>
+								      <option>6,000만원</option>
+								      <option>7,000만원</option>
+								      <option>8,000만원</option>
+								      <option>9,000만원</option>
+								      <option>1억원</option>
+								    </select>
+								  </div>
+						    </div>
+						    <!-- 가격 내용 end -->
+						  </div>
+					  	  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+						       <p class="fs-4">연료</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
+						      <!-- 연료 내용 start -->
+						      <div class="accordion-body">
+						      		<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">가솔린
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			74,078
+							      		</div>
+							      	</div>
+						      		<div class="row">
+							      		<div class="col ">
+							      			<input type="checkbox">디젤
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			73,345대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">LGP
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			10,219대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">가솔린+LPG
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			27대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">하이브리드(LPG)
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			80대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">CNG
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			16대
+							      		</div>
+							      	</div>
+						      		<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">전기
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			1,067대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">기타
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			53대
+							      		</div>
+							      	</div>
+						      	</div>
+						      	<!-- 연료 내용 end -->
+						    </div>
+						  </div>
+						</div>
+					  	</div>
 				  </div>
-				  <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-				  	<!-- 수입내용 -->
+				  </div>
+<!-- 수입 -->		  <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+				  	<div class="col">
+					  		<div class="accordion" id="accordionPanelsStayOpenExample">
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+						      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+						        <p class="fs-4">차종</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+						       <!-- 차종 내용 start -->
+						      <div class="accordion-body">
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">경차
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			15,376대
+						      		</div>
+						      	</div>
+					      		<div class="row">
+						      		<div class="col ">
+						      			<input type="checkbox">소형
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			5,751대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">준준형
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			19,723대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">중형
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			25,870대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">대형
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			25,8886대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">스포츠카
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			1,633대
+						      		</div>
+						      	</div>
+					      		<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">RV
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			6,094대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">SUV
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			41,486대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">승합
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			4,143대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">버스
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			138대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">트럭
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			17,260대
+						      		</div>
+						      	</div>
+					      		<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">특수
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			3대
+						      		</div>
+						      	</div>
+						      	<div class="row">
+						      		<div class="col">
+						      			<input type="checkbox">중기
+						      		</div>
+						      		<div class="col offset-2 text-end">
+						      			14대
+						      		</div>
+						      	</div>
+						      </div>
+						      <!-- 차종 내용 end -->
+						    </div>
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+						       <p class="fs-4">제조사/모델</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+						      <!-- 제조사 모델 내용 start -->
+						      <div class="accordion-body">
+							      <div class="col">
+								  	 <nav id="navbar-example2" class="navbar px-3 mb-3">
+									   <a class="navbar-brand" href="#">제조사/모델</a>
+									   <ul class="nav nav-pills">
+									     <li class="nav-item">
+									       <a class="nav-link" href="#scrollspyHeading1">국산차</a>
+									     </li>
+									     <li class="nav-item">
+									       <a class="nav-link" href="#scrollspyHeading2">수입차</a>
+									     </li>
+									   </ul>
+									 </nav>
+									 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2" tabindex="0">
+									   <h4 id="scrollspyHeading1" style="background-color:lightgray">국산차</h4>
+									   <!-- 국산차 -->
+										   <div class="row">
+											   <div class="col text-starr">
+											   		현대
+											   </div>
+											   <div class="col text-end">
+											   		50,587대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		기아
+											   </div>
+											   <div class="col text-end">
+											   		46,048대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		한국GM
+											   </div>
+											   <div class="col text-end">
+											   		11,575대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		쌍용
+											   </div>
+											   <div class="col text-end">
+											   		8,722대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		르노코리아
+											   </div>
+											   <div class="col text-end">
+											   		8,353대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		제네시스
+											   </div>
+											   <div class="col text-end">
+											   		4,520대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		기타
+											   </div>
+											   <div class="col text-end">
+											   		21대
+											   </div>
+										   </div>
+									   <!-- 수입차목록 -->
+									   <h4 id="scrollspyHeading2" style="background-color:lightgray">수입차</h4>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		벤츠
+											   </div>
+											   <div class="col text-end">
+											   		7,998대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		BMW
+											   </div>
+											   <div class="col text-end">
+											   		7,630대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		아우디
+											   </div>
+											   <div class="col text-end">
+											   		3,695대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		폭스바겐
+											   </div>
+											   <div class="col text-end">
+											   		2,236대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		미니
+											   </div>
+											   <div class="col text-end">
+											   		1,641대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		랜드로버
+											   </div>
+											   <div class="col text-end">
+											   		1,415대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		qhfqh
+											   </div>
+											   <div class="col text-end">
+											   		1,151대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		지프
+											   </div>
+											   <div class="col text-end">
+											   		909대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		포드
+											   </div>
+											   <div class="col text-end">
+											   		879대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		포르쉐
+											   </div>
+											   <div class="col text-end">
+											   		809대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		재규어
+											   </div>
+											   <div class="col text-end">
+											   		731대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		렉서스
+											   </div>
+											   <div class="col text-end">
+											   		543대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		푸조
+											   </div>
+											   <div class="col text-end">
+											   		534대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		인피니티
+											   </div>
+											   <div class="col text-end">
+											   		401대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		혼다
+											   </div>
+											   <div class="col text-end">
+											   		372대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		마세라티
+											   </div>
+											   <div class="col text-end">
+											   		370대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		닛산
+											   </div>
+											   <div class="col text-end">
+											   		354대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		링컨
+											   </div>
+											   <div class="col text-end">
+											   		333대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		도요타
+											   </div>
+											   <div class="col text-end">
+											   		276대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		캐딜락
+											   </div>
+											   <div class="col text-end">
+											   		229대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		크라이슬러
+											   </div>
+											   <div class="col text-end">
+											   		217대
+											   </div>
+										   </div>
+										   <div class="row">
+											   <div class="col text-starr">
+											   		테슬라
+										  	   </div>
+											   <div class="col text-end">
+											   		151대
+											   </div>
+									   	   </div>
+					  					 </div>
+							 	 	</div>
+								 </div>
+								 <!-- 제조사/모델 내용 end -->
+							 </div>
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+						       <p class="fs-4">연식</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+						      <!-- 연식 내용 start -->
+						      <div class="accordion-body">
+							      <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최소</option>
+								      <option>2000년</option>
+								      <option>2001년</option>
+								      <option>2002년</option>
+								      <option>2003년</option>
+								      <option>2004년</option>
+								      <option>2005년</option>
+								      <option>2006년</option>
+								      <option>2007년</option>
+								      <option>2008년</option>
+								      <option>2009년</option>
+								      <option>2010년</option>
+								      <option>2011년</option>
+								      <option>2012년</option>
+								      <option>2013년</option>
+								      <option>2014년</option>
+								      <option>2015년</option>
+								      <option>2016년</option>
+								      <option>2017년</option>
+								      <option>2018년</option>
+								      <option>2019년</option>
+								      <option>2020년</option>
+								      <option>2021년</option>
+								      <option>2022년</option>
+								    </select>
+						    	  </div> ~
+						    	  <div class="col">
+								     <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최대</option>
+								      <option>2000년</option>
+								      <option>2001년</option>
+								      <option>2002년</option>
+								      <option>2003년</option>
+								      <option>2004년</option>
+								      <option>2005년</option>
+								      <option>2006년</option>
+								      <option>2007년</option>
+								      <option>2008년</option>
+								      <option>2009년</option>
+								      <option>2010년</option>
+								      <option>2011년</option>
+								      <option>2012년</option>
+								      <option>2013년</option>
+								      <option>2014년</option>
+								      <option>2015년</option>
+								      <option>2016년</option>
+								      <option>2017년</option>
+								      <option>2018년</option>
+								      <option>2019년</option>
+								      <option>2020년</option>
+								      <option>2021년</option>
+								      <option>2022년</option>
+								    </select>
+								  </div>
+						      </div>
+						      <!-- 연식 내용 end -->
+						    </div>
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+						       <p class="fs-4">주행거리</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+						      <div class="accordion-body">
+						      	 <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최소</option>
+								      <option>0km</option>
+								      <option>10,000km</option>
+								      <option>20,000km</option>
+								      <option>30,000km</option>
+								      <option>40,000km</option>
+								      <option>50,000km</option>
+								      <option>60,000km</option>
+								      <option>70,000km</option>
+								      <option>80,000km</option>
+								      <option>90,000km</option>
+								      <option>100,000km</option>
+								      <option>110,000km</option>
+								      <option>120,000km</option>
+								      <option>130,000km</option>
+								      <option>140,000km</option>
+								      <option>150,000km</option>
+								      <option>160,000km</option>
+								      <option>170,000km</option>
+								      <option>180,000km</option>
+								      <option>190,000km</option>
+								      <option>200,000km</option>
+								    </select>
+								  </div> ~
+								   <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최대</option>
+								      <option>0km</option>
+								      <option>10,000km</option>
+								      <option>20,000km</option>
+								      <option>30,000km</option>
+								      <option>40,000km</option>
+								      <option>50,000km</option>
+								      <option>60,000km</option>
+								      <option>70,000km</option>
+								      <option>80,000km</option>
+								      <option>90,000km</option>
+								      <option>100,000km</option>
+								      <option>110,000km</option>
+								      <option>120,000km</option>
+								      <option>130,000km</option>
+								      <option>140,000km</option>
+								      <option>150,000km</option>
+								      <option>160,000km</option>
+								      <option>170,000km</option>
+								      <option>180,000km</option>
+								      <option>190,000km</option>
+								      <option>200,000km</option>
+								    </select>
+								  </div>
+						      </div>
+						    </div>
+						  </div>
+					  	  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+						       <p class="fs-4">가격</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+						      <!-- 가격 내용 start -->
+						      <div class="accordion-body">
+						      	 <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최소</option>
+								      <option>0만원</option>
+								      <option>100만원</option>
+								      <option>200만원</option>
+								      <option>300만원</option>
+								      <option>400만원</option>
+								      <option>500만원</option>
+								      <option>600만원</option>
+								      <option>700만원</option>
+								      <option>800만원</option>
+								      <option>900만원</option>
+								      <option>1,000만원</option>
+								      <option>1,100만원</option>
+								      <option>1,200만원</option>
+								      <option>1,300만원</option>
+								      <option>1,400만원</option>
+								      <option>1,500만원</option>
+								      <option>1,600만원</option>
+								      <option>1,700만원</option>
+								      <option>1,800만원</option>
+								      <option>1,900만원</option>
+								      <option>2,000만원</option>
+								      <option>2,500만원</option>
+								      <option>3,000만원</option>
+								      <option>3,500만원</option>
+								      <option>4,500만원</option>
+								      <option>5,000만원</option>
+								      <option>6,000만원</option>
+								      <option>7,000만원</option>
+								      <option>8,000만원</option>
+								      <option>9,000만원</option>
+								      <option>1억원</option>
+								    </select>
+								  </div> ~
+								  <div class="col">
+								    <select class="form-select" id="validationCustom04" required>
+								      <option selected disabled value="">최대</option>
+								      <option>0만원</option>
+								      <option>100만원</option>
+								      <option>200만원</option>
+								      <option>300만원</option>
+								      <option>400만원</option>
+								      <option>500만원</option>
+								      <option>600만원</option>
+								      <option>700만원</option>
+								      <option>800만원</option>
+								      <option>900만원</option>
+								      <option>1,000만원</option>
+								      <option>1,100만원</option>
+								      <option>1,200만원</option>
+								      <option>1,300만원</option>
+								      <option>1,400만원</option>
+								      <option>1,500만원</option>
+								      <option>1,600만원</option>
+								      <option>1,700만원</option>
+								      <option>1,800만원</option>
+								      <option>1,900만원</option>
+								      <option>2,000만원</option>
+								      <option>2,500만원</option>
+								      <option>3,000만원</option>
+								      <option>3,500만원</option>
+								      <option>4,500만원</option>
+								      <option>5,000만원</option>
+								      <option>6,000만원</option>
+								      <option>7,000만원</option>
+								      <option>8,000만원</option>
+								      <option>9,000만원</option>
+								      <option>1억원</option>
+								    </select>
+								  </div>
+						    </div>
+						    <!-- 가격 내용 end -->
+						  </div>
+					  	  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+						       <p class="fs-4">연료</p>
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
+						      <!-- 연료 내용 start -->
+						      <div class="accordion-body">
+						      		<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">가솔린
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			74,078
+							      		</div>
+							      	</div>
+						      		<div class="row">
+							      		<div class="col ">
+							      			<input type="checkbox">디젤
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			73,345대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">LGP
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			10,219대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">가솔린+LPG
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			27대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">하이브리드(LPG)
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			80대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">CNG
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			16대
+							      		</div>
+							      	</div>
+						      		<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">전기
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			1,067대
+							      		</div>
+							      	</div>
+							      	<div class="row">
+							      		<div class="col">
+							      			<input type="checkbox">기타
+							      		</div>
+							      		<div class="col offset-2 text-end">
+							      			53대
+							      		</div>
+							      	</div>
+						      	</div>
+						      	<!-- 연료 내용 end -->
+						    </div>
+						  </div>
+						</div>
+					  	</div>
+				  </div>
 				  </div>
 				  <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
 				</div>
@@ -1098,8 +2438,6 @@
 						   </div>	
 					  </div>
 				  </div>
-				  
-			  
 			</div> <!-- row 끝 -->
 		</div> <!-- 컨테이너 끝 -->
 		<!-- 중앙 내용 end -->
