@@ -151,7 +151,7 @@
 			</div>
 			
 			<!-- 추천차량 -->
-			
+		<%-- 	<c:forEach items="${list }" var="list" varStatus="status"> --%>
 			<div style="float:right" class="row mt-5">
 				<img src="../../resources/images/main/cadillac.jpg" style="height:745px">
 			</div>

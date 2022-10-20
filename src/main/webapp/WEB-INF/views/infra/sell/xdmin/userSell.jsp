@@ -98,11 +98,6 @@
   					<p class="fs-5">간단한 정보입력으로</p>
   					<p class="fs-4">내 차의 최고가에 도전하세요!</p>
 			</div>
-			<div class="row">
-				<div class="col offset-8 mb-3">
-					<img src="../images/sell/graph-2.jpg">
-				</div>
-			</div>
 			<div class="row mt-2">
 				<div class="col-3 offset-2 mb-5">
 					<p class="fs-5">실시간 경쟁입찰 방식

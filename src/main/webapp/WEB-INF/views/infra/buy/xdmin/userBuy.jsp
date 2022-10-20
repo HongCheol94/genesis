@@ -22,7 +22,7 @@
 		<input type="hidden" name="seq" value='<c:out value="${vo.seq }"></c:out>'>
 		<!-- hidden end -->
 		<!-- 사이드 메뉴 -->
-		<div class="common-left-area">
+<!-- 		<div class="common-left-area">
 			<h1 class="logo">
 				<a href="/main">
 					<img src="../../resources/images/kblogo.png">
@@ -67,22 +67,61 @@
 				<img src="../../resources/images/sideHero.png">
 			</div>
 		</div>
-		
+		 -->
 		<!-- 중앙 상단 나브바 -->
-		<div class="container">
-			<div class="row" style="margin-left: 250px;">
-				<div class="col-3 offset-3 mt-5">
-					<input class="form-control me-2" type="search" placeholder="164.266대의 차량이 있습니다." aria-label="Search">
-				</div>
-				<div class="col-1 mt-5">
-					<button class="btn btn-outline-success" type="submit">Search</button>
-				</div>
+		<div class="container-md">
+			<div class=text-end>
+				<a href="myPage">
+					<p class="fs-3">
+						 <!-- sessName: --><c:out value="${sessName }님"/>
+						 <%-- sessId:<c:out value="${sessId }"/> --%>
+					 </p>
+				 </a>
 			</div>
+		<!-- 상단목록 -->
+		<nav style="--bs-breadcrumb-divider: ''; aria-label="breadcrumb;">
+		  <ol class="breadcrumb">
+		  	<li class="breadcrumb-item col-1"><a href="main"><image src="../../resources/images/kblogo.png"></a></li>
+		    <li class="breadcrumb-item col-1 offset-4 mt-4">
+		    	<a href="/buy" style="color:black;">
+		    		<p class="fs-3">살때</p>
+		   		</a>
+		   	</li>
+		    <li class="breadcrumb-item active col-1 mt-4" aria-current="page">
+		    	<a href="userSell" style="color:black;">
+		    		<p class="fs-3">팔때</p>
+		   		</a>
+			</li>
+		    <li class="breadcrumb-item active col-1 mt-4" aria-current="page">
+		    	<a href="#"  style="color:black;">
+		   			<p class="fs-3">시세</p>
+				</a>
+			</li>
+		    <li class="breadcrumb-item active col-1 mt-4" aria-current="page">
+		    	<a href="#"  style="color:black;">
+		    	<p class="fs-3">혜택</p></a></li>
+		    <li class="breadcrumb-item active col-1 mt-4" aria-current="page">
+		    	<a href="#"  style="color:black;">
+		    	<p class="fs-3">안내</p></a></li>
+		    <li class="breadcrumb-item active col-1 mt-1" aria-current="page">
+		    	<a href="joinMember"  style="color:black;">
+		    		<p class="fs-1 mt-1">
+		    			<i class=" fas fa-light fa-user-plus"></i>
+	    			</p>
+				</a>
+			</li>
+		    <li class="breadcrumb-item active col-1 mt-1" aria-current="page">
+		    	<p class="fs-4 mt-3">
+			    	<button type="button" id="btnLogout" style="background-color:white;">
+		    				<i class="fa-solid fa-right-from-bracket"></i>
+	    			</button>
+    			</p>
+			</li>
+		  </ol>
+		</nav>
 		</div>
 		<!-- 중앙 내용 start -->
-		<div style="height: 100px">
-		
-		</div>
+	
 		<hr>
 		<div class=container-md>
 			<div class="row">
@@ -2285,6 +2324,7 @@
 							        <h5 class="card-title">(58두4579)한국GM 임팔라 <br>2.5 LTZ </h5>
 							        <p class="card-text">17년06월(17년식)<br> 43,500km ㅣ 가솔린 ㅣ 경남</p>
 							      </div>
+							      <br>
 							       <div class="card-footer">
 								      <small class="text-muted">
 								      	<p class="fs-5">1,880만원</p>	
@@ -2299,6 +2339,7 @@
 							        <h5 class="card-title">(232머6487)현대 제네시스 <br> DH G330 모던</h5>
 							        <p class="card-text">16년06월(16년식)<br> 82,909km ㅣ 가솔린 ㅣ 경기</p>
 							      </div>
+							      <br>
 							       <div class="card-footer">
 								      <small class="text-muted">
 								      	<p class="fs-5">1,920만원</p>	
@@ -2310,9 +2351,10 @@
 							    <div class="card">
 							      <img src="../../resources/images/buy/buyk9.jpeg" class="card-img-top" alt="...">
 							      <div class="card-body">
-							        <h5 class="card-title">(191러8672)기아 더 K9 3.8 GDI 플래티넘 I </h5>
+							        <h5 class="card-title">(191러8672)기아 더 K9 3.8<br>GDI 플래티넘 I </h5>
 							        <p class="card-text">18년08월(19년식)<br> 91,433km ㅣ 가솔린 ㅣ 경기</p>
 							      </div>
+							      <br>
 							       <div class="card-footer">
 								      <small class="text-muted">
 								      	<p class="fs-5">3,050만원</p>	
@@ -2365,7 +2407,6 @@
 						  	<div class="col-3">
 						  		<img src="../../resources/images/buy/buyhibryd.png" class="rounded mx-auto d-block" alt="..." style="width:230px; height: 380px">
 						 	</div>
-						  	
 						  	<div class="col-3">
 							    <div class="card">
 							      <img src="../../resources/images/buy/buyopr.jpg" class="card-img-top" alt="...">
