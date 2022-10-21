@@ -67,4 +67,10 @@ public class MemberDao {
 		return sqlSession.selectOne(namespace + ".selectLogin", dto);
 	}
 	
+//	uploaded
+	public int insertUploaded(Member dto) {
+	    return sqlSession.insert("Base" + ".insertUploaded", dto);
+	}
+	
+	
 }
