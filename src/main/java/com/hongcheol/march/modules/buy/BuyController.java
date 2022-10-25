@@ -1,5 +1,7 @@
 package com.hongcheol.march.modules.buy;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,15 +16,16 @@ public class BuyController {
 	BuyServiceImpl service;
 	
 	@RequestMapping(value = "buy")
-	public String main(Model model) {
+	public String buy(Model model) throws Exception {
+//		List<Buy> list= service.selectList();
+//		model.addAttribute("list", list);
 		return "infra/buy/xdmin/userBuy";
 	}
 	
-	@RequestMapping(value = "selectOneCount")
-	public String selectOneCount(BuyVo vo) throws Exception{
-		service.selectOneCount(vo);
-		return "redirect:/buy/buy";
-		
-	}
-
+//	@RequestMapping(value = "selectOneCount")
+//	public String selectOneCount(BuyVo vo) throws Exception{
+//		service.selectOneCount(vo);
+//		return "redirect:/buy/buy";
+//	}
+//	
 }

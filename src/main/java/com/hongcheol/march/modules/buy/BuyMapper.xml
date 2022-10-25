@@ -10,12 +10,20 @@
 	
 	<select id="selectlist" resultMap="resultMapObj">
 		SELECT
-    		a.*
+    		a.seq
+    		, a.carName
+    		, a.carAge
+    		, a.carMleage
+    		, a.carEngine
+    		, a.area
+    		, a.price
    		FROM car a
    		WHERE 1=1
    			AND delNy = 0
    			AND seq LIKE CONCAT('%'.#{shValue}),'%')
+   			AND page = 1
 	</select>
+	
 		
 <!-- 	<sql id = "selectCommon">
 		FORM member a

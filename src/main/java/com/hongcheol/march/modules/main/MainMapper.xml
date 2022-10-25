@@ -17,7 +17,7 @@
 	
 	<select id="selectCommon">
 		FROM cc a
-		WHERE 1=1
+		WHERE 1=1R
 			<if test="shDelNy != null and !shDelNy.equals('')">AND delNy = #{sheDelNy}</if>
 			<choose>
 				<when test="shOption == 1">AND madeCountry = #{shValue}</when>
