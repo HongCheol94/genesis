@@ -18,7 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- 버튼 작동 안될시 end -->
     <!-- datePicker -->
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">      
 	<link rel="stylesheet" href="/resources/demos/style.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -37,7 +37,9 @@
 	<c:set var="listCodeCollateral" value="${CodeServiceImpl.selectListCachedCode('10')}" />
 	<input type="hidden" name="seq" value="<c:out value="${item.seq}"/>">
 		<div class="contanier">
-			<!-- 좌측 메뉴 -->
+	<!-- 	
+			좌측 메뉴
+			
 			<div class="common-left-area">
 				<h1 class="logo">
 					<a href="main">
@@ -83,36 +85,64 @@
 					<img src="../images/sideHero.png">
 				</div>
 			</div>
-			<!-- 좌측 메뉴 end -->
+			좌측 메뉴 end
+			 -->
 			<!-- 상단 나브바 -->
-			<nav class="navbar bg-warning">
-				<div class="container-fluid">
-				  <form class="d-flex mx-auto" role="search">
-					<input class="form-control me-2" type="search" placeholder="164.266대의 차량이 있습니다." aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">Search</button>
-				  </form>
-				  <ul class="nav justify-content-end">
-					<li class="nav-item">
-					  <a class="nav-link active" aria-current="page" href="../member/myPage.html" style="color: green">
-						  <p class="fs-3">
-							  <i class="fa-solid fa-user"></i>
-						  </p>	
-					  </a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link" href="../login/loginForm.html" style="color:black">
-						  <p class="fs-4">
-							  <i class="fa-solid fa-right-to-bracket"></i>
-						  </p>
-					  </a>
-					</li>
-				  </ul>
-				</div>
-			  </nav>
+			<div class="container-md">
+			<div class=text-end>
+				<a href="myPage">
+					<p class="fs-3">
+						 <!-- sessName: --><c:out value="${sessName }님"/>
+						 <%-- sessId:<c:out value="${sessId }"/> --%>
+					 </p>
+				 </a>
+			</div>
+			<!-- 상단목록 -->
+			<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+			  <ol class="breadcrumb">
+			  	<li class="breadcrumb-item col-1"><a href="main"><image src="../../resources/images/kblogo.png"></a></li>
+			    <li class="breadcrumb-item col-1 offset-4 mt-4">
+			    	<a href="/buy" style="color:black;">
+			    		<p class="fs-3">살때</p>
+			   		</a>
+			   	</li>
+			    <li class="breadcrumb-item active col-1 mt-4" aria-current="page">
+			    	<a href="userSell" style="color:black;">
+			    		<p class="fs-3">팔때</p>
+			   		</a>
+				</li>
+			    <li class="breadcrumb-item active col-1 mt-4" aria-current="page">
+			    	<a href="#" style="color:black;">
+			   			<p class="fs-3">시세</p>
+					</a>
+				</li>
+			    <li class="breadcrumb-item active col-1 mt-4" aria-current="page">
+			    	<a href="#" style="color:black;">
+			    	<p class="fs-3">혜택</p></a></li>
+			    <li class="breadcrumb-item active col-1 mt-4" aria-current="page">
+			    	<a href="#" style="color:black;">
+			    	<p class="fs-3">안내</p></a></li>
+			    <li class="breadcrumb-item active col-1 mt-1" aria-current="page">
+			    	<a href="joinMember" style="color:black;">
+			    		<p class="fs-1 mt-1">
+			    			<i class=" fas fa-light fa-user-plus"></i>
+		    			</p>
+					</a>
+				</li>
+			    <li class="breadcrumb-item active col-1 mt-1" aria-current="page">
+			    	<p class="fs-4 mt-3">
+				    	<button type="button" id="btnLogout" style="background-color:white;">
+			    				<i class="fa-solid fa-right-from-bracket"></i>
+		    			</button>
+	    			</p>
+				</li>
+			  </ol>
+			</nav>
+			</div>
 			<!-- 싱딘 나브바 end -->
 			<!-- 메인 -->
-			<div class="row">
-				<div class="col offset-3">
+			<div class="row" style="border-top: 1px solid;">
+				<div class="col offset-3 mt-3">
 					<table>
 						<tr>
 							<td colspan="8"><p class="fs-3">기본정보</p></td>

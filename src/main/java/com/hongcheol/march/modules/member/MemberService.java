@@ -2,6 +2,8 @@ package com.hongcheol.march.modules.member;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 
 public interface MemberService {
 	
@@ -14,4 +16,5 @@ public interface MemberService {
 	public int selectOneCount(MemberVo vo) throws Exception;
 	public int idCheck(Member dto) throws Exception;
 	public Member selectLogin(Member dto) throws Exception;
+	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception;
 }

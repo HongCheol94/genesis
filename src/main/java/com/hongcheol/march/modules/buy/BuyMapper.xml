@@ -27,4 +27,13 @@
 				<when test="shOption == 3 ">AND  carName LIKE CONCT{shValue},'%'</when>
 			</choose>
 	</sql> -->
+	
+<!-- 	<select id="selectListWithoutPaging" resultMap="resultMaObj">
+		SELECT
+			a.seq
+		FROM car a
+			AND delNy= 0
+			And useNy= 1
+		ORDER BY a.seq DESC
+	</select> -->
 </mapper>
