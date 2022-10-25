@@ -87,7 +87,7 @@
 				<div class="row p-2">
 					<div class="col">
 						<select class="form-select" id="shDelNy" name="shDelNy"
-							aria-label="Default select example">
+							aria-label="Default select exam    ple">
 							<option value=""
 								<c:if test="${empty vo.shDelNy }">selected</c:if>>삭제여부</option>
 							<option value="0"

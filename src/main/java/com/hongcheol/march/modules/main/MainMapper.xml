@@ -10,9 +10,16 @@
 	
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
-    		a.*
+    		a.seq
+    		, a.carName
+    		, a.carAge
+    		, a.carEngine
+    		, a.carMleage 
+    		, a.area
+    		, a.price
    		FROM car a
    		WHERE 1=1
+   			AND page = 0
 	</select>
 	
 	<select id="selectCommon">

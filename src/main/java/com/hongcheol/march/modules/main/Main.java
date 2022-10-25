@@ -6,12 +6,12 @@ public class Main {
 
 	private String seq;
 	private String carName;
-	private Integer pirce;
+	private Integer price;
 	private Integer carEngine;
 	private Integer area;
 	private String carNumber;
-	private Date carAge;
-	private Integer Mleage;
+	private String carAge;
+	private Integer carMleage;
 	private Integer carGearBox;
 	private Double carFuelEfficiency;
 	private Integer carKind;
@@ -54,13 +54,14 @@ public class Main {
 	public void setCarName(String carName) {
 		this.carName = carName;
 	}
-	public Integer getPirce() {
-		return pirce;
-	}
-	public void setPirce(Integer pirce) {
-		this.pirce = pirce;
-	}
-	public Integer getCarEngine() {
+
+	public Integer getPrice() {
+        return price;
+    }
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+    public Integer getCarEngine() {
 		return carEngine;
 	}
 	public void setCarEngine(Integer carEngine) {
@@ -78,19 +79,19 @@ public class Main {
 	public void setCarNumber(String carNumber) {
 		this.carNumber = carNumber;
 	}
-	public Date getCarAge() {
+	public String getCarAge() {
 		return carAge;
 	}
-	public void setCarAge(Date carAge) {
+	public void setCarAge(String carAge) {
 		this.carAge = carAge;
 	}
-	public Integer getMleage() {
-		return Mleage;
-	}
-	public void setMleage(Integer mleage) {
-		Mleage = mleage;
-	}
-	public Integer getCarGearBox() {
+	public Integer getCarMleage() {
+        return carMleage;
+    }
+    public void setCarMleage(Integer carMleage) {
+        this.carMleage = carMleage;
+    }
+    public Integer getCarGearBox() {
 		return carGearBox;
 	}
 	public void setCarGearBox(Integer carGearBox) {

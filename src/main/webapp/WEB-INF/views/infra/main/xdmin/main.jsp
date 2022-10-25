@@ -21,8 +21,10 @@
 	
 	<form method="post">
 		<c:set var="listCodemadeby" value="${CodeServiceImpl.selectListCachedCode('13')}" />
-		<c:set var="listCodemodel" value="${CodeServiceImpl.selectListCachedCode('12')}" />
+		<c:set var="listCodemodel"  value="${CodeServiceImpl.selectListCachedCode('12')}" />
 		<c:set var="listCodemadeCountry" value="${CodeServiceImpl.selectListCachedCode('15')}" />
+		<c:set var="listCodearea" value="${CodeServiceImpl.selectListCachedCode('3')}" />
+		<c:set var="listCodecarEngine" value="${CodeServiceImpl.selectListCachedCode('4')}" />
 		<div class="container-md">
 			<div class=text-end>
 				<a href="myPage">
@@ -132,7 +134,7 @@
 				<div class="col-3 mt-4 mb-4">
 				<select class="form-select" aria-label="Default select example" id="model" name="model">
 					<option value="0">모델</option>
-					<c:forEach items="${listCodemodel}" var="listmodel" varStatus="statusGender">
+					<c:forEach items="${listCodemodel}" var="listmodel" varStatus="statusmodel">
 						<option class="select2" value="${listmodel.seq }"  onchange="" <c:if test="${item.model eq listmodel.seq }">selected</c:if>><c:out value="${listmodel.codeGroupCode }"/></option>
 					</c:forEach>
 				</select>
@@ -151,102 +153,42 @@
 			</div>
 			
 			<!-- 추천차량 -->
-		<%-- 	<c:forEach items="${list }" var="list" varStatus="status"> --%>
+			
 			<div style="float:right" class="row mt-5">
 				<img src="../../resources/images/main/cadillac.jpg" style="height:745px">
 			</div>
-			<div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
-			  <div class="col">
-				<a href="/buy" style="color:black">
-					<div class="card">
-					<img src="../../resources/images/main/mainCar(1).jpg" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5 class="card-title">기아 더 뉴 쏘렌토2.2 디젤 2WD 노블레스</h5>
-						<p class="card-text">
-							2018년 05월 (19년식)<br>70,000km ㅣ 디젤 ㅣ 경기
-						</p>
-					</div>
-					<div class="card-footer">
-						<small class="text-muted">
-							<p class="fs-5">2,260만원</p>	
-						</small>
-						</div>
-					</div>
-				</a>
-			  </div>
-			  <div class="col">
-			    <div class="card">
-			      <img src="../../resources/images/main/mainCar(2).jpg" class="card-img-top" alt="...">
-			      <div class="card-body">
-			        <h5 class="card-title">현대 싼타페 TM 디젤 2.0 2WD 모던</h5>
-			        <p class="card-text">18년05월(19년식)<br>63,000km ㅣ 디젤 ㅣ 경기</p>
-			      </div>
-			       <div class="card-footer">
-				      <small class="text-muted">
-				      	<p class="fs-5">2,400만원</p>	
-				      </small>
-				    </div>
-			    </div>
-			  </div>
-			 <div class="col">
-			    <div class="card">
-			      <img src="../../resources/images/main/mainCar(3).jpg" class="card-img-top" alt="...">
-			      <div class="card-body">
-			        <h5 class="card-title">현대 쏘나타 (DN8)<br> 2.0 인스퍼레이션</h5>
-			        <p class="card-text">19년07월(20년식)<br>38,569km ㅣ 가솔린 ㅣ 대구</p>
-			      </div>
-			       <div class="card-footer">
-				      <small class="text-muted">
-				      	<p class="fs-5">2,540만원</p>	
-			      	</small>
-				    </div>
-			    </div>
-			  </div>
-			  <div class="col">
-			    <div class="card">
-			      <img src="../../resources/images/main/mainCar(4).jpg" class="card-img-top" alt="...">
-			      <div class="card-body">
-			        <h5 class="card-title">현대 싼타페 TM 디젤 2.0 2WD 프리미엄</h5>
-			        <p class="card-text">18년05월(19년식)<br>68,700km ㅣ 디젤 ㅣ 울산</p>
-			      </div>
-			       <div class="card-footer">
-				      <small class="text-muted">
-				      	<p class="fs-5">2,200만원</p>
-		      		</small>
-				    </div>
-			    </div>
-			  </div>
-			  <div class="col">
-			    <div class="card">
-			      <img src="../../resources/images/main/mainCar(5).jpg" class="card-img-top" alt="...">
-			      <div class="card-body">
-			        <h5 class="card-title">기아 K5 3세대 2.0 가솔린 노블레스</h5>
-			        <p class="card-text">20년05월(20년식)<br>19,700km ㅣ 가솔린 ㅣ 울산</p>
-			      </div>
-			       <div class="card-footer">
-				      <small class="text-muted">
-				      	<p class="fs-5">2,560만원</p>	
-			      	</small>
-				    </div>
-			    </div>
-			  </div>
-			  <div class="col mb-3">
-			    <div class="card">
-			      <img src="../../resources/images/main/mainCar(6).jpg" class="card-img-top" alt="...">
-			      <div class="card-body">
-			        <h5 class="card-title">현대 싼타페 TM 디젤 2.0 2WD 익스클루시브</h5>
-			        <p class="card-text">18년07월(19년식)<br>50,000km ㅣ 디젤 ㅣ 경기</p>
-			      </div>
-			       <div class="card-footer">
-				      <small class="text-muted">
-				      	<p class="fs-5">2,380만원</p>	
-				      </small>
-				    </div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-		
+				<div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+					<c:forEach items="${list}" var="list" varStatus="status">
+					  <div class="col">
+						<a href="/buy" style="color:black">
+							<div class="card">
+							<img src="../../resources/images/main/mainCar(1).jpg" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">${list.carName}</h5>
+								<p class="card-text">
+									${list.carAge}<br>${list.carMleage}km
+									ㅣ<c:forEach items="${listCodecarEngine}" var="listcarEngine" varStatus="statuscarEngine">
+									  	<c:if test="${list.carEngine eq listcarEngine.seq}">
+											<c:out value="${listcarEngine.codeGroupCode }" />
+										</c:if>
+									  </c:forEach>
+									ㅣ<c:forEach items="${listCodearea}" var="listarea" varStatus="statusarea">
+									  	<c:if test="${list.area eq listarea.seq}">
+											<c:out value="${listarea.codeGroupCode }" />
+										</c:if>
+									  </c:forEach>
+								</p>
+							</div>
+							<div class="card-footer">
+								<small class="text-muted">
+									<p class="fs-5">${list.price}만원</p>	
+								</small>
+								</div>
+							</div>
+						</a>
+					  </div>
+			 	 </c:forEach>
+			   </div>
 		<!-- 중간광고 -->
 		
 		<div class="container-md mt-5 mb-3">
