@@ -2371,8 +2371,7 @@
 							      <img src="../../resources/images/buy/buyopr.jpg" class="card-img-top" alt="...">
 							      <div class="card-body">
 							        <h5 class="card-title">(38조8070)기아 오피러스 프리미엄 GH270 스페셜 럭셔리</h5>
-							        <br>
-							        <p class="card-text">09년07월(10년식) 94,800km 가솔린 경북</p>
+							        <p class="card-text">09년07월(10년식) 94,800km ㅣ 가솔린 ㅣ 경북</p>
 							      </div>
 							       <div class="card-footer">
 								      <small class="text-muted">
@@ -2425,7 +2424,7 @@
 								    </div>
 							    </div>
 						  	</div>
-						  	<<!-- pagination s -->
+						  	<!-- pagination s -->
 							<%@include file="../../pagination/xdmin/pagination.jsp"%>
 							<!-- pagination e -->
 						  	

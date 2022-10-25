@@ -29,7 +29,9 @@
 	
 	<!-- start -->
 	<form method="post" id="" name="form">
+	<c:set var="listCodeCarEngine" value="${CodeServiceImpl.selectListCachedCode('4')}" />
 	<c:set var="listCodeCarGear" value="${CodeServiceImpl.selectListCachedCode('5')}" />
+	<c:set var="listCodeCarKind" value="${CodeServiceImpl.selectListCachedCode('6')}" />
 	<c:set var="listCodeTaxe" value="${CodeServiceImpl.selectListCachedCode('8')}" />
 	<c:set var="listCodeSeize" value="${CodeServiceImpl.selectListCachedCode('9')}" />
 	<c:set var="listCodeCollateral" value="${CodeServiceImpl.selectListCachedCode('10')}" />
@@ -156,10 +158,12 @@
 							</td>
 							<th>연&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;료</th>
 							<td>
-								<div class="form-floating">
-									<input type="text" class="form-control" id="" name="carEngine" value="" placeholder="연료" value="연료">
-									<label for="floatingInputGrid">연료</label>
-								</div>
+								<select class="form-select form-select-lg mb-2 mt-2" aria-label=".form-select-lg example" name="carEngine" id="carEngine">
+									<option value="0">::선택::</option>
+									<c:forEach items="${listCodeCarEngine}" var="listcarEngine" varStatus="statuscarEngine">
+										<option value="${listcarEngine.seq }" <c:if test="${item.CarEngine eq listcarEngine.seq }">selected</c:if>>${listcarEngine.codeGroupCode }</option>
+									</c:forEach>
+								</select>
 							</td>
 						</tr>
 						<tr>
@@ -191,10 +195,12 @@
 							<!-- <td></td> -->
 							<th>차&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;종</th>
 							<td>
-								<div class="form-floating">
-									<input type="text" class="form-control" id="" name="carKind" value="" placeholder="차종" value="차종">
-									<label for="floatingInputGrid">차종</label>
-								</div>
+								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="carKind" id="">
+									<option value="0">::선택::</option>
+									<c:forEach items="${listCodeCarKind}" var="listcarKind" varStatus="statuscarKind">
+										<option value="${listcarKind.seq }" <c:if test="${item.CarKind eq listcarKind.seq }">selected</c:if>>${listcarKind.codeGroupCode }</option>
+									</c:forEach>
+								</select>
 							</td>
 							<th>배&nbsp;&nbsp;기&nbsp;량</th>
 							<td>
@@ -220,7 +226,7 @@
 							<td>
 								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="taxe" id="taxe">
 									<option value="0">::선택::</option>
-									<c:forEach items="${listCodeTaxe}" var="listcartaxe" varStatus="statuscarGear">
+									<c:forEach items="${listCodeTaxe}" var="listcartaxe" varStatus="statusTaxe">
 										<option value="${listcartaxe.seq }" <c:if test="${item.Taxe eq listcartaxe.seq }">selected</c:if>>${listcartaxe.codeGroupCode }</option>
 									</c:forEach>
 								</select>

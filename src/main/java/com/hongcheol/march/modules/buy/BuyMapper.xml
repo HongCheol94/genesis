@@ -16,7 +16,7 @@
    			AND delNy = 0
    			AND seq LIKE CONCAT('%'.#{shValue}),'%')
 	</select>
-	
+		
 <!-- 	<sql id = "selectCommon">
 		FORM member a
 		WHERE 1=1

@@ -9,7 +9,7 @@
 	<resultMap id="resultMapObj" type="com.hongcheol.march.modules.sellRegForm.SellRegForm"></resultMap>
 	
 	<insert id="insert">
-		INSERT INTO car{
+		INSERT INTO car {
 			carNumber
 			,carAge
 			,carMleage
