@@ -2466,7 +2466,7 @@
 								    </div>
 							    </div>
 						  	</div>
-						  	<<!-- pagination s -->
+						  	<!-- pagination s -->
 							<%@include file="../../pagination/xdmin/pagination.jsp"%>
 							<!-- pagination e -->
 						  	
