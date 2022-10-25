@@ -17,8 +17,8 @@ public class BuyController {
 	
 	@RequestMapping(value = "buy")
 	public String buy(Model model) throws Exception {
-//		List<Buy> list= service.selectList();
-//		model.addAttribute("list", list);
+		List<Buy> list= service.selectList();
+		model.addAttribute("list", list);
 		return "infra/buy/xdmin/userBuy";
 	}
 	

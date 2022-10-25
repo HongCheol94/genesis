@@ -10,7 +10,7 @@ public class Buy {
 	private Integer carEngine;
 	private Integer area;
 	private String carNumber;
-	private Date carAge;
+	private String carAge;
 	private Integer Mleage;
 	private Integer carGearBox;
 	private Double carFuelEfficiency;
@@ -29,6 +29,8 @@ public class Buy {
 	private Integer member_seq;
 	private Integer dealer_seq;
 	private Integer carDefaultNy;
+	private Integer page;
+	private Integer delNy;
 	
 //	----------------------------------------
 	
@@ -68,10 +70,10 @@ public class Buy {
 	public void setCarNumber(String carNumber) {
 		this.carNumber = carNumber;
 	}
-	public Date getCarAge() {
+	public String getCarAge() {
 		return carAge;
 	}
-	public void setCarAge(Date carAge) {
+	public void setCarAge(String carAge) {
 		this.carAge = carAge;
 	}
 	public Integer getMleage() {
@@ -181,6 +183,18 @@ public class Buy {
 	}
 	public void setCarDefaultNy(Integer carDefaultNy) {
 		this.carDefaultNy = carDefaultNy;
+	}
+	public Integer getPage() {
+		return page;
+	}
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+	public Integer getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
 	}
 	
 }

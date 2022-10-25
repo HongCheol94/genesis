@@ -21,7 +21,7 @@ public class BuyDao {
 	private static String namespace = "com.hongcheol.march.modules.buy.BuyMapper";
 	
 	public List<Buy> selectList() {
-		return sqlSession.selectList(namespace + ".selectList","");
+		return sqlSession.selectList(namespace + ".selectList");
 	}
 // search	
 	public List<Buy> selectListOne(MainVo vo) {

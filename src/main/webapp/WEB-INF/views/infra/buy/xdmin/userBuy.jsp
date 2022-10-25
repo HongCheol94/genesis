@@ -2160,7 +2160,7 @@
 								      <div class="card-body">
 								        <h5 class="card-title">${list.carName}</h5>
 								        <br>
-								        <p class="card-text">${list.carAge} ${list.carMleage} ㅣ ${list.carEngine} ㅣ ${list.area}</p>
+								        <p class="card-text">${list.carAge}<br>${list.carMleage}km ㅣ ${list.carEngine} ㅣ ${list.area}</p>
 								      </div>
 								       <div class="card-footer">
 									      <small class="text-muted">
