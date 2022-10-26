@@ -146,7 +146,7 @@
 					<input type="text" placeholder="내용을 입력해주세요" class="form-control">
 				</div>
 				<div class="col-3 mb-4">
-					<button type="button" class="btn btn-outline-secondary">
+					<button type="submit" class="btn btn-outline-secondary">
 						<i class="fa-solid fa-magnifying-glass"></i>
 					</button>
 				</div>

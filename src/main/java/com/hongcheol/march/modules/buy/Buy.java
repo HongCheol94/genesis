@@ -6,12 +6,12 @@ public class Buy {
 
 	private String seq;
 	private String carName;
-	private Integer pirce;
+	private Integer price;
 	private Integer carEngine;
 	private Integer area;
 	private String carNumber;
 	private String carAge;
-	private Integer Mleage;
+	private Integer carMleage;
 	private Integer carGearBox;
 	private Double carFuelEfficiency;
 	private Integer carKind;
@@ -46,11 +46,12 @@ public class Buy {
 	public void setCarName(String carName) {
 		this.carName = carName;
 	}
-	public Integer getPirce() {
-		return pirce;
+	
+	public Integer getPrice() {
+		return price;
 	}
-	public void setPirce(Integer pirce) {
-		this.pirce = pirce;
+	public void setPrice(Integer price) {
+		this.price = price;
 	}
 	public Integer getCarEngine() {
 		return carEngine;
@@ -76,11 +77,12 @@ public class Buy {
 	public void setCarAge(String carAge) {
 		this.carAge = carAge;
 	}
-	public Integer getMleage() {
-		return Mleage;
+
+	public Integer getCarMleage() {
+		return carMleage;
 	}
-	public void setMleage(Integer mleage) {
-		Mleage = mleage;
+	public void setCarMleage(Integer carMleage) {
+		this.carMleage = carMleage;
 	}
 	public Integer getCarGearBox() {
 		return carGearBox;

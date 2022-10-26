@@ -45,6 +45,7 @@
 			<exclude-mapping path="/test" />
 			<exclude-mapping path="/madeCountry" />
 			<exclude-mapping path="/madeby" />
+			<exclude-mapping path="/buy" />
 			
 			<beans:bean id="checkLoginSessionInterception" class="com.hongcheol.march.common.interceptor.CheckLoginSessionInterception"/>
 		</interceptor>

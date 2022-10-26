@@ -3,6 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+
+ <jsp:useBean id="CodeServiceImpl" class="com.hongcheol.march.modules.code.CodeServiceImpl" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +23,8 @@
 		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>"> 
 		<input type="hidden" name="seq" value='<c:out value="${vo.seq }"></c:out>'>
 		<!-- hidden end -->
+		<c:set var="listCodearea" value="${CodeServiceImpl.selectListCachedCode('3')}" />
+		<c:set var="listCodecarEngine" value="${CodeServiceImpl.selectListCachedCode('4')}" />
 		<!-- 사이드 메뉴 -->
 		<div class="common-left-area">
 			<h1 class="logo">
@@ -2152,283 +2156,109 @@
 					<div class="col-9">
 						<p class="fs-4">인증 및 진단 매물</p>
 						<div class="row">
-						<c:forEach items="${list}" var="list" varStatus="status">
+						<c:forEach items="${list}" var="list" varStatus="status" end="6">
 							<div class="col-3 mb-5">
 								<a href="/buyDetails">
 								    <div class="card">
 								      <img src="../../resources/images/buy/buycarso.jpg" class="card-img-top" alt="...">
-								      <div class="card-body">
+								      <div class="card-body" style="height:200px;">
 								        <h5 class="card-title">${list.carName}</h5>
 								        <br>
-								        <p class="card-text">${list.carAge}<br>${list.carMleage}km ㅣ ${list.carEngine} ㅣ ${list.area}</p>
+								        <p class="card-text">
+								        	${list.carAge} <br> ${list.carMleage}km 
+								        	ㅣ <c:forEach items="${listCodecarEngine}" var="listcarEngine" varStatus="statuscarEngine">
+											  	<c:if test="${list.carEngine eq listcarEngine.seq}">
+													<c:out value="${listcarEngine.codeGroupCode }" />
+												</c:if>
+											  </c:forEach> 
+								        	ㅣ <c:forEach items="${listCodearea}" var="listarea" varStatus="statusarea">
+											  	<c:if test="${list.area eq listarea.seq}">
+													<c:out value="${listarea.codeGroupCode }" />
+												</c:if>
+											  </c:forEach>
+							        	</p>
 								      </div>
-								       <div class="card-footer">
+								      <div class="card-footer">
 									      <small class="text-muted">
-									      	<p class="fs-5">${list.price}만원</p>	
+									      	<p class="fs-5">
+									      		${list.price}
+									      	</p>
 									      </small>
-									    </div>
+								     </div>
 								    </div>
 							   	 </a>
 						 	 </div>
 						  </c:forEach>
-				<!-- 		  
-						 <div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buycarnibar.jpg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(19가5205)기아 올 뉴 카니발 <br>9인승 2.2 디젤 노블레스</h5>
-							        <p class="card-text">14년10월(15년식)<br>85,500km ㅣ 디젤 ㅣ 대구</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">940만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  </div>
 						  <div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buymorning.jpeg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(59서9972)기아 all new 모닝<br>럭셔리</h5>
-							        <p class="card-text">14년10월(15년식)<br> 35,730km ㅣ가솔린ㅣ 서울</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">750만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  </div>
-						   <div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buyray.jpeg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(134루8397)기아 더 뉴 레이 1.0 가솔린 시그니처</h5>
-							        <p class="card-text">20년06월(21년식)<br> 18,000km ㅣ 가솔린 ㅣ 울산</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">1,320만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  </div>
-						  <div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buyrex.jpeg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(81주0583)쌍용 렉스턴 스포츠 2.2 4WD 프레스티지</h5>
-							        <p class="card-text">20년03월(20년식)<br> 45,039km ㅣ 디젤 ㅣ 인천</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">2,290만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  </div>
-						  <div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buysan.jpg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(56고2049)현대 싼타페 DM R2.0 2WD PREMIUM 기본형</h5>
-							        <p class="card-text">13년06월(14년식)<br> 96,990km ㅣ 디젤 ㅣ 경기</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">1,390만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  </div>
-						  <div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buysportg.jpg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(33하2295)기아 스포티지 더 볼드 2.0 디젤 2WD 럭셔리</h5>
-							        <p class="card-text">18년09월(19년식)<br> 74,000km ㅣ 디젤 ㅣ 경기</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">1,510만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  </div> -->
-						  
-						  <div class="col-3">
-						  	<img src="../../resources/images/buy/buybmw.jpg" class="rounded mx-auto d-block" alt="..." style="width:230px; height: 357px">
+						  	<img src="../../resources/images/buy/buybmw.jpg" class="rounded mx-auto d-block" alt="..." style="width:230px; height: 397px">
 						  </div>
 					  </div>
-					  
-					  <div class="row mt-2"> -->
+					  <div class="row mt-2">
 		 			  	<div class="col mt-3">
 					  		<p class="fs-4">일반 매물</p>
 					  	</div>
 					  </div>
 					  <div class="row">
+					  <c:forEach items="${list}" var="list" varStatus="status" begin="7" end="13">
 					  	 <div class="col-3 mb-5">
 							    <div class="card">
 							      <img src="../../resources/images/buy/buytussan.jpeg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(47보3169)현대 뉴 투싼 ix 디젤(e-VGT)2WD 스마트 </h5>
+							      <div class="card-body" style="height:200px;">
+							        <h5 class="card-title">${list.carName}</h5>
 							        <br>
-							        <p class="card-text">14년07월(15년식)<br> 92,274km ㅣ 디젤 ㅣ 울산</p>
+							        <p class="card-text">${list.carAge}
+							        	<br>${list.carMleage} 
+       									ㅣ <c:forEach items="${listCodecarEngine}" var="listcarEngine" varStatus="statuscarEngine">
+										  	<c:if test="${list.carEngine eq listcarEngine.seq}">
+												<c:out value="${listcarEngine.codeGroupCode }" />
+											</c:if>
+										  </c:forEach> 
+							        	ㅣ <c:forEach items="${listCodearea}" var="listarea" varStatus="statusarea">
+										  	<c:if test="${list.area eq listarea.seq}">
+												<c:out value="${listarea.codeGroupCode }" />
+											</c:if>
+										  </c:forEach>
+							        </p>
 							      </div>
 							       <div class="card-footer">
 								      <small class="text-muted">
-								      	<p class="fs-5">1,330만원</p>	
+								      	<p class="fs-5">${list.price}만원</p>	
 								      </small>
 								    </div>
 							    </div>
 						  </div>
-						  <div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buyimpar.jpeg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(58두4579)한국GM 임팔라 <br>2.5 LTZ </h5>
-							        <p class="card-text">17년06월(17년식)<br> 43,500km ㅣ 가솔린 ㅣ 경남</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">1,880만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						    </div>
-						    <div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buyges.jpeg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(232머6487)현대 제네시스 <br> DH G330 모던</h5>
-							        <p class="card-text">16년06월(16년식)<br> 82,909km ㅣ 가솔린 ㅣ 경기</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">1,920만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  	</div>
+						  </c:forEach>
 						  	<div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buyk9.jpeg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(191러8672)기아 더 K9 3.8 GDI 플래티넘 I </h5>
-							        <p class="card-text">18년08월(19년식)<br> 91,433km ㅣ 가솔린 ㅣ 경기</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">3,050만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  	</div>
-						  	<div class="col-3 mb-5">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buyk7.jpeg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(12거5775)기아 더 뉴 K7 3.0 GDI 프레스티지 스페셜 </h5>
-							        <p class="card-text">14년01월(14년식) 131,668km ㅣ 가솔린 ㅣ 경기</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">1,280만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  	</div>		
-						  	<div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buysonata.jpeg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(40수6202)현대 쏘나타 더 브릴리언트 CVVL 스마트 </h5>
-							        <p class="card-text">12년07월(13년식) 102,085km ㅣ 가솔린 ㅣ 부산</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">820만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  	</div>		
-						  	<div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buypotor.jpeg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(96모0955)현대 포터2 초장축 슈퍼캡 CRDi Smart</h5>
-							        <p class="card-text">18년08월(19년식)<br> 91,433km ㅣ 가솔린 ㅣ 경기</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">1,790만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  	</div>
-						  	<div class="col-3">
-						  		<img src="../../resources/images/buy/buyhibryd.png" class="rounded mx-auto d-block" alt="..." style="width:230px; height: 380px">
+						  		<img src="../../resources/images/buy/buyhibryd.png" class="rounded mx-auto d-block" alt="..." style="width:230px; height: 397px">
 						 	</div>
-						  	
+						  	<c:forEach items="${list}" var="list" varStatus="status" begin="14" end="17">
 						  	<div class="col-3">
 							    <div class="card">
 							      <img src="../../resources/images/buy/buyopr.jpg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(38조8070)기아 오피러스 프리미엄 GH270 스페셜 럭셔리</h5>
-							        <p class="card-text">09년07월(10년식) 94,800km ㅣ 가솔린 ㅣ 경북</p>
+							      <div class="card-body" style="height:200px;">
+							        <h5 class="card-title">${list.carName}</h5>
+							        <p class="card-text">
+							        	${list.carAge}<br> ${list.carMleage}94,800km 
+							        	ㅣ <c:forEach items="${listCodecarEngine}" var="listcarEngine" varStatus="statuscarEngine">
+											  	<c:if test="${list.carEngine eq listcarEngine.seq}">
+													<c:out value="${listcarEngine.codeGroupCode }" />
+												</c:if>
+											  </c:forEach> 
+							        	ㅣ <c:forEach items="${listCodearea}" var="listarea" varStatus="statusarea">
+										  	<c:if test="${list.area eq listarea.seq}">
+												<c:out value="${listarea.codeGroupCode }" />
+											</c:if>
+										  </c:forEach>
+					        		</p>
 							      </div>
 							       <div class="card-footer">
 								      <small class="text-muted">
-								      	<p class="fs-5">750만원</p>	
+								      	<p class="fs-5">${list.price}만원</p>	
 								      </small>
 								    </div>
 							    </div>
 						  	</div>
-						  	<div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buynfsona.jpg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(07마5341)현대 NF쏘나타 N20 Elegance special 기본형</h5>
-							        <p class="card-text">06년06월(06년식) 107,641km ㅣ 가솔린 ㅣ 충남</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">320만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  	</div>
-						  	<div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buystrx.jpeg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(77소9883)현대 그랜드스타렉스 어린이보호차 럭셔리</h5>
-							        <br>
-							        <p class="card-text">10년02월(10년식) 160,536km ㅣ 디젤 ㅣ 충남</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">630만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  	</div>
-						  	<div class="col-3">
-							    <div class="card">
-							      <img src="../../resources/images/buy/buykoran.jpg" class="card-img-top" alt="...">
-							      <div class="card-body">
-							        <h5 class="card-title">(92모5467)쌍용 코란도 스포츠 CX7 4WD 클럽</h5>
-							        <br>
-							        <p class="card-text">12년03월(12년식) 186,429km ㅣ 디젤 ㅣ 인천</p>
-							      </div>
-							       <div class="card-footer">
-								      <small class="text-muted">
-								      	<p class="fs-5">590만원</p>	
-								      </small>
-								    </div>
-							    </div>
-						  	</div>
+						  	</c:forEach>
 						  	<!-- pagination s -->
 							<%@include file="../../pagination/xdmin/pagination.jsp"%>
 							<!-- pagination e -->
@@ -2469,7 +2299,7 @@
 	
 	<!-- script -->
 	
-		<!-- paging start -->
+	<!-- paging start -->
 	<script type="text/javascript">
 		var userBuy = "/buy";
 		var form = $("form[name=form]");

@@ -205,6 +205,8 @@
 		</div>
 	</form>
 	
+	<!-- script 시작 -->
+	
 	<!-- DatePicker start -->
 	 <script>
 		 $.datepicker.setDefaults({
