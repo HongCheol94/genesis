@@ -17,10 +17,10 @@ public class BuyDetailsDao {
 	
 	private static String namespace = "com.hongcheol.march.modules.buyDetails.BuyDetailsMapper";
 	
-	public List<BuyDetails> selectList() {
-		return sqlSession.selectList(namespace + ".selectList","");
-	}
-	
+	/*
+	 * public List<BuyDetails> selectList() { return
+	 * sqlSession.selectList(namespace+ ".selectList",""); }
+	 */	 
 	public BuyDetails selectOne(BuyDetailsVo vo) {
 		BuyDetails result = sqlSession.selectOne(namespace + ".selectOne", vo);
 		return result;

@@ -8,6 +8,7 @@
 
     <resultMap id="resultMapObj" type="com.hongcheol.march.modules.buyDetails.BuyDetails"></resultMap>
     
+ <!--    
      <select id="selectList" resultMap="resultMapObj">
     	SELECT
     		a.seq
@@ -29,7 +30,7 @@
    		FROM car a
    		WHERE 1=1
     </select>
-    
+     -->
     
     <select id="selectOne" resultMap="resultMapObj">
     	SELECT

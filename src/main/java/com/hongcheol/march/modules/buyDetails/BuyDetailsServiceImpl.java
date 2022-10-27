@@ -10,13 +10,11 @@ public class BuyDetailsServiceImpl implements BuyDetailsService {
 
 	@Autowired
 	BuyDetailsDao dao;
-	
-	@Override
-	public List<BuyDetails> selectList() throws Exception {
-		List<BuyDetails> list = dao.selectList();
-		return list;
-	}
-	
+
+	/*
+	 * @Override public List<BuyDetails> selectList() throws Exception {
+	 * List<BuyDetails> list = dao.selectList(); return list; }
+	 */
 	@Override
 	public BuyDetails selectOne(BuyDetailsVo vo) throws Exception {
 		BuyDetails result = dao.selectOne(vo);

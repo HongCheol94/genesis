@@ -15,13 +15,11 @@ public class BuyDetailsController {
 	BuyDetailsServiceImpl service;
 	
 //	list
-//	@RequestMapping(value = "buyDetails")
-//	public String buyDetails(Model model) throws Exception {
-//		List<BuyDetails> list = service.selectList();
-//		model.addAttribute("list",list);
-//		return "infra/buy/xdmin/buyDetails";
-//	}
-
+	/*
+	 * @RequestMapping(value = "buyDetails") public String buyDetails(Model model)
+	 * throws Exception { List<BuyDetails> list = service.selectList();
+	 * model.addAttribute("list",list); return "infra/buy/xdmin/buyDetails"; }
+	 */
 //	selectOne
 	@RequestMapping(value = " buyDetails")
 	public String BuyDetails(BuyDetailsVo vo, Model model) throws Exception {

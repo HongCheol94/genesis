@@ -20,7 +20,7 @@
    		FROM car a
    		WHERE 1=1
    			AND delNy = 0
-   			AND seq LIKE CONCAT('%'.#{shValue}),'%')
+   			<!-- AND seq LIKE CONCAT('%'.#{shValue}),'%') -->
    			AND page = 1
 	</select>
 	
