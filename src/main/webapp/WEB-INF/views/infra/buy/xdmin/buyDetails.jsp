@@ -214,19 +214,19 @@
 		<!-- 차량사진 end -->
 		<!-- 가격 밑 서류 정보 start-->
 				<div class="col mt-5">
-					<p class="fs-3">(51하1024)기아 더 뉴 쏘렌토 2.2 디젤 2WD 노블레스</p>
+					<p class="fs-3">${item.carName}</p>
 					<div class="row">
 						<div class="col offset-4 mt-1">
 							<p class="fs-5" style="text-align:right">판매가격 :</p>
 						</div>
 						<div class="col">
-							<p class="fs-4" style="color: blue;">2,300만원</p>
+							<p class="fs-4" style="color: blue;">${item.price}만원</p>
 						</div>
 					</div>
 					<hr>
 					<div class="row mb-3">
 						<div class="col offset-2">
-							18년05월(19년식) ㅣ 70,000km ㅣ 디젤 ㅣ경기
+							${item.carAge} ㅣ ${item.carMleage} ㅣ ${item.carGearBox} ㅣ${item.area}
 						</div>
 					</div>
 					<div class="row mb-4">
@@ -302,45 +302,45 @@
 							<tbody>	
 								<tr>
 									<th>차량번호</th>
-									<td>51하1024</td>
+									<td>${item.carNumber}</td>
 									<th>연식</th>
-									<td>18년05형
+									<td>${item.carAge}
 										<br>(19년형)
 									</td>
 								</tr>
 								<tr>
 									<th>주행거리</th>
-									<td>70,000km</td>
+									<td>${item.carMleage}</td>
 									<th>연료</th>
-									<td>디젤</td>
+									<td>${item.carEngine}</td>
 								</tr>
 								<tr>
 									<th>변속기</th>
-									<td>오토</td>
+									<td>${item.carGearBox}</td>
 									<th>연비</th>
-									<td>13.6km</td>
+									<td>${item.carFuelEfficiency}</td>
 								</tr>
 								<tr>
 									<th>차종</th>
-									<td>SUV</td>
+									<td>${item.carKind}</td>
 									<th>배기량</th>
-									<td>2.199cc</td>
+									<td>${item.carCc}</td>
 								</tr>
 								<tr>
 									<th>색상</th>
-									<td>갈색</td>
-									<th>세금미납</th>
-									<td>없음</td>
+									<td>${item.color}</td>
+									<th>세금</th>
+									<td>${item.taxe}</td>
 								</tr>
 								<tr>
 									<th>압류</th>
-									<td>없음</td>
+									<td>${item.seize}</td>
 									<th>저당</th>
-									<td>없음</td>
+									<td>${item.collateral}</td>
 								</tr>
 								<tr>
 									<th>제시번호</th>
-									<td>20220627</td>
+									<td>${item.presentNumber}</td>
 								<tr>
 							</tbody>
 						</table>

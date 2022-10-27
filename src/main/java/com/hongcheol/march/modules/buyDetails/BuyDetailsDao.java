@@ -20,4 +20,9 @@ public class BuyDetailsDao {
 	public List<BuyDetails> selectList() {
 		return sqlSession.selectList(namespace + ".selectList","");
 	}
+	
+	public BuyDetails selectOne(BuyDetailsVo vo) {
+		BuyDetails result = sqlSession.selectOne(namespace + ".selectOne", vo);
+		return result;
+	}
 }

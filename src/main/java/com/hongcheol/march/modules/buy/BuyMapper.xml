@@ -19,8 +19,8 @@
     		, a.price
    		FROM car a
    		WHERE 1=1
-   			<!-- AND delNy = 0 -->
-   			<!-- AND seq LIKE CONCAT('%'.#{shValue}),'%') -->
+   			AND delNy = 0
+   			AND seq LIKE CONCAT('%'.#{shValue}),'%')
    			AND page = 1
 	</select>
 	
@@ -35,6 +35,23 @@
 				<when test="shOption == 3 ">AND  carName LIKE CONCT{shValue},'%'</when>
 			</choose>
 	</sql> -->
+	
+<!-- 	
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT
+    		a.seq
+    		, a.carName
+    		, a.carAge
+    		, a.carMleage
+    		, a.carEngine
+    		, a.area
+    		, a.price
+   			<include refid="selectCommon" />
+				ORDER BY a.seq ASC
+			<include refid="Base.orderByLimitForMysql" />
+			<include refid="Base.selectListLowerForMysql" />
+	</select>
+	 -->
 	
 <!-- 	<select id="selectListWithoutPaging" resultMap="resultMaObj">
 		SELECT

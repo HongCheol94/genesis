@@ -8,12 +8,50 @@
 
     <resultMap id="resultMapObj" type="com.hongcheol.march.modules.buyDetails.BuyDetails"></resultMap>
     
-    <select id="selectList" resultMap="resultMapObj">
+     <select id="selectList" resultMap="resultMapObj">
     	SELECT
-    		a.*
+    		a.seq
+    		, a.carNumber
+    		, a.carAge
+    		, a.carMleage
+    		, a.carEngine
+    		, a.carGearBox
+    		, a.carFuelEfficiency
+    		, a.carKind
+    		, a.carCc
+    		, a.color
+    		, a.taxe
+    		, a.seize
+    		, a.collateral
+    		, a.presentNumber
+    		, a.price
+    		, a.area
    		FROM car a
    		WHERE 1=1
-    		
+    </select>
+    
+    
+    <select id="selectOne" resultMap="resultMapObj">
+    	SELECT
+    		a.seq
+    		, a.carNumber
+    		, a.carAge
+    		, a.carMleage
+    		, a.carEngine
+    		, a.carGearBox
+    		, a.carFuelEfficiency
+    		, a.carKind
+    		, a.carCc
+    		, a.color
+    		, a.taxe
+    		, a.seize
+    		, a.collateral
+    		, a.presentNumber
+    		, a.price
+    		, a.area
+   		FROM car a
+   		WHERE 1=1
+    		AND seq = #{seq}
     </select>
 
 

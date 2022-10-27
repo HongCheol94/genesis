@@ -16,4 +16,12 @@ public class BuyDetailsServiceImpl implements BuyDetailsService {
 		List<BuyDetails> list = dao.selectList();
 		return list;
 	}
+	
+	@Override
+	public BuyDetails selectOne(BuyDetailsVo vo) throws Exception {
+		BuyDetails result = dao.selectOne(vo);
+		System.out.println("service result : " + result);
+		return result;
+	}
+
 }

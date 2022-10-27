@@ -2158,7 +2158,7 @@
 						<div class="row">
 						<c:forEach items="${list}" var="list" varStatus="status" end="6">
 							<div class="col-3 mb-5">
-								<a href="/buyDetails">
+								<a href="/buyDetails?seq=<c:out value="${list.seq}"/>">
 								    <div class="card">
 								      <img src="../../resources/images/buy/buycarso.jpg" class="card-img-top" alt="...">
 								      <div class="card-body" style="height:200px;">
