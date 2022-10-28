@@ -34,6 +34,7 @@ public class SellRegForm {
 		private Integer carDefaultNy;
 		private Integer carMleage;
 		
+		
 //		----------------------------------
 		
 		public String getSeq() {

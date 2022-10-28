@@ -32,10 +32,13 @@
 	<c:set var="listCodeCarEngine" value="${CodeServiceImpl.selectListCachedCode('4')}" />
 	<c:set var="listCodeCarGear" value="${CodeServiceImpl.selectListCachedCode('5')}" />
 	<c:set var="listCodeCarKind" value="${CodeServiceImpl.selectListCachedCode('6')}" />
+	<c:set var="listCodecolor" value="${CodeServiceImpl.selectListCachedCode('7')}" />
 	<c:set var="listCodeTaxe" value="${CodeServiceImpl.selectListCachedCode('8')}" />
 	<c:set var="listCodeSeize" value="${CodeServiceImpl.selectListCachedCode('9')}" />
 	<c:set var="listCodeCollateral" value="${CodeServiceImpl.selectListCachedCode('10')}" />
 	<input type="hidden" name="seq" value="<c:out value="${item.seq}"/>">
+	<input type="hidden" name="member_seq" value="<c:out value="${sessSeq}"/>">
+	
 		<div class="contanier">
 	<!-- 	
 			좌측 메뉴
@@ -247,10 +250,12 @@
 							<!-- <td></td> -->
 							<th>색&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상</th>
 							<td>
-								<div class="form-floating">
-									<input type="text" class="form-control" id="" name="color" value="" placeholder="색상" value="색상">
-									<label for="floatingInputGrid">색상</label>
-								</div>
+								<select class="form-select form-select-lg mb-3 mt-2" aria-label=".form-select-lg example" name="taxe" id="taxe">
+									<option value="0">::선택::</option>
+									<c:forEach items="${listCodecolor}" var="listcolor" varStatus="statuscolor">
+										<option value="${listcolor.seq }" <c:if test="${item.Taxe eq listcolor.seq }">selected</c:if>>${listcolor.codeGroupCode }</option>
+									</c:forEach>
+								</select>
 							</td>
 							<th>세금미납</th>
 							<td>

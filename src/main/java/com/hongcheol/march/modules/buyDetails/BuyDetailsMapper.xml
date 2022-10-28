@@ -36,6 +36,7 @@
     	SELECT
     		a.seq
     		, a.carNumber
+    		<!-- , date_format(a.carAge, "%Y-%m") as carAge -->
     		, a.carAge
     		, a.carMleage
     		, a.carEngine

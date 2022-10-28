@@ -21,7 +21,7 @@ public class BuyDetailsController {
 	 * model.addAttribute("list",list); return "infra/buy/xdmin/buyDetails"; }
 	 */
 //	selectOne
-	@RequestMapping(value = " buyDetails")
+	@RequestMapping(value = "buyDetails")
 	public String BuyDetails(BuyDetailsVo vo, Model model) throws Exception {
 		BuyDetails result = service.selectOne(vo);
 		model.addAttribute("item", result);

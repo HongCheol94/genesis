@@ -9,7 +9,7 @@
 	<resultMap id="resultMapObj" type="com.hongcheol.march.modules.sellRegForm.SellRegForm"></resultMap>
 	
 	<insert id="insert">
-		INSERT INTO car {
+		INSERT INTO car (
 			carNumber
 			,carAge
 			,carMleage
@@ -23,7 +23,8 @@
 			,seize
 			,collateral
 			,presentNumber
-		}
+			,member_seq
+		)
 		VALUE (
 			#{carNumber}
 			,#{carAge}
@@ -38,6 +39,7 @@
 			,#{seize}
 			,#{collateral}
 			,#{presentNumber}
+			,#{member_seq}
 		)
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()
