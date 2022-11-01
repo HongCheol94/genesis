@@ -23,4 +23,8 @@ public class MyPageServiceImpl implements MyPageService {
 		MyPage item = dao.selectOne();
 		return item;
 	}
+	
+	public MyPage selectLogin(MyPage dto) throws Exception {
+	    return dao.selectLogin(dto);
+	}
 }

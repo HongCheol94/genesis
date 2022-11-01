@@ -21,8 +21,16 @@ public class MyPageDao {
 	public List<MyPage> selectList() {
 		return sqlSession.selectList(namespace + ".selectList","");
 	}
+	
 	public MyPage selectOne() {
 		 MyPage item = sqlSession.selectOne(namespace + ".selectOne","");
 		 return item;
 	}
+	
+	// login
+    public MyPage selectLogin(MyPage dto) {
+        return sqlSession.selectOne(namespace + ".selectLogin", dto);
+    }
+	
+	
 }

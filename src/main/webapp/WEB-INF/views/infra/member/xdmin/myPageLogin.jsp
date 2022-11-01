@@ -11,6 +11,8 @@
 	<title>Bootstrap demo</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<link href="../../resources/css/myPageLogin.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 	
@@ -232,6 +234,7 @@
 	<div id="fb-root"></div>
 	<!-- end -->
 	
+	<!-- 로그인 페이지 전환 -->
 	<!-- script -->
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v14.0" nonce="u6wxcWyc"></script>
 	<script>
@@ -245,10 +248,10 @@
 			})
 			})
 	</script>
-	
+	<!-- 로그인 페이지 전환 end -->
 	<!-- 로그인 -->
 	<script >
- 	$("#btnLogin").on("click", function(){
+$("#btnLogin").on("click", function(){
 		
 		$.ajax({
 			async: true 
@@ -260,7 +263,7 @@
 			,data : { "id" : $("#id").val(), "password" : $("#password").val(), "autoLogin" : $("#autoLogin").is(":checked")}
 			,success: function(response) {
 				if(response.rt == "success") {
-						location.href = "myPageForm";
+						location.href = "main";
 				} else {
 					alert("회원없음");
 				}

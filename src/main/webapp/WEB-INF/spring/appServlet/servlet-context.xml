@@ -47,6 +47,10 @@
 			<exclude-mapping path="/madeby" />
 			<exclude-mapping path="/buy" />
 			<exclude-mapping path="/buyDetails" />
+			<exclude-mapping path="/myPage" />
+			<exclude-mapping path="/myPageLogin" />
+			<exclude-mapping path="/myPageForm" />
+			<exclude-mapping path="/rest/**" />
 			
 			<beans:bean id="checkLoginSessionInterception" class="com.hongcheol.march.common.interceptor.CheckLoginSessionInterception"/>
 		</interceptor>

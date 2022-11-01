@@ -8,6 +8,8 @@
 	
 	<resultMap id = "resultMapObj" type="com.hongcheol.march.modules.buy.Buy"></resultMap>
 	
+	
+	
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
     		a.seq
