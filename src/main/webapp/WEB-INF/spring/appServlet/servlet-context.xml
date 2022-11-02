@@ -43,6 +43,7 @@
 			<exclude-mapping path="/code/codeList" />
 			<exclude-mapping path="/codeGroup/codeGroupList" />
 			<exclude-mapping path="/test" />
+			<exclude-mapping path="/test/**" />
 			<exclude-mapping path="/madeCountry" />
 			<exclude-mapping path="/madeby" />
 			<exclude-mapping path="/buy" />
