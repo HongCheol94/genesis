@@ -17,4 +17,6 @@ public interface MemberService {
 	public int idCheck(Member dto) throws Exception;
 	public Member selectLogin(Member dto) throws Exception;
 	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception;
+	public Member snsLoginCheck(Member dto) throws Exception;
+	public int kakaoInst(Member dto) throws Exception;
 }

@@ -65,13 +65,30 @@
                                 <hr>
                             </div>
                             <div class="col-4 mb-4">
-                                <img src="../../resources/images/btnNaver.jpg" width="620px" height="70px">
+	                            <button type="button" style="background:none; border-style:none;">
+	                                <img src="../../resources/images/btnNaver.jpg" width="620px" height="70px">
+	                            </button>
                             </div>
+                            <!-- kakao login -->
+                            <form name="form">
+								<input type="hidden" name="name"/>
+								<input type="hidden" name="snsId"/>
+								<input type="hidden" name="phone"/>
+								<input type="hidden" name="email"/>
+								<input type="hidden" name="gender"/>
+								<input type="hidden" name="dob"/>
+								<input type="hidden" name="snsImg"/>
+								<input type="hidden" name="token"/>
+							</form>
                             <div class="col-4 mb-4">
-                                <img src="../../resources/images/klogin.jpg" width="620px" height="70px">
+                            	 <button type="button" id="kakaoBtn" style="background:none; border-style:none;">
+                                	<img src="../../resources/images/klogin.jpg" width="620px" height="70px">
+                                </button>
                             </div>
                             <div class="col-4">
-                                <img src="../../resources/images/btnGoogle.png" width="620px" height="70px">
+                            	 <button type="button" style="background:none; border-style:none;">
+                                	<img src="../../resources/images/btnGoogle.png" width="620px" height="70px">
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -129,6 +146,9 @@
 	
 	<!-- end -->
 	<div id="fb-root"></div>
+	<!-- 카카오 로그인 스크립트 -->
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<!-- 카카오 로그인 스크립트 -->
 	
 	<!-- 로그인 페이지 전환 -->
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v14.0" nonce="GE4xuZTk"></script>
@@ -174,6 +194,84 @@
 	</script >
 	<!-- 로그인 end -->
 	
+	<!-- 카카오 로그인 -->
+	<script>
+	Kakao.init('a4110429842172d8d27ea6bb34d77957'); // test 용
+    	console.log(Kakao.isInitialized());
+/*     	Kakao.init('ec2655da82c3779d622f0aff959060e6');
+    	console.log(Kakao.isInitialized()); */
+    	
+    	$("#kakaoBtn").on("click", function() {
+    		/* Kakao.Auth.authorize({
+   		      redirectUri: 'http://localhost:8080/member/kakaoCallback',
+   		    }); */
+    		
+    		Kakao.Auth.login({
+   		      success: function (response) {
+   		        Kakao.API.request({
+   		          url: '/v2/user/me',
+   		          success: function (response) {
+   		        	  
+   		        	  var accessToken = Kakao.Auth.getAccessToken();
+   		        	  Kakao.Auth.setAccessToken(accessToken);
+
+   		        	  var account = response.kakao_account;
+   		        	  
+   		        	  console.log(response)
+   		        	  console.log("email : " + account.email);
+   		        	  /* console.log("name : " + account.name);
+   		        	  console.log("nickname : " + account.profile.nickname);
+   		        	  console.log("picture : " + account.profile.thumbnail_image_url); */
+   		        	  console.log("picture : " + account.gender);
+   		        	 /*  console.log("picture : " + account.birthday);
+   		        	  console.log("picture : " + account.birthday.substring(0,2) + "-" + account.birthday.substring(2,account.birthday.length)); */
+  	        	  
+	  	        	  $("input[name=snsId]").val("카카오로그인");
+	  	        	  $("input[name=name]").val(account.profile.nickname);
+	  	        	  $("input[name=phone]").val(account.profile.phone_number);
+	  	        	  $("input[name=email]").val(account.email);
+	  	        	  $("input[name=dob]").val(account.birthday.substring(0,2) + "-" + account.birthday.substring(2,account.birthday.length));
+	  	        	  $("input[name=snsImg]").val(account.profile.thumbnail_image_url);
+	  	        	  $("input[name=token]").val(accessToken);
+	  	        	  
+	  	        	  if (account.gender === "male") {
+	  	        		  $("input[name=gender]").val(5);
+	          		  } else {
+	          			  $("input[name=gender]").val(6);
+         			  } 
+	  	        	  
+	  	        	 /*  $("form[name=form]").attr("action", "/member/kakaoLoginProc").submit(); */
+					
+	  	        	  $.ajax({
+						async: true
+						,cache: false
+						,type:"POST"
+						,url: "/member/kakaoLoginProc"
+						,data: {"name": $("input[name=name]").val(), "snsId": $("input[name=snsId]").val(), "phone": $("input[name=phone]").val(), "email": $("input[name=email]").val(), "gender": $("input[name=gender]").val(), "dob": $("input[name=dob]").val(), "snsImg": $("input[name=snsImg]").val(), "token": $("input[name=token]").val()}
+						,success : function(response) {
+							if (response.rt == "fail") {
+								alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");
+								return false;
+							} else {
+								window.location.href = "/main";
+							}
+						},
+						error : function(jqXHR, status, error) {
+							alert("알 수 없는 에러 [ " + error + " ]");
+						}
+					});
+   		          },
+   		          fail: function (error) {
+   		            console.log(error)
+   		          },
+   		        })
+   		      },
+   		      fail: function (error) {
+   		        console.log(error)
+   		      },
+   		    })
+		});
+    	</script>
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

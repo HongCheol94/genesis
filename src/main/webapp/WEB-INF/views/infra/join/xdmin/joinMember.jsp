@@ -65,7 +65,7 @@
 			  				<div class="row">
 			  					<div class="col">
 			  						<div class="form-floating mt-3">
-				  						<input type="text" name="id" id="id" class="form-control" placeholder=아이디"  value=""
+				  						<input type="text" name="id" id="id" class="form-control" placeholder="ID"  value=""
 				  						aria-label="First name" style="border-color:white;" autocomplete="off">
 				  						<div id="idFeedback"></div>
 				  						<label for="floatingPassword">아이디</label>
@@ -91,7 +91,7 @@
 	  					<td style="text-align: center;">
 	  						<div class="form-floating mt-3">
 	  							<input type="hidden" id="passwordAllowedNy" name="passwordAllowedNy">			 			 	
-					   			<input type="password" name="password" id="password" class="form-control pw" placeholder="비밀번호" style="border-color:white;" autocomplete="off">
+					   			<input type="password" name="password" id="password" class="form-control" placeholder="비밀번호" style="border-color:white;" autocomplete="off">
 								<div class="invalid-feedback" id="passwordFeedback"></div>
 								<label for="floatingPassword">비밀번호</label>
 							</div>
@@ -100,7 +100,7 @@
 	  				<!-- 비밀번호확인 -->
 		  				<td>
 		  					<div class="form-floating mt-3">
-		   			 			<input type="password" id="passwordCheck" class="form-control pw" placeholder="비밀번호확인" aria-label="First name" style="border-color:white;" autocomplete="off">
+		   			 			<input type="password" id="passwordCheck" class="form-control" placeholder="비밀번호확인" aria-label="First name" style="border-color:white;" autocomplete="off">
 		   			 			<input type="hidden" id="passwordAllowedNy" name="passwordAllowedNy">
 		   			 			 <div class="invalid-feedback" id="passwordCheckFeedback"></div>
 		   			 			<label for="floatingPassword">비밀번호확인</label>

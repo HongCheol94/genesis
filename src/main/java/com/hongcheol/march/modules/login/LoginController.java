@@ -16,6 +16,7 @@ public class LoginController {
 	@Autowired
 	MemberServiceImpl service;
 	
+//	로그인
 	@RequestMapping(value = "login")
 	public String login() throws Exception {
 		return "infra/login/xdmin/login";

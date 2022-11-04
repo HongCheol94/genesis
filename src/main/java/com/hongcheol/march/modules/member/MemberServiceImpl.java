@@ -113,6 +113,20 @@ public class MemberServiceImpl implements MemberService {
 	    }
 	}
 	
+//	snsLoginCheck
+	public Member snsLoginCheck(Member dto) throws Exception {
+		return dao.snsLoginCheck(dto);
+	}
+	
+//	kakao Insert
+	public int kakaoInst(Member dto) throws Exception {
+		try {
+			dao.kakaoInst(dto);
+			return 1;
+		} catch (Exception e) {
+			throw new Exception();
+		}
+	}
 	
 }	
 	

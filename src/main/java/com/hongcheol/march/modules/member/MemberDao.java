@@ -72,5 +72,14 @@ public class MemberDao {
 	    return sqlSession.insert("Base" + ".insertUploaded", dto);
 	}
 	
+//	snsLoginCheck
+	public Member snsLoginCheck(Member dto) {
+		return sqlSession.selectOne(namespace + ".snsLoginCheck", dto);
+	}
+	
+//	kakao insert
+	public int kakaoInst(Member dto) {
+		return sqlSession.insert(namespace + ".kakaoInst", dto);
+	}
 	
 }

@@ -52,6 +52,7 @@
 			<exclude-mapping path="/myPageLogin" />
 			<exclude-mapping path="/myPageForm" />
 			<exclude-mapping path="/rest/**" />
+			<exclude-mapping path="/member/kakaoLoginProc"/>
 			
 			<beans:bean id="checkLoginSessionInterception" class="com.hongcheol.march.common.interceptor.CheckLoginSessionInterception"/>
 		</interceptor>

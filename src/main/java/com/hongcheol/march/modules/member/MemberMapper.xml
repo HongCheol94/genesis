@@ -166,4 +166,27 @@
 		WHERE
 			id = #{id}
 	</select>
+	
+	<select id="snsLoginCheck" resultMap="resultMapObj">
+		select
+			seq
+			,id
+			,name
+			,email
+			,password
+		from member
+			and id = #{snsId}
+			and name = #{name}
+	</select>
+	
+	<insert id ="kakaoInst">
+		INSERT INTO member (
+			gender
+			,email
+		)
+		VALUES (
+			${snsId}
+			,#{name}
+		)
+	</insert>
 </mapper>
