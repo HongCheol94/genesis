@@ -84,4 +84,16 @@ public class CodeServiceImpl implements CodeService {
 		return rt;
 	}
 	
+	public static String selectOneCachedCode(int code) throws Exception {
+		String rt = "";
+		for(Code codeRow : Code.cachedCodeArrayList) {
+			if (codeRow.getSeq().equals(Integer.toString(code))) {
+				rt = codeRow.getCodeGroupCode();
+			} else {
+				// by pass
+			}
+		}
+		return rt;
+	}
+	
 }

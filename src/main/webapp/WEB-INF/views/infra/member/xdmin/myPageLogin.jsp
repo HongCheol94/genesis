@@ -165,11 +165,9 @@
 								</div>
 							</div>
 						</div>
-						<a href="myPageForm">
-							<div class="d-grid gap-2 col-12 mt-3 mx-auto">
-								<button class="btn btn-warning" type="button" id="btnLogin">확인</button>
-							</div>
-						</a>
+						<div class="d-grid gap-2 col-12 mt-3 mx-auto">
+							<button class="btn btn-warning" type="button" id="btnLogin">확인</button>
+						</div>
 					</div>
 				</div>
 			</div>

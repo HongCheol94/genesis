@@ -1,9 +1,14 @@
 package com.hongcheol.march.modules.myPage;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 //@RequestMapping(value = "")
@@ -30,6 +35,15 @@ public class MyPageController {
 	public String myPageMod(Model model) throws Exception {
 		return "infra/member/xdmin/myPageForm";
 	}
+//	로그인
+//	@ResponseBody
+//	@RequestMapping(value = "loginProc")
+//	public Map<String, Object> loginProc(MyPage dto, HttpSession httpSession) throws Exception {
+//		Map<String, Object> returnMap = new HashMap<String, Object>();
+//		
+//		MyPage rtMember = 
+//		
+//	}
 	
 	
 }

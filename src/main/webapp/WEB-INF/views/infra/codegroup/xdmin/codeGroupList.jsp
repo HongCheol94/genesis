@@ -119,6 +119,7 @@
 				</div>
 			</div>
 			<!-- 회원리스트 -->
+			<button type="button" class="btn btn-success btn-sm" name="" id="btnExcel"><i class="far fa-file-excel fa-lg"></i></button>
 			<table class="table table-hover">
 				<tr class="table-warning sear">
 					<th>
@@ -246,6 +247,17 @@
 				form.attr("action", goUrlForm).submit();
 			}
 		</script>
+		
+		<!-- 엑셀다운 -->
+	<script>
+	
+		var excelUri = "/code/excelDownload";
+	
+		$("#btnExcel").click(function() {
+			form.attr("action", excelUri).submit();
+		});
+	</script>
+	
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 	

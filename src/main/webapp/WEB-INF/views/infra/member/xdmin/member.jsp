@@ -151,6 +151,7 @@
 				value="${CodeServiceImpl.selectListCachedCode('3')}" />
 			<c:out
 				value="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + status.index) }" />
+			<button type="button" class="btn btn-success btn-sm" name="" id="btnExcel"><i class="far fa-file-excel fa-lg"></i></button>
 			<table class="table table-hover">
 				<tr class="table-warning sear">
 					<th><input type="checkbox" name="check" value="selectAll"
@@ -452,6 +453,16 @@
 		}
 	</script>
 	<!-- paging end-->
+	
+	<!-- 엑셀 다운로드 -->
+	<script>
+	
+	var excelUri = "/member/excelDownload";
+	
+	$("#btnExcel").click(function() {
+		form.attr("action", excelUri).submit();
+		});
+	</script>
 	
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script

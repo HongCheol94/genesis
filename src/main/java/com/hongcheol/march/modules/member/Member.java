@@ -14,7 +14,7 @@ public class Member {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dob;
 	private Integer postNumber;
-	private String area;
+	private Integer area;
 	private String detailedAddress;
 	private String number;
 	private String emailId;
@@ -97,10 +97,11 @@ public class Member {
 	public void setNumberAddress(String numberAddress) {
 		this.numberAddress = numberAddress;
 	}
-	public String getArea() {
+
+	public Integer getArea() {
 		return area;
 	}
-	public void setArea(String area) {
+	public void setArea(Integer area) {
 		this.area = area;
 	}
 	public String getDetailedAddress() {
