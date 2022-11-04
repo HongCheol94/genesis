@@ -31,5 +31,4 @@ public class MyPageDao {
 	public MyPage selectLogin(MyPage dto) {
 		return sqlSession.selectOne(namespace + ".selectLogin", dto);
 	}
-	
 }

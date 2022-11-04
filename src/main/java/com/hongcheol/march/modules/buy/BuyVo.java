@@ -3,6 +3,9 @@ package com.hongcheol.march.modules.buy;
 import com.hongcheol.march.common.constants.Constants;
 
 public class BuyVo {
+    
+        private String seq;
+        private String shValue;
 
 	// paging
 		private int thisPage = 1;									//	현재 페이지
@@ -160,8 +163,25 @@ public class BuyVo {
 		public void setStartRnumForMysql(int startRnumForMysql) {
 			this.startRnumForMysql = startRnumForMysql;
 		}
-		
+
 //		-------------------------------
+		
+	      public String getSeq() {
+	            return seq;
+	        }
+
+	        public void setSeq(String seq) {
+	            this.seq = seq;
+	        }
+
+	        public String getShValue() {
+	            return shValue;
+	        }
+
+	        public void setShValue(String shValue) {
+	            this.shValue = shValue;
+	        }
+	        
 		
 		
 }
