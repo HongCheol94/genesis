@@ -144,8 +144,7 @@
 								<span class="fs-4">고객명</span>
 							</div>
 							<div class="col">
-								<fieldset disabled>
-								<input type="text" id="disabledTextInput" class="form-control" placeholder="김홍철">
+								<c:out value="${sessName }님"/>
 							</div>
 						</div>
 						<div class="row mb-4">
@@ -153,8 +152,7 @@
 								<span class="fs-4">휴대폰번호</span>
 							</div>
 							<div class="col">
-								<fieldset disabled>
-								<input type="text" class="form-control" value="010-5318-9751">
+								<c:out value="${sessNumber}"/>
 							</div>
 						</div>
 						<div class="row mb-4">
@@ -179,7 +177,7 @@
 								<span class="fs-4">이메일</span>
 							</div>
 							<div class="col">
-								<input type="eamil" class="form-control" value="appleMac">
+								<c:out value="${sessEmail }"/>
 							</div>
 							<div class="col-1">
 								<span class="fs-4">@</span>

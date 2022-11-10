@@ -119,7 +119,7 @@
 				<select class="form-select" aria-label="Default select example" id="madeCountry" onchange="setComboBox1(this)">
 					 <option value="0">제조국</option>
 					 <c:forEach items="${listCodemadeCountry}" var="listmadeCountry" varStatus="statusmadeCountry">
-						<option value="${listmadeCountry.seq }" <c:if test="${item.madeCountry eq listmadeCountry.seq }">selected</c:if>><c:out value="${listmadeCountry.codeGroupCode }"/></option>
+						<option value="${listmadeCountry.seq }" <c:if test="${item.madeCountry eq listmadeCountry.seq }">selected</c:if>><c:out value="${listmadeCountry.codeNameKo }"/></option>
 					</c:forEach>
 				</select>
 				</div>
@@ -127,7 +127,7 @@
 				<select class="form-select" aria-label="Default select example" id="madeby" onchange="setComboBox2(this)">
 					  <option value="0">제조사</option>
 					  <c:forEach items="${listCodemadeby}" var="listMadeby" varStatus="statusMadeby">
-					  	<option class="select1" value="${listMadeby.seq}"  <c:if test="${item.madeby eq listMadeby.seq}">selected</c:if>><c:out value="${listMadeby.codeGroupCode }"/></option>
+					  	<option class="select1" value="${listMadeby.seq}"  <c:if test="${item.madeby eq listMadeby.seq}">selected</c:if>><c:out value="${listMadeby.codeNameKo }"/></option>
 					  </c:forEach>
 				</select>
 				</div>
@@ -135,7 +135,7 @@
 				<select class="form-select" aria-label="Default select example" id="model" name="model">
 					<option value="0">모델</option>
 					<c:forEach items="${listCodemodel}" var="listmodel" varStatus="statusmodel">
-						<option class="select2" value="${listmodel.seq }"  onchange="" <c:if test="${item.model eq listmodel.seq }">selected</c:if>><c:out value="${listmodel.codeGroupCode }"/></option>
+						<option class="select2" value="${listmodel.seq }"  onchange="" <c:if test="${item.model eq listmodel.seq }">selected</c:if>><c:out value="${listmodel.codeNameKo }"/></option>
 					</c:forEach>
 				</select>
 				</div>
@@ -169,12 +169,12 @@
 									${list.carAge}<br>${list.carMleage}km
 									ㅣ<c:forEach items="${listCodecarEngine}" var="listcarEngine" varStatus="statuscarEngine">
 									  	<c:if test="${list.carEngine eq listcarEngine.seq}">
-											<c:out value="${listcarEngine.codeGroupCode }" />
+											<c:out value="${listcarEngine.codeGroupNameK }" />
 										</c:if>
 									  </c:forEach>
 									ㅣ<c:forEach items="${listCodearea}" var="listarea" varStatus="statusarea">
 									  	<c:if test="${list.area eq listarea.seq}">
-											<c:out value="${listarea.codeGroupCode }" />
+											<c:out value="${listarea.codeGroupNameK }" />
 										</c:if>
 									  </c:forEach>
 								</p>
@@ -366,7 +366,7 @@
 					<c:forEach items="${listCodemadeby}" var="listmadeby" varStatus="statusmadeby">
 						arr.push({
 							num : "${listmadeby.seq}"				/* 여기 */
-							,name : "${listmadeby.codeGroupCode}"   				/* 여기 */
+							,name : "${listmadeby.codeNameKo}"   				/* 여기 */
 						});
 					</c:forEach>
 					for(var i=0; i<response.searchMadeby.length; i++){
@@ -408,7 +408,7 @@
 					<c:forEach items="${listCodeModel}" var="listModel" varStatus="statusModel">
 						arr.push({
 							num : "${listModel.seq}"
-							,name : "${listModel.codeGroupCode}"
+							,name : "${listModel.codeNameKo}"
 						});
 					</c:forEach>
 					for(var i=0; i<response.searchModel.length; i++){

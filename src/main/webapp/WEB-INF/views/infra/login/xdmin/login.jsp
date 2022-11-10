@@ -146,9 +146,7 @@
 	
 	<!-- end -->
 	<div id="fb-root"></div>
-	<!-- 카카오 로그인 스크립트 -->
-	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-	<!-- 카카오 로그인 스크립트 -->
+
 	
 	<!-- 로그인 페이지 전환 -->
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v14.0" nonce="GE4xuZTk"></script>
@@ -271,7 +269,10 @@
    		      },
    		    })
 		});
-    	</script>
+   	</script>
+	<!-- 카카오 로그인 스크립트 -->
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<!-- 카카오 로그인 스크립트 -->
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

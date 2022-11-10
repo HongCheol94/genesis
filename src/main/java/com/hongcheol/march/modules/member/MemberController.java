@@ -134,7 +134,10 @@ public class MemberController {
 				httpSession.setMaxInactiveInterval(60 * 30); // 60second * 30 = 30minute
 				httpSession.setAttribute("sessSeq", rtMember.getSeq());
 				httpSession.setAttribute("sessId", rtMember.getId());
+				httpSession.setAttribute("sessPassword", rtMember.getPassword());
 				httpSession.setAttribute("sessName", rtMember.getName());
+				httpSession.setAttribute("sessNumber", rtMember.getNumber());
+				httpSession.setAttribute("sessEmail", rtMember.getEmail());
 				System.out.println("rtMember.getseq : "  + rtMember.getId());
 				returnMap.put("rt", "success");
 			}else {
@@ -290,7 +293,6 @@ public class MemberController {
 //	     httpSession.setAttribute("sessImg", dto.getSnsImg());
 //	     httpSession.setAttribute("sessSns", dto.getSns_type());
 	 }
-	
 	
 }
 

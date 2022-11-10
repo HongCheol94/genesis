@@ -128,12 +128,10 @@
 					<th>
 						<input type="checkbox" name="check" value="selectAll" onclick="selectAll(this)">
 					</th>
-					<th>#</th>
-					<th>코드그룹 코드</th>
-					<th>코드그룹 이름(한글)</th>
 					<th>코드</th>
-					<th>대체 코드</th>
+					<th>코드그룹 코드</th>
 					<th>코드 이름(한글)</th>
+					<th>대체 코드</th>
 					<th>코드 이름(영문)</th>
 					<th>사용</th>
 					<th>순서</th>
@@ -153,11 +151,9 @@
 							<input type="checkbox" name="check">
 						</td>
 						<td>${list.seq}</td>
-						<td>${list.codeGroupCode}</td>
-						<td>${list.codeGroupNameK}</td>
-						<td>${list.code}</td>
+						<td>${list.ccg_seq}</td>
+						<td><a href="/code/codeRegForm?seq=<c:out value="${list.seq }"/>">${list.codeNameKo}</a></td>
 						<td>${list.substituteCode}</td>
-						<td><a href="/code/codeRegForm?seq=<c:out value="${list.seq }"/>">${list.codeNameK}</a></td>
 						<td>${list.codeNameEn}</td>
 						<td>${list.useNy}</td>
 						<td>${list.turn}</td>

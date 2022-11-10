@@ -23,10 +23,15 @@
 	<include refid="Base.selectListUpperForMysql"/>
     		SELECT
     			a.seq
-    			, a.code
-    			, a.codeAn
-    			, a.codeNameK
+    			, a.ccg_seq
+    			, a.codeGroupNameK
+    			, a.codeNameKo
     			, a.codeNameEn
+    			, a.codeAn
+    			, a.code
+    			, a.substitutecode
+    			, a.registrationDate
+    			, a.revisedDate
     			, a.useNy
     			, a.turn
     			, a.delNy
@@ -54,14 +59,14 @@
 	
 	<insert id="insert">
 		INSERT INTO cc (
-			codeNameK
+			codeNameKo
 			,codeNameEn
 			,turn
 			,codeAn
 			,delNy
 		)
 		VALUES(
-			#{codeNameK}
+			#{codeNameKo}
 			,#{codeNameEn}
 			,#{turn}
 			,#{codeAn}
@@ -76,7 +81,7 @@
 	<update id="update">
 		UPDATE cc
 		SET
-			codeNameK = #{codeNameK}
+			codeNameKo = #{codeNameKo}
 			,codeNameEn = #{codeNameEn}
 			,turn = #{turn}
 			,codeAn = #{codeAn}
@@ -101,7 +106,7 @@
 	<select id="selectListWithoutPaging" resultMap="resultMapObj">
 		SELECT
 			a.seq
-			,a.codeGroupCode
+			,a.ccg_seq
 		FROM cc a
 		WHERE 1=1
 			AND shDelNy = 0
@@ -112,7 +117,7 @@
     <select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
 		SELECT 
 			seq
-			, codeGroupCode
+			, codeGroupNameK
 			, ccg_seq
 		FROM
 			cc

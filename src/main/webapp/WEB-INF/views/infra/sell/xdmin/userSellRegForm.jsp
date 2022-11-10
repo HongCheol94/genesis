@@ -410,7 +410,8 @@
 	  <!-- DatePicker end -->
 	
 	<script type="text/javascript">
-		var goUrlInsert = "sellInsert";
+		
+	var goUrlInsert = "sellInsert";
 		
 		var form =$("form[name=form]");
 		

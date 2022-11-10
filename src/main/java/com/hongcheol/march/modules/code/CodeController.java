@@ -169,7 +169,7 @@ public class CodeController {
 	            cell = row.createCell(4);
 	            cellStyle.setAlignment(HorizontalAlignment.CENTER);
 	            cell.setCellStyle(cellStyle);
-	            cell.setCellValue(list.get(i).getCodeNameK());
+	            cell.setCellValue(list.get(i).getCodeNameKo());
 	            
 	            cell = row.createCell(5);
 	            cellStyle.setAlignment(HorizontalAlignment.CENTER);

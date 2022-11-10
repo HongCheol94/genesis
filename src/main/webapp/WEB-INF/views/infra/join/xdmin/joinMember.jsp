@@ -120,7 +120,7 @@
 							<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name = "email">
 							  <option selected>@Email</option>
 							  <c:forEach items="${listCodeEmail}" var="listEmail" varStatus="statusEmail">
-									<option value="${listEmail.seq}" <c:if test="${item.email eq listEmail.seq}">selected</c:if>>${listEmail.codeGroupCode}</option>
+									<option value="${listEmail.seq}" <c:if test="${item.email eq listEmail.seq}">selected</c:if>>${listEmail.codeNameKo}</option>
 							  </c:forEach>
 							</select>			
 						</td>
@@ -159,7 +159,7 @@
 											<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="gender" id="gender">
 												<option value="0">성별</option>
 												<c:forEach items="${listCodeGender}" var="listGender" varStatus="statusGender">
-													<option value="${listGender.seq }" <c:if test="${item.gender eq listGender.seq }">selected</c:if>>${listGender.codeGroupCode }</option>
+													<option value="${listGender.seq }" <c:if test="${item.gender eq listGender.seq }">selected</c:if>>${listGender.codeNameKo }</option>
 												</c:forEach>
 											  </select>
 										</div>
@@ -184,7 +184,7 @@
 											<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="telecom" id="telecom">
 												<option value="0">통신사</option>
 												<c:forEach items="${listCodetelecom }" var="listTelecom" varStatus="statusTelecom">
-													<option value="${listTelecom.seq }" <c:if test="${item.telecom eq listTelecom.seq }">selected</c:if>>${listTelecom.codeGroupCode }</option>
+													<option value="${listTelecom.seq }" <c:if test="${item.telecom eq listTelecom.seq }">selected</c:if>>${listTelecom.codeNameKo }</option>
 												</c:forEach>
 											  </select>
 										</div>

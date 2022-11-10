@@ -88,7 +88,7 @@ public class CodeServiceImpl implements CodeService {
 		String rt = "";
 		for(Code codeRow : Code.cachedCodeArrayList) {
 			if (codeRow.getSeq().equals(Integer.toString(code))) {
-				rt = codeRow.getCodeGroupCode();
+				rt = codeRow.getCcg_seq();
 			} else {
 				// by pass
 			}

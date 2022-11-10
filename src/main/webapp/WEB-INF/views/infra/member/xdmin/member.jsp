@@ -180,8 +180,7 @@
 								<td><a
 									href="/member/memberRegForm?seq=<c:out value="${list.seq }"/>">${list.name}</a>
 								</td>
-								<td><c:forEach items="${listCodeGender}" var="listgender"
-										varStatus="statusGender">
+								<td><c:forEach items="${listCodeGender}" var="listgender" varStatus="statusGender">
 										<c:if test="${list.gender eq listgender.seq}">
 											<c:out value="${listgender.codeGroupCode }" />
 										</c:if>

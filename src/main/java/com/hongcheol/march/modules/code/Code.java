@@ -7,13 +7,12 @@ public class Code {
 
 //	infr_code
 	private String seq;
-	private String codeGroupCode;
 	private String codeGroupNameK;
 	private String ccg_seq;
 	private Integer shDelNy;
 	private Integer code;
 	private String substituteCode;
-	private String codeNameK;
+	private String codeNameKo;
 	private String codeNameEn;
 	private String codeAn;
 	private Integer useNy;
@@ -21,6 +20,7 @@ public class Code {
 	private String registrationDate;
 	private String revisedDate;
 	private Integer delNy;
+	private String codeGroupCode;
 //	------------------------------
 	
 //	for cache
@@ -31,12 +31,6 @@ public class Code {
 	}
 	public void setSeq(String seq) {
 		this.seq = seq;
-	}
-	public String getCodeGroupCode() {
-		return codeGroupCode;
-	}
-	public void setCodeGroupCode(String codeGroupCode) {
-		this.codeGroupCode = codeGroupCode;
 	}
 	public String getCodeGroupNameK() {
 		return codeGroupNameK;
@@ -68,11 +62,17 @@ public class Code {
 	public void setSubstituteCode(String substituteCode) {
 		this.substituteCode = substituteCode;
 	}
-	public String getCodeNameK() {
-		return codeNameK;
+	public String getCodeNameKo() {
+		return codeNameKo;
 	}
-	public void setCodeNameK(String codeNameK) {
-		this.codeNameK = codeNameK;
+	public void setCodeNameKo(String codeNameKo) {
+		this.codeNameKo = codeNameKo;
+	}
+	public static List<Code> getCachedCodeArrayList() {
+		return cachedCodeArrayList;
+	}
+	public static void setCachedCodeArrayList(List<Code> cachedCodeArrayList) {
+		Code.cachedCodeArrayList = cachedCodeArrayList;
 	}
 	public String getCodeNameEn() {
 		return codeNameEn;
@@ -115,6 +115,12 @@ public class Code {
 	}
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
+	}
+	public String getCodeGroupCode() {
+		return codeGroupCode;
+	}
+	public void setCodeGroupCode(String codeGroupCode) {
+		this.codeGroupCode = codeGroupCode;
 	}
 	
 
