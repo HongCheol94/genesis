@@ -343,8 +343,11 @@
 				}
 			});
 		});
+		</script>
 		<!-- 로그아웃 end -->
+	
 		
+		<script>
 		<!-- 3단검색 ajax -->
 		
 		function setComboBox1(o){

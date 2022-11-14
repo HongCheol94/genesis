@@ -25,7 +25,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-	<form method="post" name="form">
+	<form method="post" name="form" id="form list">
 		<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage }" default="1"/>"> 
 		<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow }"/>"> 
 		<input type="hidden" name="seq" value='<c:out value="${vo.seq }"></c:out>'>
@@ -144,67 +144,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- 회원리스트 -->
-			<c:set var="listCodeGender"
-				value="${CodeServiceImpl.selectListCachedCode('2')}" />
-			<c:set var="listCodearea"
-				value="${CodeServiceImpl.selectListCachedCode('3')}" />
-			<c:out
-				value="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + status.index) }" />
-			<button type="button" class="btn btn-success btn-sm" name="" id="btnExcel"><i class="far fa-file-excel fa-lg"></i></button>
-			<table class="table table-hover">
-				<tr class="table-warning sear">
-					<th><input type="checkbox" name="check" value="selectAll"
-						onclick="selectAll(this)"></th>
-					<th>번호</th>
-					<th>아이디</th>
-					<th>이름</th>
-					<th>성별</th>
-					<th>전화번호</th>
-					<th>주소</th>
-					<th>이메일</th>
-					<th>생년월일</th>
-				</tr>
-				<c:choose>
-					<c:when test="${fn:length(list) eq 0 }">
-						<tr>
-							<td class="text-center" colspan="12">There is no date!</td>
-						</tr>
-					</c:when>
-					<c:otherwise>
-						<c:forEach items="${list}" var="list" varStatus="status">
-							<tr class="search">
-								<td><input type="checkbox" name="check"></td>
-								<td>${list.seq }</td>
-								<td>${list.id }</td>
-								<td><a
-									href="/member/memberRegForm?seq=<c:out value="${list.seq }"/>">${list.name}</a>
-								</td>
-								<td><c:forEach items="${listCodeGender}" var="listgender" varStatus="statusGender">
-										<c:if test="${list.gender eq listgender.seq}">
-											<c:out value="${listgender.codeNameKo}" />
-										</c:if>
-									</c:forEach></td>
-								<td>${list.number}</td>
-								<td><c:forEach items="${listCodearea}" var="listarea"
-										varStatus="statusarea">
-										<c:if test="${list.area eq listarea.seq}">
-											<c:out value="${listarea.codeGroupCode }" />
-										</c:if>
-									</c:forEach></td>
-								<td>${list.email}</td>
-								<td>
-									<fmt:formatDate value="${list.dob}" pattern="yyyy.mm.dd"/>
-								</td>
-							</tr>
-						</c:forEach>
-					</c:otherwise>
-				</c:choose>
-			</table>
-			<!-- 페이지 목록 -->
-			<!-- pagination s -->
-			<%@include file="../../pagination/xdmin/pagination.jsp"%>
-			<!-- pagination e -->
+			<div id="lita"></div>
 			<div class="row">
 				<div class="col-1">
 					<button type="button" class="btn btn-warning"
@@ -463,6 +403,38 @@
 	$("#btnExcel").click(function() {
 		form.attr("action", excelUri).submit();
 		});
+	<!-- 엑셀 다운로드 E -->
+	
+	$(document).ready(function(){
+		setLita();
+	}); 
+	
+	var goUrlList = "/member/memberAjaxList";
+	var goUrlLita = "/member/memberAjaxLita";
+	
+	function setLita() {
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			/* ,dataType:"json" */
+			,url: goUrlLita
+			,data : $("#formList").serialize()
+			/* ,data : {  } */
+			,success: function(response) {
+				console.log(response);				
+				$("#lita").empty();
+				$("#lita").append(response);
+				/* window.location.hash = '#page' + page;
+				page++;
+ */
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+	}
+	
 	</script>
 	
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>

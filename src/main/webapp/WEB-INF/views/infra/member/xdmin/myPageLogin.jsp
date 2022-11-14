@@ -261,7 +261,7 @@ $("#btnLogin").on("click", function(){
 			,data : { "id" : $("#id").val(), "password" : $("#password").val(), "autoLogin" : $("#autoLogin").is(":checked")}
 			,success: function(response) {
 				if(response.rt == "success") {
-						location.href = "main";
+						location.href = "myPageForm";
 				} else {
 					alert("회원없음");
 				}

@@ -45,6 +45,24 @@ public class CodeController {
 		return "infra/code/xdmin/codeList";
 	}
 	
+	@RequestMapping(value="codeAjaxList")
+	public String codeAjaxList(@ModelAttribute("vo") codeVo vo, Model model) throws Exception {
+		setSearchAndPaging(vo);
+		return "infra/code/xdmin/codeAjaxList";
+	}
+	
+	@RequestMapping(value = "codeAjaxLita")
+	public String codeAjaxLita(@ModelAttribute("vo") codeVo vo, Model model) throws Exception {
+		vo.setParamsPaging(service.selectOneCount(vo));
+		
+		if (vo.getTotalRows() > 0) {
+			List<Code> list = service.selectList(vo);
+			model.addAttribute("list",list);
+		}
+		
+		return "infra/code/xdmin/codeAjaxLita";
+	}
+	
 //	RegForm
 	@RequestMapping(value = "codeRegForm")
 	public String codeRegForm(Code dto, @ModelAttribute("vo") codeVo vo, Model model) throws Exception{

@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.hongcheol.march.modules.code.Code;
 import com.hongcheol.march.modules.code.CodeServiceImpl;
+import com.hongcheol.march.modules.code.codeVo;
 import com.hongcheol.march.modules.member.Member;
 import com.hongcheol.march.modules.member.MemberVo;
 
@@ -46,6 +48,24 @@ public class CodeGroupController {
 		model.addAttribute("list", list);
 		
 		return "infra/codegroup/xdmin/codeGroupList";
+	}
+	
+	@RequestMapping(value = "codeGroupAjaxList")
+	public String codeGroupAjaxList(@ModelAttribute("vo") CodeGroupVo vo ,Model model) throws Exception {
+		setSearchAndPaging(vo);
+		return "infra/codegroup/xdmin/codeGroupAjaxList";
+	}
+	
+	@RequestMapping(value = "codeGroupAjaxLita")
+	public String codeGroupAjaxLita(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
+		vo.setParamsPaging(service.selectOneCount(vo));
+		
+		if (vo.getTotalRows() > 0 ) {
+			List<CodeGroup> list = service.selectList(vo);
+			model.addAttribute("list", list);
+		}
+		
+		return "infra/codegroup/xdmin/codeGroupAjaxLita";
 	}
 	
 //	RegForm,View
