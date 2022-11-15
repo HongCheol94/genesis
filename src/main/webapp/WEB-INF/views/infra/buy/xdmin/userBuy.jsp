@@ -2277,9 +2277,9 @@
 			</div> <!-- row 끝 -->
 		</div> <!-- 컨테이너 끝 -->
 		<!-- 중앙 내용 end -->
-		<div class="foot container clear">
+		<div class="foot container clear md">
 			<div class="row mt-5">
-					<div class="col">
+					<div class="col offset-3">
 						<br><image alt="" src="../images/kbfoot.png"></image>
 						<br>
 						<br>이용약관 ㅣ 개인정보처리방침 ㅣ 위치기반서비스 이용약관
