@@ -25,6 +25,7 @@ public class Member {
 	private String roadAddress;
 	private String numberAddress;
 	private Integer telecom;
+	private String snsId;
 	
 //	첨부파일(uploaded)
     private String tableName;
@@ -219,6 +220,12 @@ public class Member {
     }
     public void setPseq(String pseq) {
         this.pseq = pseq;
+    }
+    public String getSnsId() {
+        return snsId;
+    }
+    public void setSnsId(String snsId) {
+        this.snsId = snsId;
     }
 	
 

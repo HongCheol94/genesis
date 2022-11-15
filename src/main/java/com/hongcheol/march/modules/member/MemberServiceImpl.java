@@ -118,15 +118,17 @@ public class MemberServiceImpl implements MemberService {
 		return dao.snsLoginCheck(dto);
 	}
 	
-//	kakao Insert
-	public int kakaoInst(Member dto) throws Exception {
-		try {
-			dao.kakaoInst(dto);
-			return 1;
-		} catch (Exception e) {
-			throw new Exception();
-		}
-	}
+// kakao insert
+    @Override
+    public int kakaoInst(Member dto) throws Exception {
+        return dao.kakaoInst(dto);
+    }
+    
+//  naver insert
+    @Override
+    public int naverInst(Member dto) throws Exception {
+        return dao.naverInst(dto);
+    }
 	
 }	
 	

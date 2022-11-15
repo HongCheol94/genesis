@@ -14,6 +14,12 @@
     <link href="../../resources/css/loginForm.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 네이버 로그인 -->
+	<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+	<!-- 네이버 로그인 -->
+	<!-- 카카오 로그인 스크립트 -->
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<!-- 카카오 로그인 스크립트 -->
 </head>
 <body>
 	
@@ -64,13 +70,10 @@
                             <div class="col">
                                 <hr>
                             </div>
-                            <div class="col-4 mb-4">
-	                            <button type="button" style="background:none; border-style:none;">
+                           <div class="col-4 mb-4">
+	                            <button type="button" onclick="location.href='javascript:naverLoginClick()';" style="background:none; border-style:none;">
 	                                <img src="../../resources/images/btnNaver.jpg" width="620px" height="70px">
 	                            </button>
-                            </div>
-                            <div class="btn_login_wrap">
-								<div id="naverIdLogin"></div>
                             </div>
                             <!-- kakao login -->
                             <form name="form">
@@ -196,8 +199,52 @@
 	<!-- 로그인 end -->
 	
 	<!-- 네이버 로그인 -->
-	<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
-	<!-- 네이버 로그인 -->
+	<script>
+	var naverLogin = new naver.LoginWithNaverId(
+			{
+				clientId: "sC4dLjDEajg7ebDdXZoF", 
+				callbackUrl: "http://localhost:8080/main",
+				isPopup: true
+			}
+		);
+		
+		naverLogin.init();
+
+        naverLoginClick = function(){
+			naverLogin.getLoginStatus(function (status) {
+				
+				if(!status)
+					naverLogin.authorize();
+                
+
+                setLoginStatus();  //하늘님 메소드 실행 -> Ajax
+			});
+        }
+   		
+   		function setLoginStatus() {
+   			
+			$.ajax({
+				async: true
+				,cache: false
+				,type:"POST"
+				,url: "/member/naverLoginProc"
+				,data: {"name": naverLogin.user.name, "snsId": "네이버로그인"}
+				,success : function(response) {
+					if (response.rt == "success") {
+						window.location.href = "/main";
+						return false;
+					} else {
+						alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");
+					}
+				},
+				error : function(jqXHR, status, error) {
+					alert("알 수 없는 에러 [ " + error + " ]");
+				}
+			});
+		}
+    	</script>
+	<!-- 네이버 로그인end -->
+	
 	
 	<!-- 카카오 로그인 -->
 	<script>
@@ -224,35 +271,19 @@
    		        	  
    		        	  console.log(response)
    		        	  console.log("email : " + account.email);
-   		        	  /* console.log("name : " + account.name);
-   		        	  console.log("nickname : " + account.profile.nickname);
-   		        	  console.log("picture : " + account.profile.thumbnail_image_url); */
-   		        	  console.log("picture : " + account.gender);
-   		        	 /*  console.log("picture : " + account.birthday);
-   		        	  console.log("picture : " + account.birthday.substring(0,2) + "-" + account.birthday.substring(2,account.birthday.length)); */
+   		        	  console.log("name : " + account.name);
   	        	  
 	  	        	  $("input[name=snsId]").val("카카오로그인");
-	  	        	  $("input[name=name]").val(account.profile.nickname);
-	  	        	  $("input[name=phone]").val(account.profile.phone_number);
 	  	        	  $("input[name=email]").val(account.email);
-	  	        	  $("input[name=dob]").val(account.birthday.substring(0,2) + "-" + account.birthday.substring(2,account.birthday.length));
-	  	        	  $("input[name=snsImg]").val(account.profile.thumbnail_image_url);
 	  	        	  $("input[name=token]").val(accessToken);
 	  	        	  
-	  	        	  if (account.gender === "male") {
-	  	        		  $("input[name=gender]").val(5);
-	          		  } else {
-	          			  $("input[name=gender]").val(6);
-         			  } 
-	  	        	  
-	  	        	 /*  $("form[name=form]").attr("action", "/member/kakaoLoginProc").submit(); */
 					
 	  	        	  $.ajax({
 						async: true
 						,cache: false
 						,type:"POST"
 						,url: "/member/kakaoLoginProc"
-						,data: {"name": $("input[name=name]").val(), "snsId": $("input[name=snsId]").val(), "phone": $("input[name=phone]").val(), "email": $("input[name=email]").val(), "gender": $("input[name=gender]").val(), "dob": $("input[name=dob]").val(), "snsImg": $("input[name=snsImg]").val(), "token": $("input[name=token]").val()}
+						,data: {"name": $("input[name=name]").val(), "snsId": $("input[name=snsId]").val(), "phone": $("input[name=phone]").val(), "email": $("input[name=email]").val(), "gender": $("input[name=gender]").val(), e=dob]").val(),"token": $("input[name=token]").val()}
 						,success : function(response) {
 							if (response.rt == "fail") {
 								alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");
@@ -277,9 +308,6 @@
    		    })
 		});
    	</script>
-	<!-- 카카오 로그인 스크립트 -->
-	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-	<!-- 카카오 로그인 스크립트 -->
 	<script src="https://kit.fontawesome.com/df50a53180.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

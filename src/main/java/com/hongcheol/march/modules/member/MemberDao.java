@@ -82,4 +82,8 @@ public class MemberDao {
 		return sqlSession.insert(namespace + ".kakaoInst", dto);
 	}
 	
+//	naver insert
+	public int naverInst(Member dto) {
+	    return sqlSession.insert(namespace + ".naverInst", dto);
+	}
 }

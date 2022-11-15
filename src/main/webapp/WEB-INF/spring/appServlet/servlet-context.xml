@@ -53,6 +53,7 @@
 			<exclude-mapping path="/myPageForm" />
 			<exclude-mapping path="/rest/**" />
 			<exclude-mapping path="/member/kakaoLoginProc"/>
+			<exclude-mapping path="/member/naverLoginProc"/>
 			<exclude-mapping path="/code/codeAjaxList" />
 			<exclude-mapping path="/code/codeAjaxLita" />
 			<exclude-mapping path="/codeGroup/codeGroupAjaxList" />

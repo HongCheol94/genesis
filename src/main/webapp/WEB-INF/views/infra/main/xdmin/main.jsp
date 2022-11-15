@@ -29,8 +29,7 @@
 			<div class=text-end>
 				<a href="myPage">
 					<p class="fs-3">
-						 <!-- sessName: --><c:out value="${sessName }님"/>
-						 <%-- sessId:<c:out value="${sessId }"/> --%>
+						${sessName }님
 					 </p>
 				 </a>
 			</div>
@@ -325,6 +324,7 @@
 		<!-- 로그아웃 -->
 		<script>
 		$("#btnLogout").on("click", function(){
+			alert("작동");
 			$.ajax({
 				async: true 
 				,cache: false

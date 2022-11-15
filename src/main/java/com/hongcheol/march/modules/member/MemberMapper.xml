@@ -177,17 +177,29 @@
 			,email
 			,password
 		from member
+		WHERE 1=1
 			and id = #{snsId}
 			and name = #{name}
 	</select>
 	
 	<insert id ="kakaoInst">
 		INSERT INTO member (
-			gender
-			,email
+			id
+			,name
 		)
 		VALUES (
-			${snsId}
+			#{snsId}
+			,#{name}
+		)
+	</insert>
+	
+	<insert id="naverInst">
+		INSERT INTO member (
+			id
+			,name
+		)
+		VALUES (
+			#{snsId}
 			,#{name}
 		)
 	</insert>
