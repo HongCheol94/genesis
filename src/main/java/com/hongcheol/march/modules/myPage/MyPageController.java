@@ -62,8 +62,13 @@ public class MyPageController {
                 httpSession.setMaxInactiveInterval(60 * 30); // 60second * 30 = 30minute
                 httpSession.setAttribute("sessSeq", rtMember.getSeq());
                 httpSession.setAttribute("sessId", rtMember.getId());
+                httpSession.setAttribute("sessPassword", rtMember.getPassword());
                 httpSession.setAttribute("sessName", rtMember.getName());
+                httpSession.setAttribute("sessNumber", rtMember.getNumber());
+                httpSession.setAttribute("sessEmail", rtMember.getEmail());
                 System.out.println("rtMember.getseq : "  + rtMember.getId());
+                System.out.println("비밀번호는" + rtMember.getPassword());
+                System.out.println("전화번호는" + rtMember.getNumber());
                 returnMap.put("rt", "success");
             }else {
                 returnMap.put("rt", "fail");

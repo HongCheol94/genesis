@@ -118,6 +118,8 @@
 			, a.name
 			, a.email
 			, a.seq
+			, a.number
+			, a.password
 		FROM member a
 		WHERE 1=1
 			AND id = #{id}
