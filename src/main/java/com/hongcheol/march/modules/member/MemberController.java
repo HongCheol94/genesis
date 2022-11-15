@@ -137,7 +137,7 @@ public class MemberController {
 		}
 		return returnMap;
 	}
-
+			
 //	로그인
 	@ResponseBody
 	@RequestMapping(value = "loginProc")
@@ -163,8 +163,6 @@ public class MemberController {
 				returnMap.put("rt", "fail");
 			}
 			return returnMap;
-
-
 	}
 	
 //	로그아웃
