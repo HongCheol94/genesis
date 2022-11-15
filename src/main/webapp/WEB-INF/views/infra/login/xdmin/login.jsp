@@ -69,6 +69,9 @@
 	                                <img src="../../resources/images/btnNaver.jpg" width="620px" height="70px">
 	                            </button>
                             </div>
+                            <div class="btn_login_wrap">
+								<div id="naverIdLogin"></div>
+                            </div>
                             <!-- kakao login -->
                             <form name="form">
 								<input type="hidden" name="name"/>
@@ -191,6 +194,10 @@
  	
 	</script >
 	<!-- 로그인 end -->
+	
+	<!-- 네이버 로그인 -->
+	<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+	<!-- 네이버 로그인 -->
 	
 	<!-- 카카오 로그인 -->
 	<script>
