@@ -287,39 +287,7 @@
 		
 	<!-- end -->
 	
-	<!-- script -->
-		
-		
-		<!-- <script>
-			$("#id").on("focusout", function(){
-					$.ajax({
-						async: true 
-						,cache: false
-						,type: "post"
-						/* ,dataType:"json" */
-						,url: "checkId" 							/* checkId는 dto부터 만들어야한다 */
-						/* ,data : $("#formLogin").serialize() */
-						,data : { "id" : $("#id").val() }
-						,success: function(response) {
-							if(response.rt == "success") {
-								document.getElementById("idFeedback").classList.add('is-valid');
-								document.getElementById("idFeedback").classList.remove('invalid-feedback');
-								document.getElementById("idFeedback").classList.add('valid-feedback');
-								 $("#idFeedback").text("사용가능");
-							} else {
-								document.getElementById("idFeedback").classList.add('is-invalid');
-								document.getElementById("idFeedback").classList.remove('valid-feedback');
-								document.getElementById("idFeedback").classList.add('invalid-feedback');
-								$("#idFeedback").text("사용 불가능 합니다");
-							}
-						}
-						
-						,error : function(jqXHR, textStatus, errorThrown){
-							alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-						}
-					});
-			});
-		</script> -->
+	<!-- --------------------------------------------------- script ---------------------------------------------------------- -->
 	
 		<!-- 로그아웃 -->
 		<script>
