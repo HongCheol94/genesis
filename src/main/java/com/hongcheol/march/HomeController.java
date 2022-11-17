@@ -55,19 +55,10 @@ public class HomeController {
 		}
 		
 		@RequestMapping(value = "/")
-		public String main(Model model) {
-			return "infra/main/xdmin/main";
-		}
-		
-		@RequestMapping(value = "userBuy")
-		public String buy(Model model) {
-			return "infra/buy/xdmin/userBuy";
-		}
-		
-		@RequestMapping(value = "test")
 		public String test() {
-			return "infra/teamPTest/test";
+			return "infra/main/xdmin/choiceList";
 		}
+		
 	
 	
 }

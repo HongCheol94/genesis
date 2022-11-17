@@ -41,7 +41,7 @@
 			<li class="nav-item col">
                 <a class="nav-link" href="../member/myPage.html" style="color:deepskyblue">
 					<i class="fas fa-light fa-circle-user fs-2"></i>
-					<span class="fs-2">김홍철님</span>
+					<span class="fs-2">${sessName }</span>
 				</a>
             </li>
 			<li>
@@ -61,8 +61,8 @@
     <main>
         <div class="my_info" style="background-color:lightgoldenrodyellow;" >
 			<div>
-                <p class="fs-5">김홍철님</p>
-                <a href="myPageLogin"><p class="fs-6" style="color:black;">정보수정</p></a>			
+                <p class="fs-5">${sessName }</p>
+                <a href="myPageForm"><p class="fs-6" style="color:black;">정보수정</p></a>			
             </div>
             <div class="info">
                 <span class="fs-6">찜한차량</span>

@@ -62,16 +62,17 @@
                                 <button class="btn btn-outline-warning" type="button" id="btnLogin">로그인</button>
                             </div>
                             <div class="col-4 offset-4">
-                                <a href="../login/findIdPw.html" class="fs-6" mt-2 mt-sm-0 href="#">Find Id/Password</a>
+                                <a href="/findIdPw" class="fs-6">Find Id/Password</a>
                             </div>
                             <div class="col-4 offset-4">
-                                <a href="memberRegForm" class="fs-6" mt-2 mt-sm-0 href="#">회원가입</a>
+                                <a href="/joinMember" class="fs-6" >회원가입</a>
                             </div>
                             <div class="col">
                                 <hr>
                             </div>
                            <div class="col-4 mb-4">
-	                            <button type="button" onclick="location.href='javascript:naverLoginClick()';" style="background:none; border-style:none;">
+	                           <!--  <button type="button" onclick="location.href='javascript:naverLoginClick()';" style="background:none; border-style:none;"> -->
+	                             <button type="button" id="naverIdLogin" style="background:none; border-style:none;">
 	                                <img src="../../resources/images/btnNaver.jpg" width="620px" height="70px">
 	                            </button>
                             </div>
@@ -85,6 +86,7 @@
 								<input type="hidden" name="dob"/>
 								<input type="hidden" name="snsImg"/>
 								<input type="hidden" name="token"/>
+								<input type="hidden" name="naver" value="${sessSeq }"/>
 							</form>
                             <div class="col-4 mb-4">
                             	 <button type="button" id="kakaoBtn" style="background:none; border-style:none;">
@@ -203,26 +205,34 @@
 	var naverLogin = new naver.LoginWithNaverId(
 			{
 				clientId: "sC4dLjDEajg7ebDdXZoF", 
-				callbackUrl: "http://localhost:8080/main",
+				callbackUrl: "http://localhost:8080/login",
 				isPopup: true
 			}
 		);
 		
 		naverLogin.init();
-
-        naverLoginClick = function(){
-			naverLogin.getLoginStatus(function (status) {
-				
-				if(!status)
-					naverLogin.authorize();
-                
-
-                setLoginStatus();  //하늘님 메소드 실행 -> Ajax
+			
+			$("#naverIdLogin").on("click", function() {
+				naverLogin.getLoginStatus(function (status) {
+					if (!status) {
+						naverLogin.authorize();
+					} else {
+					setLoginStatus();
+					}
+				});
+		})
+			
+		window.addEventListener('load', function () {
+			if (naverLogin.accessToken != null) { 
+	  			naverLogin.getLoginStatus(function (status) {
+	  				if (status) {
+	  					setLoginStatus();
+	  				}
+					});
+			}
 			});
-        }
    		
    		function setLoginStatus() {
-   			
 			$.ajax({
 				async: true
 				,cache: false
@@ -283,7 +293,7 @@
 						,cache: false
 						,type:"POST"
 						,url: "/member/kakaoLoginProc"
-						,data: {"name": $("input[name=name]").val(), "snsId": $("input[name=snsId]").val(), "phone": $("input[name=phone]").val(), "email": $("input[name=email]").val(), "gender": $("input[name=gender]").val(), e=dob]").val(),"token": $("input[name=token]").val()}
+						,data: {"name": $("input[name=name]").val(), "snsId": $("input[name=snsId]").val(), "phone": $("input[name=phone]").val(), "email": $("input[name=email]").val(), "gender": $("input[name=gender]").val(),"token": $("input[name=token]").val()}
 						,success : function(response) {
 							if (response.rt == "fail") {
 								alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");

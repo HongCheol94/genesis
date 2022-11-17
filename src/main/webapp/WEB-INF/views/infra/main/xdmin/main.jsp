@@ -290,27 +290,27 @@
 	<!-- --------------------------------------------------- script ---------------------------------------------------------- -->
 	
 		<!-- 로그아웃 -->
-		<script>
-		$("#btnLogout").on("click", function(){
-			alert("작동");
-			$.ajax({
-				async: true 
-				,cache: false
-				,type: "post"
-				,url: "/member/logoutProc"
-				,data: {}
-				,success: function(response) {
-					if(response.rt == "success") {
-						location.href = "login";
-					} else {
-						// by pass
+		<script type="text/javascript">
+			$("#btnLogout").on("click", function(){
+				alert("Asdasd");
+				$.ajax({
+					async: true 
+					,cache: false
+					,type: "post"
+					,url: "/member/logoutProc"
+					,data: {}
+					,success: function(response) {
+						if(response.rt == "success") {
+							location.href = "login";
+						} else {
+							// by pass
+						}
 					}
-				}
-				,error : function(jqXHR, textStatus, errorThrown){
-					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-				}
+					,error : function(jqXHR, textStatus, errorThrown){
+						alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+					}
+				});
 			});
-		});
 		</script>
 		<!-- 로그아웃 end -->
 	

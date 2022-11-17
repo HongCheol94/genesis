@@ -22,8 +22,8 @@
 		WHERE 1=1
 			AND seq = #{seq}
  	</select>
- 	
- 	<!-- 로그인 -->
+<!--  	
+ 	로그인
 	<select id="selectLogin" resultMap="resultMapObj">
 		SELECT
 			a.id
@@ -37,5 +37,17 @@
 			AND id = #{id}
 			AND password = #{password}
 	</select>
-	<!-- 로그인 -->
+	로그인
+	 -->
+	<!-- update -->
+	<!-- <update id="update">
+		UPDATE member
+		SET
+			id = #{id}
+			,name = #{name)
+			,number = #{number}
+			,email = #{email}
+		WHERE
+			seq = #{seq}
+	</update> -->
  </mapper>

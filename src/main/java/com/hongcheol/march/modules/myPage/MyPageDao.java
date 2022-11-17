@@ -31,4 +31,10 @@ public class MyPageDao {
 	public MyPage selectLogin(MyPage dto) {
 		return sqlSession.selectOne(namespace + ".selectLogin", dto);
 	}
+	
+//	update
+	public int update(MyPage dto) {
+		return sqlSession.update(namespace + ".update", dto);
+	}
+
 }

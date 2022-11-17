@@ -144,7 +144,15 @@
 								<span class="fs-4">고객명</span>
 							</div>
 							<div class="col">
-								${sessName}
+								<input type="text" class="form-control" id="name" value="${sessName}">
+							</div>
+						</div>
+						<div class="row mb-4">
+							<div class="col-2">
+								<span class="fs-4">아이디</span>
+							</div>
+							<div class="col">
+								<input type="text" class="form-control" id="id" value="${sessId}">
 							</div>
 						</div>
 						<div class="row mb-4">
@@ -152,33 +160,15 @@
 								<span class="fs-4">휴대폰번호</span>
 							</div>
 							<div class="col">
-								${sessNumber}
+								<input type="text" class="form-control" id="number" value="${sessNumber}">
 							</div>
 						</div>
-						<div class="row mb-4">
-							<div class="col-2">
-								<span class="fs-4">비밀번호</span>
-							</div>
-							<div class="col">
-								<input type="password" class="form-control" value="${sessPassword}">
-								
-							</div>
-							<span class="fs-6 offset-2 text-start" style="color:gray">영문 대/소문자,숫자,특수문자('~!@#$%+=-만 허용)를 조합해서 입력해 주세요.(8~20자)</span>
-						</div>
-						<!-- <div class="row mb-4">
-							<div class="col-2">
-								<span class="fs-4">새로운 비밀번호 확인</span>
-							</div>
-							<div class="col">
-								<input type="text" class="form-control" value="">
-							</div>
-						</div> -->
 						<div class="row mb-4">
 							<div class="col-2">
 								<span class="fs-4">이메일</span>
 							</div>
 							<div class="col">
-								<c:out value="${sessEmail }"/>
+								<input type="password" class="form-control" id="email" value="${sessEmail}">
 							</div>
 							<div class="col-1">
 								<span class="fs-4">@</span>

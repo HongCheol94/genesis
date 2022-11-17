@@ -29,4 +29,8 @@ public class MyPageServiceImpl implements MyPageService {
 		dto.setPassword(UtilSecurity.encryptSha256(dto.getPassword()));
 		return dao.selectLogin(dto);
 	}
+	
+	public int update(MyPage dto) throws Exception {
+		return dao.update(dto);
+	}
 }

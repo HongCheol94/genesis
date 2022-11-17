@@ -172,6 +172,8 @@ public class MemberController {
 		Map<String,Object> returnMap = new HashMap<String,Object>();
 		httpSession.invalidate();
 		returnMap.put("rt", "success");
+//		String name = httpSession.getAttribute("sessName").toString();
+//		System.out.println("tsets : "+ name);
 		return returnMap;
 	}
 	
@@ -332,6 +334,17 @@ public class MemberController {
 	        }
 	        return returnMap;
 	    }
+	 
+//	id/pw 찾기
+	 @RequestMapping(value ="findIdPw")
+	 public String findIdPw() {
+		 return "/infra/login/xdmin/findIdPw";
+	 }
+	 
+	 @ResponseBody
+	 @RequestMapping(value = "findId")
+	 
+	 
 	
 }
 

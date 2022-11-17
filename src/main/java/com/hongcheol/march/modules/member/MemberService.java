@@ -18,6 +18,15 @@ public interface MemberService {
 	public Member selectLogin(Member dto) throws Exception;
 	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception;
 	public Member snsLoginCheck(Member dto) throws Exception;
+	
+//	kokoa insert
 	public int kakaoInst(Member dto) throws Exception;
+	
+//	naver insert
 	public int naverInst(Member dto) throws Exception;
+	
+//	find ID & Pw
+	public Member findId(Member dto) throws Exception;
+	public int findPw(Member dto) throws Exception;
+	public int changePw(Member dto) throws Exception;
 }

@@ -22,6 +22,7 @@ public class JoinServiceImpl implements JoinService {
 //	맴버insert
 	@Override
 	public int insertM(Member dto) throws Exception{
+		dto.setPassword(UtilSecurity.encryptSha256(dto.getPassword()));
 		return dao.insertM(dto);
 	}
 
@@ -31,6 +32,7 @@ public class JoinServiceImpl implements JoinService {
 		return dao.checkId(dto);
 	}
 //	login,암호화
+	@Override
 	public Member selectLogin(Member dto) throws Exception{
 		dto.setPassword(UtilSecurity.encryptSha256(dto.getPassword()));
 		return dao.selectLogin(dto);

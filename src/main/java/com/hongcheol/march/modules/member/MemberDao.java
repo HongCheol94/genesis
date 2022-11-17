@@ -86,4 +86,15 @@ public class MemberDao {
 	public int naverInst(Member dto) {
 	    return sqlSession.insert(namespace + ".naverInst", dto);
 	}
+	
+//	findId & pw 
+	public Member findId(Member dto) {
+		return sqlSession.selectOne(namespace + ".findId", dto);
+	}
+	public int findPw(Member dto) {
+		return sqlSession.selectOne(namespace + ".findPw", dto);
+	}
+	public int changePw(Member dto) {
+		return sqlSession.update(namespace + ".changePw", dto);
+	}
 }

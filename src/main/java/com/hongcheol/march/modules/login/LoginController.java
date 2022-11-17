@@ -16,12 +16,12 @@ public class LoginController {
 	@Autowired
 	MemberServiceImpl service;
 	
-//	로그인
+//	로그인 페이지 연결
 	@RequestMapping(value = "login")
 	public String login() throws Exception {
 		return "infra/login/xdmin/login";
 	}
-	
+//	ID/PW찾기 페이지 연결
 	@RequestMapping(value = "findIdPw")
 	public String findIdPw(Model model) throws Exception{
 		return "infra/login/xdmin/findIdPw";

@@ -129,6 +129,35 @@ public class MemberServiceImpl implements MemberService {
     public int naverInst(Member dto) throws Exception {
         return dao.naverInst(dto);
     }
-	
+    
+//    find Id & Pw
+    @Override
+    public Member findId(Member dto) throws Exception {
+
+    	Member id = dao.findId(dto);
+    	System.out.println("id : " + id.getId());
+    	
+    	String myId = id.getId().substring(0, id.getId().length()-3);
+    	int starLength = id.getId().length()- myId.length();
+    	
+    	for (int i=0; i<starLength; i++) {
+    		myId += "*";
+    	}
+    	dto.setId(myId);
+		
+		return dto;
+    }
+    
+    @Override
+    public int findPw(Member dto) throws Exception {
+    	return dao.findPw(dto);
+    }
+    
+    @Override
+    public int changePw(Member dto) throws Exception {
+    	dto.setPassword(UtilSecurity.encryptSha256(dto.getPassword()));
+    	return dao.changePw(dto);
+    }
+    
 }	
 	

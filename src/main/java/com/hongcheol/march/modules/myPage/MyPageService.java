@@ -9,4 +9,5 @@ public interface MyPageService {
 	public List<MyPage> selectList() throws Exception;
 	public MyPage selectOne() throws Exception;
 	public MyPage selectLogin(MyPage dto) throws Exception;
+	public int update(MyPage dto) throws Exception;
 }
