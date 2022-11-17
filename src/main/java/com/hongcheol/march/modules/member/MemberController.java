@@ -341,10 +341,6 @@ public class MemberController {
 		 return "/infra/login/xdmin/findIdPw";
 	 }
 	 
-	 @ResponseBody
-	 @RequestMapping(value = "findId")
-	 
-	 
 	
 }
 
