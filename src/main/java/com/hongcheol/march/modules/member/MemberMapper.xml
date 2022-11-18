@@ -222,10 +222,10 @@
 			and dob = #{dob}
 	</select>
 	
-	<select id="findPw" resultMap="resultMapObj">
+	<select id="findPw" resultType="Integer">
 		select
 			count(*)
-		from user u
+		from member
 		where 1=1
 			and id = #{id}
 			and name = #{name}

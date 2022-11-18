@@ -35,6 +35,9 @@
 			<exclude-mapping path="/dealer" />
 			<exclude-mapping path="/login" />
 			<exclude-mapping path="/findIdPw" />
+			<exclude-mapping path="/findId" />
+			<exclude-mapping path="/findPw" />
+			<exclude-mapping path="/changePw" />
 			<exclude-mapping path="/joinForm" />
 			<exclude-mapping path="/joinMember" />
 			<exclude-mapping path="/memberInsert" />

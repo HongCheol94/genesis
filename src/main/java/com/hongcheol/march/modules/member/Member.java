@@ -11,8 +11,9 @@ public class Member {
 	private String password;
 	private String name;
 	private Integer gender;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date dob;
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	private Date dob;
+	private String dob;
 	private Integer postNumber;
 	private Integer area;
 	private String detailedAddress;
@@ -73,10 +74,11 @@ public class Member {
 	public void setGender(Integer gender) {
 		this.gender = gender;
 	}
-	public Date getDob() {
+
+	public String getDob() {
 		return dob;
 	}
-	public void setDob(Date dob) {
+	public void setDob(String dob) {
 		this.dob = dob;
 	}
 	public Integer getPostNumber() {

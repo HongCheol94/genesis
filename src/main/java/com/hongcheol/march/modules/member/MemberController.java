@@ -335,12 +335,6 @@ public class MemberController {
 	        return returnMap;
 	    }
 	 
-//	id/pw 찾기
-	 @RequestMapping(value ="findIdPw")
-	 public String findIdPw() {
-		 return "/infra/login/xdmin/findIdPw";
-	 }
-	 
 	
 }
 
