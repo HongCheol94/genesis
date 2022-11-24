@@ -263,16 +263,16 @@
 	                        <div class="card-body contacts_body">
 	                            <ui class="contacts" id="chatList">
 	                            
-	                            	<c:forEach items="${list }" var="list" varStatus="status">
+	                            	<c:forEach items="${list}" var="list" varStatus="status">
 	                            		
-																		<li class="room" id="${list.chatSeq}" onclick="selectChatRoom(${list.chatSeq})">
+											<li class="room" id="${list.chatSeq}" onclick="selectChatRoom(${list.chatSeq})">
 		                                    <div class="d-flex bd-highlight">
 		                                        <div class="img_cont">
 																								<!-- 아래 path 와 uuidname 도 본인의 dto field에 맞게 수정 -->
 		                                            <img src="
-																										<c:if test = "${list.upPath ne null}">
-																											${list.upPath}${list.upUuidName}
-																										</c:if>
+													<c:if test = "${list.path ne null}">
+														${list.path}${list.uuidName}
+													</c:if>
 		                                                " class="rounded-circle user_img">
 		                                        </div>
 		                                        <div class="chat_product_info">
@@ -326,13 +326,13 @@
 	
   //Firebase 프로젝트에서 추출한 정보 입력
 	const firebaseConfig = {
-  		apiKey: "",
-  		authDomain: "",
-  		databaseURL: "",
-  		projectId: "",
-  		storageBucket: "",
-  		messagingSenderId: "",
-  		appId: ""
+  		 apiKey: "AIzaSyCwGaOKgdZZNHfxw8Xlpu05JRGbGRQQzDo",
+    authDomain: "my-chat-d7386.firebaseapp.com",
+    databaseURL: "https://my-chat-d7386-default-rtdb.firebaseio.com",
+    projectId: "my-chat-d7386",
+    storageBucket: "my-chat-d7386.appspot.com",
+    messagingSenderId: "29005941556",
+    appId: "1:29005941556:web:310105715efb295ea1f361"
 	};		
 	// Initialize Firebase
 	const app = initializeApp(firebaseConfig);
@@ -501,7 +501,7 @@
 								txt+='<img src="';
 								if(result.newChat.upPath != null)
 								{
-									txt+=result.newChat.upPath + result.newChat.upUuidName;
+									txt+=result.newChat.path + result.newChat.uuidName;
 								}
 								txt+='" class="rounded-circle user_img">';
 								txt+='</div>';

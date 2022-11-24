@@ -120,7 +120,9 @@
 						<button type="button" class="btn btn-outline-warning btn-lg">방문예약</button>
 					</div>
 				<div class="col-2 px-0">
-					<button type="button" class="btn btn-outline-primary btn-lg">상담예약</button>
+					<a href="/chat/">
+						<button type="button" class="btn btn-outline-primary btn-lg">상담하기</button>
+					</a>
 				</div>
 				<!-- 상단 나브바 end -->
 				<!-- 차량사진 start -->

@@ -23,7 +23,7 @@ public class ChatController {
 	@RequestMapping(value="")
 	public String chat(HttpSession httpSession,Model model) throws Exception {
 		
-		List<Chat> list = service.selectChatListFromOne((int)httpSession.getAttribute("sessSeq"));
+		List<Chat> list = service.selectChatListFromOne(Integer.parseInt(httpSession.getAttribute("sessSeq").toString()));
 		model.addAttribute("list", list);
 		
 		return "infra/chat/user/chat";

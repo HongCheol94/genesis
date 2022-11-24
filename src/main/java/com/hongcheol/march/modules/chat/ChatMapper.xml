@@ -30,7 +30,7 @@
 			,up.uuidName     <!-- 채팅상대의 프로필 이미지 파일명 -->
 		FROM chatUser cu 
 		JOIN member mm 
-		ON cu.cuMember  = mm.Seq
+		ON cu.cuMember  = mm.seq
 		LEFT JOIN memberUploaded up    <!-- 프로필 이미지가 없을 경우에 대비해 LEFT JOIN -->
 		ON mm.seq = up.pseq   
 		AND up.delNy = 0             <!-- 프로필 이미지의 삭제유무 -->
