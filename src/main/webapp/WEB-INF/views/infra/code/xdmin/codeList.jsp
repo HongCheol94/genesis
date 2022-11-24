@@ -131,7 +131,6 @@
 					<th>코드</th>
 					<th>코드그룹 코드</th>
 					<th>코드 이름(한글)</th>
-					<th>대체 코드</th>
 					<th>코드 이름(영문)</th>
 					<th>사용</th>
 					<th>순서</th>
@@ -153,7 +152,6 @@
 						<td>${list.seq}</td>
 						<td>${list.ccg_seq}</td>
 						<td><a href="/code/codeRegForm?seq=<c:out value="${list.seq }"/>">${list.codeNameKo}</a></td>
-						<td>${list.substituteCode}</td>
 						<td>${list.codeNameEn}</td>
 						<td>${list.useNy}</td>
 						<td>${list.turn}</td>

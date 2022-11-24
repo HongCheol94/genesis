@@ -144,7 +144,7 @@ public class CodeController {
 	        sheet.setColumnWidth(1, 3100);
 
 //	        Header
-	        String[] tableHeader = {"Seq", "코드그룹 코드", "코드그룹 이름(한글)", "코드", "대체 코드", "코드 이름(한글)", "코드 이름(영문)", "사용", "순서", "등록일", "수정일"};
+	        String[] tableHeader = {"Seq", "코드그룹 코드", "코드그룹 이름(한글)", "코드", "코드 이름(한글)", "코드 이름(영문)", "사용", "순서", "등록일", "수정일"};
 
 	        row = sheet.createRow(rowNum++);
 	        
@@ -178,28 +178,22 @@ public class CodeController {
 	        	cell.setCellStyle(cellStyle);
 	        	cell.setCellValue(list.get(i).getCode());
 	        	
-	            
 	            cell = row.createCell(3);
-	            cellStyle.setAlignment(HorizontalAlignment.CENTER);
-	            cell.setCellStyle(cellStyle);
-	            cell.setCellValue(list.get(i).getSubstituteCode());
-	            
-	            cell = row.createCell(4);
 	            cellStyle.setAlignment(HorizontalAlignment.CENTER);
 	            cell.setCellStyle(cellStyle);
 	            cell.setCellValue(list.get(i).getCodeNameKo());
 	            
-	            cell = row.createCell(5);
+	            cell = row.createCell(4);
 	            cellStyle.setAlignment(HorizontalAlignment.CENTER);
 	            cell.setCellStyle(cellStyle);
 	            cell.setCellValue(list.get(i).getCodeNameEn());   
 
-	            cell = row.createCell(6);
+	            cell = row.createCell(5);
 	            cellStyle.setAlignment(HorizontalAlignment.CENTER);
 	            cell.setCellStyle(cellStyle);
 	            cell.setCellValue(list.get(i).getUseNy()); 
 	            
-	            cell = row.createCell(7);
+	            cell = row.createCell(6);
 	            cellStyle.setAlignment(HorizontalAlignment.CENTER);
 	            cell.setCellStyle(cellStyle);
 	            cell.setCellValue(list.get(i).getTurn());  
